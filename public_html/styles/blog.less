@@ -1,0 +1,102 @@
+@import "variables.less";
+
+div.footnotes {
+//     display: none;
+    font-size: .9em;
+    p {
+        padding: .5rem 0;
+    }
+}
+
+main#contents {
+//    max-width: 650px;
+//    max-width: 900px;
+}
+
+
+p.blogHeaderByline {
+    .sideText;
+    margin-top: -1.34rem;
+    margin-bottom: 1.34em;
+    a.blend {
+        color: inherit !important;
+    }
+    span {
+        display: none;
+    }
+}
+main.blog.post p.blogHeaderByline span {
+    display: inline;
+}
+
+.blog-share {
+    a {
+        display: inline-block;
+        width: 20%;
+        text-align: center;
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+        border-right: 1px solid;
+        &:last-of-type {
+            border-right: none;
+        }
+        @media (min-width: @sizeChange) {
+            border-bottom: none;
+            &:first-of-type { border-bottom-left-radius: @borderRad;    }
+            &:last-of-type {  border-bottom-right-radius: @borderRad;   }
+        }
+        padding: 5px;
+        border-right-color: white;
+        border-bottom-color: @color4;
+        border-top-color: @color4;
+        color: @color2;
+        background-color: white;
+        &:hover {
+            color: white;
+            background-color: @color2;
+            border-top-color: @color2;
+            border-bottom-color: @color2;
+        }
+        &:active {
+            background-color: @color1;
+            border-top-color: @color1;
+            border-bottom-color: @color1;
+            color: white;
+        }
+    }
+    a.twitter   { color: #33CCFF; &:hover { color: white; background-color: #33CCFF; }  &:active { color: white; background-color: @color1; border-top-color: @color1;} }
+    a.facebook  { color: #3B5998; &:hover { color: white; background-color: #3B5998; }  &:active { color: white; background-color: @color1; border-top-color: @color1;} }
+    a.pinterest { color: #D43638; &:hover { color: white; background-color: #D43638; }  &:active { color: white; background-color: @color1; border-top-color: @color1;} }
+    a.linkedin  { color: #4875B4; &:hover { color: white; background-color: #4875B4; }  &:active { color: white; background-color: @color1; border-top-color: @color1;} }
+}
+
+
+
+
+// Archive
+.yearList {
+    list-style: none;
+    padding-left: @sidePadding;
+    li span {
+        width: 50px;
+        font-size: .9em;
+        display: inline-block;
+        color: @color4;
+    }
+}
+
+
+
+// Blog filters in footer
+.blogPagination {
+    text-align: center;
+    max-width: @contentWidth;
+    height: @sidePadding;
+    height: 2.5rem;
+    margin: @objectSpace auto;
+    a {
+        &.prev { float: left;   margin-left: 5px;   i { margin-right: 10px; }  @media (min-width: @sizeChange) { margin-left: 0;  }  }
+        &.next { float: right;  margin-right: 5px;  i { margin-left:  10px; }  @media (min-width: @sizeChange) { margin-right: 0; }  }
+        .orangeButton;
+    }
+}

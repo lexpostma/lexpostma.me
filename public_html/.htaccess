@@ -1,0 +1,47 @@
+RedirectMatch 301 ^/portfolio/?$    http://portfolio.lexpostma.me$1
+RedirectMatch 301 ^/blog/?$         http://blog.lexpostma.me$1
+RedirectMatch 301 ^/cv/?$           http://resume.lexpostma.me$1
+RedirectMatch 301 ^/resume/?$       http://resume.lexpostma.me$1
+RedirectMatch 301 ^/about/?$        http://about.lexpostma.me$1
+
+RedirectMatch 301 ^/q/?$            https://lexpostma.typeform.com/to/fKK9oO
+RedirectMatch 301 ^/Q/?$            https://lexpostma.typeform.com/to/fKK9oO
+RedirectMatch 301 ^/statafel/?$     https://lexpostma.typeform.com/to/fKK9oO
+#RedirectMatch 301 ^/mesh/?$         https://docs.google.com/a/postma.me/forms/d/1Ht3jsyRe56SAaj8yfFLStzHHrVYKuDzzPgR_tuHhfhM/viewform
+
+RedirectMatch 301 ^/phpmyadmin/index.php/?$     https://lexpostma.typeform.com/to/fKK9oO
+RedirectMatch 301 ^/phpmyadmin/?$               https://lexpostma.typeform.com/to/fKK9oO
+
+RewriteEngine On
+RewriteBase /
+
+## Block Baidu spiders ##
+#RewriteCond %{HTTP_USER_AGENT} ^Baiduspider.* [NC]
+#RewriteRule .* - [F]
+
+## From WWW to non-WWW ##
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,N]
+
+## All other rewrites ##
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^tu/([A-Za-z0-9-]+)/?$      /index.php?p=filter&client=tudelft-$1	[NC,L]
+RewriteRule ^filter/(.*)/?$             /index.php?p=filter&$1	                [NC,L]
+RewriteRule ^apple/([A-Za-z0-9-_]+)/?$  /index.php?p=apple&to=$1          	    [NC,L]
+RewriteRule ^([A-Za-z0-9-]+)/?$		    /index.php?p=$1                         [NC,L]
+
+## Disable Directory Indexes
+Options -Indexes
+
+ErrorDocument 400 /error/400.php
+ErrorDocument 401 /error/401.php
+ErrorDocument 403 /error/403.php
+ErrorDocument 404 /error/404.php
+ErrorDocument 500 /error/500.php
+ErrorDocument 502 /error/502.php
+
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>

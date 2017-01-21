@@ -1,0 +1,90 @@
+@color1: #4B0082; // indigo/paars
+//@color2: #C23700; // donkeroranje  //@color2: #028E9B; // oud cyan
+// @color3: #005B79; // donkerblauw
+
+
+@color1-1: #7D01D7;
+@color1-2: #5E00A1;
+@color1-3: #3B0065;
+@color1-4: #270043;
+
+@color2-1: #FF4900;
+@color2-2: #F04400;
+@color2: @color2-2; // ook in twitter links, in index.php, en in videoLightning
+@color2-3: #962B00;
+@color2-4: #641C00;
+
+@color3-1: #009DD1;
+@color3-2: #007196;
+// @color3: @color3-2;
+@color3-3: #00475E;
+@color3-4: #002F3E;
+
+@linkOpacity: .5;
+@color3: #7D01D7;   // voorheen @color1, maar dan lichter, rgba(75, 0, 130, @linkOpacity);
+
+@color4: DarkGray;
+@color5: #27ae60;
+@colorBackground: #F7F7F7; // heel lichtgrijs
+
+@inactiveOpaqueLink: rgba(255, 255, 255, @linkOpacity);
+.blurredPurple {
+    background-color: rgba(75, 0, 130, .85);
+            backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+@sizeChange:    500px;
+@contentWidth:  650px;
+
+@sidePadding:   1rem;
+@itemMargin:    30px;
+@objectSpace:   80px;
+@borderRad:     5px;
+@borderRadIn:   4px;
+
+.transition (@trans-vars) {
+            transition: @trans-vars 200ms ease-in-out 0ms;
+    -webkit-transition: @trans-vars 200ms ease-in-out 0ms;
+         -o-transition: @trans-vars 200ms ease-in-out 0ms;
+       -moz-transition: @trans-vars 200ms ease-in-out 0ms;
+        -ms-transition: @trans-vars 200ms ease-in-out 0ms;
+    -kthtml-transition: @trans-vars 200ms ease-in-out 0ms;
+}
+
+.transitionPlus (@trans-vars; @trans-speed; @trans-delay) {
+            transition: @trans-vars @trans-speed ease-in-out @trans-delay;
+    -webkit-transition: @trans-vars @trans-speed ease-in-out @trans-delay;
+         -o-transition: @trans-vars @trans-speed ease-in-out @trans-delay;
+       -moz-transition: @trans-vars @trans-speed ease-in-out @trans-delay;
+        -ms-transition: @trans-vars @trans-speed ease-in-out @trans-delay;
+    -kthtml-transition: @trans-vars @trans-speed ease-in-out @trans-delay;
+}
+
+@dribbblePink:  #EA4C89;
+@twitterBlue:   #33CCFF;
+@linkedinBlue:  #4875B4;
+@rssOrange:     #FB9F3B;
+
+.orangeButton {
+    display: inline-block;
+    text-decoration: none;
+    color: @color2;
+    padding: 8px @sidePadding;
+            border-radius: @borderRad;
+    -webkit-border-radius: @borderRad;
+    &:hover {
+        color: white;
+        background: @color2;
+    }
+    &:active {
+        color: white;
+        background: @color1;
+    }
+}
+
+.sideText {
+    font-style: italic;
+    font-size: .9em;
+    color: @color4;
+}

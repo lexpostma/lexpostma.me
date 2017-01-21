@@ -1,0 +1,21 @@
+User-agent: *
+Disallow: /apple/
+
+#Yahoo
+User-agent: Slurp
+Crawl-delay: 300
+ 
+User-agent: Yahoo!-AdCrawler
+Disallow: /
+
+#CUIL
+User-agent: twiceler
+Disallow: /
+
+#Baiduspider
+User-agent: Baiduspider
+Disallow: /
+
+#Yandex
+User-agent: Yandex
+Disallow: /

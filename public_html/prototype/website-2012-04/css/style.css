@@ -1,0 +1,144 @@
+* { margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; }
+html { background-color: #ccc; }
+body {
+	background-color: #ccc;
+	/* Gradient*/
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(255, 255, 255)), to(rgb(204, 204, 204)));
+	background-image: -webkit-linear-gradient(top, rgb(255, 255, 255), rgb(204, 204, 204));
+	background-image: -moz-linear-gradient(top, rgb(255, 255, 255), rgb(204, 204, 204));
+	background-image: -o-linear-gradient(top, rgb(255, 255, 255), rgb(204, 204, 204));
+	background-image: -ms-linear-gradient(top, rgb(255, 255, 255), rgb(204, 204, 204));
+	background-image: linear-gradient(top, rgb(255, 255, 255), rgb(204, 204, 204));
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#ffffff', EndColorStr='#cccccc'); }
+
+.container {
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto; }
+.ruimte_groot {	height: 30px; }
+.ruimte_klein {	height: 10px; }
+
+/*Titel*/
+h1 {
+	margin-bottom: -25px;
+	margin-top: -12px;
+	text-align: center;
+	font-size: 70px; 
+	font-family: Myriad Pro,Helvetica,Arial,sans-serif;
+	font-weight: bold;
+	font-stretch: condensed; 
+	color: #969696; }
+
+/*Subtitels*/
+h2 {
+	text-transform: uppercase;
+	margin-bottom: -3px;
+	margin-top: -4px;
+	font-size: 15px; 
+	font-family:Helvetica Neue,Helvetica,Arial,sans-serif; 
+	font-stretch: condensed; 
+	font-weight: bold;
+	color: #969696; }
+	
+/*Teksten*/
+p {
+	font-size: 15px; 
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+	font-weight: 200; 
+	color: #000; }
+
+/*Over mij*/
+.overmij_tekst {
+	bottom: 0px;
+	margin-bottom: -15px;
+	left: 190px;
+	width: 500px;
+	top: -15px;
+	position: relative;
+	text-align: right; }
+#foto {
+	margin-bottom: -20px;
+	margin-top: -230px;
+	background: url('../images/lex.png') no-repeat; 
+	height: 250px;
+	width: 211px;
+	position: relative;
+	float: right;
+	margin-left: 100px; }
+
+/*Over mij links*/
+a.o_link:link { 	text-decoration: none; color: black; font-weight: 400; }
+a.o_link:visited {text-decoration: none; color: black; font-weight: 400;}
+a.o_link:hover { 	text-decoration: underline; }
+a.o_link:active {	text-decoration: none; background-color: black;	color: white; }
+
+/*Portfolio*/
+h3 {
+	margin-left: 0; 
+	margin-bottom: 10px; 
+	margin-right: 0; 
+	margin-top: 0; 
+	font-size:15px; 
+	font-weight:normal; 
+	color: #d1ff10; }
+.portfolio_tekst {
+	color:#FFF; 
+	background-color:#000;
+	height:0; }
+
+#cesli {		top:270px;	left:550px;	width:336px; }
+#roman_chariot {top:10px;	left:5px;	width:350px; }
+#douchewand {	top:290px;	left:10px;	width:336px; } 
+#tassenhulp {	top:250px;	left:600px;	width:236px; }
+
+/*Portfolio links*/
+a.p_link:link {		text-decoration: underline; color: #d1ff10; }
+a.p_link:visited {	text-decoration: underline; color: #d1ff10; }
+a.p_link:hover {	text-decoration: underline; color: #d1ff10; }
+a.p_link:active {	text-decoration: none; color: black; background-color: #d1ff10;	}
+
+
+/*Contact*/
+.contact_tekst {
+	right: 10px;
+	float: right;
+	height: 34px;
+	width: 130px;
+	top: -12px;
+	position: relative; 
+	text-align: right; }
+
+.c_button { margin-left: 4px; float: right; position: relative; top: -12px; height: 34px; width: 32px; }
+
+#mail {		background: url('../images/c_mail.png') no-repeat; }
+#tel {		background: url('../images/c_telefoon.png') no-repeat; }
+#skype {	background: url('../images/c_skype.png') no-repeat; }
+#facebook {	background: url('../images/c_facebook.png') no-repeat; }
+#twitter {	background: url('../images/c_twitter.png') no-repeat; }
+#linkedin {	background: url('../images/c_linkedin.png') no-repeat; }
+#cv {		background: url('../images/c_cv.png') no-repeat; }
+#runkeeper {background: url('../images/c_runkeeper.png') no-repeat; }
+
+#flickr {	background: url('../images/c_flickr.png') no-repeat; }
+#plus {		background: url('../images/c_plus.png') no-repeat; }
+#lastfm {	background: url('../images/c_lastfm.png') no-repeat; }
+#paypal {	background: url('../images/c_paypal.png') no-repeat; }
+#tumblr {	background: url('../images/c_tumblr.png') no-repeat; }
+#vimeo {	background: url('../images/c_vimeo.png') no-repeat; }
+#youtube {	background: url('../images/c_youtube.png') no-repeat; }
+#aboutme {	background: url('../images/c_aboutme.png') no-repeat; }
+#instagram {background: url('../images/c_instagram.png') no-repeat; }
+#sms {		background: url('../images/c_sms.png') no-repeat; }
+#msn {		background: url('../images/c_msn.png') no-repeat; }
+#blog {		background: url('../images/c_blog.png') no-repeat; }
+#wordpress {background: url('../images/c_wordpress.png') no-repeat; }
+#foursquare {background: url('../images/c_foursquare.png') no-repeat; }
+#pinterest {background: url('../images/c_pinterest.png') no-repeat; }
+
+#mail, #tel, #skype, #facebook, #twitter, #linkedin, #cv, #runkeeper, #flickr, #plus, #lastfm, #paypal, #tumblr, #vimeo, #youtube, #aboutme, #instagram, #sms, #msn, #blog, #wordpress, #foursquare, #pinterest { 
+	background-position: 0 1px; }
+#mail:hover, #tel:hover, #skype:hover, #facebook:hover, #twitter:hover, #linkedin:hover, #cv:hover, #runkeeper:hover, #flickr:hover, #plus:hover, #lastfm:hover, #paypal:hover, #tumblr:hover, #vimeo:hover, #youtube:hover, #aboutme:hover, #instagram:hover, #sms:hover, #msn:hover, #blog:hover, #wordpress:hover, #foursquare:hover, #pinterest:hover { 
+	background-position: 0 -34px; }
+#mail:active, #tel:active, #skype:active, #facebook:active, #twitter:active, #linkedin:active, #cv:active, #runkeeper:active, #flickr:active, #plus:active, #lastfm:active, #paypal:active, #tumblr:active, #vimeo:active, #youtube:active, #aboutme:active, #instagram:active, #sms:active, #msn:active, #blog:active, #wordpress:active, #foursquare:active, #pinterest:active { 
+	background-position: 0 -68px; }

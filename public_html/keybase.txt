@@ -1,0 +1,66 @@
+==================================================================
+https://keybase.io/lexpostma
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://lexpostma.me
+  * I am lexpostma (https://keybase.io/lexpostma) on keybase.
+  * I have a public key with fingerprint 648B 3CCF F244 D76C 003A  E0F0 500F 7FB1 E298 9B6E
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "648b3ccff244d76c003ae0f0500f7fb1e2989b6e",
+            "host": "keybase.io",
+            "key_id": "500f7fb1e2989b6e",
+            "uid": "092d0f163f4eed9e7fd3d236f7c66700",
+            "username": "lexpostma"
+        },
+        "service": {
+            "hostname": "lexpostma.me",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1414187512,
+    "expire_in": 157680000,
+    "prev": "0bf1b6124b3727cab7882929ae395d7daab80c27e92e97c853c0ea678a814597",
+    "seqno": 3,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v1.1.3
+Comment: https://keybase.io/crypto
+
+yMHkAnicO8LLzMDFqLTwqnb6sjhbxtMHPpUyhHid/FGtlJSfUqlkVa2UnQqm0jLz
+0lOLCooy80qUrJTMTCySjJOT09KMTExSzM2SDQyME1MN0gxMDQzSzNOSDFONLC0s
+k8xSlXSUMvKLQTqAxiQlFqfqZeYDxYCc+MwUoCgW9aVgCQNLoxSDNEMz4zST1NQU
+y1TztBTjFCNjszTzZDMzcwMDkMLi1KK8xNxUoOqc1IoCoDW5iUq1OkpA4bLM5FSQ
+o0F2oyvRywXZUlCUX5KfnJ8DlMkoKSmwAmksqSwAqSxPTYqHmhGflJmXAvQ4UENZ
+alFxZn6ekpUhUGVySSbIUEMTILQwNzU00lECGp9ZlBqfCVJham5mYQAEIGtSy0C+
+SUozTDIzNDJJMjY3Mk9OTDK3sDCyNLJMTDW2NE0xT0lMTLIwSDYyT7U0SrU0T7Yw
+NU42SE00M7dItDA0MbU0VwL5qjAvX8nKGOjMxHSgkcWZ6XmJJaVFqUq1hw7EsDAw
+cjGwsTKBoo6Bi1MAFqGTytj/e/4pW7C+fN6UXafXpZ7U+2Zg9kl+377CCWnLDbVd
+XsmznntmLGKj12feOMVqypcLTy7Pb+654G5fWOz7LC5gvdC8p9V/ZrNUaFpV/zkZ
+sTAtZtOBquWMO3Y/D14g+vnj33xp/f2hf7tMDsy/J1VQ+TjjWNTcLXZXYq+Jbll0
+XTD0kOel9YlTmC0ljk3KfeQpu2/lnuzVU0UDfFXbl9kJhV65y85W3Pwn4vOe69oG
+kgUzOIQeMrifv97S/Z/zycUPGxR3Lb7zdvKeshPhj1Sa+v4v/C5ovUOgxDN/RlLf
+Wd3i542HexJiNj45aHRmjXj28snCXyxaJe9WPbvtqRrLv+1rxYWYlL7YNQ8+xxo1
+bAEARaYb+g==
+=4Se0
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/lexpostma
+
+==================================================================
+
