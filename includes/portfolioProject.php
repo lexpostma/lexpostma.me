@@ -11,7 +11,7 @@
         $clientPromoImg = $clientPromo;
         if($clientPromo == 'peerby'){ $clientPromoImg .= 'Light'; }
 ?>
-        <a href="<?=makeNewFilterURL('client').'&client='.$clientPromo?>" title="View projects for <?=$clientCount?>"><img class="infoClientLogo" src="/img/logos/<?=$clientPromoImg?>.svg"></a>
+        <a href="<?=makeNewFilterURL('client').'&client='.$clientPromo?>" title="View projects for <?=$clientCount?>"><img class="infoClientLogo" src="/images/logos/<?=$clientPromoImg?>.svg"></a>
 <?
     }
 ?>
@@ -32,7 +32,7 @@
         echo '<div class="portfolioItem">';
 
 ?>    
-        <a href="/<?=$shortname?>" style="background-image: url(/img/portfolio/<?=$shortname?>-1.png);" title="<?=$plainTitle?>">
+        <a href="/<?=$shortname?>" style="background-image: url(/images/portfolio/<?=$shortname?>-1.png);" title="<?=$plainTitle?>">
             <div class="portfolioItemText">
                 <span class="portfolioItemTitle"><?=$plainTitle?></span>
                 <span class="portfolioItemSummary"><?=$summary?></span>

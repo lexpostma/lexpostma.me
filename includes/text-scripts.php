@@ -6,8 +6,8 @@ function bodyScan($input,$unique){
     global $blogURL;
     global $portURL;
     
-    $input = str_replace('src="/img',        'src="'.$coreURL.'img',  $input);
-    $input = str_replace('src="/vids',       'src="'.$coreURL.'vids', $input);
+    $input = str_replace('src="/images', 'src="'.$coreURL.'images',  $input);
+    $input = str_replace('src="/videos', 'src="'.$coreURL.'videos', $input);
 
     $input = str_replace('href="/portfolio', 'href="'.$portURL,       $input);
     $input = str_replace('href="/blog',      'href="'.$blogURL,       $input);

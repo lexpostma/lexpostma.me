@@ -27,8 +27,8 @@
 
         // all the clients with nice logos
         if($row['showLogo'] == 1){
-            if(isset($clientFilter) && $clientFilter == $shortclient2){  $clientsWithLogo .= '<a href="'.makeNewFilterURL('client').'" title="Remove '.$client2.' filter" class="selected"><img src="/img/logos/'.$shortclient2.'.svg" /></a>';      }
-            else{                                                        $clientsWithLogo .= '<a href="'.makeNewFilterURL('client').'&client='.$shortclient2.'" title="Filter by '.$client2.'" ><img src="/img/logos/'.$shortclient2.'.svg" /></a>'; };
+            if(isset($clientFilter) && $clientFilter == $shortclient2){  $clientsWithLogo .= '<a href="'.makeNewFilterURL('client').'" title="Remove '.$client2.' filter" class="selected"><img src="/images/logos/'.$shortclient2.'.svg" /></a>';      }
+            else{                                                        $clientsWithLogo .= '<a href="'.makeNewFilterURL('client').'&client='.$shortclient2.'" title="Filter by '.$client2.'" ><img src="/images/logos/'.$shortclient2.'.svg" /></a>'; };
         };
     };
 

@@ -17,7 +17,7 @@
     	$link       = $row['link'];
     	$svgCode    = $row['svgCode'];
 
-        $style     = "background-image: url('/img/buttons/$shortname.svg');";
+        $style     = "background-image: url('/images/buttons/$shortname.svg');";
         $mouseover = "show('a-$shortname');	hide('a-activities')";
         $mouseout  = "hide('a-$shortname'); show('a-activities')";
         $gaEvent   = "ga('send', 'event', 'About', 'Quirky details', '$activity');";

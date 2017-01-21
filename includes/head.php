@@ -13,9 +13,9 @@
 ?>
         
         <!-- Icons -->
-        <link rel="mask-icon" href="/img/icons/Safari-pinnedtab.svg" color="#4B0082">
-        <link rel="shortcut icon" type="image/ico" href="/img/icons/favicon.png" />
-        <link rel="fluid-icon" type="image/png" href="/img/icons/Fluid-icon.png" />
+        <link rel="mask-icon" href="/images/icons/Safari-pinnedtab.svg" color="#4B0082">
+        <link rel="shortcut icon" type="image/ico" href="/images/icons/favicon.png" />
+        <link rel="fluid-icon" type="image/png" href="/images/icons/Fluid-icon.png" />
         
         <!-- Standard SEO / Google -->
         <meta name="description" content="<?=$seoDescription?>" />
@@ -63,15 +63,15 @@
         <!-- Apple / iOS -->
         <meta name="apple-mobile-web-app-title" content="Lex Postma" />
         <meta name="apple-mobile-web-app-capable" content="no" />
-        <link rel="apple-touch-icon-precomposed" 	sizes="60x60"		href="/img/icons/Icon-60.png" />
-        <link rel="apple-touch-icon-precomposed" 	sizes="120x120"		href="/img/icons/Icon-60@2x.png" />
-        <link rel="apple-touch-icon-precomposed" 	sizes="180x180"		href="/img/icons/Icon-60@3x.png" />
-        <link rel="apple-touch-icon-precomposed" 	sizes="76x76"		href="/img/icons/Icon-76.png" />
-        <link rel="apple-touch-icon-precomposed" 	sizes="152x152"		href="/img/icons/Icon-76@2x.png" />
+        <link rel="apple-touch-icon-precomposed" 	sizes="60x60"		href="/images/icons/Icon-60.png" />
+        <link rel="apple-touch-icon-precomposed" 	sizes="120x120"		href="/images/icons/Icon-60@2x.png" />
+        <link rel="apple-touch-icon-precomposed" 	sizes="180x180"		href="/images/icons/Icon-60@3x.png" />
+        <link rel="apple-touch-icon-precomposed" 	sizes="76x76"		href="/images/icons/Icon-76.png" />
+        <link rel="apple-touch-icon-precomposed" 	sizes="152x152"		href="/images/icons/Icon-76@2x.png" />
         
         <!-- Microsoft / Metro -->
         <meta name="msapplication-TileColor" content="#47257E">
-        <meta name="msapplication-TileImage" content="/img/icons/metro.png">
+        <meta name="msapplication-TileImage" content="/images/icons/metro.png">
 
         <!-- Pinterest -->        
         <meta name="p:domain_verify" content="06c4f3327c9c9b5ae87545dc4fa3a3ad"/>

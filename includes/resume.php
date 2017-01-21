@@ -51,7 +51,7 @@
                 else{ echo $description;};
 ?>
         </div>
-            <? if(isset($companyLogo)){ echo '<img class="companyLogo" src="/img/logos/'.$companyLogo.'.svg" />'; }?>        
+            <? if(isset($companyLogo)){ echo '<img class="companyLogo" src="/images/logos/'.$companyLogo.'.svg" />'; }?>        
     </div>
 <?
         }
