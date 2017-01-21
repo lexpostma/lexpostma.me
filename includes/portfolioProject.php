@@ -32,7 +32,7 @@
         echo '<div class="portfolioItem">';
 
 ?>    
-        <a href="/<?=$shortname?>" style="background-image: url(/images/portfolio/<?=$shortname?>-1.png);" title="<?=$plainTitle?>">
+        <a href="/<?=$shortname?>" style="background-image: url(/public-files/images/portfolio/<?=$shortname?>-1.png);" title="<?=$plainTitle?>">
             <div class="portfolioItemText">
                 <span class="portfolioItemTitle"><?=$plainTitle?></span>
                 <span class="portfolioItemSummary"><?=$summary?></span>

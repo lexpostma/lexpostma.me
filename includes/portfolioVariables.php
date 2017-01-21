@@ -44,7 +44,7 @@
         		</iframe>
         	</figure>';
         } else {
-            $body .= '<img src="/images/portfolio/'.$shortname.'-1.png">';
+            $body .= '<img src="/public-files/images/portfolio/'.$shortname.'-1.png">';
         };
         
         if($initialBody != ''){
