@@ -26,7 +26,7 @@
 <?
     echo mysqli_fetch_array(mysqli_query($con, "SELECT body FROM about WHERE name = 'intro';"))[0];
 ?>
-<div class="apple-extra-img lef" id="apple-img1"><img src="../images/apple/apple-me.png" onclick="showDetails('apple-img1');"><p>This is me, hi!</p></div>
+<div class="apple-extra-img lef" id="apple-img1"><img src="../public-files/images/apple/apple-me.png" onclick="showDetails('apple-img1');"><p>This is me, hi!</p></div>
 
 <p class="filterText"><b>I would like to apply for job as design&nbsp;engineer&nbsp;at&nbsp;Apple. Here’s&nbsp;why…</b></p>
 
@@ -38,7 +38,7 @@
     <p>I’m passionate about Apple, apps, design and technology. I have a versatile skill set, from UI design and wireframing, to product design and prototyping. I can prototype with my hands and I can code. I’m eager to explore the unknown and improve the existing, and have always been a loyal fan of the ‘fruit company’. I understand and treasure Apple’s design- and user-focused culture. My experience with interfaces, retail, health and fitness, the Internet of Things, and prototypes, have all been part of my Cupertino-roadmap since 2005. I also have a Dutch — non-US, non-San Francisco — perspective on design, tech and product use. All this, combined with my eye for detail, makes me the perfect candidate.</p>
 </article>
 
-<div class="apple-extra-img rig" id="apple-img2"><img src="../images/apple/apple-crystalslide.png" onclick="showDetails('apple-img2');"><p><a onclick="ga('send', 'event', 'Apple', 'Portfolio bubbles', 'Crystal Slide');" href="http://lexpostma.me/crystal-slide">Crystal Slide</a>, revolving door design in Apple Stores</p></div>
+<div class="apple-extra-img rig" id="apple-img2"><img src="../public-files/images/apple/apple-crystalslide.png" onclick="showDetails('apple-img2');"><p><a onclick="ga('send', 'event', 'Apple', 'Portfolio bubbles', 'Crystal Slide');" href="http://lexpostma.me/crystal-slide">Crystal Slide</a>, revolving door design in Apple Stores</p></div>
 
 
 <article class="contentBlock">
@@ -48,7 +48,7 @@
     <p>Now this may sound cheesy, but really, the biggest reason of “why Apple?” for me, is Apple’s own mission: <i>Making great products that enrich people’s lives.</i></p>
 </article>
 
-<div class="apple-extra-img rig" id="apple-img4"><img src="../images/apple/apple-juicemonkey.png" onclick="showDetails('apple-img4');"><p><a onclick="ga('send', 'event', 'Apple', 'Portfolio bubbles', 'Juice Monkey');" href="http://lexpostma.me/juice-monkey">Juice Monkey</a>, citrus juicer for the creative's kitchen</p></div>
+<div class="apple-extra-img rig" id="apple-img4"><img src="../public-files/images/apple/apple-juicemonkey.png" onclick="showDetails('apple-img4');"><p><a onclick="ga('send', 'event', 'Apple', 'Portfolio bubbles', 'Juice Monkey');" href="http://lexpostma.me/juice-monkey">Juice Monkey</a>, citrus juicer for the creative's kitchen</p></div>
 
 
 <article class="contentBlock" id="apple-ytbaqs">
@@ -64,7 +64,7 @@
 </article>
 
 
-<div class="apple-extra-img rig" id="apple-img5"><img src="../images/apple/apple-rechtstreex1.png" onclick="showDetails('apple-img5');"><p><a onclick="ga('send', 'event', 'Apple', 'Portfolio bubbles', 'Experience on resumé');" href="http://lexpostma.me/resume#experience" <?/* blog.lexpostma.me/linking-a-dymo-scale-to-the-internet */?>>Prototyping</a> with Raspberry Pi Zero</p></div>
+<div class="apple-extra-img rig" id="apple-img5"><img src="../public-files/images/apple/apple-rechtstreex1.png" onclick="showDetails('apple-img5');"><p><a onclick="ga('send', 'event', 'Apple', 'Portfolio bubbles', 'Experience on resumé');" href="http://lexpostma.me/resume#experience" <?/* blog.lexpostma.me/linking-a-dymo-scale-to-the-internet */?>>Prototyping</a> with Raspberry Pi Zero</p></div>
 
 
 <article class="contentBlock" id="apple-references">
@@ -89,7 +89,7 @@
 </article>
 
 
-<div class="apple-extra-img lef" id="apple-img7"><img src="../images/apple/apple-whirlpoolbubble.png" onclick="showDetails('apple-img7');"><p>Redesigning and user testing the <a onclick="ga('send', 'event', 'Apple', 'Portfolio bubbles', 'Whirlpool Bubble');" href="http://lexpostma.me/whirlpool-bubble">Whirlpool Bubble</a> microwave</span></div>
+<div class="apple-extra-img lef" id="apple-img7"><img src="../public-files/images/apple/apple-whirlpoolbubble.png" onclick="showDetails('apple-img7');"><p>Redesigning and user testing the <a onclick="ga('send', 'event', 'Apple', 'Portfolio bubbles', 'Whirlpool Bubble');" href="http://lexpostma.me/whirlpool-bubble">Whirlpool Bubble</a> microwave</span></div>
 
 
 <article class="contentBlock">
@@ -126,7 +126,7 @@
 </article>
 
 
-<div class="apple-extra-img rig" id="apple-img8"><img src="../images/apple/apple-workplace.png" onclick="showDetails('apple-img8');"><p>Working hard in the workshop</p></div>
+<div class="apple-extra-img rig" id="apple-img8"><img src="../public-files/images/apple/apple-workplace.png" onclick="showDetails('apple-img8');"><p>Working hard in the workshop</p></div>
 
 
 <div class="apple-links">
@@ -169,5 +169,5 @@
 </script>
 
 
-<div class="apple-extra-img lef notInline" id="apple-img3"><img src="../images/apple/apple-shaped.png" onclick="showDetails('apple-img3');"><p><a onclick="ga('send', 'event', 'Apple', 'Portfolio bubbles', 'Shaped');" href="http://lexpostma.me/shaped">Shaped</a>, run a route of a specific shape</span></div>
-<div class="apple-extra-img lef notInline" id="apple-img6"><img src="../images/apple/apple-rechtstreex2.png" onclick="showDetails('apple-img6');"><p><a onclick="ga('send', 'event', 'Apple', 'Portfolio bubbles', 'Rechtstreex scale link');" href="http://lexpostma.me/rechtstreex-scale-link">Rechtstreex scale link</a>, connecting scales to the internet</p></div>
+<div class="apple-extra-img lef notInline" id="apple-img3"><img src="../public-files/images/apple/apple-shaped.png" onclick="showDetails('apple-img3');"><p><a onclick="ga('send', 'event', 'Apple', 'Portfolio bubbles', 'Shaped');" href="http://lexpostma.me/shaped">Shaped</a>, run a route of a specific shape</span></div>
+<div class="apple-extra-img lef notInline" id="apple-img6"><img src="../public-files/images/apple/apple-rechtstreex2.png" onclick="showDetails('apple-img6');"><p><a onclick="ga('send', 'event', 'Apple', 'Portfolio bubbles', 'Rechtstreex scale link');" href="http://lexpostma.me/rechtstreex-scale-link">Rechtstreex scale link</a>, connecting scales to the internet</p></div>

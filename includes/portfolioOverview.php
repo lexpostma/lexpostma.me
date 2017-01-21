@@ -13,7 +13,7 @@
 
             if(isset($videoFilter)){ // video items
 ?>
-            <a href="http://vimeo.com/<?=$videoid?>" class="video-in-link play" onclick="ga('send', 'event', 'Portfolio', 'Play video', '<?=$plainTitle?>');" style="background-image: url(/images/portfolio/<?=$shortname?>-1.png);" title="Play <?=$plainTitle?>'s video">
+            <a href="http://vimeo.com/<?=$videoid?>" class="video-in-link play" onclick="ga('send', 'event', 'Portfolio', 'Play video', '<?=$plainTitle?>');" style="background-image: url(/public-files/images/portfolio/<?=$shortname?>-1.png);" title="Play <?=$plainTitle?>'s video">
                 <div class="portfolioItemText">
                     <span class="portfolioItemPlayButton"><i class="fa fa-play-circle"></i></span>
                     <span class="portfolioItemTitle"><?=$plainTitle?></span>
@@ -32,7 +32,7 @@
 <?                
             } else { // regular portfolio items
 ?>
-            <a href="/<?=$shortname?>" style="background-image: url(/images/portfolio/<?=$shortname?>-1.png);" title="<?=$plainTitle?>">
+            <a href="/<?=$shortname?>" style="background-image: url(/public-files/images/portfolio/<?=$shortname?>-1.png);" title="<?=$plainTitle?>">
                 <div class="portfolioItemText">
                     <span class="portfolioItemTitle"><?=$plainTitle?></span>
                     <span class="portfolioItemSummary"><?=$summary?></span>
