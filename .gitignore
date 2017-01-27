@@ -1,4 +1,5 @@
 .DS_Store
 .env
 public_html/private-files/
+public_html/raw-feeds/
 local_assets/
