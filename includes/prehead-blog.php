@@ -1,12 +1,13 @@
 <?
     $pageTitle      = 'Lex’ blog';
+    $navigationName = 'blog';
 
     $seoTitle       = $pageTitle;
     $seoDescription = 'Personal blog, by Lex Postma. I blog about Apple, tech, apps, design and sometimes sports.'; // also in the feedbuilder
     $seoKeywords    = 'Apple,tech,design,sport,apps';
     $seoAuthor      = 'Lex Postma';
     $seoType        = 'website';
-    $navName        = $seoTitle;
+
     
 
     $pubTest = 1;  // 2 IS FOR TESTING ONLY!!!

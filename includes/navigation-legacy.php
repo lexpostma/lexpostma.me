@@ -57,8 +57,8 @@
 ?>
                 <div id="nav-actions">
 <?
-    if(isset($navName) && $secondpage != 'home'){ // the back button when not on the homepage
-        echo '<a href="/" class="backHome" title="Back to '.$navName.'"><i class="fa fa-angle-left"></i>'.$navName.'</a>';
+    if(isset($navigationName) && $secondpage != 'home'){ // the back button when not on the homepage
+        echo '<a href="/" class="backHome" title="Back to '.$navigationName.'"><i class="fa fa-angle-left"></i>'.$navigationName.'</a>';
     };
 
     // secondary menu, different for each main page

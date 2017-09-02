@@ -1,12 +1,12 @@
 <?
     $pageTitle      = 'Lex’ portfolio';
+    $navigationName = 'portfolio';
     
     $seoTitle       = $pageTitle;
     $seoDescription = 'Portfolio by Lex Postma. I design things.'; // also in the feedbuilder
     $seoKeywords    = 'portfolio,Apple,TU,Delft,design';
     $seoAuthor      = 'Lex Postma';
     $seoType        = 'website';
-    $navName        = 'Portfolio';
 
     $introTitle = '<p class="filterText">A selection of the projects that I worked on, both individually and in teams.</p>';
     
