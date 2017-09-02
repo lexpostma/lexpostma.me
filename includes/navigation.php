@@ -15,6 +15,10 @@
 ?>
             <a href="<?=$baseURL?>" title="Back to <? echo $pageTitle ?>"><? include 'navigationIcons/back.svg'  ?></a>
 <?        
+    } elseif( $basepage == 'about' ){
+?>
+            <a href="<?=$baseURL?>" title="Back to <? echo $pageTitle ?>"><? include 'navigationIcons/contact.svg'  ?></a>
+<?        
     } else {
 ?>
             <a href="#"             title="Filter <? echo $pageTitle ?>"><? include 'navigationIcons/filter.svg' ?></a>
@@ -40,10 +44,6 @@
             <a href="#references">References</a>
             <a href="#">Download</a>
 <?
-    } elseif ( $basepage == 'about' ){
-?>
-            <a href="#">Get in touch!</a>
-<?
     } 
 ?>
         </nav>
@@ -51,6 +51,7 @@
 
 <!--
         <div>
+            <a href="#">Get in touch!</a>
             <a href="#">Archive</a>
         </div>
 -->
