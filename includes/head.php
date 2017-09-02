@@ -79,6 +79,7 @@
         <!-- Styles and scripts -->
         <link rel="stylesheet" href="/styles/normalize.css">
         <link rel="stylesheet" href="/styles/global.css">
+        <link rel="stylesheet" href="/styles/global-new.css">
         <link rel="stylesheet" href="/styles/<?=$homepage?>.css">
         <link rel="stylesheet" href="/fonts/font-awesome/css/font-awesome.min.css">
         <script type="text/javascript" src="/scripts/jquery-1.12.0.min.js"></script>
