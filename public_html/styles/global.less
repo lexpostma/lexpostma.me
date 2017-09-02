@@ -368,39 +368,3 @@ footer#main-footer {
         &:nth-of-type(3)::selection{ background-color: #21468B; }
     }
 }
-
-
-
-
-
-// iPhone template
-
-.template-for-app-in-iphone {
-    @media (min-width: 350px){
-        width: 375px;
-        height: 667px;
-        position: relative;
-        margin: 118px auto;
-        border-radius: 0px;
-    }
-}
-.iphone-6-template {
-    display: none;
-    @media (min-width: 350px){
-        display: block;
-        position: absolute;
-        top: -118px;
-        left: -40px;
-        z-index: 0;
-        width: 454px;
-        height: 902px;
-    }
-}
-.app-in-iphone {
-    position: relative;
-    border-radius: 0px;
-    @media (min-width: 350px){
-        z-index: 1;
-        position: absolute;
-    }
-}
