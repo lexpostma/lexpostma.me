@@ -97,12 +97,6 @@
     	<link href="/styles/prism.css" rel="stylesheet" />
 <?
     };
-    if(isset($mathOn)){
-        $pageContains .= '• MathJax ';
-?>
-    	<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<?
-    };
     if(isset($footnoteOn) || $homepage == 'resume'){
     	$pageContains .= '• Bigfoot footnotes ';
 ?>
