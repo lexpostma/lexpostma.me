@@ -1,17 +1,19 @@
 <?
-    $seoTitle       = 'Lex’ resumé';
+    $pageTitle      = 'Lex’ resumé';
+    $navigationName = 'resume';
+
+    $seoTitle       = $pageTitle;
     $seoDescription = 'Resumé of Lex Postma. My experience, skills, education, work, interests and references, all in one place.';
     $seoKeywords    = 'TU,Delft,CV,curriculum vitae,Industrial Design,engineering,Apple';
     $seoAuthor      = 'Lex Postma';
     $seoType        = 'website';
-    $navName        = 'Resumé';
 
     if (isset($p)) {
         if ($p == 'references'){ // Reference overview page
             $seoTitle       = 'Lex’ references';
             $seoDescription = 'How other people liked working with Lex.';
             $seoKeywords    = 'references,TU,Delft,CV,curriculum vitae,Industrial Design,engineering';
-            $secondpage     = 'references';
+            $basepageTwo     = 'references';
             $includePage    = 'resumeReferenceOverview.php';
             
 /*
@@ -26,7 +28,7 @@
             $referenceCheck = mysqli_query($con,"SELECT * FROM resume_references JOIN authors_creators ON resume_references.author_id=authors_creators.id WHERE published = '1' AND shortname = '$p' GROUP BY shortname;");
             if (mysqli_num_rows($referenceCheck)!=0){ // More than 0 matches = reference
                 $post = $p;
-                $secondpage     = 'references reference';
+                $basepageTwo     = 'references reference';
     
                 $row = mysqli_fetch_array($referenceCheck);
                
@@ -67,7 +69,7 @@
     
             		$seoTitle      = 'Lex’ resumé filtered by '.$catfilter;
             		$seoKeywords   .= $catfilter;
-            		$secondpage     = 'filter';
+            		$basepageTwo     = 'filter';
             		$includePage    = 'resume.php';
         		}
                 else { // Fallback to custom 404 include page

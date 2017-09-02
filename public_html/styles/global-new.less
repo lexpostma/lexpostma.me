@@ -1,0 +1,181 @@
+@import "variables.less";
+
+@colorLine: #B2B2B2;
+@colorInactive: #929292;
+
+
+body {
+    padding-bottom: 50px;
+}
+
+header#titleHeader {
+    background-color: @color1;
+    color: white;
+    width: 100%;
+    height: 50px;
+    span#mainTitle {
+        line-height: 50px;
+        font-size: 24px;
+        font-weight: bold;
+        padding-left: 20px;
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    }
+    a#mainLogo {
+        position: absolute;
+        background: @color1;
+        padding: 3px;
+        height: 56px;
+        width: 56px;
+        top: 17px;
+        right: 17px;
+        svg {
+            height: 100%;
+            width: 100%;
+            fill: white;
+        }
+    }
+}
+
+nav#mainNavigation {
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background-color: rgba(250,250,250,0.9);
+            backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid @colorLine;
+    a {
+        display: block;
+        height: 50px;
+        width: 20%;
+        position: relative;
+        span.tabName {
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 10px;
+            color: @colorInactive;
+        }
+        svg {
+            height: 30px;
+            width: 100%;
+            margin: 3.5px auto;
+            fill: @colorInactive;
+        }
+    }
+    a:first-child {
+        border-right: 1px solid @colorLine;
+        svg {
+            margin: 10px auto;
+        }
+    }
+    a.active, a:hover {
+        span.tabName {
+            color: @color1;
+        }
+        svg {
+            fill: @color1;
+        }
+    }
+}
+
+
+nav#secondNavigation {
+    padding: 2px 10px;
+    vertical-align: bottom;
+    a {
+        display: inline-block;
+        text-decoration: none;
+        color: @color1;
+        padding: 5px 10px;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+
+// Floating animation from https://codepen.io/MarioDesigns/pen/woJgeo
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-3px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+#tabbarTooltip {
+    position: absolute;
+    background-color: @color1;
+    color: white;
+    bottom: 54px;
+    left: 4px;
+    display: block;
+    text-align: center;
+    padding: 4px 7px 6px;
+    border-radius: 5px;
+   	animation: float 3s ease-in-out infinite;
+    span {
+        position: relative;
+        z-index: 3;
+        white-space: nowrap;
+    }
+    div {
+        width: 15px;
+        height: 15px;
+        background-color: inherit;
+        position: absolute;
+        z-index: 0;
+        bottom: -5px;
+        left: 21px;
+        transform: rotate(45deg);
+    }
+}
+nav#mainNavigation a:hover div#tabbarTooltip span {
+    text-decoration: underline;
+}
+
+
+// Hide the navigation bar on scrolldown, shown on scroll up
+nav#mainNavigation {
+    transition: transform 0.2s ease-in-out;
+    a #tabbarTooltip {
+        transition: transform 0.2s ease-in-out;        
+    }
+    &.tabbarHidden {
+        transform: translateY(50px);
+        a #tabbarTooltip {
+            transform: translateY(100px);
+            animation: none;
+        }
+    }
+/*
+    &.tabbarHasBeenHidden a #tabbarTooltip {
+        display: none;
+    }
+*/
+}
+
+
+.foldableFilterBox {
+    position: absolute;
+    bottom: 51px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    
+    display: none;
+}

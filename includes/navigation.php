@@ -1,114 +1,123 @@
-        <header id="nav-header" class="<?=$homepage.' '.$secondpage?> ">
-            <div id="nav-container">
-                <a id="main-logo" href="/">
-                    <svg width="100px" height="100px" viewBox="0 0 1160 1160" preserveAspectRatio="xMinYMin meet">
-                        <g fill-rule="evenodd">
-                            <path d="M0,0 L1160,0 L1160,1160 L0,1160 L0,0 Z M80,80 L80,1080 L499.462983,1080 L533,1000 L160,1000 L160,80 L80,80 Z M500,80 L240,80.0000026 L240,920 L566,920 L600,840 L320,840 L320,520 L685,520 L651,440 L320,440 L320,160 L534,160 L500,80 Z M665,80 L580,80 L788,580 L580,1080 L665,1080 L830,682 L995,1080 L1080,1080 L872,580 L1080,80 L995,80 L829.999995,477 L665,80 Z"></path>
-                        </g>
-                    </svg>
-                </a>
-                <nav>
-                        <a href="<?=$portURL?>" onclick="ga('send', 'event', 'Navigation', 'Navigate main menu', 'Portfolio');" title="Portfolio" class="main portfolio">Portfolio
-                    </a><a href="<?=$blogURL?>" onclick="ga('send', 'event', 'Navigation', 'Navigate main menu', 'Blog');"      title="Blog"      class="main blog">Blog
-                    </a><a href="<?=$resuURL?>" onclick="ga('send', 'event', 'Navigation', 'Navigate main menu', 'Resumé');"    title="Resume"    class="main resume">Resumé
-                    </a><a href="<?=$abouURL?>" onclick="ga('send', 'event', 'Navigation', 'Navigate main menu', 'About');"     title="About me"  class="main about">About me
-                    </a>
-                </nav>
-                <script>
-                    function toggleFoldbar(id)  { $('#'+id).toggleClass('show'); }
-                    function closeOtherBar(id)  { $('#'+id).removeClass('show'); }
-                    function focusOnInput(id)   {
-                        if ($('#'+id).hasClass('show')) {
-                            $('#'+id+' form input[type="search"]').focus();
-                        } else {
-                            $('#'+id+' form input[type="search"]').blur();
-                        }
-                    }
-                    
-                </script>
+        <header id="titleHeader">
+            <span id="mainTitle"><a href="<? echo $baseURL ?>"><? echo $pageTitle ?></a></span>
+            <a id="mainLogo" href="/">
+                <svg width="100px" height="100px" viewBox="0 0 1160 1160" preserveAspectRatio="xMinYMin meet">
+                    <g fill-rule="evenodd">
+                        <path d="M0,0 L1160,0 L1160,1160 L0,1160 L0,0 Z M80,80 L80,1080 L499.462983,1080 L533,1000 L160,1000 L160,80 L80,80 Z M500,80 L240,80.0000026 L240,920 L566,920 L600,840 L320,840 L320,520 L685,520 L651,440 L320,440 L320,160 L534,160 L500,80 Z M665,80 L580,80 L788,580 L580,1080 L665,1080 L830,682 L995,1080 L1080,1080 L872,580 L1080,80 L995,80 L829.999995,477 L665,80 Z"></path>
+                    </g>
+                </svg>
+            </a>
+        </header>
+        <nav id="mainNavigation">
+
 <?
-//     $anyFilter = 1;
-    if($homepage == 'portfolio') {
+    if( $basepageTwo !== 'home' && $basepageTwo !== 'filtered' ){
 ?>
-                <div id="portfolioSearchBar" class="foldableExtraNavBar">
-                    <? include 'portfolioFilters.php'; ?>
-                </div>
+            <a href="<?=$baseURL?>" title="Back to <? echo $pageTitle ?>"><? include 'navigationIcons/back.svg'  ?></a>
 <?        
-    } else if($homepage == 'blog') {
-
+    } elseif( $basepage == 'about' ){
 ?>
-                <div id="blogFilterBar" class="foldableExtraNavBar">
-                    <? include 'blogFilters.php'; ?>
-                </div>
-
-                <div id="blogSubscribeBar" class="foldableExtraNavBar">
-                    <? include 'blogSubscribe.php'; ?>
-                </div>
-
+            <a href="#"             title="Back to <? echo $pageTitle ?>"><? include 'navigationIcons/contact.svg'  ?><div id="tabbarTooltip"><span>Get in touch!</span><div></div></div></a>
 <?        
-    } else if($homepage == 'resume') {
+    } elseif( $basepage == 'resume' ){
 ?>
-                <div id="resumeDownloadBar" class="foldableExtraNavBar">
-                    <? include 'resumeDownload.php'; ?>
-                </div>
-
-<?
-    };
+            <a href="#"             title="Back to <? echo $pageTitle ?>"><? include 'navigationIcons/download.svg'  ?><div id="tabbarTooltip"><span>Download my resume</span><div></div></div></a>
+<?        
+    } else {
 ?>
-                <div id="nav-actions">
+            <a href="#" onclick=""             title="Filter <? echo $pageTitle ?>"><? include 'navigationIcons/filter.svg' ?></a>
+            <div class="foldableFilterBox">
 <?
-    if(isset($navName) && $secondpage != 'home'){ // the back button when not on the homepage
-        echo '<a href="/" class="backHome" title="Back to '.$navName.'"><i class="fa fa-angle-left"></i>'.$navName.'</a>';
-    };
-
-    // secondary menu, different for each main page
-    if($homepage == 'portfolio') {
+        if( $basepage == 'blog' ){
+            include 'blogFilters.php';
+        } elseif( $basepage == 'portfolio' ){
+            include 'portfolioFilters.php';
+        }
 ?>
-                            <a href="/videos" class="videos"   onclick="ga('send', 'event', 'Navigation', 'Navigate second menu', 'Videos');" title="Videos I made" >Videos
-                        </a><a href="/icons"  class="icons"    onclick="ga('send', 'event', 'Navigation', 'Navigate second menu', 'Icons');"  title="Icons I made"   >Icons
-                        </a><a href="#"       class="search"   onclick="ga('send', 'event', 'Navigation', 'Filter', 'Open portfolio search'); toggleFoldbar('portfolioSearchBar'); toggleFoldbar('filtersOpen'); focusOnInput('portfolioSearchBar'); " title="Filter my portfolio projects"  id="filtersOpen">Search
-                        </a><a onclick="ga('send', 'event', 'Navigation', 'Social', 'Dribbble');" class="dribbble" href="http://dribbble.com/lexpostma" title="Check out my Dribbble shots" ><i class="fa fa-dribbble" aria-hidden="true"></i>
-                        </a>
-
-<?
-    } else if($homepage == 'blog') {
-?>
-                            <a class="archive" href="/archive" title="Blog archive" onclick="ga('send', 'event', 'Navigation', 'Navigate second menu', 'Blog archive');">Archive
-                        </a><a id="subscribeOpen" class="rss"  href="#" title="Subscribe to my blog" 
-                            onclick="
-                                toggleFoldbar('blogSubscribeBar');
-                                toggleFoldbar('subscribeOpen');
-                                closeOtherBar('blogFilterBar'); 
-                                closeOtherBar('filtersOpen'); 
-                                ga('send', 'event', 'Navigation', 'Subscribe', 'RSS blog');"
-                            >Subscribe
-                        </a><a id="filtersOpen" href="#" title="Filter my blog posts" class="search"
-                            onclick="
-                                toggleFoldbar('blogFilterBar');
-                                toggleFoldbar('filtersOpen');
-                                closeOtherBar('blogSubscribeBar');
-                                closeOtherBar('subscribeOpen'); 
-                                focusOnInput('blogFilterBar');
-                                ga('send', 'event', 'Navigation', 'Filter', 'Open blog filters');"
-                            >Search
-                        </a><a class="twitter" href="https://twitter.com/lexpostmame" title="Follow my blog on Twitter @lexpostmame" onclick="ga('send', 'event', 'Navigation', 'Social', 'Twitter website');"><i class="fa fa-twitter" aria-hidden="true"></i>
-                        </a>
-<?
-    } else if($homepage == 'resume') {
-        if(isset($referencesOnline)){?><a class="references" href="/references" title="References: what people are saying about me" onclick="ga('send', 'event', 'Navigation', 'Navigate main menu', 'References');">References</a><?};
-?><a id="filtersOpen" class="pdf" href="#" title="Download a pdf of my resumé" onclick="ga('send', 'event', 'Navigation', 'Navigate main menu', 'Open download box'); toggleFoldbar('resumeDownloadBar'); toggleFoldbar('filtersOpen');">Download
-                        </a><a class="linkedin" href="http://www.linkedin.com/in/lexpostma" title="Connect with me on LinkedIn" onclick="ga('send', 'event', 'Navigation', 'Social', 'LinkedIn');"><i class="fa fa-linkedin-square" aria-hidden="true"></i>
-                        </a>
-                    </span>
-<?
-    } else if($homepage == 'about') {
-?>
-                            <a class="more"  href="/more" title="Random stuff worth sharing" onclick="ga('send', 'event', 'Navigation', 'Navigate main menu', 'More about Lex');">Other random stuff
-                        </a><a class="twitter"  href="https://twitter.com/lexpostma" title="Follow me on Twitter @lexpostma" onclick="ga('send', 'event', 'Navigation', 'Social', 'Twitter');"><i class="fa fa-twitter" aria-hidden="true"></i>
-                        </a>
+            </div>
 <?
     }
 ?>
-                </div>
-            </div>
-        </header>
+            <a href="<?=$portURL?>" title="Portfolio" class="<? if( $basepage == 'portfolio'){ echo('active'); } ?>" ><? include 'navigationIcons/portfolio.svg'?><span class="tabName">Portfolio</span></a>
+            <a href="<?=$blogURL?>" title="Blog"      class="<? if( $basepage == 'blog'){      echo('active'); } ?>" ><? include 'navigationIcons/blog.svg'     ?><span class="tabName">Blog</span></a>
+            <a href="<?=$resuURL?>" title="Resume"    class="<? if( $basepage == 'resume'){    echo('active'); } ?>" ><? include 'navigationIcons/resume.svg'   ?><span class="tabName">Resumé</span></a>
+            <a href="<?=$abouURL?>" title="About Lex" class="<? if( $basepage == 'about'){     echo('active'); } ?>" ><? include 'navigationIcons/about.svg'    ?><span class="tabName">About Lex</span></a>
+        </nav>
+        
+        <nav id="secondNavigation">
+
+<?
+    if( $basepage == 'blog' ){
+?>
+            <a href="#">Subscribe</a>
+            <a href="<? echo $blogTwitterURL ?>"><i class="fa fa-twitter"></i></a>
+<?
+    } elseif ( $basepage == 'resume' ){
+?>
+            <a href="#references">References</a>
+            <a href="<? echo $linkedinURL ?>"><i class="fa fa-linkedin-square"></i></a>
+<?
+    } 
+?>
+        </nav>
+
+
+<!--
+        <div>
+            <a href="#">Get in touch!</a>
+            <a href="#">Archive</a>
+        </div>
+-->
+
+
+
+<!-- Hide header on scroll down, show on scroll up: https://medium.com/@mariusc23/hide-header-on-scroll-down-show-on-scroll-up-67bbaae9a78c -->
+<script>
+
+    // Hide Header on on scroll down
+    var didScroll;
+    var lastScrollTop = 0;
+    var delta = 10;
+    var navbarHeight = $('#mainNavigation').outerHeight();
+    
+    $(window).scroll(function(event){
+        didScroll = true;
+    });
+    
+    setInterval(function() {
+        if (didScroll) {
+            hasScrolled();
+            didScroll = false;
+        }
+    }, 250);
+    
+    function hasScrolled() {
+        var st = $(this).scrollTop();
+        
+        // Make sure they scroll more than delta
+        if(Math.abs(lastScrollTop - st) <= delta)
+            return;
+        
+        // If they scrolled down and are past the navbar, add class .nav-up.
+        // This is necessary so you never see what is "behind" the navbar.
+        if (st > lastScrollTop && st > navbarHeight){
+            // Scroll Down
+            $('#mainNavigation').addClass('tabbarHidden');
+        } else {
+            // Scroll Up
+            if(st + $(window).height() < $(document).height()) {
+                $('#mainNavigation').removeClass('tabbarHidden');
+            }
+        }
+        
+        lastScrollTop = st;
+    }
+    
+</script>
+
+
+
+
+
+
+

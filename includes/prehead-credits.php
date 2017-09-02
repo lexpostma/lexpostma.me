@@ -1,11 +1,13 @@
 <?
-    $seoTitle       = 'Credits for Lex’ website';
-    $seoDescription = $seoTitle;
+    $pageTitle      = 'Credits for Lex’ website';
+    $navigationName = 'credits';
+
+    $seoTitle       = $pageTitle;
+    $seoDescription = $pageTitle;
     $seoKeywords    = 'credits';
     $seoAuthor      = 'Lex Postma';
     $seoType        = 'website';
-    $navName        = 'Credits';
 
-    $secondpage     = 'home';
+    $basepageTwo     = 'home';
     $includePage    = 'credits.php';
 ?>

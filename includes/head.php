@@ -6,7 +6,7 @@
         <title><?=$seoTitle?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 <?
-    if($secondpage == 'apple'){?>
+    if($basepageTwo == 'apple'){?>
         <meta name="robots" content="noindex" />
 <?
     };
@@ -79,7 +79,8 @@
         <!-- Styles and scripts -->
         <link rel="stylesheet" href="/styles/normalize.css">
         <link rel="stylesheet" href="/styles/global.css">
-        <link rel="stylesheet" href="/styles/<?=$homepage?>.css">
+        <link rel="stylesheet" href="/styles/global-new.css">
+        <link rel="stylesheet" href="/styles/<?=$basepage?>.css">
         <link rel="stylesheet" href="/fonts/font-awesome/css/font-awesome.min.css">
         <script type="text/javascript" src="/scripts/jquery-1.12.0.min.js"></script>
 <!--
@@ -97,13 +98,7 @@
     	<link href="/styles/prism.css" rel="stylesheet" />
 <?
     };
-    if(isset($mathOn)){
-        $pageContains .= '• MathJax ';
-?>
-    	<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<?
-    };
-    if(isset($footnoteOn) || $homepage == 'resume'){
+    if(isset($footnoteOn) || $basepage == 'resume'){
     	$pageContains .= '• Bigfoot footnotes ';
 ?>
     	<script type="text/javascript" src="/scripts/bigfoot.min.js"></script>
@@ -113,7 +108,7 @@
     	        {
                     positionContent		: "true",
 <?
-        if ($homepage == 'resume'){?>
+        if ($basepage == 'resume'){?>
                     actionOriginalFN    : "delete",
 <?
         }
@@ -130,7 +125,7 @@
     if(isset($tweetOn)){
         $pageContains .= '• Embedded tweets ';        
     };
-    if($homepage == 'about' && $secondpage == 'more'){
+    if($basepage == 'about' && $basepageTwo == 'more'){
         $pageContains .= '• Counter-Up • Waypoints '
 ?>
         <script>

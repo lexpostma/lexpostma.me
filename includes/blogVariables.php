@@ -71,7 +71,7 @@
 
 
     // LISTING NEXT AND PREVIOUS ARTICLES
-    if(isset($secondpage) && $secondpage == 'post'){ // only on single post pages
+    if(isset($basepageTwo) && $basepageTwo == 'post'){ // only on single post pages
         $blogPostNext  = mysqli_query($con,"SELECT shortname,title FROM blog WHERE datePublished > '$datePublished' AND published = '$pubTest' ORDER BY datePublished ASC LIMIT 1;");
         if(mysqli_num_rows($blogPostNext)!=0){
             $row = mysqli_fetch_array($blogPostNext);
