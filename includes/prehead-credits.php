@@ -1,6 +1,8 @@
 <?
-    $seoTitle       = 'Credits for Lex’ website';
-    $seoDescription = $seoTitle;
+    $pageTitle       = 'Credits for Lex’ website';
+
+    $seoTitle       = $pageTitle;
+    $seoDescription = $pageTitle;
     $seoKeywords    = 'credits';
     $seoAuthor      = 'Lex Postma';
     $seoType        = 'website';
