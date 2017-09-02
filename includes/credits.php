@@ -18,7 +18,7 @@
         <li><i>Though I style in LESS, I use <a href="https://github.com/idmean/CodaLess" onclick="ga('send', 'event', 'Credits', 'Libraries', 'CodaLess');" >CodaLess</a> to compile to CSS on save</i></li>
         <li>Some social vector icons are from <a href="http://www.lifetreecreative.com" onclick="ga('send', 'event', 'Credits', 'Libraries', 'Life Tree Creative');" >Life Tree Creative</a></li>
 <!--         <li><a onclick="ga('send', 'event', 'Credits', 'Libraries', 'Lightbox for Youtube and Vimeo');" href="https://github.com/musocrat/jquery-video-lightning">Lightbox for Youtube and Vimeo</a>, by <a href="https://github.com/musocrat">Andrew Carpenter</a></li>  -->
-        <li><a onclick="ga('send', 'event', 'Credits', 'Libraries', 'MathJax');" href="http://www.mathjax.org">MathJax</a>, beautiful math in all browsers</li>
+<!--         <li><a onclick="ga('send', 'event', 'Credits', 'Libraries', 'MathJax');" href="http://www.mathjax.org">MathJax</a>, beautiful math in all browsers</li> -->
         <li><a onclick="ga('send', 'event', 'Credits', 'Libraries', 'Normalize.css');" href="http://necolas.github.io/normalize.css/">Normalize.css</a>, a modern, HTML5-ready alternative to CSS resets</li>
         <li><a onclick="ga('send', 'event', 'Credits', 'Libraries', 'Mobile Detect');" href="http://mobiledetect.net">Mobile Detect</a>, the lightweight PHP class for detecting mobile devices (including tablets)</li>
         <li><a onclick="ga('send', 'event', 'Credits', 'Libraries', 'PlusAnchor');" href="https://github.com/JamyGolden/PlusAnchor">PlusAnchor</a>, a simple jQuery plugin to scrolls to anchor links</li>

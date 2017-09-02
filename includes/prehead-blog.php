@@ -162,7 +162,6 @@
             $addLibraries = $row['Footnote_Code_markDown_Tweet_Math'];
             if(strpos($addLibraries,'f') !== false){ $footnoteOn = 1; };
             if(strpos($addLibraries,'c') !== false){ $codeOn     = 1; };
-            if(strpos($addLibraries,'m') !== false){ $mathOn     = 1; };
             if(strpos($addLibraries,'t') !== false){ $tweetOn    = 1; };
         };
 
