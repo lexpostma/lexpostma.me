@@ -1,4 +1,4 @@
-        <header id="nav-header" class="<?=$homepage.' '.$secondpage?> ">
+        <header id="nav-header" class="<?=$basepage.' '.$basepageTwo?> ">
             <div id="nav-container">
                 <a id="main-logo" href="/">
                     <svg width="100px" height="100px" viewBox="0 0 1160 1160" preserveAspectRatio="xMinYMin meet">
@@ -28,13 +28,13 @@
                 </script>
 <?
 //     $anyFilter = 1;
-    if($homepage == 'portfolio') {
+    if($basepage == 'portfolio') {
 ?>
                 <div id="portfolioSearchBar" class="foldableExtraNavBar">
                     <? include 'portfolioFilters.php'; ?>
                 </div>
 <?        
-    } else if($homepage == 'blog') {
+    } else if($basepage == 'blog') {
 
 ?>
                 <div id="blogFilterBar" class="foldableExtraNavBar">
@@ -46,7 +46,7 @@
                 </div>
 
 <?        
-    } else if($homepage == 'resume') {
+    } else if($basepage == 'resume') {
 ?>
                 <div id="resumeDownloadBar" class="foldableExtraNavBar">
                     <? include 'resumeDownload.php'; ?>
@@ -57,12 +57,12 @@
 ?>
                 <div id="nav-actions">
 <?
-    if(isset($navigationName) && $secondpage != 'home'){ // the back button when not on the homepage
+    if(isset($navigationName) && $basepageTwo != 'home'){ // the back button when not on the homepage
         echo '<a href="/" class="backHome" title="Back to '.$navigationName.'"><i class="fa fa-angle-left"></i>'.$navigationName.'</a>';
     };
 
     // secondary menu, different for each main page
-    if($homepage == 'portfolio') {
+    if($basepage == 'portfolio') {
 ?>
                             <a href="/videos" class="videos"   onclick="ga('send', 'event', 'Navigation', 'Navigate second menu', 'Videos');" title="Videos I made" >Videos
                         </a><a href="/icons"  class="icons"    onclick="ga('send', 'event', 'Navigation', 'Navigate second menu', 'Icons');"  title="Icons I made"   >Icons
@@ -71,7 +71,7 @@
                         </a>
 
 <?
-    } else if($homepage == 'blog') {
+    } else if($basepage == 'blog') {
 ?>
                             <a class="archive" href="/archive" title="Blog archive" onclick="ga('send', 'event', 'Navigation', 'Navigate second menu', 'Blog archive');">Archive
                         </a><a id="subscribeOpen" class="rss"  href="#" title="Subscribe to my blog" 
@@ -94,14 +94,14 @@
                         </a><a class="twitter" href="https://twitter.com/lexpostmame" title="Follow my blog on Twitter @lexpostmame" onclick="ga('send', 'event', 'Navigation', 'Social', 'Twitter website');"><i class="fa fa-twitter" aria-hidden="true"></i>
                         </a>
 <?
-    } else if($homepage == 'resume') {
+    } else if($basepage == 'resume') {
         if(isset($referencesOnline)){?><a class="references" href="/references" title="References: what people are saying about me" onclick="ga('send', 'event', 'Navigation', 'Navigate main menu', 'References');">References</a><?};
 ?><a id="filtersOpen" class="pdf" href="#" title="Download a pdf of my resumé" onclick="ga('send', 'event', 'Navigation', 'Navigate main menu', 'Open download box'); toggleFoldbar('resumeDownloadBar'); toggleFoldbar('filtersOpen');">Download
                         </a><a class="linkedin" href="http://www.linkedin.com/in/lexpostma" title="Connect with me on LinkedIn" onclick="ga('send', 'event', 'Navigation', 'Social', 'LinkedIn');"><i class="fa fa-linkedin-square" aria-hidden="true"></i>
                         </a>
                     </span>
 <?
-    } else if($homepage == 'about') {
+    } else if($basepage == 'about') {
 ?>
                             <a class="more"  href="/more" title="Random stuff worth sharing" onclick="ga('send', 'event', 'Navigation', 'Navigate main menu', 'More about Lex');">Other random stuff
                         </a><a class="twitter"  href="https://twitter.com/lexpostma" title="Follow me on Twitter @lexpostma" onclick="ga('send', 'event', 'Navigation', 'Social', 'Twitter');"><i class="fa fa-twitter" aria-hidden="true"></i>

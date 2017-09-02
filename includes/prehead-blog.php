@@ -16,7 +16,7 @@
         header ("Location: http://feed.lexpostma.me/blog");
     } else if(isset($p) && $p == 'archive'){ // archive page
         $seoTitle    = 'Archive of Lex’ blog';
-        $secondpage  = 'archive';
+        $basepageTwo  = 'archive';
         $includePage = 'blogArchive.php';
     } else { // list of blog posts;
         $coreBlogSQLquery =	"
@@ -87,7 +87,7 @@
     				};
     			};
             };
-            $secondpage = 'filtered';
+            $basepageTwo = 'filtered';
 
             if(empty($dateFilter) && empty($tagFilter) && empty($authorFilter) && empty($searchFilter) && empty($sourceFilter) && $pageFilter <= 1){
                 echo '<script language="Javascript">document.location.href="/";</script>';
@@ -123,7 +123,7 @@
                 $seoKeywords       = $tagKeywords.$author;
                 $seoAuthor         = $author;
                 $seoType           = 'article';
-                $secondpage        = 'post';
+                $basepageTwo        = 'post';
                 $coreBlogSQLquery .= "AND shortname = '$post' ";
             } else { // Fallback to custom 404 include page
                 include '../includes/error-404-include.php'; exit; //Do not do any more work in this script.

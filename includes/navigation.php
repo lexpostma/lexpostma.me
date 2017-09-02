@@ -9,9 +9,20 @@
             </a>
         </header>
         <nav id="mainNavigation">
-            <a href="<?=$baseURL?>" title="Back to <? echo $pageTitle ?>"                                            ><? include 'navigationIcons/back.svg'     ?></a>
-            <a href="<?=$portURL?>" title="Portfolio" class="<? if( $homepage == 'portfolio'){ echo('active'); } ?>" ><? include 'navigationIcons/portfolio.svg'?><span>Portfolio</span></a>
-            <a href="<?=$blogURL?>" title="Blog"      class="<? if( $homepage == 'blog'){ echo('active'); }      ?>" ><? include 'navigationIcons/blog.svg'     ?><span>Blog</span></a>
-            <a href="<?=$resuURL?>" title="Resume"    class="<? if( $homepage == 'resume'){ echo('active'); }    ?>" ><? include 'navigationIcons/resume.svg'   ?><span>Resumé</span></a>
-            <a href="<?=$abouURL?>" title="About me"  class="<? if( $homepage == 'about'){ echo('active'); }     ?>" ><? include 'navigationIcons/about.svg'    ?><span>About me</span></a>
+
+<?
+    if( $basepageTwo !== 'home' ){
+?>
+            <a href="<?=$baseURL?>" title="Back to <? echo $pageTitle ?>"><? include 'navigationIcons/back.svg'  ?></a>
+<?        
+    } else {
+?>
+            <a href="#"             title="Filter <? echo $pageTitle ?>"><? include 'navigationIcons/filter.svg' ?></a>
+<?        
+    }
+?>
+            <a href="<?=$portURL?>" title="Portfolio" class="<? if( $basepage == 'portfolio'){ echo('active'); } ?>" ><? include 'navigationIcons/portfolio.svg'?><span>Portfolio</span></a>
+            <a href="<?=$blogURL?>" title="Blog"      class="<? if( $basepage == 'blog'){      echo('active'); } ?>" ><? include 'navigationIcons/blog.svg'     ?><span>Blog</span></a>
+            <a href="<?=$resuURL?>" title="Resume"    class="<? if( $basepage == 'resume'){    echo('active'); } ?>" ><? include 'navigationIcons/resume.svg'   ?><span>Resumé</span></a>
+            <a href="<?=$abouURL?>" title="About me"  class="<? if( $basepage == 'about'){     echo('active'); } ?>" ><? include 'navigationIcons/about.svg'    ?><span>About me</span></a>
         </nav>

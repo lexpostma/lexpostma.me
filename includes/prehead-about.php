@@ -14,7 +14,7 @@
             $seoTitle       = 'More stuff from Lex';
             $seoDescription = 'More about Lex Postma, including some random stats and his top 5s.'; // his current iOS homescreen, latest backed Kickstarter projects and hardware and software tools he uses.
             $seoKeywords    = 'top5s,stats'; // tools,iOS,homescreen,Kickstarter,software,hardware
-            $secondpage     = 'more';
+            $basepageTwo     = 'more';
             $includePage    = 'aboutMore.php';  
         } else { // Fallback to custom 404 include page
             include '../includes/error-404-include.php'; exit; //Do not do any more work in this script.

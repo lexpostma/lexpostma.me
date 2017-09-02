@@ -1,6 +1,6 @@
 <?
-    $homepage = 'error';
-    $secondpage = 'none';
+    $basepage = 'error';
+    $basepageTwo = 'none';
     unset($navigationName);
 
     $seoTitle       = $errNum.' • Lex’ website';
@@ -16,7 +16,7 @@
     <body>
         <? include 'navigation.php'; ?>
 
-        <main id="contents" class="<?=$homepage.' '.$secondpage?>">
+        <main id="contents" class="<?=$basepage.' '.$basepageTwo?>">
 <!--             <h1 class="filterText"><?=$errNum?></h1> -->
             <article class="contentBlock">
                 <h2><?=$errName?><span><?=$errNum?></span></h2>

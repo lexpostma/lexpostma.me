@@ -27,7 +27,7 @@
     
             $corePortfolioSQLquery .= " AND videoid != '' ";
             $includePage = 'portfolioOverview.php';
-            $secondpage     = 'videos';
+            $basepageTwo     = 'videos';
     
             $videoFilter    = 1;
             $introTitle = '<p class="filterText">Concept videos that I made and/or worked on.</p>';
@@ -39,7 +39,7 @@
     
             $corePortfolioSQLquery .= " AND shortcategory = 'icon' ";
             $includePage = 'portfolioOverview.php';
-            $secondpage     = 'icons';
+            $basepageTwo     = 'icons';
     
             $iconFilter    = 1;
             $introTitle = '<p class="filterText">Icons I made, mostly for fun.</p>';
@@ -48,7 +48,7 @@
             $seoTitle       = 'Lex Postma → ';
             $seoDescription = 'Motivation letter from Lex Postma to Apple.';
             $seoKeywords    = 'Apple,design,iOS,culture,passion,software,hardware,prototyping';
-            $secondpage     = 'apple';
+            $basepageTwo     = 'apple';
             $includePage    = 'apple.php';  
 
 
@@ -56,7 +56,7 @@
             $seoTitle    = 'Lex’ portfolio filtered';
     
             $includePage = 'portfolioOverview.php';
-            $secondpage  = 'filtered';
+            $basepageTwo  = 'filtered';
     
             $anyFilter   = 1;
     
@@ -125,7 +125,7 @@
                 $seoKeywords    = $category.$clientsKeywords;
                 $seoType        = 'article';
                 $includePage    = 'portfolioProject.php';
-                $secondpage     = 'post';
+                $basepageTwo     = 'post';
                 
                 // Get 2 random projects, to display at bottom of project detail page
                 $otherProjectsPortfolioSQLquery = $corePortfolioSQLquery." AND shortname != '$post' GROUP BY shortname ORDER BY rand() ASC LIMIT 2; ";

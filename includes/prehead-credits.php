@@ -8,6 +8,6 @@
     $seoAuthor      = 'Lex Postma';
     $seoType        = 'website';
 
-    $secondpage     = 'home';
+    $basepageTwo     = 'home';
     $includePage    = 'credits.php';
 ?>

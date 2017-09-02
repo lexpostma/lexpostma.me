@@ -15,7 +15,7 @@
     if(isset($prevPostURL) || isset($nextPostURL)){
         echo '<nav class="blogPagination">';
         
-        if($secondpage == 'post'){ $post1 = "Previous post: "; $post2 = "Next post: ";
+        if($basepageTwo == 'post'){ $post1 = "Previous post: "; $post2 = "Next post: ";
         } else {                   $post1 = ""; $post2 = ""; }
         
         

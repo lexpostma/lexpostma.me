@@ -2,20 +2,20 @@
     require_once '../includes/connection.php';
     require_once '../includes/domains.php';
     
-    $secondpage = 'home';
+    $basepageTwo = 'home';
     if(isset($_GET['p'])){
         $p = strtolower(mysqli_real_escape_string($con,$_GET['p']));
         if($p == 'credit' || $p == 'credits'){
-            $homepage = 'credits';
+            $basepage = 'credits';
         } else if($p == 'apple') {
-            $homepage = 'apple';
+            $basepage = 'apple';
         };
     };
     
 
     require_once '../includes/Michelf/MarkdownExtra.inc.php';
     require_once '../includes/text-scripts.php';
-    require '../includes/prehead-'.$homepage.'.php';
+    require '../includes/prehead-'.$basepage.'.php';
 ?>
 
 <!DOCTYPE HTML>
@@ -27,7 +27,7 @@
 <?
     require '../includes/navigation.php';
 ?>
-        <main id="contents" class="<?=$homepage.' '.$secondpage?>">
+        <main id="contents" class="<?=$basepage.' '.$basepageTwo?>">
             <? if(isset($includePage)){ require ('../includes/'.$includePage); } else{ echo '404'; }; ?>
         </main>
 <?
