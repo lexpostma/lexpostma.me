@@ -13,7 +13,7 @@
             	$wordCountNumber = mysqli_fetch_array($wordCountResult)['wordCount'];
             	echo $wordCount = number_format($wordCountNumber,'0',',','.');
             ?></span>words on <a href="<?=$blogURL?>" title="Lex’ blog" onclick="ga('send', 'event', 'About', 'Stats', 'Blog, written words');">my blog</a></p>
-            <p><i class="fa fa-2x fa-twitter"></i><span class="counter"><? include 'stats/aboutStats-twitter.txt'; ?></span><a href="<? echo $twitterPersonalURL ?>" onclick="ga('send', 'event', 'About', 'Stats', 'Twitter followers');" title="Twitter profile">Twitter</a> followers</p>
+            <p><i class="fa fa-2x fa-twitter"></i><span class="counter"><? include 'stats/aboutStats-twitter.txt'; ?></span><a href="<? echo $twitterURL ?>" onclick="ga('send', 'event', 'About', 'Stats', 'Twitter followers');" title="Twitter profile">Twitter</a> followers</p>
 
         </div>
         

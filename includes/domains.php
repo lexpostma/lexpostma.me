@@ -48,7 +48,12 @@
     $coreURL = $abouURL;
     
     
-    $linkedinURL = 'http://www.linkedin.com/in/lexpostma';
-    $twitterPersonalURL = 'https://twitter.com/lexpostma';
-    $twitterWebsiteURL = 'https://twitter.com/lexpostmame';
+    $twitterURL         = 'https://twitter.com/lexpostma';    
+    $linkedinURL        = 'http://www.linkedin.com/in/lexpostma';
+    $dribbbleURL        = 'http://dribbble.com/lexpostma';
+
+    $blogTwitterURL     = 'https://twitter.com/lexpostmame';
+    $blogFeedURL        = 'http://feed.lexpostma.me/blog';
+    $blogAppleNewsURL   = 'https://apple.news/TBmjmdpQ6SQaZCn5d7fmEdA';
+
 ?>

@@ -41,12 +41,12 @@
     if( $basepage == 'blog' ){
 ?>
             <a href="#">Subscribe</a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="<? echo $blogTwitterURL ?>"><i class="fa fa-twitter"></i></a>
 <?
     } elseif ( $basepage == 'resume' ){
 ?>
             <a href="#references">References</a>
-            <a href="#"><i class="fa fa-linkedin-square"></i></a>
+            <a href="<? echo $linkedinURL ?>"><i class="fa fa-linkedin-square"></i></a>
 <?
     } 
 ?>

@@ -67,7 +67,7 @@
                             <a href="/videos" class="videos"   onclick="ga('send', 'event', 'Navigation', 'Navigate second menu', 'Videos');" title="Videos I made" >Videos
                         </a><a href="/icons"  class="icons"    onclick="ga('send', 'event', 'Navigation', 'Navigate second menu', 'Icons');"  title="Icons I made"   >Icons
                         </a><a href="#"       class="search"   onclick="ga('send', 'event', 'Navigation', 'Filter', 'Open portfolio search'); toggleFoldbar('portfolioSearchBar'); toggleFoldbar('filtersOpen'); focusOnInput('portfolioSearchBar'); " title="Filter my portfolio projects"  id="filtersOpen">Search
-                        </a><a onclick="ga('send', 'event', 'Navigation', 'Social', 'Dribbble');" class="dribbble" href="http://dribbble.com/lexpostma" title="Check out my Dribbble shots" ><i class="fa fa-dribbble" aria-hidden="true"></i>
+                        </a><a onclick="ga('send', 'event', 'Navigation', 'Social', 'Dribbble');" class="dribbble" href="<? echo $dribbbleURL ?>" title="Check out my Dribbble shots" ><i class="fa fa-dribbble" aria-hidden="true"></i>
                         </a>
 
 <?
@@ -91,7 +91,7 @@
                                 focusOnInput('blogFilterBar');
                                 ga('send', 'event', 'Navigation', 'Filter', 'Open blog filters');"
                             >Search
-                        </a><a class="twitter" href="<? echo $twitterWebsiteURL ?>" title="Follow my blog on Twitter @lexpostmame" onclick="ga('send', 'event', 'Navigation', 'Social', 'Twitter website');"><i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a><a class="twitter" href="<? echo $blogTwitterURL ?>" title="Follow my blog on Twitter @lexpostmame" onclick="ga('send', 'event', 'Navigation', 'Social', 'Twitter website');"><i class="fa fa-twitter" aria-hidden="true"></i>
                         </a>
 <?
     } else if($basepage == 'resume') {
@@ -104,7 +104,7 @@
     } else if($basepage == 'about') {
 ?>
                             <a class="more"  href="/more" title="Random stuff worth sharing" onclick="ga('send', 'event', 'Navigation', 'Navigate main menu', 'More about Lex');">Other random stuff
-                        </a><a class="twitter"  href="$twitterPersonalURL" title="Follow me on Twitter @lexpostma" onclick="ga('send', 'event', 'Navigation', 'Social', 'Twitter');"><i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a><a class="twitter"  href="<? echo $twitterURL ?>" title="Follow me on Twitter @lexpostma" onclick="ga('send', 'event', 'Navigation', 'Social', 'Twitter');"><i class="fa fa-twitter" aria-hidden="true"></i>
                         </a>
 <?
     }

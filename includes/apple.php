@@ -154,7 +154,7 @@
 <?    
     }
 ?>
-        <a title="My Twitter profile" href="<? echo $twitterPersonalURL ?>"                   onclick="ga('send', 'event', 'Apple', 'Social', 'Twitter');"><i class="fa fa-twitter"></i></a>
+        <a title="My Twitter profile" href="<? echo $twitterURL ?>"                   onclick="ga('send', 'event', 'Apple', 'Social', 'Twitter');"><i class="fa fa-twitter"></i></a>
     </p>
     <p>Not in a postion to help me now, <br class="desktop">but know someone who can or might?<br>
         <a title="Recommend me internally with your manager/recruiter" href="mailto:?subject=Check out Lex's job application for Apple&body=Dear colleague, have a look at this guy Lex Postma’s application for a job at Apple: http://lexpostma.me/apple. He looks really interesting and promising, and I think we should invite him."
