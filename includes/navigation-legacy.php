@@ -91,20 +91,20 @@
                                 focusOnInput('blogFilterBar');
                                 ga('send', 'event', 'Navigation', 'Filter', 'Open blog filters');"
                             >Search
-                        </a><a class="twitter" href="https://twitter.com/lexpostmame" title="Follow my blog on Twitter @lexpostmame" onclick="ga('send', 'event', 'Navigation', 'Social', 'Twitter website');"><i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a><a class="twitter" href="<? echo $twitterWebsiteURL ?>" title="Follow my blog on Twitter @lexpostmame" onclick="ga('send', 'event', 'Navigation', 'Social', 'Twitter website');"><i class="fa fa-twitter" aria-hidden="true"></i>
                         </a>
 <?
     } else if($basepage == 'resume') {
         if(isset($referencesOnline)){?><a class="references" href="/references" title="References: what people are saying about me" onclick="ga('send', 'event', 'Navigation', 'Navigate main menu', 'References');">References</a><?};
 ?><a id="filtersOpen" class="pdf" href="#" title="Download a pdf of my resumé" onclick="ga('send', 'event', 'Navigation', 'Navigate main menu', 'Open download box'); toggleFoldbar('resumeDownloadBar'); toggleFoldbar('filtersOpen');">Download
-                        </a><a class="linkedin" href="http://www.linkedin.com/in/lexpostma" title="Connect with me on LinkedIn" onclick="ga('send', 'event', 'Navigation', 'Social', 'LinkedIn');"><i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                        </a><a class="linkedin" href="<? echo $linkedinURL ?>" title="Connect with me on LinkedIn" onclick="ga('send', 'event', 'Navigation', 'Social', 'LinkedIn');"><i class="fa fa-linkedin-square" aria-hidden="true"></i>
                         </a>
                     </span>
 <?
     } else if($basepage == 'about') {
 ?>
                             <a class="more"  href="/more" title="Random stuff worth sharing" onclick="ga('send', 'event', 'Navigation', 'Navigate main menu', 'More about Lex');">Other random stuff
-                        </a><a class="twitter"  href="https://twitter.com/lexpostma" title="Follow me on Twitter @lexpostma" onclick="ga('send', 'event', 'Navigation', 'Social', 'Twitter');"><i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a><a class="twitter"  href="$twitterPersonalURL" title="Follow me on Twitter @lexpostma" onclick="ga('send', 'event', 'Navigation', 'Social', 'Twitter');"><i class="fa fa-twitter" aria-hidden="true"></i>
                         </a>
 <?
     }

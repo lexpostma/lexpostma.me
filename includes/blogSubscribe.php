@@ -7,7 +7,7 @@
             <i class="fa fa-newspaper-o"></i>Apple News
     </a><?
         }
-    ?><a href="https://twitter.com/lexpostmame" target="_blank" title="Follow this blog on Twitter @lexpostmame" onclick="ga('send', 'event', 'Navigation', 'Subscribe', 'Twitter website');" class="twitter">
+    ?><a href="<? echo $twitterWebsiteURL ?>" target="_blank" title="Follow this blog on Twitter @lexpostmame" onclick="ga('send', 'event', 'Navigation', 'Subscribe', 'Twitter website');" class="twitter">
             <i class="fa fa-twitter"></i>@lexpostmame
     </a>
 </div>

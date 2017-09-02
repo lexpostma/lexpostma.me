@@ -46,4 +46,9 @@
 
     }
     $coreURL = $abouURL;
+    
+    
+    $linkedinURL = 'http://www.linkedin.com/in/lexpostma';
+    $twitterPersonalURL = 'https://twitter.com/lexpostma';
+    $twitterWebsiteURL = 'https://twitter.com/lexpostmame';
 ?>
