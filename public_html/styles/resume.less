@@ -54,33 +54,8 @@ h1.resume-category {
             padding-top: 0px;
         }
     }
-    .companyLogo {
-        display: none;
-        left: 105%;
-        margin-top: -1.5rem;
-        top: 50%;
-        opacity: 0;
-                filter: grayscale(1) brightness(7);
-        -webkit-filter: grayscale(1) brightness(7);
-        .transition (opacity);
-        position: absolute;
-        height: 3em;
-        width: auto;
-        @media (min-width: 950px) {
-            display: block;
-        }
-        @media (min-width: 1000px) {
-            opacity: 1;
-        }
-    }
-    &:hover {
-        .companyLogo {
-                    filter: grayscale(0) brightness(1);
-            -webkit-filter: grayscale(0) brightness(1);        
-        }
-        .resume-left {
-            color: @color1;
-        }
+    &:hover .resume-left {
+        color: @color1;
     }
 }
 
