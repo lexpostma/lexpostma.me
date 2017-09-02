@@ -1,5 +1,7 @@
 <?
-    $seoTitle       = 'Lex’ portfolio';
+    $pageTitle      = 'Lex’ portfolio';
+    
+    $seoTitle       = $pageTitle;
     $seoDescription = 'Portfolio by Lex Postma. I design things.'; // also in the feedbuilder
     $seoKeywords    = 'portfolio,Apple,TU,Delft,design';
     $seoAuthor      = 'Lex Postma';
