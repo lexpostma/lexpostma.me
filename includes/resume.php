@@ -26,11 +26,6 @@
             $subject = $row['subject'];
             $description = $row['description'];
 
-            unset($companyLogo);
-            if($row['showLogo'] == 1){
-                $companyLogo = $row['shortclient'];
-                if (strpos($companyLogo,'tudelft') !== false){ $companyLogo = 'tudelft'; };
-            }
             if(substr($date,0,2) == '20'){ $date = "<span dir='ltr'>".$date."</span>";}; // Corrects the year - year from flipping due to the hacked CSS
 ?>
     <div class="resume-row">
@@ -50,8 +45,7 @@
                 }
                 else{ echo $description;};
 ?>
-        </div>
-            <? if(isset($companyLogo)){ echo '<img class="companyLogo" src="/images/logos/'.$companyLogo.'.svg" />'; }?>        
+        </div>     
     </div>
 <?
         }
