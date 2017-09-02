@@ -52,7 +52,7 @@ nav#mainNavigation {
         height: 50px;
         width: 20%;
         position: relative;
-        span {
+        span.tabName {
             position: absolute;
             bottom: 2px;
             left: 0;
@@ -70,13 +70,12 @@ nav#mainNavigation {
     }
     a:first-child {
         border-right: 1px solid @colorLine;
-//         background-color: rgba(75, 0, 130, 0.2);
         svg {
             margin: 10px auto;
         }
     }
     a.active, a:hover {
-        span {
+        span.tabName {
             color: @color1;
         }
         svg {
@@ -97,4 +96,49 @@ nav#secondNavigation {
             text-decoration: underline;
         }
     }
+}
+
+
+// Floating animation from https://codepen.io/MarioDesigns/pen/woJgeo
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-3px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+#tabbarTooltip {
+    position: absolute;
+    background-color: @color1;
+    color: white;
+    bottom: 54px;
+    left: 4px;
+    display: block;
+    text-align: center;
+    padding: 4px 7px 6px;
+    border-radius: 5px;
+   	animation: float 3s ease-in-out infinite;
+    span {
+        position: relative;
+        z-index: 3;
+        white-space: nowrap;
+    }
+    div {
+        width: 15px;
+        height: 15px;
+        background-color: inherit;
+        position: absolute;
+        z-index: 0;
+        bottom: -5px;
+        left: 21px;
+        transform: rotate(45deg);
+    }
+}
+nav#mainNavigation a:hover div#tabbarTooltip span {
+    text-decoration: underline;
 }

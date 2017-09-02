@@ -17,7 +17,11 @@
 <?        
     } elseif( $basepage == 'about' ){
 ?>
-            <a href="<?=$baseURL?>" title="Back to <? echo $pageTitle ?>"><? include 'navigationIcons/contact.svg'  ?></a>
+            <a href="#"             title="Back to <? echo $pageTitle ?>"><? include 'navigationIcons/contact.svg'  ?><div id="tabbarTooltip"><span>Get in touch!</span><div></div></div></a>
+<?        
+    } elseif( $basepage == 'resume' ){
+?>
+            <a href="#"             title="Back to <? echo $pageTitle ?>"><? include 'navigationIcons/download.svg'  ?><div id="tabbarTooltip"><span>Download my resume</span><div></div></div></a>
 <?        
     } else {
 ?>
@@ -25,10 +29,10 @@
 <?        
     }
 ?>
-            <a href="<?=$portURL?>" title="Portfolio" class="<? if( $basepage == 'portfolio'){ echo('active'); } ?>" ><? include 'navigationIcons/portfolio.svg'?><span>Portfolio</span></a>
-            <a href="<?=$blogURL?>" title="Blog"      class="<? if( $basepage == 'blog'){      echo('active'); } ?>" ><? include 'navigationIcons/blog.svg'     ?><span>Blog</span></a>
-            <a href="<?=$resuURL?>" title="Resume"    class="<? if( $basepage == 'resume'){    echo('active'); } ?>" ><? include 'navigationIcons/resume.svg'   ?><span>Resumé</span></a>
-            <a href="<?=$abouURL?>" title="About me"  class="<? if( $basepage == 'about'){     echo('active'); } ?>" ><? include 'navigationIcons/about.svg'    ?><span>About me</span></a>
+            <a href="<?=$portURL?>" title="Portfolio" class="<? if( $basepage == 'portfolio'){ echo('active'); } ?>" ><? include 'navigationIcons/portfolio.svg'?><span class="tabName">Portfolio</span></a>
+            <a href="<?=$blogURL?>" title="Blog"      class="<? if( $basepage == 'blog'){      echo('active'); } ?>" ><? include 'navigationIcons/blog.svg'     ?><span class="tabName">Blog</span></a>
+            <a href="<?=$resuURL?>" title="Resume"    class="<? if( $basepage == 'resume'){    echo('active'); } ?>" ><? include 'navigationIcons/resume.svg'   ?><span class="tabName">Resumé</span></a>
+            <a href="<?=$abouURL?>" title="About Lex" class="<? if( $basepage == 'about'){     echo('active'); } ?>" ><? include 'navigationIcons/about.svg'    ?><span class="tabName">About Lex</span></a>
         </nav>
         
         <nav id="secondNavigation">
@@ -42,7 +46,7 @@
     } elseif ( $basepage == 'resume' ){
 ?>
             <a href="#references">References</a>
-            <a href="#">Download</a>
+            <a href="#"><i class="fa fa-linkedin-square"></i></a>
 <?
     } 
 ?>
