@@ -1,12 +1,12 @@
 <?
-    $pageTitle       = 'Lex’ resumé';
+    $pageTitle      = 'Lex’ resumé';
+    $navigationName = 'resume';
 
     $seoTitle       = $pageTitle;
     $seoDescription = 'Resumé of Lex Postma. My experience, skills, education, work, interests and references, all in one place.';
     $seoKeywords    = 'TU,Delft,CV,curriculum vitae,Industrial Design,engineering,Apple';
     $seoAuthor      = 'Lex Postma';
     $seoType        = 'website';
-    $navName        = 'Resumé';
 
     if (isset($p)) {
         if ($p == 'references'){ // Reference overview page

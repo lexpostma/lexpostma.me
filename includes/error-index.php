@@ -1,7 +1,7 @@
 <?
     $homepage = 'error';
     $secondpage = 'none';
-    unset($navName);
+    unset($navigationName);
 
     $seoTitle       = $errNum.' • Lex’ website';
     $seoDescription = 'error';
