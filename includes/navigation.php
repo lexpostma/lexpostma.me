@@ -1,5 +1,5 @@
         <header id="titleHeader">
-            <? echo $pageTitle ?>
+            <span id="mainTitle"><? echo $pageTitle ?></span>
             <a id="mainLogo" href="/">
                 <svg width="100px" height="100px" viewBox="0 0 1160 1160" preserveAspectRatio="xMinYMin meet">
                     <g fill-rule="evenodd">
