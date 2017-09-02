@@ -17,11 +17,11 @@
 <?        
     } elseif( $basepage == 'about' ){
 ?>
-            <a href="#"             title="Back to <? echo $pageTitle ?>"><? include 'navigationIcons/contact.svg'  ?><div id="tabbarTooltip"><span>Get in touch!</span><div></div></div></a>
+            <a href="#"             title="Get in touch!"><? include 'navigationIcons/contact.svg'  ?><div id="tabbarTooltip"><span>Get in touch!</span><div></div></div></a>
 <?        
     } elseif( $basepage == 'resume' ){
 ?>
-            <a href="#"             title="Back to <? echo $pageTitle ?>"><? include 'navigationIcons/download.svg'  ?><div id="tabbarTooltip"><span>Download my resume</span><div></div></div></a>
+            <a href="#"             title="Download my resume"><? include 'navigationIcons/download.svg'  ?><div id="tabbarTooltip"><span>Download my resume</span><div></div></div></a>
 <?        
     } else {
 ?>
