@@ -4,6 +4,10 @@
 @colorInactive: #929292;
 
 
+body {
+    padding-bottom: 50px;
+}
+
 header#titleHeader {
     background-color: @color1;
     color: white;
@@ -84,6 +88,7 @@ nav#mainNavigation {
     }
 }
 
+
 nav#secondNavigation {
     padding: 2px 10px;
     vertical-align: bottom;
@@ -142,3 +147,26 @@ nav#secondNavigation {
 nav#mainNavigation a:hover div#tabbarTooltip span {
     text-decoration: underline;
 }
+
+
+// Hide the navigation bar on scrolldown, shown on scroll up
+nav#mainNavigation {
+    transition: transform 0.2s ease-in-out;
+    a #tabbarTooltip {
+        transition: transform 0.2s ease-in-out;        
+    }
+    &.tabbarHidden {
+        transform: translateY(50px);
+        a #tabbarTooltip {
+            transform: translateY(100px);
+            animation: none;
+        }
+    }
+/*
+    &.tabbarHasBeenHidden a #tabbarTooltip {
+        display: none;
+    }
+*/
+}
+
+
