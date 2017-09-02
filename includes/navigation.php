@@ -8,7 +8,13 @@
                 </svg>
             </a>
         </header>
-        <nav id="mainNavigation">
+
+
+<!—------------------------------
+   | Primary navigation, tab bar |
+   ------------------------------->
+
+        <nav id="tabbarNavigation">
 
 <?
     if( $basepageTwo !== 'home' && $basepageTwo !== 'filtered' ){
@@ -17,33 +23,66 @@
 <?        
     } elseif( $basepage == 'about' ){
 ?>
-            <a href="#"             title="Get in touch!"><? include 'navigationIcons/contact.svg'  ?><div id="tabbarTooltip"><span>Get in touch!</span><div></div></div></a>
+            <a href="#" title="Get in touch!" onclick="toggleDrawer('navigationActionDrawer'); 
+                                                       toggleDrawer('tabbarNavigation');
+                                                       changeItem('tabbarTooltip')">
+                <? include 'navigationIcons/contact.svg'  ?>
+                <div id="tabbarTooltip">
+                    <span>Get in touch!</span>
+                    <div></div>
+                </div>
+            </a>
 <?        
     } elseif( $basepage == 'resume' ){
 ?>
-            <a href="#"             title="Download my resume"><? include 'navigationIcons/download.svg'  ?><div id="tabbarTooltip"><span>Download my resume</span><div></div></div></a>
+            <a href="#" title="Download my resume" onclick="toggleDrawer('navigationActionDrawer'); 
+                                                            toggleDrawer('tabbarNavigation'); 
+                                                            changeItem('tabbarTooltip')">
+                <? include 'navigationIcons/download.svg'  ?>
+                <div id="tabbarTooltip">
+                    <span>Download my resume</span>
+                    <div></div>
+                </div>
+            </a>
 <?        
     } else {
 ?>
-            <a href="#" onclick=""             title="Filter <? echo $pageTitle ?>"><? include 'navigationIcons/filter.svg' ?></a>
-            <div class="foldableFilterBox">
-<?
-        if( $basepage == 'blog' ){
-            include 'blogFilters.php';
-        } elseif( $basepage == 'portfolio' ){
-            include 'portfolioFilters.php';
-        }
-?>
-            </div>
+            <a href="#" title="Filter <? echo $pageTitle ?>" onclick="toggleDrawer('navigationActionDrawer'); 
+                                                                      toggleDrawer('tabbarNavigation')"  >
+                <? include 'navigationIcons/filter.svg' ?>
+            </a>
 <?
     }
 ?>
-            <a href="<?=$portURL?>" title="Portfolio" class="<? if( $basepage == 'portfolio'){ echo('active'); } ?>" ><? include 'navigationIcons/portfolio.svg'?><span class="tabName">Portfolio</span></a>
-            <a href="<?=$blogURL?>" title="Blog"      class="<? if( $basepage == 'blog'){      echo('active'); } ?>" ><? include 'navigationIcons/blog.svg'     ?><span class="tabName">Blog</span></a>
-            <a href="<?=$resuURL?>" title="Resume"    class="<? if( $basepage == 'resume'){    echo('active'); } ?>" ><? include 'navigationIcons/resume.svg'   ?><span class="tabName">Resumé</span></a>
-            <a href="<?=$abouURL?>" title="About Lex" class="<? if( $basepage == 'about'){     echo('active'); } ?>" ><? include 'navigationIcons/about.svg'    ?><span class="tabName">About Lex</span></a>
+
+<!—------------------------
+   | Main navigation items |
+   ------------------------->
+
+            <a href="<?=$portURL?>" title="Portfolio" class="<? if( $basepage == 'portfolio'){ echo('active'); } ?>" >
+                <? include 'navigationIcons/portfolio.svg'?>
+                <span class="tabName">Portfolio</span>
+            </a>
+            <a href="<?=$blogURL?>" title="Blog"      class="<? if( $basepage == 'blog'){      echo('active'); } ?>" >
+                <? include 'navigationIcons/blog.svg'     ?>
+                <span class="tabName">Blog</span>
+            </a>
+            <a href="<?=$resuURL?>" title="Resume"    class="<? if( $basepage == 'resume'){    echo('active'); } ?>" >
+                <? include 'navigationIcons/resume.svg'   ?>
+                <span class="tabName">Resumé</span>
+            </a>
+            <a href="<?=$abouURL?>" title="About Lex" class="<? if( $basepage == 'about'){     echo('active'); } ?>" >
+                <? include 'navigationIcons/about.svg'    ?>
+                <span class="tabName">About Lex</span>
+            </a>
         </nav>
+
+
         
+<!—-----------------------
+   | Secundary navigation |
+   ------------------------>
+
         <nav id="secondNavigation">
 
 <?
@@ -62,23 +101,44 @@
         </nav>
 
 
+
+<!—----------------
+   | Action Drawer |
+   ----------------->
+
+        <div id="navigationActionDrawer">
+            <script>
+                function toggleDrawer(id) { $('#'+id).toggleClass('toggled'); }
+                function changeItem(id)   { $('#'+id).addClass('changed');  }
+            </script>
+<?
+        if( $basepage == 'portfolio' ){  include 'portfolioFilters.php'; }
+    elseif( $basepage == 'blog' ){       include 'blogFilters.php';      }
+    elseif( $basepage == 'resume' ){     include 'resumeDownload.php';   }
+    elseif( $basepage == 'about' ){      include 'aboutContact.php';     }
+?>
+        </div>
+
+
 <!--
         <div>
-            <a href="#">Get in touch!</a>
             <a href="#">Archive</a>
         </div>
 -->
 
 
 
-<!-- Hide header on scroll down, show on scroll up: https://medium.com/@mariusc23/hide-header-on-scroll-down-show-on-scroll-up-67bbaae9a78c -->
-<script>
 
-    // Hide Header on on scroll down
+<script>
+/**
+   Hide tabbar on scroll down, show on scroll up
+   https://medium.com/@mariusc23/hide-header-on-scroll-down-show-on-scroll-up-67bbaae9a78c
+**/
+
     var didScroll;
     var lastScrollTop = 0;
     var delta = 10;
-    var navbarHeight = $('#mainNavigation').outerHeight();
+    var navbarHeight = $('#tabbarNavigation').outerHeight();
     
     $(window).scroll(function(event){
         didScroll = true;
@@ -102,11 +162,11 @@
         // This is necessary so you never see what is "behind" the navbar.
         if (st > lastScrollTop && st > navbarHeight){
             // Scroll Down
-            $('#mainNavigation').addClass('tabbarHidden');
+            $('#tabbarNavigation').addClass('tabbarHidden');
         } else {
             // Scroll Up
             if(st + $(window).height() < $(document).height()) {
-                $('#mainNavigation').removeClass('tabbarHidden');
+                $('#tabbarNavigation').removeClass('tabbarHidden');
             }
         }
         
