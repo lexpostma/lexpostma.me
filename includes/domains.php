@@ -20,17 +20,16 @@
         $coreURL = $portURL;
     }
     else {
-        $portURL =           "http://lexpostma.me/";
-        $blogURL =      "http://blog.lexpostma.me/";
-        $resuURL =    "http://resume.lexpostma.me/";
-        $abouURL =     "http://about.lexpostma.me/";
-        $commURL =   "http://command.lexpostma.me/";
+        $portURL =           "https://lexpostma.me/";
+        $blogURL =      "https://blog.lexpostma.me/";
+        $resuURL =    "https://resume.lexpostma.me/";
+        $abouURL =     "https://about.lexpostma.me/";
+        $commURL =   "https://command.lexpostma.me/";
 
     	// Actual URLs
             if($_SERVER['HTTP_HOST'] ==      'blog.lexpostma.me'){ $homepage = "blog";      $baseURL = $blogURL; }
     	elseif($_SERVER['HTTP_HOST'] ==    'resume.lexpostma.me'){ $homepage = "resume";    $baseURL = $resuURL; }
     	elseif($_SERVER['HTTP_HOST'] ==     'about.lexpostma.me'){ $homepage = "about";     $baseURL = $abouURL; }
-//     	elseif($_SERVER['HTTP_HOST'] ==   'command.lexpostma.me'){ $homepage = "command";   $baseURL = $commURL; } // not in use
         elseif($_SERVER['HTTP_HOST'] == 'portfolio.lexpostma.me'){ $homepage = "portfolio"; $baseURL = $portURL; } // legacy URL
     	elseif($_SERVER['HTTP_HOST'] ==           'lexpostma.me'){ $homepage = "portfolio"; $baseURL = $portURL; }
 
