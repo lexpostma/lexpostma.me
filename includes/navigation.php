@@ -11,7 +11,7 @@
         <nav id="mainNavigation">
 
 <?
-    if( $basepageTwo !== 'home' ){
+    if( $basepageTwo !== 'home' && $basepageTwo !== 'filtered' ){
 ?>
             <a href="<?=$baseURL?>" title="Back to <? echo $pageTitle ?>"><? include 'navigationIcons/back.svg'  ?></a>
 <?        
@@ -25,8 +25,17 @@
 <?        
     } else {
 ?>
-            <a href="#"             title="Filter <? echo $pageTitle ?>"><? include 'navigationIcons/filter.svg' ?></a>
-<?        
+            <a href="#" onclick=""             title="Filter <? echo $pageTitle ?>"><? include 'navigationIcons/filter.svg' ?></a>
+            <div class="foldableFilterBox">
+<?
+        if( $basepage == 'blog' ){
+            include 'blogFilters.php';
+        } elseif( $basepage == 'portfolio' ){
+            include 'portfolioFilters.php';
+        }
+?>
+            </div>
+<?
     }
 ?>
             <a href="<?=$portURL?>" title="Portfolio" class="<? if( $basepage == 'portfolio'){ echo('active'); } ?>" ><? include 'navigationIcons/portfolio.svg'?><span class="tabName">Portfolio</span></a>
@@ -105,9 +114,6 @@
     }
     
 </script>
-
-
-
 
 
 
