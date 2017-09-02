@@ -26,3 +26,31 @@
             <a href="<?=$resuURL?>" title="Resume"    class="<? if( $basepage == 'resume'){    echo('active'); } ?>" ><? include 'navigationIcons/resume.svg'   ?><span>Resumé</span></a>
             <a href="<?=$abouURL?>" title="About me"  class="<? if( $basepage == 'about'){     echo('active'); } ?>" ><? include 'navigationIcons/about.svg'    ?><span>About me</span></a>
         </nav>
+        
+        <nav id="secondNavigation">
+
+<?
+    if( $basepage == 'blog' ){
+?>
+            <a href="#">Subscribe</a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+<?
+    } elseif ( $basepage == 'resume' ){
+?>
+            <a href="#references">References</a>
+            <a href="#">Download</a>
+<?
+    } elseif ( $basepage == 'about' ){
+?>
+            <a href="#">Get in touch!</a>
+<?
+    } 
+?>
+        </nav>
+
+
+<!--
+        <div>
+            <a href="#">Archive</a>
+        </div>
+-->
