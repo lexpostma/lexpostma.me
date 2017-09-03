@@ -92,12 +92,6 @@
         
 <?
     $pageContains = '        <!-- This page contains ';
-	if(isset($codeOn)){
-    	$pageContains .= '• Prism syntax highlighting ';
-?>
-    	<link href="/styles/prism.css" rel="stylesheet" />
-<?
-    };
     if(isset($footnoteOn) || $basepage == 'resume'){
     	$pageContains .= '• Bigfoot footnotes ';
 ?>

@@ -22,7 +22,7 @@
         <li><a onclick="ga('send', 'event', 'Credits', 'Libraries', 'Normalize.css');" href="http://necolas.github.io/normalize.css/">Normalize.css</a>, a modern, HTML5-ready alternative to CSS resets</li>
         <li><a onclick="ga('send', 'event', 'Credits', 'Libraries', 'Mobile Detect');" href="http://mobiledetect.net">Mobile Detect</a>, the lightweight PHP class for detecting mobile devices (including tablets)</li>
         <li><a onclick="ga('send', 'event', 'Credits', 'Libraries', 'PlusAnchor');" href="https://github.com/JamyGolden/PlusAnchor">PlusAnchor</a>, a simple jQuery plugin to scrolls to anchor links</li>
-        <li><a onclick="ga('send', 'event', 'Credits', 'Libraries', 'Prism');" href="http://prismjs.com">Prism</a>, a lightweight, extensible syntax highlighter</li>
+<!--         <li><a onclick="ga('send', 'event', 'Credits', 'Libraries', 'Prism');" href="http://prismjs.com">Prism</a>, a lightweight, extensible syntax highlighter</li> -->
         <li><a onclick="ga('send', 'event', 'Credits', 'Libraries', 'Waypoints');" href="http://imakewebthings.com/waypoints/">Waypoints</a>, trigger a function when you scroll to an element.</li>
 
 <!--         <li><a href="http://inorganik.github.io/countUp.js/">CountUp.js</a>, a dependency-free, lightweight JavaScript "class" to animate numerical data</li> -->

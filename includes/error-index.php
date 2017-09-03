@@ -28,7 +28,7 @@
         </main>
         <canvas id="c"></canvas>
  		<script type="text/javascript" src="/scripts/matrix.js"></script>
-        <script src="/scripts/prism.js"></script>
+<!--         <script src="/scripts/prism.js"></script> -->
         <script>
             function historyBackWFallback(fallbackUrl) {
                 fallbackUrl = fallbackUrl || 'http://lexpostma.me';
