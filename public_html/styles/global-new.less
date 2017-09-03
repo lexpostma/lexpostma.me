@@ -1,5 +1,7 @@
 @import "variables.less";
 
+
+// Variables
 @colorLine: #B2B2B2;
 @colorInactive: #929292;
 .translucentBar {
@@ -12,10 +14,23 @@
 .navShowHideTransition {
     transition: transform 0.2s ease-in-out;
 }
+.firstButtonActiveState {
+    nav#tabbarNavigation a:first-child {
+        background-color: @color1;
+        span.tabName {
+            color: white;
+        }
+        svg {
+            fill: white;
+        }
+    }
+}
+
+
 
 
 body {
-    padding-bottom: 50px;
+    padding-bottom: @tabbarHeight;
 }
 
 header#titleHeader {
@@ -190,7 +205,7 @@ nav#tabbarNavigation a:hover div#tabbarTooltip span {
 
 // Add and alter elements when a view is filtered
 #filterIndicationBar {
-    display: block;
+    display: none;
     position: fixed;
     left: 0;
     right: 0;
@@ -206,8 +221,12 @@ nav#tabbarNavigation a:hover div#tabbarTooltip span {
     border-top: .5px solid @colorLine;
 }
 
-
-
+#navigationElements.filtered {
+    #filterIndicationBar {
+        display: block;
+    }
+    .firstButtonActiveState;
+}
 
 
 // When the action drawer is toggled, open the drawer, lock the tabbar, hide the filterbar and change the button
@@ -219,19 +238,8 @@ nav#tabbarNavigation a:hover div#tabbarTooltip span {
     #filterIndicationBar {
         transform: translateY(2 * @tabbarHeight);
     }
-    nav#tabbarNavigation a:first-child {
-        background-color: @color1;
-        span.tabName {
-            color: white;
-        }
-        svg {
-            fill: white;
-        }
-
-    }
+    .firstButtonActiveState;
 }
-
-
 
 
 // Hide the navigation bar on scrolldown, show on scroll up (if action drawer is not opened)

@@ -8,7 +8,7 @@
                 </svg>
             </a>
         </header>
-        <div id="navigationElements">
+        <div id="navigationElements" class="<? echo $basepageTwo ?>">
 
 <!—------------------------------
    | Primary navigation, tab bar |
