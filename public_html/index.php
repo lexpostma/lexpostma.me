@@ -30,6 +30,9 @@
         <main id="contents" class="<?=$basepage.' '.$basepageTwo?>">
             <? if(isset($includePage)){ require ('../includes/'.$includePage); } else{ echo '404'; }; ?>
         </main>
+        
+        <!-- Hide tabbar on scrolling down, but show on scroll up -->
+        <script src="/scripts/stickyNavigation.js"></script>
 <?
     include '../includes/footer.php';
 
