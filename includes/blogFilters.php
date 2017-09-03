@@ -95,5 +95,16 @@
             <span class="line"></span>
         </span>
     </div>
-    <a href="#">Archive</a>
+</div>
+
+
+
+
+<div class="cellRowGroup">
+<!--     <h6>Download a pdf of my resume</h6> -->
+    <a class="cellRow" href="/archive">
+        <div class="cellIcon"><i class="fa fa-archive"></i></div>
+        <span class="cellLabel">Archive</span>
+        <div class="cellClosingIcon chevron"><? include 'navigationIcons/chevron.svg'  ?></div>
+    </a>
 </div>
