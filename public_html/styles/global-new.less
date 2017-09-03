@@ -298,14 +298,17 @@ nav#tabbarNavigation a:hover div#tabbarTooltip span {
     .cellValue {
         color: @colorInactive;
     }
-    .cellClosingIcon.download {
+    .cellClosingIcon {
         height: 29px;
         float: right;
-        svg {
+        &.download svg {
             fill: @color1;
             height: 22px;
             margin-top: 3px;
             margin-right: -12px
+        }
+        &.chevron svg {
+            fill: @colorInactive;
         }
     }
 }
