@@ -32,7 +32,6 @@
         </main>
 <?
     include '../includes/footer.php';
-
     if(isset($tweetOn)){?>		<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script><script>$(".twitter-tweet").attr({"align":"center"});</script><?};
 ?>
     </body>
