@@ -8,49 +8,49 @@
                 </svg>
             </a>
         </header>
-
+        <div id="navigationElements">
 
 <!—------------------------------
    | Primary navigation, tab bar |
    ------------------------------->
 
-        <nav id="tabbarNavigation">
+            <nav id="tabbarNavigation">
 
 <?
     if( $basepageTwo !== 'home' && $basepageTwo !== 'filtered' ){
 ?>
-            <a href="<?=$baseURL?>" title="Back to <? echo $pageTitle ?>"><? include 'navigationIcons/back.svg'  ?></a>
+                <a href="<?=$baseURL?>" title="Back to <? echo $pageTitle ?>" class="noLabel"><? include 'navigationIcons/back.svg'  ?></a>
 <?        
     } elseif( $basepage == 'about' ){
 ?>
-            <a href="#" title="Get in touch!" onclick="toggleDrawer('navigationActionDrawer'); 
-                                                       toggleDrawer('tabbarNavigation');
-                                                       changeItem('tabbarTooltip')">
-                <? include 'navigationIcons/contact.svg'  ?>
-                <div id="tabbarTooltip">
-                    <span>Get in touch!</span>
-                    <div></div>
-                </div>
-            </a>
+                <a href="#" title="Get in touch!" onclick="toggleDrawer('navigationElements'); 
+                                                           changeItem('tabbarTooltip')">
+                    <? include 'navigationIcons/contact.svg'  ?>
+                    <div id="tabbarTooltip">
+                        <span>Get in touch!</span>
+                        <div></div>
+                    </div>
+                    <span class="tabName">Let's talk</span>
+                </a>
 <?        
     } elseif( $basepage == 'resume' ){
 ?>
-            <a href="#" title="Download my resume" onclick="toggleDrawer('navigationActionDrawer'); 
-                                                            toggleDrawer('tabbarNavigation'); 
-                                                            changeItem('tabbarTooltip')">
-                <? include 'navigationIcons/download.svg'  ?>
-                <div id="tabbarTooltip">
-                    <span>Download my resume</span>
-                    <div></div>
-                </div>
-            </a>
+                <a href="#" title="Download my resume" onclick="toggleDrawer('navigationElements'); 
+                                                                changeItem('tabbarTooltip')">
+                    <? include 'navigationIcons/download.svg'  ?>
+                    <div id="tabbarTooltip">
+                        <span>Download my resume</span>
+                        <div></div>
+                    </div>
+                    <span class="tabName">Download</span>
+                </a>
 <?        
     } else {
 ?>
-            <a href="#" title="Filter <? echo $pageTitle ?>" onclick="toggleDrawer('navigationActionDrawer'); 
-                                                                      toggleDrawer('tabbarNavigation')"  >
-                <? include 'navigationIcons/filter.svg' ?>
-            </a>
+                <a href="#" title="Filter <? echo $pageTitle ?>" onclick="toggleDrawer('navigationElements')"  >
+                    <? include 'navigationIcons/filter.svg' ?>
+                    <span class="tabName">Filter</span>
+                </a>
 <?
     }
 ?>
@@ -59,46 +59,46 @@
    | Main navigation items |
    ------------------------->
 
-            <a href="<?=$portURL?>" title="Portfolio" class="<? if( $basepage == 'portfolio'){ echo('active'); } ?>" >
-                <? include 'navigationIcons/portfolio.svg'?>
-                <span class="tabName">Portfolio</span>
-            </a>
-            <a href="<?=$blogURL?>" title="Blog"      class="<? if( $basepage == 'blog'){      echo('active'); } ?>" >
-                <? include 'navigationIcons/blog.svg'     ?>
-                <span class="tabName">Blog</span>
-            </a>
-            <a href="<?=$resuURL?>" title="Resume"    class="<? if( $basepage == 'resume'){    echo('active'); } ?>" >
-                <? include 'navigationIcons/resume.svg'   ?>
-                <span class="tabName">Resumé</span>
-            </a>
-            <a href="<?=$abouURL?>" title="About Lex" class="<? if( $basepage == 'about'){     echo('active'); } ?>" >
-                <? include 'navigationIcons/about.svg'    ?>
-                <span class="tabName">About Lex</span>
-            </a>
-        </nav>
-
+                <a href="<?=$portURL?>" title="Portfolio" class="<? if( $basepage == 'portfolio'){ echo('active'); } ?>" >
+                    <? include 'navigationIcons/portfolio.svg'?>
+                    <span class="tabName">Portfolio</span>
+                </a>
+                <a href="<?=$blogURL?>" title="Blog"      class="<? if( $basepage == 'blog'){      echo('active'); } ?>" >
+                    <? include 'navigationIcons/blog.svg'     ?>
+                    <span class="tabName">Blog</span>
+                </a>
+                <a href="<?=$resuURL?>" title="Resume"    class="<? if( $basepage == 'resume'){    echo('active'); } ?>" >
+                    <? include 'navigationIcons/resume.svg'   ?>
+                    <span class="tabName">Resumé</span>
+                </a>
+                <a href="<?=$abouURL?>" title="About Lex" class="<? if( $basepage == 'about'){     echo('active'); } ?>" >
+                    <? include 'navigationIcons/about.svg'    ?>
+                    <span class="tabName">About Lex</span>
+                </a>
+            </nav>
+    
 
         
 <!—-----------------------
    | Secundary navigation |
    ------------------------>
 
-        <nav id="secondNavigation">
+           <nav id="secondNavigation">
 
 <?
     if( $basepage == 'blog' ){
 ?>
-            <a href="#">Subscribe</a>
-            <a href="<? echo $blogTwitterURL ?>"><i class="fa fa-twitter"></i></a>
+                <a href="#">Subscribe</a>
+                <a href="<? echo $blogTwitterURL ?>"><i class="fa fa-twitter"></i></a>
 <?
     } elseif ( $basepage == 'resume' ){
 ?>
-            <a href="#references">References</a>
-            <a href="<? echo $linkedinURL ?>"><i class="fa fa-linkedin-square"></i></a>
+                <a href="#references">References</a>
+                <a href="<? echo $linkedinURL ?>"><i class="fa fa-linkedin-square"></i></a>
 <?
     } 
 ?>
-        </nav>
+            </nav>
 
 
 
@@ -106,26 +106,24 @@
    | Action Drawer |
    ----------------->
 
-        <div id="navigationActionDrawer">
-            <script>
-                function toggleDrawer(id) { $('#'+id).toggleClass('toggled'); }
-                function changeItem(id)   { $('#'+id).addClass('changed');  }
-            </script>
+            <div id="navigationActionDrawer">
+                <script>
+                    function toggleDrawer(id) { $('#'+id).toggleClass('actionDrawerToggled'); }
+                    function changeItem(id)   { $('#'+id).addClass('changed');  }
+                </script>
 <?
         if( $basepage == 'portfolio' ){  include 'portfolioFilters.php'; }
     elseif( $basepage == 'blog' ){       include 'blogFilters.php';      }
     elseif( $basepage == 'resume' ){     include 'resumeDownload.php';   }
     elseif( $basepage == 'about' ){      include 'aboutContact.php';     }
 ?>
+            </div>
+    
+    
+            <a href="#" onclick="toggleDrawer('navigationElements')" id="filterIndicationBar">Filtered by date, tag, author and keyword.</a>
+
+
         </div>
-
-
-<!--
-        <div>
-            <a href="#">Archive</a>
-        </div>
--->
-
 
 
 
@@ -162,11 +160,11 @@
         // This is necessary so you never see what is "behind" the navbar.
         if (st > lastScrollTop && st > navbarHeight){
             // Scroll Down
-            $('#tabbarNavigation').addClass('tabbarHidden');
+            $('#navigationElements').addClass('tabbarHidden');
         } else {
             // Scroll Up
             if(st + $(window).height() < $(document).height()) {
-                $('#tabbarNavigation').removeClass('tabbarHidden');
+                $('#navigationElements').removeClass('tabbarHidden');
             }
         }
         
