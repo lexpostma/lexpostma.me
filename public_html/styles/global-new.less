@@ -253,3 +253,77 @@ nav#tabbarNavigation a:hover div#tabbarTooltip span {
     }
 }
 
+
+// iOS style cell row elements
+.cellRow {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    width: 100%;
+    background-color: white;
+    text-decoration: none;
+    padding: 7px 15px 8px;
+    position: relative;
+    &:after {
+        content:''; 
+        position: absolute;
+        left: 59px;
+        right: 0px;
+        bottom: -.5px;
+        z-index: 8;
+        background: @colorLine; 
+        height: .5px;
+    }
+    &:first-of-type {
+        border-top:    .5px solid @colorLine;
+    }
+    &:last-of-type {
+        border-bottom: .5px solid @colorLine;
+    }
+    .cellIcon {
+        height: 29px;
+        width: 29px;
+        border-radius: 6px;
+        background-color: red;
+        margin-right: 14px;
+        display: block;
+    }
+    .cellLabel {
+        display: block;
+        line-height: 29px;
+        flex-grow: 2;
+        color: @colorBodyText;
+        font-size: 17px;
+    }
+    .cellValue {
+        color: @colorInactive;
+    }
+    .cellClosingIcon.download {
+        height: 29px;
+        float: right;
+        svg {
+            fill: @color1;
+            height: 22px;
+            margin-top: 3px;
+            margin-right: -12px
+        }
+    }
+}
+.cellRowGroup {
+    display: block;
+    width: 100%;
+    margin: 10px auto 25px;
+    h6 {
+        padding: 0 15px;
+        line-height: 29px;
+        font-size: 17px;
+        font-weight: bold;
+        margin: 0;
+    }
+}
+
+
+
+
+
+
