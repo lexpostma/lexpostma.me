@@ -91,10 +91,9 @@
 
         
 <?
-    $pageContains = '        <!-- This page contains ';
     if(isset($footnoteOn) || $basepage == 'resume'){
-    	$pageContains .= '• Bigfoot footnotes ';
 ?>
+        <!-- Bigfoot • jQuery plugin for empowering footnotes -->
     	<script type="text/javascript" src="/scripts/bigfoot.min.js"></script>
     	<link rel="stylesheet" type="text/css" href="/styles/bigfoot-number.css" />
     	<script type="text/javascript">
@@ -116,12 +115,9 @@
     	</script>
 <?
     };
-    if(isset($tweetOn)){
-        $pageContains .= '• Embedded tweets ';        
-    };
     if($basepage == 'about' && $basepageTwo == 'more'){
-        $pageContains .= '• Counter-Up • Waypoints '
 ?>
+        <!-- Counter-Up • jQuery plugin that animates a number from zero -->
         <script>
             jQuery(document).ready(function($) {
                 $('.counter').counterUp({
@@ -132,7 +128,7 @@
         </script>
 <?
     };
-    echo $pageContains .= '-->';
+
 
 
     // detect whether browser is mobile, use FastClick to optimize touches
@@ -155,7 +151,7 @@
 
 ?>
 
-		<!-- FitVids.js: a lightweight, easy-to-use jQuery plugin for fluid width video embeds -->
+		<!-- FitVids.js • a lightweight, easy-to-use jQuery plugin for fluid width video embeds -->
         <script src="/scripts/jquery.fitvids.js"></script>
         <script>
           $(document).ready(function(){
@@ -164,7 +160,7 @@
         </script>
 
 		
-		<!-- PlusAnchor - smooth scrolling to anchors -->
+		<!-- PlusAnchor • smooth scrolling to anchors -->
 		<script type="text/javascript" src="/scripts/jquery.plusanchor.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
