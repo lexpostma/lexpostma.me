@@ -77,8 +77,6 @@
                 </a>
             </nav>
     
-
-        
 <!—-----------------------
    | Secundary navigation |
    ------------------------>
@@ -100,8 +98,6 @@
 ?>
             </nav>
 
-
-
 <!—----------------
    | Action Drawer |
    ----------------->
@@ -119,9 +115,11 @@
 ?>
             </div>
     
-    
-            <a href="#" onclick="toggleDrawer('navigationElements')" id="filterIndicationBar">Filtered by date, tag, author and keyword.</a>
+<!—------------------------
+   | Filter indication bar |
+   ------------------------->
 
+            <a href="#" onclick="toggleDrawer('navigationElements')" id="filterIndicationBar">Filtered by date, tag, author and keyword.</a>
 
         </div>
 
