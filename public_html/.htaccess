@@ -1,8 +1,8 @@
-RedirectMatch 301 ^/portfolio/?$    http://portfolio.lexpostma.me$1
-RedirectMatch 301 ^/blog/?$         http://blog.lexpostma.me$1
-RedirectMatch 301 ^/cv/?$           http://resume.lexpostma.me$1
-RedirectMatch 301 ^/resume/?$       http://resume.lexpostma.me$1
-RedirectMatch 301 ^/about/?$        http://about.lexpostma.me$1
+RedirectMatch 301 ^/portfolio/?$    https://portfolio.lexpostma.me$1
+RedirectMatch 301 ^/blog/?$         https://blog.lexpostma.me$1
+RedirectMatch 301 ^/cv/?$           https://resume.lexpostma.me$1
+RedirectMatch 301 ^/resume/?$       https://resume.lexpostma.me$1
+RedirectMatch 301 ^/about/?$        https://about.lexpostma.me$1
 
 RedirectMatch 301 ^/q/?$            https://lexpostma.typeform.com/to/fKK9oO
 RedirectMatch 301 ^/Q/?$            https://lexpostma.typeform.com/to/fKK9oO
@@ -21,7 +21,7 @@ RewriteBase /
 
 ## From WWW to non-WWW ##
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-RewriteRule ^(.*)$ http://%1/$1 [R=301,N]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,N]
 
 ## All other rewrites ##
 RewriteCond %{REQUEST_FILENAME} !-f
