@@ -28,7 +28,7 @@
 ?>
         <meta name='robots' content='noindex,nofollow' />
 <?
-    }
+    };
     if(isset($nextPostTitle)){?>
         <link rel="next" title="<?=$nextPostTitle?>" href="<?=$nextPostURL?>">
 <?
