@@ -49,7 +49,7 @@
 ?>
                 <a href="#" title="Filter <? echo $pageTitle ?>" onclick="toggleDrawer('navigationElements')"  >
                     <? include 'navigationIcons/filter.svg' ?>
-                    <span class="tabName">Filter</span>
+                    <span class="tabName">Filters & more</span>
                 </a>
 <?
     }
