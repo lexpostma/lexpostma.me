@@ -9,6 +9,7 @@
 
 }
 @tabbarHeight: 50.5px;
+@lineThickness: 0.5px;
 .navShowHideTransition {
     transition: transform 0.2s ease-in-out;
 }
@@ -23,6 +24,7 @@
         }
     }
 }
+
 
 
 
@@ -69,7 +71,7 @@ nav#tabbarNavigation {
     right: 0;
     bottom: 0;
     z-index: 1000;
-    border-top: .5px solid @colorLine;
+    border-top: @lineThickness solid @colorLine;
     .navShowHideTransition;
     .translucentBar;
     a {
@@ -94,7 +96,7 @@ nav#tabbarNavigation {
         }
     }
     a:first-child {
-        border-right: .5px solid @colorLine;
+        border-right: @lineThickness solid @colorLine;
 //         background-color: white;
         span.tabName {
 //             color: white;
@@ -143,7 +145,7 @@ nav#secondNavigation {
     overflow: scroll;
     max-height: ~"calc(100vh - @{tabbarHeight})";
     z-index: 800;
-    border-top: .5px solid @colorLine;
+    border-top: @lineThickness solid @colorLine;
     transform: translateY(~"calc(100vh - @{tabbarHeight})");
 }
 
@@ -215,7 +217,7 @@ nav#tabbarNavigation a:hover div#tabbarTooltip span {
     padding: 5px 10px;
     text-decoration: none;
     text-align: center;
-    border-top: .5px solid @colorLine;
+    border-top: @lineThickness solid @colorLine;
 }
 
 #navigationElements.filtered {
@@ -261,10 +263,10 @@ nav#tabbarNavigation a:hover div#tabbarTooltip span {
         position: absolute;
         left: 59px;
         right: 0px;
-        bottom: -.5px;
+        bottom: -@lineThickness;
         z-index: 8;
         background: @colorLine; 
-        height: .5px;
+        height: @lineThickness;
     }
 }
 .cellRow {
@@ -280,13 +282,13 @@ nav#tabbarNavigation a:hover div#tabbarTooltip span {
     position: relative;
     .cellSeparator;
     &:first-of-type {
-        border-top:    .5px solid @colorLine;
+        border-top:    @lineThickness solid @colorLine;
     }
     &:last-of-type {
         &:after {
             content: none;
         }
-        border-bottom: .5px solid @colorLine;
+        border-bottom: @lineThickness solid @colorLine;
     }
     .cellIcon {
         height: 29px;
