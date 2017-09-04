@@ -24,6 +24,11 @@
         <meta name="copyright" content="Copyright (c) 2011-<?=date('Y')?> by Lex Postma" />
         <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <?
+    if($currentEnvironment == 'test'){
+?>
+        <meta name='robots' content='noindex,nofollow' />
+<?
+    }
     if(isset($nextPostTitle)){?>
         <link rel="next" title="<?=$nextPostTitle?>" href="<?=$nextPostURL?>">
 <?
