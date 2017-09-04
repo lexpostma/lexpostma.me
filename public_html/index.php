@@ -16,6 +16,13 @@
     require_once '../includes/Michelf/MarkdownExtra.inc.php';
     require_once '../includes/text-scripts.php';
     require '../includes/prehead-'.$basepage.'.php';
+    
+    if($testEnvironment == 'development'){
+        $seoTitle = '🐞 ' . $seoTitle;
+    } elseif($testEnvironment == 'test'){
+        $seoTitle = '🚧 ' . $seoTitle;
+    }
+
 ?>
 
 <!DOCTYPE HTML>

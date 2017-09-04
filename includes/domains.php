@@ -4,6 +4,8 @@
 
     if (strpos($_SERVER['HTTP_HOST'], 'dev.lexpostma.me') !== false) {
         
+        $testEnvironment = 'development';
+        
         $portURL = "http://portfolio.dev.lexpostma.me/";
         $blogURL =      "http://blog.dev.lexpostma.me/";
         $resuURL =    "http://resume.dev.lexpostma.me/";
@@ -17,6 +19,8 @@
     	elseif($_SERVER['HTTP_HOST'] ==           'dev.lexpostma.me'){ $basepage = "about";     $baseURL = $abouURL; };
         
     } elseif (strpos($_SERVER['HTTP_HOST'], 'test.lexpostma.me') !== false) {
+
+        $testEnvironment = 'test';
         
         $portURL = "https://portfolio.test.lexpostma.me/";
         $blogURL =      "https://blog.test.lexpostma.me/";
@@ -31,6 +35,9 @@
     	elseif($_SERVER['HTTP_HOST'] ==           'test.lexpostma.me'){ $basepage = "about";     $baseURL = $abouURL; };
         
     } else {
+
+        $testEnvironment = 'production';
+
         $portURL = "https://portfolio.lexpostma.me/";
         $blogURL =      "https://blog.lexpostma.me/";
         $resuURL =    "https://resume.lexpostma.me/";
