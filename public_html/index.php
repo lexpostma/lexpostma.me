@@ -18,9 +18,9 @@
     require '../includes/prehead-'.$basepage.'.php';
     
     // Giving a small indication of the environment to looking at
-    if($testEnvironment == 'development'){
+    if($currentEnvironment == 'development'){
         $seoTitle = '🐞 ' . $seoTitle;
-    } elseif($testEnvironment == 'test'){
+    } elseif($currentEnvironment == 'test'){
         $seoTitle = '🚧 ' . $seoTitle;
     }
 

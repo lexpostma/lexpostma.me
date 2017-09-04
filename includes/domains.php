@@ -4,7 +4,7 @@
 
     if (strpos($_SERVER['HTTP_HOST'], 'dev.lexpostma.me') !== false) {
         
-        $testEnvironment = 'development';
+        $currentEnvironment = 'development';
         
         $portURL = "http://portfolio.dev.lexpostma.me/";
         $blogURL =      "http://blog.dev.lexpostma.me/";
@@ -20,7 +20,7 @@
         
     } elseif (strpos($_SERVER['HTTP_HOST'], 'test.lexpostma.me') !== false) {
 
-        $testEnvironment = 'test';
+        $currentEnvironment = 'test';
         
         $portURL = "https://portfolio.test.lexpostma.me/";
         $blogURL =      "https://blog.test.lexpostma.me/";
@@ -36,7 +36,7 @@
         
     } else {
 
-        $testEnvironment = 'production';
+        $currentEnvironment = 'production';
 
         $portURL = "https://portfolio.lexpostma.me/";
         $blogURL =      "https://blog.lexpostma.me/";
