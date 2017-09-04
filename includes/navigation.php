@@ -102,7 +102,7 @@
    | Action Drawer |
    ----------------->
 
-            <div id="navigationActionDrawer">
+            <div id="actionDrawerNavigation">
                 <script>
                     function toggleDrawer(id) { $('#'+id).toggleClass('actionDrawerToggled'); }
                     function changeItem(id)   { $('#'+id).addClass('changed');  }
