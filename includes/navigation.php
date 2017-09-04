@@ -103,16 +103,23 @@
    ----------------->
 
             <div id="actionDrawerNavigation">
-                <script>
-                    function toggleDrawer(id) { $('#'+id).toggleClass('actionDrawerToggled'); }
-                    function changeItem(id)   { $('#'+id).addClass('changed');  }
-                </script>
+                <div id="actionDrawerTitleBar">
+                    <h6>Title</h6>
+                    <a href="#" id="actionDrawerClose" onclick="toggleDrawer('navigationElements')">Close</a>
+                </div>
+                <div id="actionDrawerContent">
+
 <?
         if( $basepage == 'portfolio' ){  include 'portfolioFilters.php'; }
     elseif( $basepage == 'blog' ){       include 'blogFilters.php';      }
     elseif( $basepage == 'resume' ){     include 'resumeDownload.php';   }
     elseif( $basepage == 'about' ){      include 'aboutContact.php';     }
 ?>
+                </div>
+                <script>
+                    function toggleDrawer(id) { $('#'+id).toggleClass('actionDrawerToggled'); }
+                    function changeItem(id)   { $('#'+id).addClass('changed');  }
+                </script>
             </div>
     
 <!—------------------------

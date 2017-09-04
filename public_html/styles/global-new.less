@@ -143,15 +143,38 @@ nav#secondNavigation {
     left: 0;
     right: 0;
     .navShowHideTransition;
-//     background-color: lime; // temporary debugging
-    overflow: scroll;
+    overflow: hidden;
+    border-top-left-radius:  10px;
+    border-top-right-radius: 10px;
+
     max-height: ~"calc(100vh - @{tabbarHeight})";
     z-index: 800;
     transform: translateY(~"calc(100vh - @{tabbarHeight})");
     border-top: @lineThickness solid @colorLine;
+    
+    box-shadow: 0 10px 50px 0 rgba(0, 0, 0, .5)
 }
-
-
+#actionDrawerTitleBar {
+    background-color: white;
+    border-bottom: @lineThickness solid @colorLine;
+    position: relative;
+    .iOSFontStyling;
+    padding: 7px 15px 8px;
+    h6 {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+    a#actionDrawerClose {
+        position: absolute;
+        top: 7px;
+        right: 15px;
+    }
+}
+#actionDrawerContent {
+    .translucentBackground;
+    overflow: scroll;
+}
 
 // Tabbar tooltip styling
 @keyframes float { // Floating animation from https://codepen.io/MarioDesigns/pen/woJgeo
