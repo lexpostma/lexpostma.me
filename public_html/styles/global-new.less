@@ -255,6 +255,18 @@ nav#tabbarNavigation a:hover div#tabbarTooltip span {
 
 
 // iOS style cell row elements
+.cellSeparator {
+    &:after {
+        content:''; 
+        position: absolute;
+        left: 59px;
+        right: 0px;
+        bottom: -.5px;
+        z-index: 8;
+        background: @colorLine; 
+        height: .5px;
+    }
+}
 .cellRow {
     font-size: 17px;
     line-height: 29px;
@@ -266,20 +278,14 @@ nav#tabbarNavigation a:hover div#tabbarTooltip span {
     text-decoration: none;
     padding: 7px 15px 8px;
     position: relative;
-    &:after {
-        content:''; 
-        position: absolute;
-        left: 59px;
-        right: 0px;
-        bottom: -.5px;
-        z-index: 8;
-        background: @colorLine; 
-        height: .5px;
-    }
+    .cellSeparator;
     &:first-of-type {
         border-top:    .5px solid @colorLine;
     }
     &:last-of-type {
+        &:after {
+            content: none;
+        }
         border-bottom: .5px solid @colorLine;
     }
     .cellIcon {
