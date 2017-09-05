@@ -1,6 +1,6 @@
 <?
     // client filter
-	if(empty($clientFilter)){   $selectClient = "<option                                        >Filter by client</option><option disabled></option>"; }
+	if(empty($clientFilter)){   $selectClient = "<option                                        >Select</option><option disabled></option>"; }
 	else{                       $selectClient = "<option value='".makeNewFilterURL('client')."' >- Remove client filter</option><option disabled></option>"; };
     $clientsWithLogo = '';
 
@@ -34,7 +34,7 @@
 
 
     // category filter
-	if(empty($categoryFilter)){ $selectCategory = "<option                                          >Filter by category</option><option disabled></option>"; }
+	if(empty($categoryFilter)){ $selectCategory = "<option                                          >Select</option><option disabled></option>"; }
 	else{                       $selectCategory = "<option value='".makeNewFilterURL('category')."' >- Remove category filter</option><option disabled></option>"; };
 
     $categoryFilterSelection = mysqli_query($con,"SELECT category,shortcategory FROM portfolio JOIN portfolio_categories on portfolio.category_id=portfolio_categories.id WHERE onlineVisible = '1' GROUP BY shortcategory ORDER BY category ASC;");
@@ -44,7 +44,7 @@
 	};
 
     // year filter
-	if(empty($yearFilter)){   $selectYear = "<option                                      >Filter by year</option><option disabled></option>"; }
+	if(empty($yearFilter)){   $selectYear = "<option                                      >Select</option><option disabled></option>"; }
 	else{                     $selectYear = "<option value='".makeNewFilterURL('year')."' >- Remove year filter</option><option disabled></option>"; };
 
     $yearFilterSelection = mysqli_query($con,"SELECT year FROM portfolio WHERE onlineVisible = 1 GROUP BY year ORDER BY year ASC;");
@@ -53,56 +53,105 @@
         else{                                                   $selectYear .= "<option value='".makeNewFilterURL('year')."&year=".$row['year']."'          >".$row['year']."</option>";            };
     };
 ?>
-
 <!--
+
 <form class="contentSearchForm" action="/search.php" method="get">
-    <i class="fa fa-fw fa-search"></i>
+
     <input type="hidden" name="rest"   value="<?=makeNewFilterURL('search');?>">
     <input type="search" name="search" placeholder="Search for projects" title="Search for projects"
         <? if(isset($searchFilter)){ echo ' value="'.$searchFilter.'" ';}?>>
-    <span class="line"></span>
 </form>
 
 <div class="wrappedBox">
     <div class="selectsBox">
         <span id="selectCategory" class="filter <?if(isset($categoryFilter)){ echo'filterOn';}?>">
-            <i class="fa fa-fw fa-tags" aria-hidden="true"></i>
             <select onchange="window.open(this.value,'_self');" onfocus="focusFilter('selectCategory');" onblur="stopFilter('selectCategory');" title="Filter by category">
             <?=$selectCategory?>
             </select>
-            <i class="fa fa-caret-down" aria-hidden="true"></i>
-            <span class="line"></span>
         </span>
         <span id="selectYear" class="filter <?if(isset($yearFilter)){ echo'filterOn';}?>">
-            <i class="fa fa-fw fa-calendar" aria-hidden="true"></i>
             <select onchange="window.open(this.value,'_self');" onfocus="focusFilter('selectYear');" onblur="stopFilter('selectYear');" title="Filter by year">
                 <?=$selectYear?>
             </select>
-            <i class="fa fa-caret-down" aria-hidden="true"></i>
-            <span class="line"></span>
         </span>
         <span id="selectClient" class="filter <?if(isset($clientFilter)){ echo'filterOn';}?>">
-            <i class="fa fa-fw fa-building" aria-hidden="true"></i>
             <select onchange="window.open(this.value,'_self');" onfocus="focusFilter('selectClient');" onblur="stopFilter('selectClient');" title="Filter by client">
                 <?=$selectClient?>
             </select>
-            <i class="fa fa-caret-down" aria-hidden="true"></i>
-            <span class="line"></span>
         </span>
     </div>
 
 </div>
-
-
-<a>Videos only</a>
 -->
+
+
+
+
+<ul class="cellRowGroup">
+    <li class="cellRow <?if(isset($searchFilter)){ echo'filterOn';}?>">
+        <a href="#">
+            <div class="cellIcon"><i class="fa fa-fw fa-search"></i></div>
+            <span class="cellLabel">Search</span>
+            <div class="cellValue">
+                <form class="contentSearchForm" action="/search.php" method="get">
+                
+                    <input type="hidden" name="rest"   value="<?=makeNewFilterURL('search');?>">
+                    <input type="search" name="search" placeholder="Search for projects" title="Search for projects"
+                        <? if(isset($searchFilter)){ echo ' value="'.$searchFilter.'" ';}?>>
+                </form>
+            </div>
+        </a>
+    </li>
+    <li class="cellRow <?if(isset($categoryFilter)){ echo'filterOn';}?>">
+        <a href="#">
+            <div class="cellIcon"><i class="fa fa-fw fa-tag"></i></div>
+            <span class="cellLabel">Category</span>
+            <div class="cellValue">
+                <select onchange="window.open(this.value,'_self');" onfocus="focusFilter('selectCategory');" onblur="stopFilter('selectCategory');" title="Filter by category">
+                <?=$selectCategory?>
+                </select>
+            </div>
+        </a>
+    </li>
+    <li class="cellRow <?if(isset($yearFilter)){ echo'filterOn';}?>">
+        <a href="#">
+            <div class="cellIcon"><i class="fa fa-fw fa-calendar"></i></div>
+            <span class="cellLabel">Year</span>
+            <div class="cellValue">
+                <select onchange="window.open(this.value,'_self');" onfocus="focusFilter('selectYear');" onblur="stopFilter('selectYear');" title="Filter by year">
+                    <?=$selectYear?>
+                </select>
+            </div>
+        </a>
+    </li>
+    <li class="cellRow <?if(isset($clientFilter)){ echo'filterOn';}?>">
+        <a href="#">
+            <div class="cellIcon"><i class="fa fa-fw fa-building"></i></div>
+            <span class="cellLabel">Tag</span>
+            <div class="cellValue">
+                <select onchange="window.open(this.value,'_self');" onfocus="focusFilter('selectClient');" onblur="stopFilter('selectClient');" title="Filter by client">
+                    <?=$selectClient?>
+                </select>
+
+            </div>
+        </a>
+    </li>
+    <li class="cellRow">
+        <a href="/videos">
+            <div class="cellIcon"><i class="fa fa-fw fa-video-camera"></i></div>
+            <span class="cellLabel">Oldies, but gooies</span>
+            <div class="cellClosingIcon chevron"><? include 'navigationIcons/chevron.svg'  ?></div>
+        </a>
+    </li>
+</ul>
+
 
 <ul class="cellRowGroup">
 <!--         <span class="cellGroupTitle">Download a pdf of my resume</span> -->
-    <li>
-        <a class="cellRow" href="/archive">
-            <div class="cellIcon"><i class="fa fa-archive"></i></div>
-            <span class="cellLabel">Oldies, but goodies</span>
+    <li class="cellRow">
+        <a href="/archive">
+            <div class="cellIcon"><i class="fa fa-fw fa-archive"></i></div>
+            <span class="cellLabel">Oldies, but gooies</span>
             <div class="cellClosingIcon chevron"><? include 'navigationIcons/chevron.svg'  ?></div>
         </a>
     </li>

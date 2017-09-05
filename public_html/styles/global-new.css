@@ -427,6 +427,14 @@ li.cellRow a .cellIcon {
 li.cellRow a .cellIcon i {
   color: white;
 }
+li.cellRow a .cellIcon i.fa-tag {
+  padding-left: 1px;
+  padding-top: 7px;
+}
+li.cellRow a .cellIcon i.fa-building {
+  padding-left: 2px;
+  padding-top: 7px;
+}
 li.cellRow a .cellLabel {
   display: block;
   flex-grow: 2;
@@ -435,6 +443,30 @@ li.cellRow a .cellLabel {
 li.cellRow a .cellValue {
   color: #929292;
   text-align: right;
+  max-width: 70%;
+  overflow: hidden;
+}
+li.cellRow a .cellValue input,
+li.cellRow a .cellValue select {
+  background: none;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-decoration: none;
+  /*
+                    border-radius: 0;
+            -webkit-border-radius: 0;
+*/
+  text-align: right;
+  direction: rtl;
+}
+li.cellRow a .cellValue input option,
+li.cellRow a .cellValue select option,
+li.cellRow a .cellValue input optgroup,
+li.cellRow a .cellValue select optgroup {
+  direction: ltr;
 }
 li.cellRow a .cellClosingIcon {
   height: 29px;

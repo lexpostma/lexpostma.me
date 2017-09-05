@@ -111,7 +111,7 @@ nav#tabbarNavigation {
     ul#tabbarItemList {
         display: flex;
         justify-content: space-around;
-        .firstButtonActiveState;
+//         .firstButtonActiveState;
     }
 }
 li.tabbarItem {
@@ -403,6 +403,14 @@ li.cellRow a {
         text-align: center;
         i {
             color: white;
+            &.fa-tag {
+                padding-left: 1px;
+                padding-top: 7px;                
+            }
+            &.fa-building {
+                padding-left: 2px;
+                padding-top: 7px;
+            }
         }
     }
     .cellLabel {
@@ -413,6 +421,27 @@ li.cellRow a {
     .cellValue {
         color: @colorInactive;
         text-align: right;
+        max-width: 70%;
+        overflow: hidden;
+        input, select {
+            background: none;
+            border: none;
+            outline: none;
+            -webkit-appearance: none;
+               -moz-appearance: none;
+                    appearance: none;
+            text-decoration: none;
+/*
+                    border-radius: 0;
+            -webkit-border-radius: 0;
+*/
+            text-align: right;
+            direction: rtl;
+            option, optgroup {
+                direction: ltr;
+            }
+        }
+
     }
     .cellClosingIcon {
         height: 29px;
@@ -427,4 +456,3 @@ li.cellRow a {
         }
     }
 }
-
