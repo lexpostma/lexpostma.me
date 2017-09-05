@@ -1,5 +1,5 @@
 <div class="cellRowGroup">
-    <h6>Download a pdf of my resume</h6>
+    <span class="cellGroupTitle">Download a pdf of my resume</span>
     <a class="cellRow en" href="/public-files/CV-Lex-Postma-en-web.pdf" 
             target="_blank" title="Download a pdf of my resumé in English" 
             onclick="ga('send', 'event', 'Navigation', 'Download', 'Resumé pdf English');">

@@ -96,7 +96,7 @@
 <a>Videos only</a>
 
 <div class="cellRowGroup">
-<!--     <h6>Download a pdf of my resume</h6> -->
+<!--         <span class="cellGroupTitle">Download a pdf of my resume</span> -->
     <a class="cellRow" href="/archive">
         <div class="cellIcon"><i class="fa fa-archive"></i></div>
         <span class="cellLabel">Oldies, but goodies</span>

@@ -104,7 +104,7 @@
 
             <div id="actionDrawerNavigation">
                 <div id="actionDrawerTitleBar">
-                    <h6>Title</h6>
+                    <span>Title</span>
                     <a href="#" id="actionDrawerClose" onclick="toggleDrawer()">Close</a>
                 </div>
                 <div id="actionDrawerContent">
