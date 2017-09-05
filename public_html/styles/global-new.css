@@ -129,18 +129,6 @@ nav#tabbarNavigation ul#tabbarItemList {
   display: flex;
   justify-content: space-around;
 }
-nav#tabbarNavigation ul#tabbarItemList li.tabbarItem#tabbarSpecialItem a.tabbarLink,
-nav#tabbarNavigation ul#tabbarItemList li.tabbarItem#tabbarSpecialItem a.tabbarLink:hover {
-  background-color: #4B0082;
-}
-nav#tabbarNavigation ul#tabbarItemList li.tabbarItem#tabbarSpecialItem a.tabbarLink span.tabName,
-nav#tabbarNavigation ul#tabbarItemList li.tabbarItem#tabbarSpecialItem a.tabbarLink:hover span.tabName {
-  color: white;
-}
-nav#tabbarNavigation ul#tabbarItemList li.tabbarItem#tabbarSpecialItem a.tabbarLink svg,
-nav#tabbarNavigation ul#tabbarItemList li.tabbarItem#tabbarSpecialItem a.tabbarLink:hover svg {
-  fill: white;
-}
 li.tabbarItem {
   display: block;
   width: 20%;
