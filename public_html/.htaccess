@@ -1,16 +1,12 @@
-RedirectMatch 301 ^/portfolio/?$    https://portfolio.lexpostma.me$1
-RedirectMatch 301 ^/blog/?$         https://blog.lexpostma.me$1
-RedirectMatch 301 ^/cv/?$           https://resume.lexpostma.me$1
-RedirectMatch 301 ^/resume/?$       https://resume.lexpostma.me$1
-RedirectMatch 301 ^/about/?$        https://about.lexpostma.me$1
+# RedirectMatch 301 ^/portfolio/?$    https://portfolio.lexpostma.me$1
+# RedirectMatch 301 ^/blog/?$         https://blog.lexpostma.me$1
+# RedirectMatch 301 ^/cv/?$           https://resume.lexpostma.me$1
+# RedirectMatch 301 ^/resume/?$       https://resume.lexpostma.me$1
+# RedirectMatch 301 ^/about/?$        https://about.lexpostma.me$1
 
 RedirectMatch 301 ^/q/?$            https://lexpostma.typeform.com/to/fKK9oO
 RedirectMatch 301 ^/Q/?$            https://lexpostma.typeform.com/to/fKK9oO
 RedirectMatch 301 ^/statafel/?$     https://lexpostma.typeform.com/to/fKK9oO
-#RedirectMatch 301 ^/mesh/?$         https://docs.google.com/a/postma.me/forms/d/1Ht3jsyRe56SAaj8yfFLStzHHrVYKuDzzPgR_tuHhfhM/viewform
-
-RedirectMatch 301 ^/phpmyadmin/index.php/?$     https://lexpostma.typeform.com/to/fKK9oO
-RedirectMatch 301 ^/phpmyadmin/?$               https://lexpostma.typeform.com/to/fKK9oO
 
 RewriteEngine On
 RewriteBase /
