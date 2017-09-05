@@ -36,7 +36,15 @@
     require '../includes/navigation.php';
 ?>
         <main id="contents" class="<?=$basepage.' '.$basepageTwo?>">
-            <? if(isset($includePage)){ require ('../includes/'.$includePage); } else{ echo '404'; }; ?>
+<?
+    require '../includes/navigationTitle.php';
+
+    if( isset($includePage) ){ 
+        require ('../includes/'.$includePage);
+    } else { 
+        echo '404';
+    };
+?>
         </main>
         
         <!-- Hide tabbar on scrolling down, but show on scroll up -->

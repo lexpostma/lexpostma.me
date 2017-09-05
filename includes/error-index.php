@@ -17,7 +17,7 @@
         <? include 'navigation.php'; ?>
 
         <main id="contents" class="<?=$basepage.' '.$basepageTwo?>">
-<!--             <h1 class="filterText"><?=$errNum?></h1> -->
+            <? require '../includes/navigationTitle.php'; ?>
             <article class="contentBlock">
                 <h2><?=$errName?><span><?=$errNum?></span></h2>
                 <p>
@@ -28,7 +28,6 @@
         </main>
         <canvas id="c"></canvas>
  		<script type="text/javascript" src="/scripts/matrix.js"></script>
-<!--         <script src="/scripts/prism.js"></script> -->
         <script>
             function historyBackWFallback(fallbackUrl) {
                 fallbackUrl = fallbackUrl || 'http://lexpostma.me';
