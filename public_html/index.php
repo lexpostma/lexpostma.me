@@ -33,7 +33,7 @@
     <body>
         <div id="top"></div>
 <?
-    require '../includes/navigation.php';
+    require '../includes/navigationTabbar.php';
 ?>
         <main id="contents" class="<?=$basepage.' '.$basepageTwo?>">
 <?

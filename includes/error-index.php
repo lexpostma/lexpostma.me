@@ -14,7 +14,7 @@
 <html lang="en">
     <? include 'head.php'; ?>
     <body>
-        <? include 'navigation.php'; ?>
+        <? include 'navigationTabbar.php'; ?>
 
         <main id="contents" class="<?=$basepage.' '.$basepageTwo?>">
             <? require '../includes/navigationTitle.php'; ?>

@@ -11,25 +11,26 @@
    ------------------------------->
 
             <nav id="tabbarNavigation">
-                <ul>
+                <ul id="tabbarItemList">
 
 <?
     if( $basepageTwo !== 'home' && $basepageTwo !== 'filtered' ){
 ?>
-                    <li class="tabbarItem" id="tabbarSpecialButton">
-                        <a href="<?=$baseURL?>" title="Back to <? echo $pageTitle ?>" class="noLabel"><? include 'navigationIcons/back.svg'  ?></a>
+                    <li class="tabbarItem" id="tabbarSpecialItem">
+                        <a href="<?=$baseURL?>" title="Back to <? echo $pageTitle ?>" class="tabbarLink noLabel"><? include 'navigationIcons/back.svg'  ?></a>
                     </li>
 <?        
     } elseif( $basepage == 'about' ){
 ?>
-                    <li class="tabbarItem" id="tabbarSpecialButton">
-                        <a href="#" title="Get in touch!" onclick="toggleDrawer(); 
-                                                                   changeItem('tabbarTooltip')">
-                            <? include 'navigationIcons/contact.svg'  ?>
+                    <li class="tabbarItem" id="tabbarSpecialItem">
+                        <a href="#" 
+                                title="Get in touch!" 
+                                class="tabbarLink" 
+                                onclick="toggleDrawer(); changeItem('tabbarTooltip')">
                             <div id="tabbarTooltip">
                                 <span>Get in touch!</span>
-                                <div></div>
                             </div>
+                            <? include 'navigationIcons/contact.svg'  ?>
                             <span class="tabName">Let's talk</span>
                         </a>
                         <? include 'navigationActionDrawer.php'  ?>
@@ -37,14 +38,15 @@
 <?        
     } elseif( $basepage == 'resume' ){
 ?>
-                    <li class="tabbarItem" id="tabbarSpecialButton">
-                        <a href="#" title="Download my resume" onclick="toggleDrawer(); 
-                                                                        changeItem('tabbarTooltip')">
-                            <? include 'navigationIcons/download.svg'  ?>
+                    <li class="tabbarItem" id="tabbarSpecialItem">
+                        <a href="#" 
+                                title="Download my resume"
+                                class="tabbarLink" 
+                                onclick="toggleDrawer(); changeItem('tabbarTooltip')">
                             <div id="tabbarTooltip">
                                 <span>Download my resume</span>
-                                <div></div>
                             </div>
+                            <? include 'navigationIcons/download.svg'  ?>
                             <span class="tabName">Download</span>
                         </a>
                         <? include 'navigationActionDrawer.php'  ?>
@@ -52,8 +54,11 @@
 <?        
     } else {
 ?>
-                    <li class="tabbarItem" id="tabbarSpecialButton">
-                        <a href="#" title="Filter <? echo $pageTitle ?>" onclick="toggleDrawer()"  >
+                    <li class="tabbarItem" id="tabbarSpecialItem">
+                        <a href="#" 
+                                title="Filter <? echo $pageTitle ?>"
+                                class="tabbarLink"
+                                onclick="toggleDrawer()"  >
                             <? include 'navigationIcons/filter.svg' ?>
                             <span class="tabName">Filters & more</span>
                         </a>
@@ -68,25 +73,25 @@
    ------------------------->
 
                     <li class="tabbarItem">
-                        <a href="<?=$portURL?>" title="Portfolio" class="<? if( $basepage == 'portfolio'){ echo('active'); } ?>" >
+                        <a href="<?=$portURL?>" title="Portfolio" class="tabbarLink <? if( $basepage == 'portfolio'){ echo('active'); } ?>" >
                             <? include 'navigationIcons/portfolio.svg'?>
                             <span class="tabName">Portfolio</span>
                         </a>
                     </li>
                     <li class="tabbarItem">
-                        <a href="<?=$blogURL?>" title="Blog"      class="<? if( $basepage == 'blog'){      echo('active'); } ?>" >
+                        <a href="<?=$blogURL?>" title="Blog"      class="tabbarLink <? if( $basepage == 'blog'){      echo('active'); } ?>" >
                             <? include 'navigationIcons/blog.svg'     ?>
                             <span class="tabName">Blog</span>
                         </a>
                     </li>
                     <li class="tabbarItem">
-                        <a href="<?=$resuURL?>" title="Resume"    class="<? if( $basepage == 'resume'){    echo('active'); } ?>" >
+                        <a href="<?=$resuURL?>" title="Resume"    class="tabbarLink <? if( $basepage == 'resume'){    echo('active'); } ?>" >
                             <? include 'navigationIcons/resume.svg'   ?>
                             <span class="tabName">Resumé</span>
                         </a>
                     </li>
                     <li class="tabbarItem">
-                        <a href="<?=$abouURL?>" title="About Lex" class="<? if( $basepage == 'about'){     echo('active'); } ?>" >
+                        <a href="<?=$abouURL?>" title="About Lex" class="tabbarLink <? if( $basepage == 'about'){     echo('active'); } ?>" >
                             <? include 'navigationIcons/about.svg'    ?>
                             <span class="tabName">About Lex</span>
                         </a>
