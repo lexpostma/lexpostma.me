@@ -65,6 +65,7 @@ body {
 main#contents {
   margin: auto;
   overflow: hidden;
+  min-height: 100vh;
   position: relative;
   padding-bottom: 50.5px;
   background-color: white;
