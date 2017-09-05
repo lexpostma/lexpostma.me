@@ -1,1 +1,373 @@
-.blurredPurple{background-color:rgba(75,0,130,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}.orangeButton{display:inline-block;text-decoration:none;color:#F04400;padding:8px 1rem;border-radius:5px;-webkit-border-radius:5px}.orangeButton:hover{color:#fff;background:#F04400}.orangeButton:active{color:#fff;background:indigo}.sideText{font-style:italic;font-size:.9em;color:#a9a9a9}.translucentBackground{background-color:rgba(250,250,250,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}.navShowHideTransition{transition:transform .2s ease-in-out}.firstButtonActiveState nav#tabbarNavigation a:first-child{background-color:indigo}.firstButtonActiveState nav#tabbarNavigation a:first-child span.tabName{color:#fff}.firstButtonActiveState nav#tabbarNavigation a:first-child svg{fill:#fff}body{padding-bottom:50.5px}h6{font-size:17px;line-height:29px}header#titleHeader{background-color:indigo;color:#fff;width:100%;height:50px}header#titleHeader span#mainTitle{line-height:50px;font-size:24px;font-weight:700;padding-left:20px}header#titleHeader span#mainTitle a{color:#fff;text-decoration:none}header#titleHeader a#mainLogo{position:absolute;background:indigo;padding:3px;height:56px;width:56px;top:17px;right:17px}header#titleHeader a#mainLogo svg{height:100%;width:100%;fill:#fff}nav#tabbarNavigation{display:flex;justify-content:space-around;position:fixed;left:0;right:0;bottom:0;z-index:1000;border-top:.5px solid #B2B2B2;transition:transform .2s ease-in-out;background-color:rgba(250,250,250,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}nav#tabbarNavigation a{display:block;height:50px;width:20%;position:relative}nav#tabbarNavigation a span.tabName{position:absolute;bottom:2px;left:0;right:0;text-align:center;font-size:10px;color:#929292}nav#tabbarNavigation a svg{height:30px;width:100%;margin:3.5px auto;fill:#929292}nav#tabbarNavigation a:first-child{border-right:.5px solid #B2B2B2}nav#tabbarNavigation a.noLabel svg{margin:10px auto}nav#tabbarNavigation a.active span.tabName,nav#tabbarNavigation a:hover span.tabName{color:indigo}nav#tabbarNavigation a.active svg,nav#tabbarNavigation a:hover svg{fill:indigo}nav#secondNavigation{padding:2px 10px;vertical-align:bottom}nav#secondNavigation a{display:inline-block;text-decoration:none;color:indigo;padding:5px 10px}nav#secondNavigation a:hover{text-decoration:underline}#actionDrawerNavigation{position:fixed;bottom:0;left:0;right:0;transition:transform .2s ease-in-out;overflow:hidden;border-top-left-radius:10px;border-top-right-radius:10px;max-height:calc(100vh - 50.5px);z-index:800;transform:translateY(calc(100vh - 50.5px));border-top:.5px solid #B2B2B2;box-shadow:0 10px 50px 0 rgba(0,0,0,.5)}#actionDrawerTitleBar{background-color:#fff;border-bottom:.5px solid #B2B2B2;position:relative;font-size:17px;line-height:29px;padding:7px 15px 8px}#actionDrawerTitleBar h6{padding:0;margin:0;text-align:center}#actionDrawerTitleBar a#actionDrawerClose{position:absolute;top:7px;right:15px}#actionDrawerContent{background-color:rgba(250,250,250,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);overflow:scroll}@keyframes float{0%{transform:translatey(0)}50%{transform:translatey(-3px)}100%{transform:translatey(0)}}#tabbarTooltip{position:absolute;background-color:indigo;color:#fff;bottom:54px;left:4px;display:block;text-align:center;padding:4px 7px 6px;border-radius:5px;animation:float 3s ease-in-out infinite;transition:transform .2s ease-in-out}#tabbarTooltip span{position:relative;z-index:3;white-space:nowrap}#tabbarTooltip div{width:15px;height:15px;background-color:inherit;position:absolute;z-index:0;bottom:-5px;left:21px;transform:rotate(45deg)}#tabbarTooltip.changed{display:none}nav#tabbarNavigation a:hover div#tabbarTooltip span{text-decoration:underline}#filterIndicationBar{display:none;position:fixed;left:0;right:0;bottom:50.5px;z-index:999;transition:transform .2s ease-in-out;background-color:rgba(250,250,250,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:indigo;padding:5px 10px;text-decoration:none;text-align:center;border-top:.5px solid #B2B2B2}#navigationElements.filtered #filterIndicationBar{display:block}#navigationElements.filtered nav#tabbarNavigation a:first-child{background-color:indigo}#navigationElements.filtered nav#tabbarNavigation a:first-child span.tabName{color:#fff}#navigationElements.filtered nav#tabbarNavigation a:first-child svg{fill:#fff}#navigationElements.actionDrawerToggled #actionDrawerNavigation{transform:translateY(-50.5px)}#navigationElements.actionDrawerToggled #filterIndicationBar{transform:translateY(101px)}#navigationElements.actionDrawerToggled nav#tabbarNavigation a:first-child{background-color:indigo}#navigationElements.actionDrawerToggled nav#tabbarNavigation a:first-child span.tabName{color:#fff}#navigationElements.actionDrawerToggled nav#tabbarNavigation a:first-child svg{fill:#fff}#navigationElements.tabbarHidden:not(.actionDrawerToggled) nav#tabbarNavigation{transform:translateY(50.5px)}#navigationElements.tabbarHidden:not(.actionDrawerToggled) nav#tabbarNavigation a #tabbarTooltip{transform:translateY(100px);animation:none}#navigationElements.tabbarHidden:not(.actionDrawerToggled) #filterIndicationBar{transform:translateY(50.5px)}.iOSFontStyling{font-size:17px;line-height:29px}.cellSeparator:after{content:'';position:absolute;left:59px;right:0;bottom:-.5px;z-index:8;background:#B2B2B2;height:.5px}.cellRow{font-size:17px;line-height:29px;display:flex;justify-content:flex-start;align-content:center;width:100%;background-color:#fff;text-decoration:none;padding:7px 15px 8px;position:relative}.cellRow:after{content:'';position:absolute;left:59px;right:0;bottom:-.5px;z-index:8;background:#B2B2B2;height:.5px}.cellRow:first-of-type{border-top:.5px solid #B2B2B2}.cellRow:last-of-type{border-bottom:.5px solid #B2B2B2}.cellRow:last-of-type:after{content:none}.cellRow .cellIcon{height:29px;width:29px;border-radius:6px;background-color:red;margin-right:14px;display:block;text-align:center}.cellRow .cellIcon i{color:#fff}.cellRow .cellLabel{display:block;flex-grow:2;color:#270043}.cellRow .cellValue{color:#929292;text-align:right}.cellRow .cellClosingIcon{height:29px;float:right}.cellRow .cellClosingIcon.download svg{fill:indigo;height:29px;margin-right:-9px}.cellRow .cellClosingIcon.chevron svg{fill:#929292}.cellRowGroup{font-size:17px;line-height:29px;display:block;width:100%;margin:10px auto 25px}.cellRowGroup h6{padding:0 15px;font-weight:700;margin:0}
+.blurredPurple {
+  background-color: rgba(75, 0, 130, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.orangeButton {
+  display: inline-block;
+  text-decoration: none;
+  color: #F04400;
+  padding: 8px 1rem;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+.orangeButton:hover {
+  color: white;
+  background: #F04400;
+}
+.orangeButton:active {
+  color: white;
+  background: #4B0082;
+}
+.sideText {
+  font-style: italic;
+  font-size: .9em;
+  color: DarkGray;
+}
+.translucentBackground {
+  background-color: rgba(250, 250, 250, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.navShowHideTransition {
+  transition: transform 0.2s ease-in-out;
+}
+.firstButtonActiveState nav#tabbarNavigation a:first-child {
+  background-color: #4B0082;
+}
+.firstButtonActiveState nav#tabbarNavigation a:first-child span.tabName {
+  color: white;
+}
+.firstButtonActiveState nav#tabbarNavigation a:first-child svg {
+  fill: white;
+}
+body {
+  padding-bottom: 50.5px;
+}
+h6 {
+  font-size: 17px;
+  line-height: 29px;
+}
+header#titleHeader {
+  background-color: #4B0082;
+  color: white;
+  width: 100%;
+  height: 50px;
+}
+header#titleHeader span#mainTitle {
+  line-height: 50px;
+  font-size: 24px;
+  font-weight: bold;
+  padding-left: 20px;
+}
+header#titleHeader span#mainTitle a {
+  color: white;
+  text-decoration: none;
+}
+header#titleHeader a#mainLogo {
+  position: absolute;
+  background: #4B0082;
+  padding: 3px;
+  height: 56px;
+  width: 56px;
+  top: 17px;
+  right: 17px;
+}
+header#titleHeader a#mainLogo svg {
+  height: 100%;
+  width: 100%;
+  fill: white;
+}
+nav#tabbarNavigation {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  border-top: 0.5px solid #B2B2B2;
+  transition: transform 0.2s ease-in-out;
+  background-color: rgba(250, 250, 250, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+nav#tabbarNavigation a {
+  display: block;
+  height: 50px;
+  width: 20%;
+  position: relative;
+}
+nav#tabbarNavigation a span.tabName {
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 10px;
+  color: #929292;
+}
+nav#tabbarNavigation a svg {
+  height: 30px;
+  width: 100%;
+  margin: 3.5px auto;
+  fill: #929292;
+}
+nav#tabbarNavigation a:first-child {
+  border-right: 0.5px solid #B2B2B2;
+}
+nav#tabbarNavigation a.noLabel svg {
+  margin: 10px auto;
+}
+nav#tabbarNavigation a.active span.tabName,
+nav#tabbarNavigation a:hover span.tabName {
+  color: #4B0082;
+}
+nav#tabbarNavigation a.active svg,
+nav#tabbarNavigation a:hover svg {
+  fill: #4B0082;
+}
+nav#secondNavigation {
+  padding: 2px 10px;
+  vertical-align: bottom;
+}
+nav#secondNavigation a {
+  display: inline-block;
+  text-decoration: none;
+  color: #4B0082;
+  padding: 5px 10px;
+}
+nav#secondNavigation a:hover {
+  text-decoration: underline;
+}
+#actionDrawerNavigation {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: transform 0.2s ease-in-out;
+  overflow: hidden;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  max-height: calc(100vh - 50.5px);
+  z-index: 800;
+  transform: translateY(calc(100vh - 50.5px));
+  border-top: 0.5px solid #B2B2B2;
+  box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.5);
+}
+#actionDrawerTitleBar {
+  background-color: white;
+  border-bottom: 0.5px solid #B2B2B2;
+  position: relative;
+  font-size: 17px;
+  line-height: 29px;
+  padding: 7px 15px 8px;
+}
+#actionDrawerTitleBar h6 {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+#actionDrawerTitleBar a#actionDrawerClose {
+  position: absolute;
+  top: 7px;
+  right: 15px;
+}
+#actionDrawerContent {
+  background-color: rgba(250, 250, 250, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  overflow: scroll;
+}
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-3px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+#tabbarTooltip {
+  position: absolute;
+  background-color: #4B0082;
+  color: white;
+  bottom: 54px;
+  left: 4px;
+  display: block;
+  text-align: center;
+  padding: 4px 7px 6px;
+  border-radius: 5px;
+  animation: float 3s ease-in-out infinite;
+  transition: transform 0.2s ease-in-out;
+}
+#tabbarTooltip span {
+  position: relative;
+  z-index: 3;
+  white-space: nowrap;
+}
+#tabbarTooltip div {
+  width: 15px;
+  height: 15px;
+  background-color: inherit;
+  position: absolute;
+  z-index: 0;
+  bottom: -5px;
+  left: 21px;
+  transform: rotate(45deg);
+}
+#tabbarTooltip.changed {
+  display: none;
+}
+nav#tabbarNavigation a:hover div#tabbarTooltip span {
+  text-decoration: underline;
+}
+#filterIndicationBar {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 50.5px;
+  z-index: 999;
+  transition: transform 0.2s ease-in-out;
+  background-color: rgba(250, 250, 250, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #4B0082;
+  padding: 5px 10px;
+  text-decoration: none;
+  text-align: center;
+  border-top: 0.5px solid #B2B2B2;
+}
+#navigationElements.filtered #filterIndicationBar {
+  display: block;
+}
+#navigationElements.filtered nav#tabbarNavigation a:first-child {
+  background-color: #4B0082;
+}
+#navigationElements.filtered nav#tabbarNavigation a:first-child span.tabName {
+  color: white;
+}
+#navigationElements.filtered nav#tabbarNavigation a:first-child svg {
+  fill: white;
+}
+#navigationElements.actionDrawerToggled #actionDrawerNavigation {
+  transform: translateY(-50.5px);
+}
+#navigationElements.actionDrawerToggled #filterIndicationBar {
+  transform: translateY(101px);
+}
+#navigationElements.actionDrawerToggled nav#tabbarNavigation a:first-child {
+  background-color: #4B0082;
+}
+#navigationElements.actionDrawerToggled nav#tabbarNavigation a:first-child span.tabName {
+  color: white;
+}
+#navigationElements.actionDrawerToggled nav#tabbarNavigation a:first-child svg {
+  fill: white;
+}
+main#contents.actionDrawerToggled {
+  transform: scale(0.9);
+}
+#navigationElements.tabbarHidden:not(.actionDrawerToggled) nav#tabbarNavigation {
+  transform: translateY(50.5px);
+}
+#navigationElements.tabbarHidden:not(.actionDrawerToggled) nav#tabbarNavigation a #tabbarTooltip {
+  transform: translateY(100px);
+  animation: none;
+}
+#navigationElements.tabbarHidden:not(.actionDrawerToggled) #filterIndicationBar {
+  transform: translateY(50.5px);
+}
+.iOSFontStyling {
+  font-size: 17px;
+  line-height: 29px;
+}
+.cellSeparator:after {
+  content: '';
+  position: absolute;
+  left: 59px;
+  right: 0px;
+  bottom: -0.5px;
+  z-index: 8;
+  background: #B2B2B2;
+  height: 0.5px;
+}
+.cellRow {
+  font-size: 17px;
+  line-height: 29px;
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  width: 100%;
+  background-color: white;
+  text-decoration: none;
+  padding: 7px 15px 8px;
+  position: relative;
+}
+.cellRow:after {
+  content: '';
+  position: absolute;
+  left: 59px;
+  right: 0px;
+  bottom: -0.5px;
+  z-index: 8;
+  background: #B2B2B2;
+  height: 0.5px;
+}
+.cellRow:first-of-type {
+  border-top: 0.5px solid #B2B2B2;
+}
+.cellRow:last-of-type {
+  border-bottom: 0.5px solid #B2B2B2;
+}
+.cellRow:last-of-type:after {
+  content: none;
+}
+.cellRow .cellIcon {
+  height: 29px;
+  width: 29px;
+  border-radius: 6px;
+  background-color: red;
+  margin-right: 14px;
+  display: block;
+  text-align: center;
+}
+.cellRow .cellIcon i {
+  color: white;
+}
+.cellRow .cellLabel {
+  display: block;
+  flex-grow: 2;
+  color: #270043;
+}
+.cellRow .cellValue {
+  color: #929292;
+  text-align: right;
+}
+.cellRow .cellClosingIcon {
+  height: 29px;
+  float: right;
+}
+.cellRow .cellClosingIcon.download svg {
+  fill: #4B0082;
+  height: 29px;
+  margin-right: -9px;
+}
+.cellRow .cellClosingIcon.chevron svg {
+  fill: #929292;
+}
+.cellRowGroup {
+  font-size: 17px;
+  line-height: 29px;
+  display: block;
+  width: 100%;
+  margin: 10px auto 25px;
+}
+.cellRowGroup h6 {
+  padding: 0 15px;
+  font-weight: bold;
+  margin: 0;
+}
