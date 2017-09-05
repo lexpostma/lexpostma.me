@@ -23,7 +23,7 @@
 <?        
     } elseif( $basepage == 'about' ){
 ?>
-                <a href="#" title="Get in touch!" onclick="toggleDrawer('navigationElements'); 
+                <a href="#" title="Get in touch!" onclick="toggleDrawer(); 
                                                            changeItem('tabbarTooltip')">
                     <? include 'navigationIcons/contact.svg'  ?>
                     <div id="tabbarTooltip">
@@ -35,7 +35,7 @@
 <?        
     } elseif( $basepage == 'resume' ){
 ?>
-                <a href="#" title="Download my resume" onclick="toggleDrawer('navigationElements'); 
+                <a href="#" title="Download my resume" onclick="toggleDrawer(); 
                                                                 changeItem('tabbarTooltip')">
                     <? include 'navigationIcons/download.svg'  ?>
                     <div id="tabbarTooltip">
@@ -47,7 +47,7 @@
 <?        
     } else {
 ?>
-                <a href="#" title="Filter <? echo $pageTitle ?>" onclick="toggleDrawer('navigationElements')"  >
+                <a href="#" title="Filter <? echo $pageTitle ?>" onclick="toggleDrawer()"  >
                     <? include 'navigationIcons/filter.svg' ?>
                     <span class="tabName">Filters & more</span>
                 </a>
@@ -105,7 +105,7 @@
             <div id="actionDrawerNavigation">
                 <div id="actionDrawerTitleBar">
                     <h6>Title</h6>
-                    <a href="#" id="actionDrawerClose" onclick="toggleDrawer('navigationElements')">Close</a>
+                    <a href="#" id="actionDrawerClose" onclick="toggleDrawer()">Close</a>
                 </div>
                 <div id="actionDrawerContent">
 
@@ -117,7 +117,10 @@
 ?>
                 </div>
                 <script>
-                    function toggleDrawer(id) { $('#'+id).toggleClass('actionDrawerToggled'); }
+                    function toggleDrawer() { 
+                        $('#navigationElements').toggleClass('actionDrawerToggled');
+                        $('#contents').toggleClass('actionDrawerToggled');
+                    }
                     function changeItem(id)   { $('#'+id).addClass('changed');  }
                 </script>
             </div>
@@ -126,6 +129,6 @@
    | Filter indication bar |
    ------------------------->
 
-            <a href="#" onclick="toggleDrawer('navigationElements')" id="filterIndicationBar">Filtered by date, tag, author and keyword.</a>
+            <a href="#" onclick="toggleDrawer()" id="filterIndicationBar">Filtered by date, tag, author and keyword.</a>
 
         </div>
