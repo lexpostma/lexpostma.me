@@ -20,6 +20,7 @@
                     function toggleDrawer() { 
                         $('#navigationElements').toggleClass('actionDrawerToggled');
                         $('body').toggleClass('actionDrawerToggled');
+                        $('#contents').toggleClass('actionDrawerToggled');
                     }
                     function changeItem(id)   { $('#'+id).addClass('changed');  }
                 </script>
