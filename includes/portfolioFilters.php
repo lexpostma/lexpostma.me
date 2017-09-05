@@ -54,6 +54,7 @@
     };
 ?>
 
+<!--
 <form class="contentSearchForm" action="/search.php" method="get">
     <i class="fa fa-fw fa-search"></i>
     <input type="hidden" name="rest"   value="<?=makeNewFilterURL('search');?>">
@@ -94,12 +95,15 @@
 
 
 <a>Videos only</a>
+-->
 
-<div class="cellRowGroup">
+<ul class="cellRowGroup">
 <!--         <span class="cellGroupTitle">Download a pdf of my resume</span> -->
-    <a class="cellRow" href="/archive">
-        <div class="cellIcon"><i class="fa fa-archive"></i></div>
-        <span class="cellLabel">Oldies, but goodies</span>
-        <div class="cellClosingIcon chevron"><? include 'navigationIcons/chevron.svg'  ?></div>
-    </a>
-</div>
+    <li>
+        <a class="cellRow" href="/archive">
+            <div class="cellIcon"><i class="fa fa-archive"></i></div>
+            <span class="cellLabel">Oldies, but goodies</span>
+            <div class="cellClosingIcon chevron"><? include 'navigationIcons/chevron.svg'  ?></div>
+        </a>
+    </li>
+</ul>

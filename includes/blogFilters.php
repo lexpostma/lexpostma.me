@@ -54,6 +54,7 @@
     }
 ?>
 
+<!--
 <form class="contentSearchForm" action="/search.php" method="get">
     <i class="fa fa-fw fa-search"></i>
     <input type="hidden" name="rest"   value="<?=makeNewFilterURL('search');?>">
@@ -96,43 +97,56 @@
         </span>
     </div>
 </div>
+-->
 
 
-<div class="cellRowGroup">
-    <a class="cellRow" href="#">
-        <div class="cellIcon"><i class="fa fa-search"></i></div>
-        <span class="cellLabel">Search</span>
-        <div class="cellValue">Something</div>
-    </a>
-    <a class="cellRow" href="#">
-        <div class="cellIcon"><i class="fa fa-tag"></i></div>
-        <span class="cellLabel">Tag</span>
-        <div class="cellValue">Something</div>
-    </a>
-    <a class="cellRow" href="#">
-        <div class="cellIcon"><i class="fa fa-user"></i></div>
-        <span class="cellLabel">Author</span>
-        <div class="cellValue">Something</div>
-    </a>
-    <a class="cellRow" href="#">
-        <div class="cellIcon"><i class="fa fa-calendar"></i></div>
-        <span class="cellLabel">Date</span>
-        <div class="cellValue">Something</div>
-    </a>
-</div>
+<ul class="cellRowGroup">
+    <li class="cellRow">
+        <a href="#">
+            <div class="cellIcon"><i class="fa fa-search"></i></div>
+            <span class="cellLabel">Search</span>
+            <div class="cellValue">Something</div>
+        </a>
+    </li>
+    <li class="cellRow">
+        <a href="#">
+            <div class="cellIcon"><i class="fa fa-tag"></i></div>
+            <span class="cellLabel">Tag</span>
+            <div class="cellValue">Something</div>
+        </a>
+    </li>
+    <li class="cellRow">
+        <a href="#">
+            <div class="cellIcon"><i class="fa fa-user"></i></div>
+            <span class="cellLabel">Author</span>
+            <div class="cellValue">Something</div>
+        </a>
+    </li>
+    <li class="cellRow">
+        <a href="#">
+            <div class="cellIcon"><i class="fa fa-calendar"></i></div>
+            <span class="cellLabel">Date</span>
+            <div class="cellValue">Something</div>
+        </a>
+    </li>
+</ul>
 
 
 
-<div class="cellRowGroup">
+<ul class="cellRowGroup">
 <!--         <span class="cellGroupTitle">Download a pdf of my resume</span> -->
-    <a class="cellRow" href="/archive">
-        <div class="cellIcon"><i class="fa fa-archive"></i></div>
-        <span class="cellLabel">Archive</span>
-        <div class="cellClosingIcon chevron"><? include 'navigationIcons/chevron.svg'  ?></div>
-    </a>
-    <a class="cellRow" href="/about">
-        <div class="cellIcon"><i class="fa fa-pencil"></i></div>
-        <span class="cellLabel">About this blog</span>
-        <div class="cellClosingIcon chevron"><? include 'navigationIcons/chevron.svg'  ?></div>
-    </a>
-</div>
+    <li class="cellRow">
+        <a href="/archive">
+            <div class="cellIcon"><i class="fa fa-archive"></i></div>
+            <span class="cellLabel">Archive</span>
+            <div class="cellClosingIcon chevron"><? include 'navigationIcons/chevron.svg'  ?></div>
+        </a>
+    </li>
+    <li class="cellRow">
+        <a href="/about">
+            <div class="cellIcon"><i class="fa fa-pencil"></i></div>
+            <span class="cellLabel">About this blog</span>
+            <div class="cellClosingIcon chevron"><? include 'navigationIcons/chevron.svg'  ?></div>
+        </a>
+    </li>
+</ul>
