@@ -44,14 +44,13 @@
     } else { 
         echo '404';
     };
+    include '../includes/footer.php';
 ?>
         </main>
         
         <!-- Hide tabbar on scrolling down, but show on scroll up -->
         <script src="/scripts/stickyNavigation.js"></script>
 <?
-    include '../includes/footer.php';
-
     if(isset($tweetOn)){
 ?>
         <!-- Embed tweet styling from Twitter -->
