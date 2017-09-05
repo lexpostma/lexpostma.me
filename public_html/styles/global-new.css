@@ -481,3 +481,7 @@ li.cellRow a .cellClosingIcon.download svg {
 li.cellRow a .cellClosingIcon.chevron svg {
   fill: #929292;
 }
+li.cellRow.resetFilters .cellLabel {
+  text-align: center;
+  color: red;
+}

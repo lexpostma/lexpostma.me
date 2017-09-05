@@ -139,8 +139,13 @@
     <li class="cellRow">
         <a href="/videos">
             <div class="cellIcon"><i class="fa fa-fw fa-video-camera"></i></div>
-            <span class="cellLabel">Oldies, but gooies</span>
+            <span class="cellLabel">Videos only</span>
             <div class="cellClosingIcon chevron"><? include 'navigationIcons/chevron.svg'  ?></div>
+        </a>
+    </li>
+    <li class="cellRow resetFilters">
+        <a href="/">
+            <span class="cellLabel">Reset all filters</span>
         </a>
     </li>
 </ul>

@@ -143,6 +143,11 @@
             </div>
         </a>
     </li>
+    <li class="cellRow resetFilters">
+        <a href="/">
+            <span class="cellLabel">Reset all filters</span>
+        </a>
+    </li>
 </ul>
 
 
