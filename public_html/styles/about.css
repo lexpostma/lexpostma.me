@@ -1,1 +1,262 @@
-.blurredPurple{background-color:rgba(75,0,130,0.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}.orangeButton{display:inline-block;text-decoration:none;color:#f04400;padding:8px 1rem;border-radius:5px;-webkit-border-radius:5px}.orangeButton:hover{color:#fff;background:#f04400}.orangeButton:active{color:#fff;background:#4b0082}.sideText{font-style:italic;font-size:.9em;color:#a9a9a9}p.filterText span.line{white-space:normal}@media (min-width:330px){p.filterText span.line{white-space:nowrap}}@media (min-width:650px){.contentBlock img:first-child{border-top-left-radius:5px;border-top-right-radius:5px}}.favLists{overflow:hidden}.favLists ul,.favLists ol{float:left;width:100%}@media (min-width:400px){.favLists ul,.favLists ol{width:50%}}.favLists ul lh,.favLists ol lh{font-weight:bold}.favLists .link2{margin-left:2px;font-size:.65em;opacity:.9;border:1px solid #f04400;padding:0 2px;border-radius:3px;vertical-align:top}.favLists .link2:hover{border-color:#7d01d7;text-decoration:none !important}.favLists .link2:active{border-color:#4b0082;background:#4b0082;color:#fff !important}.counter{font-weight:bold;font-size:1.5em}.stats{overflow:hidden;margin-bottom:1rem}.stats p{margin:0;line-height:normal;padding:1rem;text-align:center;float:left;display:block;width:50%}@media (min-width:400px){.stats p{width:33%}}.stats p i,.stats p span{display:block;margin-bottom:3px}.stats p span i{display:inline}.stats p i.fa-heartbeat{color:#e21616}.stats p i.fa-twitter{color:#3cf}.stats p i.fa-arrows-v{color:#a9a9a9}.stats p i.fa-male{color:#fc9}.stats p i.fa-road{color:#515050}.stats p i.fa-pencil{color:#4b0082}.stats p i.fa-apple{color:#4e4e4e}.contact-text{text-align:center;min-height:4.5rem}.contact-text p{padding-top:1rem;padding-bottom:0}.contact-buttons{text-align:center;display:block;max-width:450px;margin:auto;padding-bottom:1rem}.contact-buttons a.button{margin:5px}.contact-buttons a.button svg{border:1px solid #fff;background-color:#fff;border-radius:50%;-webkit-border-radius:50%}.contact-buttons a.button:hover svg{border:1px solid #7d01d7;fill:#7d01d7 !important}.contact-buttons a.button:active svg{border:1px solid #4b0082;fill:#fff !important;background-color:#4b0082}.contact-buttons a.button.b-snapchat svg{stroke:#000}.internet-thing a{white-space:nowrap}.activities-text{text-align:center}.activities-text p{padding-top:1rem;padding-bottom:1rem;margin:auto}.activities-buttons{text-align:center}.activities-buttons a.button{margin:10px}.activities-buttons a.button svg{fill:#f04400;border:1px solid #fff;background-color:#fff;border-radius:50%;-webkit-border-radius:50%}.activities-buttons a.button:hover svg{border:1px solid #7d01d7;fill:#7d01d7}.activities-buttons a.button:active svg{border:1px solid #4b0082;fill:#fff;background-color:#4b0082}.fa-heartbeat{-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-duration:600ms;animation-duration:600ms;-webkit-animation-name:pulse;animation-name:pulse;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite}.b-schoollove:hover svg{-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-duration:400ms;animation-duration:400ms;-webkit-animation-name:pulse;animation-name:pulse;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite}.b-drinks:hover svg{-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:shake;animation-name:shake}.b-runweather:hover svg,.b-mess:hover svg,.b-tools:hover svg{-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:swing;animation-name:swing}@media (min-width:1300px){main#contents.about.home,main#contents.about.more{max-width:1200px}#aboutColumns{margin:80px auto;column-gap:80px;-moz-column-gap:80px;-webkit-column-gap:80px;column-count:2;-moz-column-count:2;-webkit-column-count:2}#aboutColumns .contentBlock{-webkit-column-break-inside:avoid;page-break-inside:avoid;break-inside:avoid;margin:auto auto 80px auto;display:inline-block;width:100%}#aboutColumns .contentBlock .contact-text p{margin-top:0}#aboutColumns .contentBlock.columnBreak{break-before:always;column-break-before:always;-moz-column-break-before:always;-webkit-column-break-before:always}}
+.blurredPurple {
+  background-color: rgba(75, 0, 130, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.orangeButton {
+  display: inline-block;
+  text-decoration: none;
+  color: #F04400;
+  padding: 8px 1rem;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+.orangeButton:hover {
+  color: white;
+  background: #F04400;
+}
+.orangeButton:active {
+  color: white;
+  background: #4B0082;
+}
+.sideText {
+  font-style: italic;
+  font-size: .9em;
+  color: DarkGray;
+}
+p.filterText span.line {
+  white-space: normal;
+}
+@media (min-width: 330px) {
+  p.filterText span.line {
+    white-space: nowrap;
+  }
+}
+@media (min-width: 650px) {
+  .contentBlock img:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+}
+.favLists {
+  overflow: hidden;
+}
+.favLists ul,
+.favLists ol {
+  float: left;
+  width: 100%;
+}
+@media (min-width: 400px) {
+  .favLists ul,
+  .favLists ol {
+    width: 50%;
+  }
+}
+.favLists ul lh,
+.favLists ol lh {
+  font-weight: bold;
+}
+.favLists .link2 {
+  margin-left: 2px;
+  font-size: .65em;
+  opacity: .9;
+  border: 1px solid #F04400;
+  padding: 0 2px;
+  border-radius: 3px;
+  vertical-align: top;
+}
+.favLists .link2:hover {
+  border-color: #7D01D7;
+  text-decoration: none !important;
+}
+.favLists .link2:active {
+  border-color: #4B0082;
+  background: #4B0082;
+  color: white !important;
+}
+.counter {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+.stats {
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+.stats p {
+  margin: 0;
+  line-height: normal;
+  padding: 1rem;
+  text-align: center;
+  float: left;
+  display: block;
+  width: 50%;
+}
+@media (min-width: 400px) {
+  .stats p {
+    width: 33%;
+  }
+}
+.stats p i,
+.stats p span {
+  display: block;
+  margin-bottom: 3px;
+}
+.stats p span i {
+  display: inline;
+}
+.stats p i.fa-heartbeat {
+  color: #E21616;
+}
+.stats p i.fa-twitter {
+  color: #33CCFF;
+}
+.stats p i.fa-arrows-v {
+  color: DarkGray;
+}
+.stats p i.fa-male {
+  color: #FFCC99;
+}
+.stats p i.fa-road {
+  color: #515050;
+}
+.stats p i.fa-pencil {
+  color: #4B0082;
+}
+.stats p i.fa-apple {
+  color: #4E4E4E;
+}
+.contact-text {
+  text-align: center;
+  min-height: 4.5rem;
+}
+.contact-text p {
+  padding-top: 1rem;
+  padding-bottom: 0;
+}
+.contact-buttons {
+  text-align: center;
+  display: block;
+  max-width: 450px;
+  margin: auto;
+  padding-bottom: 1rem;
+}
+.contact-buttons a.button {
+  margin: 5px;
+}
+.contact-buttons a.button svg {
+  border: 1px solid white;
+  background-color: white;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+.contact-buttons a.button:hover svg {
+  border: 1px solid #7D01D7;
+  fill: #7D01D7 !important;
+}
+.contact-buttons a.button:active svg {
+  border: 1px solid #4B0082;
+  fill: white   !important;
+  background-color: #4B0082;
+}
+.contact-buttons a.button.b-snapchat svg {
+  stroke: black;
+}
+.internet-thing a {
+  white-space: nowrap;
+}
+.activities-text {
+  text-align: center;
+}
+.activities-text p {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin: auto;
+}
+.activities-buttons {
+  text-align: center;
+}
+.activities-buttons a.button {
+  margin: 10px;
+}
+.activities-buttons a.button svg {
+  fill: #F04400;
+  border: 1px solid white;
+  background-color: white;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+.activities-buttons a.button:hover svg {
+  border: 1px solid #7D01D7;
+  fill: #7D01D7;
+}
+.activities-buttons a.button:active svg {
+  border: 1px solid #4B0082;
+  fill: white;
+  background-color: #4B0082;
+}
+.fa-heartbeat {
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 600ms;
+  animation-duration: 600ms;
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+.b-schoollove:hover svg {
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 400ms;
+  animation-duration: 400ms;
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+.b-drinks:hover svg {
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-name: shake;
+  animation-name: shake;
+}
+.b-runweather:hover svg,
+.b-mess:hover svg,
+.b-tools:hover svg {
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-name: swing;
+  animation-name: swing;
+}
+@media (min-width: 1300px) {
+  #aboutColumns {
+    margin: 80px auto;
+    column-gap: 80px;
+    -moz-column-gap: 80px;
+    -webkit-column-gap: 80px;
+    column-count: 2;
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+  }
+  #aboutColumns .contentBlock {
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin: auto auto 80px auto;
+    display: inline-block;
+    width: 100%;
+  }
+  #aboutColumns .contentBlock .contact-text p {
+    margin-top: 0;
+  }
+  #aboutColumns .contentBlock.columnBreak {
+    break-before: always;
+    column-break-before: always;
+    -moz-column-break-before: always;
+    -webkit-column-break-before: always;
+  }
+}
