@@ -35,10 +35,6 @@
             box-sizing: border-box;
 }
 
-html {
-    background-color: white;
-}
-
 html, body {
     width: 100%;
     overflow-x: hidden;
@@ -46,14 +42,14 @@ html, body {
 }
 
 body {
-    background-color: black;
-    padding-bottom: @tabbarHeight;
+    background-color: @color1;
 }
 
 main#contents {
     margin: auto;
     overflow: hidden;
     position: relative;
+    padding-bottom: @tabbarHeight;
     background-color: white;
     @media (min-width: @sizeChange) {
         background-color: @colorBackground;
@@ -181,17 +177,10 @@ nav#secondNavigation {
     left: 0;
     right: 0;
     .navShowHideTransition;
-//     overflow: hidden;
-
-//     max-height: calc(100vh);
-    max-height: ~"calc(100vh - @{tabbarHeight})";
     z-index: -10;
+    max-height: ~"calc(100vh - @{tabbarHeight})";
     transform: translateY(~"calc(100vh - ( @{tabbarHeight}) )");
-//     transform: translateY(100vh);
-//     border-top: @lineThickness solid @colorLine;
-    
-//     box-shadow: 0 10px 50px 0 rgba(0, 0, 0, .5);
-    &:before {
+    &:before { // Shadow at the top of the drawer, but without having it overlay the tabbar
         content: "";
         display: block;
         top: 0px;
@@ -326,8 +315,13 @@ main#contents {
         border-top-right-radius: 10px;
     }
 }
+body.actionDrawerToggled {
+    background-color: black;
+}
 
-
+body:not(.actionDrawerToggled) {
+    transition: background 0.2s ease-in 0.2s;
+}
 
 
 // Hide the navigation bar on scrolldown, show on scroll up (if action drawer is not opened)

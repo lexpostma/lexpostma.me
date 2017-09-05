@@ -53,9 +53,6 @@ input[type="search"] {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-html {
-  background-color: white;
-}
 html,
 body {
   width: 100%;
@@ -63,13 +60,13 @@ body {
   font-family: 'Source Sans Pro', Georgia, sans-serif;
 }
 body {
-  background-color: black;
-  padding-bottom: 50.5px;
+  background-color: #4B0082;
 }
 main#contents {
   margin: auto;
   overflow: hidden;
   position: relative;
+  padding-bottom: 50.5px;
   background-color: white;
 }
 @media (min-width: 500px) {
@@ -202,8 +199,8 @@ nav#secondNavigation a:hover {
   left: 0;
   right: 0;
   transition: transform 0.2s ease-in-out;
-  max-height: calc(100vh - 50.5px);
   z-index: -10;
+  max-height: calc(100vh - 50.5px);
   transform: translateY(calc(100vh - ( 50.5px) ));
 }
 #actionDrawerNavigation:before {
@@ -353,6 +350,12 @@ main#contents.actionDrawerToggled {
   opacity: .6;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+}
+body.actionDrawerToggled {
+  background-color: black;
+}
+body:not(.actionDrawerToggled) {
+  transition: background 0.2s ease-in 0.2s;
 }
 #navigationElements.tabbarHidden:not(.actionDrawerToggled) nav#tabbarNavigation {
   transform: translateY(50.5px);
