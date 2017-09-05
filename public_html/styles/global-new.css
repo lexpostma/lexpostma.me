@@ -56,7 +56,6 @@ input[type="search"] {
 html,
 body {
   width: 100%;
-  min-height: 1vh;
   overflow-x: hidden;
   font-family: 'Source Sans Pro', Georgia, sans-serif;
 }
@@ -66,7 +65,6 @@ body {
 main#contents {
   margin: auto;
   overflow: hidden;
-  min-height: 1vh;
   position: relative;
   padding-bottom: 50.5px;
   background-color: white;
