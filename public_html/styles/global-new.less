@@ -13,13 +13,15 @@
     transition: transform 0.2s ease-in-out;
 }
 .firstButtonActiveState {
-    #tabbarSpecialButton {
+    li.tabbarItem#tabbarSpecialItem a.tabbarLink,
+    li.tabbarItem#tabbarSpecialItem a.tabbarLink:hover {
         background-color: @color1;
         span.tabName {
             color: white;
         }
         svg {
             fill: white;
+            
         }
     }
 }
@@ -34,7 +36,9 @@
 }
 
 html {
-    background-color: black;
+    background-color: white;
+}
+
 html, body {
     width: 100%;
     overflow-x: hidden;
@@ -42,6 +46,7 @@ html, body {
 }
 
 body {
+    background-color: black;
     padding-bottom: @tabbarHeight;
 }
 
@@ -107,60 +112,53 @@ nav#tabbarNavigation {
     border-top: @lineThickness solid @colorLine;
     .navShowHideTransition;
     .translucentBackground;
-    ul {
+    ul#tabbarItemList {
         display: flex;
         justify-content: space-around;
-        li.tabbarItem {
-            display: block;
-            width: 20%;
-            position: relative;
-            a {
-                height: 50px;
-                display: block;
-                position: relative;
-                span.tabName {
-                    position: absolute;
-                    bottom: 2px;
-                    left: 0;
-                    right: 0;
-                    text-align: center;
-                    font-size: 10px;
-                    color: @colorInactive;
-                }
-                svg {
-                    height: 30px;
-                    width: 100%;
-                    margin: 3.5px auto;
-                    fill: @colorInactive;
-                }
-            }
-            a.noLabel {
-                svg {
-                    margin: 10px auto;
-                }
-            }
-            a.active, a:hover {
-                span.tabName {
-                    color: @color1;
-                }
-                svg {
-                    fill: @color1;
-                }
-            }
+        .firstButtonActiveState;
+    }
+}
+li.tabbarItem {
+    display: block;
+    width: 20%;
+    position: relative;
+    a.tabbarLink {
+        height: 50px;
+        display: block;
+        position: relative;
+        span.tabName {
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 10px;
+            color: @colorInactive;
         }
-        li.tabbarItem:first-child a {
-            border-right: @lineThickness solid @colorLine;
-    /*
-            background-color: white;
-            span.tabName {
-                color: white;
-            }
-            svg {
-                fill: white;
-            }
-    */
+        svg {
+            height: 30px;
+            width: 100%;
+            margin: 3.5px auto;
+            fill: @colorInactive;
         }
     }
+    a.tabbarLink.noLabel {
+        svg {
+            margin: 10px auto;
+        }
+    }
+    a.tabbarLink.active, a.tabbarLink:hover {
+        span.tabName {
+            color: @color1;
+        }
+        svg {
+            fill: @color1;
+        }
+    }
+}
+
+li.tabbarItem:first-child a.tabbarLink {
+    border-right: @lineThickness solid @colorLine;
 }
 
 nav#secondNavigation {
@@ -183,21 +181,34 @@ nav#secondNavigation {
     left: 0;
     right: 0;
     .navShowHideTransition;
-    overflow: hidden;
+//     overflow: hidden;
+
+//     max-height: calc(100vh);
+    max-height: ~"calc(100vh - @{tabbarHeight})";
+    z-index: -10;
+    transform: translateY(~"calc(100vh - ( @{tabbarHeight}) )");
+//     transform: translateY(100vh);
+//     border-top: @lineThickness solid @colorLine;
+    
+//     box-shadow: 0 10px 50px 0 rgba(0, 0, 0, .5);
+    &:before {
+        content: "";
+        display: block;
+        top: 0px;
+        left: 0;
+        right: 0;
+        bottom: 30px;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        filter: blur(20px);
+    }
+}
+#actionDrawerTitleBar {
     border-top-left-radius:  10px;
     border-top-right-radius: 10px;
 
-    max-height: calc(100vh);
-//     max-height: ~"calc(100vh - @{tabbarHeight})";
-    z-index: 800;
-//     transform: translateY(~"calc(100vh - ( @{tabbarHeight}) )");
-    transform: translateY(100vh);
-    border-top: @lineThickness solid @colorLine;
-    
-    box-shadow: 0 10px 50px 0 rgba(0, 0, 0, .5)
-}
-#actionDrawerTitleBar {
     background-color: white;
+    border-top:    @lineThickness solid @colorLine;
     border-bottom: @lineThickness solid @colorLine;
     position: relative;
     .iOSFontStyling;
@@ -218,7 +229,7 @@ nav#secondNavigation {
 }
 #actionDrawerContent {
     .translucentBackground;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 // Tabbar tooltip styling
@@ -245,7 +256,8 @@ nav#secondNavigation {
         z-index: 3;
         white-space: nowrap;
     }
-    div {
+    &:after {
+        content: '';
         width: 15px;
         height: 15px;
         background-color: inherit;
@@ -292,32 +304,28 @@ nav#tabbarNavigation a:hover div#tabbarTooltip span {
 }
 
 
+
 // When the action drawer is toggled, open the drawer, lock the tabbar, hide the filterbar and change the button
 #navigationElements.actionDrawerToggled {
     #actionDrawerNavigation {
-        transform: translateY(0);
+        transform: translateY(-@tabbarHeight);
     }
-
     #filterIndicationBar {
         transform: translateY(2 * @tabbarHeight);
     }
     .firstButtonActiveState;
 }
-/*
-body {
-    margin: 0;
-//     transition-property: margin, transform, border-radius;
+main#contents {
+    transition-property: opacity, transform, border-radius;
     transition-duration: .2s;
     transition-timing-function: ease-in-out;
+    &.actionDrawerToggled {
+        transform: scale(.9, .999) translateY(20px);
+        opacity: .6;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
 }
-body.actionDrawerToggled {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-//     margin: 20px auto 0;
-//     width: ~"calc(100% - 40px)";
-//     transform: scaleX(.9)
-}
-*/
 
 
 
@@ -355,75 +363,74 @@ body.actionDrawerToggled {
     }
 }
 
-nav#tabbarNavigation {
-    
-    ul.cellRowGroup {
-        .iOSFontStyling;
-        display: block;
-        width: 100%;
-        margin: 25px auto;
-        .cellGroupTitle {
-            padding: 0 15px;
-            font-weight: bold;
-        }
+ul.cellRowGroup {
+    .iOSFontStyling;
+    display: block;
+    width: 100%;
+    margin: 25px auto;
+    .cellGroupTitle {
+        padding: 0 15px;
+        font-weight: bold;
     }
-    li.cellRow {
-        .iOSFontStyling;
-        display: flex;
-        justify-content: flex-start;
-        align-content: center;
-        width: 100%;
-        background-color: white;
-        text-decoration: none;
-        padding: 7px 15px 8px;
-        position: relative;
-        .cellSeparator;
-        &:first-of-type {
-            border-top:    @lineThickness solid @colorLine;
-        }
-        &:last-of-type {
-            &:after {
-                content: none;
-            }
-            border-bottom: @lineThickness solid @colorLine;
-        }
-        .cellIcon {
-            height: 29px;
-            width: 29px;
-            border-radius: 6px;
-            background-color: red;
-            margin-right: 14px;
-            display: block;
-            text-align: center;
-            i {
-                color: white;
-            }
-        }
-        .cellLabel {
-            display: block;
-            flex-grow: 2;
-            color: @colorBodyText;
-        }
-        .cellValue {
-            color: @colorInactive;
-            text-align: right;
-        }
-        .cellClosingIcon {
-            height: 29px;
-            float: right;
-            &.download svg {
-                fill: @color1;
-                height: 29px;
-                margin-right: -9px
-            }
-            &.chevron svg {
-                fill: @colorInactive;
-            }
-        }
-    }
-    
-    
 }
+li.cellRow {
+    display: block;
+    width: 100%;
+    position: relative;
+    .cellSeparator;
+    &:first-of-type {
+        border-top:    @lineThickness solid @colorLine;
+    }
+    &:last-of-type {
+        &:after {
+            content: none;
+        }
+        border-bottom: @lineThickness solid @colorLine;
+    }
 
-
+}
+li.cellRow a {
+    .iOSFontStyling;
+    
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    width: 100%;
+    background-color: white;
+    text-decoration: none;
+    padding: 7px 15px 8px;
+    .cellIcon {
+        height: 29px;
+        width: 29px;
+        border-radius: 6px;
+        background-color: red;
+        margin-right: 14px;
+        display: block;
+        text-align: center;
+        i {
+            color: white;
+        }
+    }
+    .cellLabel {
+        display: block;
+        flex-grow: 2;
+        color: @colorBodyText;
+    }
+    .cellValue {
+        color: @colorInactive;
+        text-align: right;
+    }
+    .cellClosingIcon {
+        height: 29px;
+        float: right;
+        &.download svg {
+            fill: @color1;
+            height: 29px;
+            margin-right: -9px
+        }
+        &.chevron svg {
+            fill: @colorInactive;
+        }
+    }
+}
 
