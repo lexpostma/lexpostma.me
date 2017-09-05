@@ -16,13 +16,13 @@
 <?
     if( $basepageTwo !== 'home' && $basepageTwo !== 'filtered' ){
 ?>
-                    <li class="tabbarItem">
+                    <li class="tabbarItem" id="tabbarSpecialButton">
                         <a href="<?=$baseURL?>" title="Back to <? echo $pageTitle ?>" class="noLabel"><? include 'navigationIcons/back.svg'  ?></a>
                     </li>
 <?        
     } elseif( $basepage == 'about' ){
 ?>
-                    <li class="tabbarItem">
+                    <li class="tabbarItem" id="tabbarSpecialButton">
                         <a href="#" title="Get in touch!" onclick="toggleDrawer(); 
                                                                    changeItem('tabbarTooltip')">
                             <? include 'navigationIcons/contact.svg'  ?>
@@ -37,7 +37,7 @@
 <?        
     } elseif( $basepage == 'resume' ){
 ?>
-                    <li class="tabbarItem">
+                    <li class="tabbarItem" id="tabbarSpecialButton">
                         <a href="#" title="Download my resume" onclick="toggleDrawer(); 
                                                                         changeItem('tabbarTooltip')">
                             <? include 'navigationIcons/download.svg'  ?>
@@ -52,7 +52,7 @@
 <?        
     } else {
 ?>
-                    <li class="tabbarItem">
+                    <li class="tabbarItem" id="tabbarSpecialButton">
                         <a href="#" title="Filter <? echo $pageTitle ?>" onclick="toggleDrawer()"  >
                             <? include 'navigationIcons/filter.svg' ?>
                             <span class="tabName">Filters & more</span>

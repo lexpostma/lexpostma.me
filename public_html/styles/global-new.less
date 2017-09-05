@@ -13,7 +13,7 @@
     transition: transform 0.2s ease-in-out;
 }
 .firstButtonActiveState {
-    nav#tabbarNavigation a:first-child {
+    #tabbarSpecialButton {
         background-color: @color1;
         span.tabName {
             color: white;
@@ -25,10 +25,22 @@
 }
 
 
-
+html {
+    background-color: black;
+}
 
 body {
     padding-bottom: @tabbarHeight;
+}
+
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    li {
+        display: inline-block;
+    }
 }
 
 header#titleHeader {
@@ -36,6 +48,7 @@ header#titleHeader {
     color: white;
     width: 100%;
     height: 50px;
+    position: relative;
     span#mainTitle {
         line-height: 50px;
         font-size: 24px;
@@ -63,8 +76,6 @@ header#titleHeader {
 }
 
 nav#tabbarNavigation {
-    display: flex;
-    justify-content: space-around;
     position: fixed;
     left: 0;
     right: 0;
@@ -73,48 +84,58 @@ nav#tabbarNavigation {
     border-top: @lineThickness solid @colorLine;
     .navShowHideTransition;
     .translucentBackground;
-    a {
-        display: block;
-        height: 50px;
-        width: 20%;
-        position: relative;
-        span.tabName {
-            position: absolute;
-            bottom: 2px;
-            left: 0;
-            right: 0;
-            text-align: center;
-            font-size: 10px;
-            color: @colorInactive;
+    ul {
+        display: flex;
+        justify-content: space-around;
+        li.tabbarItem {
+            display: block;
+            width: 20%;
+            position: relative;
+            a {
+                height: 50px;
+                display: block;
+                position: relative;
+                span.tabName {
+                    position: absolute;
+                    bottom: 2px;
+                    left: 0;
+                    right: 0;
+                    text-align: center;
+                    font-size: 10px;
+                    color: @colorInactive;
+                }
+                svg {
+                    height: 30px;
+                    width: 100%;
+                    margin: 3.5px auto;
+                    fill: @colorInactive;
+                }
+            }
+            a.noLabel {
+                svg {
+                    margin: 10px auto;
+                }
+            }
+            a.active, a:hover {
+                span.tabName {
+                    color: @color1;
+                }
+                svg {
+                    fill: @color1;
+                }
+            }
         }
-        svg {
-            height: 30px;
-            width: 100%;
-            margin: 3.5px auto;
-            fill: @colorInactive;
-        }
-    }
-    a:first-child {
-        border-right: @lineThickness solid @colorLine;
-//         background-color: white;
-        span.tabName {
-//             color: white;
-        }
-        svg {
-//             fill: white;
-        }
-    }
-    a.noLabel {
-        svg {
-            margin: 10px auto;
-        }
-    }
-    a.active, a:hover {
-        span.tabName {
-            color: @color1;
-        }
-        svg {
-            fill: @color1;
+        li.tabbarItem:first-child a {
+            border-right: @lineThickness solid @colorLine;
+    /*
+            background-color: white;
+            span.tabName {
+                color: white;
+            }
+            svg {
+                fill: white;
+            }
+    */
         }
     }
 }
@@ -143,9 +164,11 @@ nav#secondNavigation {
     border-top-left-radius:  10px;
     border-top-right-radius: 10px;
 
-    max-height: ~"calc(100vh - @{tabbarHeight})";
+    max-height: calc(100vh);
+//     max-height: ~"calc(100vh - @{tabbarHeight})";
     z-index: 800;
-    transform: translateY(~"calc(100vh - @{tabbarHeight})");
+//     transform: translateY(~"calc(100vh - ( @{tabbarHeight}) )");
+    transform: translateY(100vh);
     border-top: @lineThickness solid @colorLine;
     
     box-shadow: 0 10px 50px 0 rgba(0, 0, 0, .5)
@@ -166,6 +189,8 @@ nav#secondNavigation {
         position: absolute;
         top: 7px;
         right: 15px;
+        text-decoration: none;
+        color: @color1;
     }
 }
 #actionDrawerContent {
@@ -253,7 +278,7 @@ nav#tabbarNavigation a:hover div#tabbarTooltip span {
 // When the action drawer is toggled, open the drawer, lock the tabbar, hide the filterbar and change the button
 #navigationElements.actionDrawerToggled {
     #actionDrawerNavigation {
-        transform: translateY(-@tabbarHeight);
+        transform: translateY(0);
     }
 
     #filterIndicationBar {
@@ -261,6 +286,23 @@ nav#tabbarNavigation a:hover div#tabbarTooltip span {
     }
     .firstButtonActiveState;
 }
+/*
+body {
+    margin: 0;
+//     transition-property: margin, transform, border-radius;
+    transition-duration: .2s;
+    transition-timing-function: ease-in-out;
+}
+body.actionDrawerToggled {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+//     margin: 20px auto 0;
+//     width: ~"calc(100% - 40px)";
+//     transform: scaleX(.9)
+}
+*/
+
+
 
 
 // Hide the navigation bar on scrolldown, show on scroll up (if action drawer is not opened)
@@ -295,73 +337,76 @@ nav#tabbarNavigation a:hover div#tabbarTooltip span {
         height: @lineThickness;
     }
 }
-.cellRow {
-    .iOSFontStyling;
-    display: flex;
-    justify-content: flex-start;
-    align-content: center;
-    width: 100%;
-    background-color: white;
-    text-decoration: none;
-    padding: 7px 15px 8px;
-    position: relative;
-    .cellSeparator;
-    &:first-of-type {
-        border-top:    @lineThickness solid @colorLine;
-    }
-    &:last-of-type {
-        &:after {
-            content: none;
-        }
-        border-bottom: @lineThickness solid @colorLine;
-    }
-    .cellIcon {
-        height: 29px;
-        width: 29px;
-        border-radius: 6px;
-        background-color: red;
-        margin-right: 14px;
+
+nav#tabbarNavigation {
+    
+    ul.cellRowGroup {
+        .iOSFontStyling;
         display: block;
-        text-align: center;
-        i {
-            color: white;
+        width: 100%;
+        margin: 25px auto;
+        .cellGroupTitle {
+            padding: 0 15px;
+            font-weight: bold;
         }
     }
-    .cellLabel {
-        display: block;
-        flex-grow: 2;
-        color: @colorBodyText;
-    }
-    .cellValue {
-        color: @colorInactive;
-        text-align: right;
-    }
-    .cellClosingIcon {
-        height: 29px;
-        float: right;
-        &.download svg {
-            fill: @color1;
+    li.cellRow {
+        .iOSFontStyling;
+        display: flex;
+        justify-content: flex-start;
+        align-content: center;
+        width: 100%;
+        background-color: white;
+        text-decoration: none;
+        padding: 7px 15px 8px;
+        position: relative;
+        .cellSeparator;
+        &:first-of-type {
+            border-top:    @lineThickness solid @colorLine;
+        }
+        &:last-of-type {
+            &:after {
+                content: none;
+            }
+            border-bottom: @lineThickness solid @colorLine;
+        }
+        .cellIcon {
             height: 29px;
-            margin-right: -9px
+            width: 29px;
+            border-radius: 6px;
+            background-color: red;
+            margin-right: 14px;
+            display: block;
+            text-align: center;
+            i {
+                color: white;
+            }
         }
-        &.chevron svg {
-            fill: @colorInactive;
+        .cellLabel {
+            display: block;
+            flex-grow: 2;
+            color: @colorBodyText;
+        }
+        .cellValue {
+            color: @colorInactive;
+            text-align: right;
+        }
+        .cellClosingIcon {
+            height: 29px;
+            float: right;
+            &.download svg {
+                fill: @color1;
+                height: 29px;
+                margin-right: -9px
+            }
+            &.chevron svg {
+                fill: @colorInactive;
+            }
         }
     }
+    
+    
 }
-.cellRowGroup {
-    .iOSFontStyling;
-    display: block;
-    width: 100%;
-    margin: 10px auto 25px;
-    .cellGroupTitle {
-        padding: 0 15px;
-        font-weight: bold;
-    }
-}
-
-
-
 
 
 
