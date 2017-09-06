@@ -1,20 +1,23 @@
+<?
+        if( $basepage == 'portfolio' ){  $actionDrawerContentIncludeFile = 'portfolioFilters.php'; $actionDrawerTitle = 'Filters & more';}
+    elseif( $basepage == 'blog' ){       $actionDrawerContentIncludeFile = 'blogFilters.php';      $actionDrawerTitle = 'Filters & more';}
+    elseif( $basepage == 'resume' ){     $actionDrawerContentIncludeFile = 'resumeDownload.php';   $actionDrawerTitle = 'Download the pdf';}
+    elseif( $basepage == 'about' ){      $actionDrawerContentIncludeFile = 'aboutContact.php';     $actionDrawerTitle = 'Let’s talk';}
+?>
+
+
+
 <!—----------------
    | Action Drawer |
    ----------------->
 
             <div id="actionDrawerNavigation">
                 <div id="actionDrawerTitleBar">
-                    <span>Title</span>
+                    <span><?=$actionDrawerTitle?></span>
                     <a href="#" id="actionDrawerClose" onclick="toggleDrawer()">Close</a>
                 </div>
                 <div id="actionDrawerContent">
-
-<?
-        if( $basepage == 'portfolio' ){  include 'portfolioFilters.php'; }
-    elseif( $basepage == 'blog' ){       include 'blogFilters.php';      }
-    elseif( $basepage == 'resume' ){     include 'resumeDownload.php';   }
-    elseif( $basepage == 'about' ){      include 'aboutContact.php';     }
-?>
+                    <? include $actionDrawerContentIncludeFile; ?>
                 </div>
                 <script>
                     function toggleDrawer() { 

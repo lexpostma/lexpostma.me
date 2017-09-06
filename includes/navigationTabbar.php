@@ -31,7 +31,7 @@
                                 <span>Get in touch!</span>
                             </div>
                             <? include 'navigationIcons/contact.svg'  ?>
-                            <span class="tabName">Let's talk</span>
+                            <span class="tabName">Let’s talk</span>
                         </a>
                         <? include 'navigationActionDrawer.php'  ?>
                     </li>
