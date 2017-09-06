@@ -370,7 +370,7 @@ body:not(.actionDrawerToggled) {
 }
 #navigationElements.tabbarMinified:not(.actionDrawerToggled) li.tabbarItem a.tabbarLink.noLabel svg {
   transition: margin 0.2 ease-in-out;
-  margin: 0 auto;
+  margin: 3.5px auto;
 }
 .iOSFontStyling {
   font-size: 17px;
