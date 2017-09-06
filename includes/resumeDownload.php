@@ -1,3 +1,11 @@
+<?
+/*
+    Original flag icons from 
+    https://commons.wikimedia.org/wiki/File:Square_Flag_of_the_United_Kingdom.svg
+    https://commons.wikimedia.org/wiki/File:Flag_of_the_Netherlands.svg
+*/
+?>
+
 <ul class="cellRowGroup">
     <li class="cellRow resumeDownloadItem">
         <a href="/public-files/CV-Lex-Postma-en-web.pdf" 
