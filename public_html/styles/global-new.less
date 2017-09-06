@@ -141,6 +141,7 @@ li.tabbarItem {
     }
     a.tabbarLink.noLabel {
         svg {
+            transition: margin .2 ease-in-out;
             margin: 10px auto;
         }
     }
@@ -350,6 +351,10 @@ body:not(.actionDrawerToggled) {
     }
     #filterIndicationBar {
         transform: translateY(12px);
+    }
+    li.tabbarItem a.tabbarLink.noLabel svg {
+        transition: margin .2 ease-in-out;
+        margin: 0 auto;
     }
 }
 

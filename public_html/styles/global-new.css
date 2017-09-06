@@ -156,6 +156,7 @@ li.tabbarItem a.tabbarLink svg {
   fill: #929292;
 }
 li.tabbarItem a.tabbarLink.noLabel svg {
+  transition: margin 0.2 ease-in-out;
   margin: 10px auto;
 }
 li.tabbarItem a.tabbarLink.active span.tabName,
@@ -366,6 +367,10 @@ body:not(.actionDrawerToggled) {
 }
 #navigationElements.tabbarMinified:not(.actionDrawerToggled) #filterIndicationBar {
   transform: translateY(12px);
+}
+#navigationElements.tabbarMinified:not(.actionDrawerToggled) li.tabbarItem a.tabbarLink.noLabel svg {
+  transition: margin 0.2 ease-in-out;
+  margin: 0 auto;
 }
 .iOSFontStyling {
   font-size: 17px;
