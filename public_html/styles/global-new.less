@@ -488,3 +488,30 @@ li.cellRow.resetFilters {
         color: red;
     }
 }
+
+li.cellRow.contactItem a {
+    .cellIcon#contactIcon_snapchat {
+        border: @lineThickness solid @colorLine;
+        svg {
+            margin: -@lineThickness;
+            stroke: black;
+            stroke-width: 2px;
+        }
+    }
+    .cellIcon#contactIcon_instagram {
+        /* Instagram CSS gradient by Ana Tudor https://codepen.io/thebabydino/pen/qZvvBM */
+        background: radial-gradient(circle at 33% 100%, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF);
+    }
+}
+li.cellRow.resumeDownloadItem a .cellIcon {
+    background-color: inherit;
+    border: .5px solid @colorLine;
+    svg {    
+        width:  30px;
+        height: 30px;
+        margin: -1px;
+    }
+}
+
+
+
