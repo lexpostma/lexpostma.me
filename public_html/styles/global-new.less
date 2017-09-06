@@ -180,8 +180,11 @@ nav#secondNavigation {
     right: 0;
     .navShowHideTransition;
     z-index: -10;
-    max-height: ~"calc(100vh - @{tabbarHeight})";
-    transform: translateY(~"calc(100vh - ( @{tabbarHeight}) )");
+    overflow: hidden;
+    max-height: ~"calc(100vh - 2* @{tabbarHeight})";
+    transform: translateY(~"calc(100vh - @{tabbarHeight} )");
+    display: flex;
+    flex-direction: column;
     &:before { // Shadow at the top of the drawer, but without having it overlay the tabbar
         content: "";
         display: block;
@@ -220,7 +223,9 @@ nav#secondNavigation {
 }
 #actionDrawerContent {
     .translucentBackground;
+    align-items: stretch;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 // Tabbar tooltip styling
@@ -416,7 +421,8 @@ li.cellRow a {
         height: 29px;
         width: 29px;
         border-radius: 6px;
-        background-color: red;
+        background-color: red; // temporary color!
+        overflow: hidden;
         margin-right: 14px;
         display: block;
         text-align: center;
