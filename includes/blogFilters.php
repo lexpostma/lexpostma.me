@@ -99,7 +99,7 @@
     <li class="cellRow <?if(isset($dateFilter)){ echo'filterOn';}?>">
         <a href="#">
             <div class="cellIcon"><i class="fa fa-fw fa-calendar"></i></div>
-            <span class="cellLabel">Publish date</span>
+            <span class="cellLabel">Publishing date</span>
             <div class="cellValue">
                 <select onchange="window.open(this.value,'_self');" onfocus="focusFilter('selectDate');" onblur="stopFilter('selectDate');" title="Filter by date">
                     <?=$selectDate?>
