@@ -34,13 +34,13 @@ function hasScrolled() {
     // Unless they reached the bottom, or are scrolling up.
     if ((windowHeight + scrollPosition) >= docHeight) {
         // Bottom of the page
-        $('#navigationElements').removeClass('tabbarHidden');
+        $('#navigationElements').removeClass('tabbarMinified');
     } else if ( (scrollPosition > lastScrollPosition) && (scrollPosition > titleBarHeight) ){
         // Scrolling down
-        $('#navigationElements').addClass('tabbarHidden');
+        $('#navigationElements').addClass('tabbarMinified');
     } else {
         // Scrolling up
-        $('#navigationElements').removeClass('tabbarHidden');
+        $('#navigationElements').removeClass('tabbarMinified');
     }
 
     lastScrollPosition = scrollPosition;

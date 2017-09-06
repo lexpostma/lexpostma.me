@@ -357,6 +357,16 @@ body:not(.actionDrawerToggled) {
 #navigationElements.tabbarHidden:not(.actionDrawerToggled) #filterIndicationBar {
   transform: translateY(50.5px);
 }
+#navigationElements.tabbarMinified:not(.actionDrawerToggled) nav#tabbarNavigation {
+  transform: translateY(12px);
+}
+#navigationElements.tabbarMinified:not(.actionDrawerToggled) nav#tabbarNavigation a #tabbarTooltip {
+  transform: translateY(100px);
+  animation: none;
+}
+#navigationElements.tabbarMinified:not(.actionDrawerToggled) #filterIndicationBar {
+  transform: translateY(12px);
+}
 .iOSFontStyling {
   font-size: 17px;
   line-height: 29px;

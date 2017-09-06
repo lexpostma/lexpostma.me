@@ -340,6 +340,20 @@ body:not(.actionDrawerToggled) {
     }
 }
 
+#navigationElements.tabbarMinified:not(.actionDrawerToggled) {
+    nav#tabbarNavigation {
+        transform: translateY(12px);
+        a #tabbarTooltip {
+            transform: translateY(100px);
+            animation: none;
+        }
+    }
+    #filterIndicationBar {
+        transform: translateY(12px);
+    }
+}
+
+
 
 // iOS style cell row elements
 .iOSFontStyling {
