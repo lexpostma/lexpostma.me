@@ -1,15 +1,14 @@
-<?
-# ================================================================= #
-# ====     Title bar and secundary navigation are in index.php ==== #
-# ================================================================= #
-?>
-
         <div id="navigationElements" class="<? echo $basepageTwo ?>">
 
-<!—------------------------------
-   | Primary navigation, tab bar |
-   ------------------------------->
+<?
+// Title bar and secundary navigation are in index.php
 
+# ===================================== #
+# ==== Primary navigation, tab bar ==== #
+# ===================================== #
+
+
+?>
             <nav id="tabbarNavigation">
                 <ul id="tabbarItemList">
 
@@ -65,13 +64,13 @@
                         <? include 'navigationActionDrawer.php'  ?>
                     </li>
 <?
-    }
+    };
+    
+# =============================== #
+# ==== Main navigation items ==== #
+# =============================== #
+
 ?>
-
-<!—------------------------
-   | Main navigation items |
-   ------------------------->
-
                     <li class="tabbarItem">
                         <a href="<?=$portURL?>" title="Portfolio" class="tabbarLink <? if( $basepage == 'portfolio'){ echo('active'); } ?>" >
                             <? include 'navigationIcons/portfolio.svg'?>
