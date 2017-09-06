@@ -369,7 +369,7 @@ body:not(.actionDrawerToggled) {
   transform: translateY(12px);
 }
 #navigationElements.tabbarMinified:not(.actionDrawerToggled) li.tabbarItem a.tabbarLink.noLabel svg {
-  transform: translateY(6.5px);
+  transform: translateY(-6.5px);
 }
 .iOSFontStyling {
   font-size: 17px;
