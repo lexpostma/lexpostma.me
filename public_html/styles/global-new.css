@@ -333,9 +333,10 @@ main#contents {
   transition-property: opacity, transform, border-radius;
   transition-duration: .2s;
   transition-timing-function: ease-in-out;
+  transform-origin: top;
 }
 main#contents.actionDrawerToggled {
-  transform: scale(0.9, 0.999) translateY(20px);
+  transform: scale(0.9, 0.9) translateY(20px);
   opacity: .6;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
