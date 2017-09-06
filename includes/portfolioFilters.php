@@ -53,39 +53,6 @@
         else{                                                   $selectYear .= "<option value='".makeNewFilterURL('year')."&year=".$row['year']."'          >".$row['year']."</option>";            };
     };
 ?>
-<!--
-
-<form class="contentSearchForm" action="/search.php" method="get">
-
-    <input type="hidden" name="rest"   value="<?=makeNewFilterURL('search');?>">
-    <input type="search" name="search" placeholder="Search for projects" title="Search for projects"
-        <? if(isset($searchFilter)){ echo ' value="'.$searchFilter.'" ';}?>>
-</form>
-
-<div class="wrappedBox">
-    <div class="selectsBox">
-        <span id="selectCategory" class="filter <?if(isset($categoryFilter)){ echo'filterOn';}?>">
-            <select onchange="window.open(this.value,'_self');" onfocus="focusFilter('selectCategory');" onblur="stopFilter('selectCategory');" title="Filter by category">
-            <?=$selectCategory?>
-            </select>
-        </span>
-        <span id="selectYear" class="filter <?if(isset($yearFilter)){ echo'filterOn';}?>">
-            <select onchange="window.open(this.value,'_self');" onfocus="focusFilter('selectYear');" onblur="stopFilter('selectYear');" title="Filter by year">
-                <?=$selectYear?>
-            </select>
-        </span>
-        <span id="selectClient" class="filter <?if(isset($clientFilter)){ echo'filterOn';}?>">
-            <select onchange="window.open(this.value,'_self');" onfocus="focusFilter('selectClient');" onblur="stopFilter('selectClient');" title="Filter by client">
-                <?=$selectClient?>
-            </select>
-        </span>
-    </div>
-
-</div>
--->
-
-
-
 
 <ul class="cellRowGroup">
     <li class="cellRow <?if(isset($searchFilter)){ echo'filterOn';}?>">

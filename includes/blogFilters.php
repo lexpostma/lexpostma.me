@@ -54,42 +54,6 @@
     }
 ?>
 
-<!--
-<form class="contentSearchForm" action="/search.php" method="get">
-
-    <input type="hidden" name="rest"   value="<?=makeNewFilterURL('search');?>">
-    <input type="search" name="search" placeholder="Search for blog posts" title="Search for blog posts"
-        <? if(isset($searchFilter)){ echo ' value="'.$searchFilter.'" ';}?>>
-</form>
-
-<div class="wrappedBox">
-    <div class="selectsBox">
-        <span id="selectTag" class="filter <?if(isset($tagFilter)){ echo'filterOn';}?>">
-            <select onchange="window.open(this.value,'_self');" onfocus="focusFilter('selectTag');" onblur="stopFilter('selectTag');" title="Filter by tag">
-                <?=$selectTag?>
-            </select>
-        </span>
-<?
-    if(isset($selectAuthor)){
-?>
-        <span id="selectAuthor" class="filter <?if(isset($authorFilter)){ echo'filterOn';}?>">
-            <select onchange="window.open(this.value,'_self');" onfocus="focusFilter('selectAuthor');" onblur="stopFilter('selectAuthor');" title="Filter by author">
-                <?if(isset($selectAuthor)){ echo $selectAuthor;}?>
-            </select>
-        </span>
-<?
-    }
-?>
-        <span id="selectDate" class="filter <?if(isset($dateFilter)){ echo'filterOn';}?>">
-            <select onchange="window.open(this.value,'_self');" onfocus="focusFilter('selectDate');" onblur="stopFilter('selectDate');" title="Filter by date">
-                <?=$selectDate?>
-            </select>
-        </span>
-    </div>
-</div>
--->
-
-
 <ul class="cellRowGroup">
     <li class="cellRow <?if(isset($searchFilter)){ echo'filterOn';}?>">
         <a href="#">
