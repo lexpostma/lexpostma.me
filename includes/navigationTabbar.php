@@ -3,11 +3,12 @@
 <?
 // Title bar and secundary navigation are in index.php
 
+
 # ===================================== #
 # ==== Primary navigation, tab bar ==== #
 # ===================================== #
 
-
+    $gaMainNavEvent = " 'send', 'event', 'Navigation', 'Navigate tab bar',";
 ?>
             <nav id="tabbarNavigation">
                 <ul id="tabbarItemList">
@@ -16,7 +17,7 @@
     if( $basepageTwo !== 'home' && $basepageTwo !== 'filtered' ){
 ?>
                     <li class="tabbarItem" id="tabbarSpecialItem">
-                        <a href="<?=$baseURL?>" title="Back to <? echo $pageTitle ?>" class="tabbarLink noLabel"><? include 'navigationIcons/back.svg'  ?></a>
+                        <a href="<?=$baseURL?>" title="Back to <?=$basepageTitle ?>" class="tabbarLink noLabel" onclick="ga(<?=$gaMainNavEvent?> 'Back to <?=$basepage?>');"><? include 'navigationIcons/back.svg'  ?></a>
                     </li>
 <?        
     } else {
@@ -27,7 +28,7 @@
                     <li class="tabbarItem" id="tabbarSpecialItem">
                         <a class="tabbarLink" href="#" 
                                 title="<?=$tabbarSpecialItemTitle?>" 
-                                onclick="toggleDrawer(); changeItem('tabbarTooltip')">
+                                onclick="toggleDrawer(); ga(<?=$gaMainNavEvent?> 'Toggle drawer on <?=$basepage?>'); changeItem('tabbarTooltip')">
 <?
         if($tabbarSpecialItemTooltip){
 ?>
@@ -51,25 +52,37 @@
 
 ?>
                     <li class="tabbarItem">
-                        <a href="<?=$portURL?>" title="Portfolio" class="tabbarLink <? if( $basepage == 'portfolio'){ echo('active'); } ?>" >
+                        <a class="tabbarLink <? if( $basepage == 'portfolio'){ echo('active'); } ?>" 
+                                href="<?=$portURL?>" 
+                                onclick="ga(<?=$gaMainNavEvent?> 'Portfolio');"
+                                title="Portfolio" >
                             <? include 'navigationIcons/portfolio.svg'?>
                             <span class="tabName">Portfolio</span>
                         </a>
                     </li>
                     <li class="tabbarItem">
-                        <a href="<?=$blogURL?>" title="Blog"      class="tabbarLink <? if( $basepage == 'blog'){      echo('active'); } ?>" >
+                        <a class="tabbarLink <? if( $basepage == 'blog'){      echo('active'); } ?>"
+                                href="<?=$blogURL?>" 
+                                onclick="ga(<?=$gaMainNavEvent?> 'Blog');"
+                                title="Blog" >
                             <? include 'navigationIcons/blog.svg'     ?>
                             <span class="tabName">Blog</span>
                         </a>
                     </li>
                     <li class="tabbarItem">
-                        <a href="<?=$resuURL?>" title="Resume"    class="tabbarLink <? if( $basepage == 'resume'){    echo('active'); } ?>" >
+                        <a class="tabbarLink <? if( $basepage == 'resume'){    echo('active'); } ?>" 
+                                href="<?=$resuURL?>"
+                                onclick="ga(<?=$gaMainNavEvent?> 'Resumé');"
+                                title="Resumé" >
                             <? include 'navigationIcons/resume.svg'   ?>
                             <span class="tabName">Resumé</span>
                         </a>
                     </li>
                     <li class="tabbarItem">
-                        <a href="<?=$abouURL?>" title="About Lex" class="tabbarLink <? if( $basepage == 'about'){     echo('active'); } ?>" >
+                        <a class="tabbarLink <? if( $basepage == 'about'){     echo('active'); } ?>"
+                                href="<?=$abouURL?>" 
+                                onclick="ga(<?=$gaMainNavEvent?> 'About');"
+                                title="About Lex" >
                             <? include 'navigationIcons/about.svg'    ?>
                             <span class="tabName">About Lex</span>
                         </a>
