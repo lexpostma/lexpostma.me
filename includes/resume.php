@@ -65,7 +65,7 @@
 
 ?>
 
-<h1 class="resume-category"><i class="fa fa-comments"></i><span>References</span></h1>
+<h1 class="resume-category" id="references"><i class="fa fa-comments"></i><span>References</span></h1>
 <div class="contentBlock resume-category-set">
 <?
         	while($row = mysqli_fetch_array($referencesResult)){
