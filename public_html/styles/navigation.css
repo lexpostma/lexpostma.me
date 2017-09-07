@@ -58,8 +58,7 @@ ul.cellRowGroup {
   padding: 0;
   margin: 0;
 }
-nav ul li,
-ul.cellRowGroup li {
+nav ul li {
   display: inline-block;
 }
 /* =================
@@ -456,7 +455,6 @@ li.cellRow.resetFilters .cellLabel {
 }
 li.cellRow.contactItem a .cellIcon svg {
   fill: white;
-  padding-top: 1px;
 }
 li.cellRow.contactItem a .cellIcon#contactIcon_snapchat {
   border: 0.5px solid #B2B2B2;
