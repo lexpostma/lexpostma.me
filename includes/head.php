@@ -136,25 +136,12 @@
 
 
 
+/*
     // detect whether browser is mobile, use FastClick to optimize touches
     require_once("Mobile_Detect.php");
     $detect = new Mobile_Detect();
-    if( $detect ->isMobile()) {
-?>
-
-        <!-- FastClick • touch optimized clicks -->
-<!--
-        <script type='application/javascript' src='/scripts/fastclick.min.js'></script>
-        <script>
-            if ('addEventListener' in document) {
-                document.addEventListener('DOMContentLoaded', function() {
-                    FastClick.attach(document.body);
-                }, false);
-            }
-        </script>
--->
-<?
-    };
+    if( $detect ->isMobile()) {};
+*/
 
 ?>
 
