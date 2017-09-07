@@ -183,7 +183,7 @@ nav#secondNavigation a {
   position: absolute;
   bottom: 50.5px;
   width: 100%;
-  max-height: calc(100vh - 2.3 * 50.5px);
+  max-height: calc(100vh - 3.3 * 50.5px);
   transform: translateY(100vh);
   display: flex;
   flex-direction: column;
