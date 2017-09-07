@@ -1,15 +1,14 @@
-/**
-   Hide tabbar on scroll down, show on scroll up
-   https://medium.com/@mariusc23/hide-header-on-scroll-down-show-on-scroll-up-67bbaae9a78c
-   And show when reaching the bottom
-   https://stackoverflow.com/questions/9439725/javascript-how-to-detect-if-browser-window-is-scrolled-to-bottom
-**/
-
+/* *
+   * 
+   * Hide tabbar on scroll down, show on scroll up
+   * https://medium.com/@mariusc23/hide-header-on-scroll-down-show-on-scroll-up-67bbaae9a78c
+   * And show when reaching the bottom
+   * https://stackoverflow.com/questions/9439725/javascript-how-to-detect-if-browser-window-is-scrolled-to-bottom
+   * 
+ */
 var didScroll;
 var lastScrollPosition = 0;
 var delta = 10;
-var titleBarHeight = $('#titleHeader').outerHeight();
-var windowHeight = window.innerHeight;
 
 $(window).scroll(function(event){
     didScroll = true;
@@ -32,10 +31,10 @@ function hasScrolled() {
     
     // If they scrolled down and are past the navbar, add class .tabbarHidden.
     // Unless they reached the bottom, or are scrolling up.
-    if ((windowHeight + scrollPosition) >= docHeight) {
+    if ((window.innerHeight + scrollPosition) >= docHeight) {
         // Bottom of the page
         $('#navigationElements').removeClass('tabbarOnScrollDown');
-    } else if ( (scrollPosition > lastScrollPosition) && (scrollPosition > titleBarHeight) ){
+    } else if ( (scrollPosition > lastScrollPosition) && (scrollPosition > $('#titleHeader').outerHeight()) ){
         // Scrolling down
         $('#navigationElements').addClass('tabbarOnScrollDown');
     } else {
