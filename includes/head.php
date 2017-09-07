@@ -143,6 +143,7 @@
 ?>
 
         <!-- FastClick • touch optimized clicks -->
+<!--
         <script type='application/javascript' src='/scripts/fastclick.min.js'></script>
         <script>
             if ('addEventListener' in document) {
@@ -151,6 +152,7 @@
                 }, false);
             }
         </script>
+-->
 <?
     };
 
