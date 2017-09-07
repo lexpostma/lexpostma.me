@@ -67,7 +67,8 @@
         
         <!-- Apple / iOS -->
         <meta name="apple-mobile-web-app-title" content="Lex Postma" />
-        <meta name="apple-mobile-web-app-capable" content="no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
         <link rel="apple-touch-icon-precomposed" 	sizes="60x60"		href="/images/icons/Icon-60.png" />
         <link rel="apple-touch-icon-precomposed" 	sizes="120x120"		href="/images/icons/Icon-60@2x.png" />
         <link rel="apple-touch-icon-precomposed" 	sizes="180x180"		href="/images/icons/Icon-60@3x.png" />
