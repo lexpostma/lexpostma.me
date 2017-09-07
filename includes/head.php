@@ -136,12 +136,10 @@
 
 
 
-/*
     // detect whether browser is mobile, use FastClick to optimize touches
     require_once("Mobile_Detect.php");
     $detect = new Mobile_Detect();
-    if( $detect ->isMobile()) {};
-*/
+//     if( $detect ->isMobile()) {};
 
 ?>
 
