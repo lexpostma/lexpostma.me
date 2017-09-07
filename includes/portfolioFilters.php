@@ -94,7 +94,7 @@
     <li class="cellRow <?if(isset($clientFilter)){ echo'filterOn';}?>">
         <a href="#">
             <div class="cellIcon"><i class="fa fa-fw fa-building"></i></div>
-            <span class="cellLabel">Tag</span>
+            <span class="cellLabel">Client</span>
             <div class="cellValue">
                 <select onchange="window.open(this.value,'_self');" onfocus="focusFilter('selectClient');" onblur="stopFilter('selectClient');" title="Filter by client">
                     <?=$selectClient?>
