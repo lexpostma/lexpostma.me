@@ -2,6 +2,7 @@
    * 
    * Hide tabbar on scroll down, show on scroll up
    * https://medium.com/@mariusc23/hide-header-on-scroll-down-show-on-scroll-up-67bbaae9a78c
+   * http://jsfiddle.net/mariusc23/s6mLJ/31/
    * And show when reaching the bottom
    * https://stackoverflow.com/questions/9439725/javascript-how-to-detect-if-browser-window-is-scrolled-to-bottom
    * 
