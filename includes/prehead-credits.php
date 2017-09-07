@@ -1,9 +1,9 @@
 <?
-    $pageTitle      = 'Credits for Lex’ website';
+    $basepageTitle  = 'Credits for Lex’ website';
     $navigationName = 'credits';
 
-    $seoTitle       = $pageTitle;
-    $seoDescription = $pageTitle;
+    $seoTitle       = $basepageTitle;
+    $seoDescription = $basepageTitle;
     $seoKeywords    = 'credits';
     $seoAuthor      = 'Lex Postma';
     $seoType        = 'website';

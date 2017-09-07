@@ -1,8 +1,8 @@
 <?
-    $pageTitle      = 'Lex’ portfolio';
+    $basepageTitle  = 'Lex’ portfolio';
     $navigationName = 'portfolio';
     
-    $seoTitle       = $pageTitle;
+    $seoTitle       = $basepageTitle;
     $seoDescription = 'Portfolio by Lex Postma. I design things.'; // also in the feedbuilder
     $seoKeywords    = 'portfolio,Apple,TU,Delft,design';
     $seoAuthor      = 'Lex Postma';

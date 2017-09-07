@@ -1,8 +1,8 @@
 <?
-    $pageTitle      = 'Lex’ resumé';
+    $basepageTitle  = 'Lex’ resumé';
     $navigationName = 'resume';
 
-    $seoTitle       = $pageTitle;
+    $seoTitle       = $basepageTitle;
     $seoDescription = 'Resumé of Lex Postma. My experience, skills, education, work, interests and references, all in one place.';
     $seoKeywords    = 'TU,Delft,CV,curriculum vitae,Industrial Design,engineering,Apple';
     $seoAuthor      = 'Lex Postma';

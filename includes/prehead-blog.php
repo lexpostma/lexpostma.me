@@ -1,8 +1,8 @@
 <?
-    $pageTitle      = 'Lex’ blog';
+    $basepageTitle  = 'Lex’ blog';
     $navigationName = 'blog';
 
-    $seoTitle       = $pageTitle;
+    $seoTitle       = $basepageTitle;
     $seoDescription = 'Personal blog, by Lex Postma. I blog about Apple, tech, apps, design and sometimes sports.'; // also in the feedbuilder
     $seoKeywords    = 'Apple,tech,design,sport,apps';
     $seoAuthor      = 'Lex Postma';

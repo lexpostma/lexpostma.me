@@ -1,5 +1,5 @@
             <header id="titleHeader">
-                <span id="mainTitle"><a href="<? echo $baseURL ?>"><? echo $pageTitle ?></a></span>
+                <span id="mainTitle"><a href="<?=$baseURL ?>"><?=$basepageTitle ?></a></span>
                 <a id="mainLogo" href="/">
                     <? include '../public_html/images/lex-logo.svg'; ?>
                 </a>

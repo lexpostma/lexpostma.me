@@ -1,8 +1,8 @@
 <?
-    $pageTitle      = 'About Lex';
+    $basepageTitle  = 'About Lex';
     $navigationName = 'about';
 
-    $seoTitle       = $pageTitle;
+    $seoTitle       = $basepageTitle;
     $seoDescription = 'Personal blog, portfolio, résumé and more, by Lex Postma. I blog about Apple, tech, apps, design and sometimes sports.';
     $seoKeywords    = 'blog,resume,portfolio,Apple,TU,Delft,design,tech,sport';
     $seoAuthor      = 'Lex Postma';
