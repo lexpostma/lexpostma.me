@@ -1346,7 +1346,7 @@ tr:nth-child(even) {
 tr:hover {
   background-color: silver;
 }
-.ownName {
+.nowrap {
   white-space: nowrap;
 }
 span.searchhighlight {

@@ -85,7 +85,7 @@
             if (strpos($clientCountShort,'tudelft') !== false){ $clientCountShort = 'tudelft'; };
             
 	        if($i++){                       $clientsComplete .= ', '; };
-            $clientsComplete .= '<span class="ownName"><a href="'.makeNewFilterURL('client').'&client='.$clientCountShort.'" title="View projects for '.$clientCount.'">'.$clientCount.'</a></span>';
+            $clientsComplete .= '<span class="nowrap"><a href="'.makeNewFilterURL('client').'&client='.$clientCountShort.'" title="View projects for '.$clientCount.'">'.$clientCount.'</a></span>';
             
             if (empty($clientPromo) && $row['showLogo'] == 1) { $clientPromo = $clientCountShort; };
         };
@@ -115,9 +115,9 @@
     		$creatorLink = $row['link'];
     		$creatorLinkedIn = $row['linkedin'];
 	        if($i++){                       $creatorsComplete .= ', '; };
-    		if($creatorLink != ''){         $creatorsComplete .= '<span class="ownName"><a title="'.$creatorName.'’s website" class="creator" href="'.$creatorLink.'">'.$creatorName.'</a></span>';	 }
-    		elseif($creatorLinkedIn != ''){	$creatorsComplete .= '<span class="ownName"><a title="'.$creatorName.'’s LinkedIn" href="'.$creatorLinkedIn.'">'.$creatorName.'</a></span>'; }
-    		else{						    $creatorsComplete .= '<span class="ownName">'.$creatorName.'</span>';		                             };
+    		if($creatorLink != ''){         $creatorsComplete .= '<span class="nowrap"><a title="'.$creatorName.'’s website" class="creator" href="'.$creatorLink.'">'.$creatorName.'</a></span>';	 }
+    		elseif($creatorLinkedIn != ''){	$creatorsComplete .= '<span class="nowrap"><a title="'.$creatorName.'’s LinkedIn" href="'.$creatorLinkedIn.'">'.$creatorName.'</a></span>'; }
+    		else{						    $creatorsComplete .= '<span class="nowrap">'.$creatorName.'</span>';		                             };
 
     	};
         $creatorsComplete .= '. ';
