@@ -455,6 +455,7 @@ li.cellRow.resetFilters .cellLabel {
 }
 li.cellRow.contactItem a .cellIcon svg {
   fill: white;
+  padding-top: 1px;
 }
 li.cellRow.contactItem a .cellIcon#contactIcon_snapchat {
   border: 0.5px solid #B2B2B2;
