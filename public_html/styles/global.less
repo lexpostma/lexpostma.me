@@ -1,6 +1,7 @@
 @import "variables.less";
 @import "animate-custom.less";
 
+/*
 p,
 h1,h2,h3,h4,h5,h6,
 figcaption,caption,
@@ -9,6 +10,7 @@ math {
     padding-right: @sidePadding;
     color: @color1-4;
 }
+*/
 
 /*
 p, li, footer {
@@ -16,11 +18,13 @@ p, li, footer {
 }
 */
 
+/*
 ul, ol {
     padding-right: @sidePadding;
 }
 ul {    padding-left: 2.3rem;   }
 ol {    padding-left: 2.6rem;   }
+*/
 
 
 
@@ -32,6 +36,7 @@ ol {    padding-left: 2.6rem;   }
 
 
 p, h1, h2, h3, h4, h5, h6, li, blockquote, figcaption {
+/*
     a {
                     color: @color2; text-decoration: none;
 //             &:link {    color: @color2; text-decoration: none;      }
@@ -40,6 +45,8 @@ p, h1, h2, h3, h4, h5, h6, li, blockquote, figcaption {
 //             &:visited { color: @color5;  }
         @media (monochrome) {       text-decoration: underline; }
     }
+*/
+/*
     time {
         a.blend:hover + a {
             color: @color3;
@@ -49,9 +56,11 @@ p, h1, h2, h3, h4, h5, h6, li, blockquote, figcaption {
             color: @color1;
         }
     }
+*/
 
 }
 
+/*
 .contentBlock {
     background-color: white;
     margin: @objectSpace auto;
@@ -61,12 +70,14 @@ p, h1, h2, h3, h4, h5, h6, li, blockquote, figcaption {
         -webkit-border-radius: @borderRad;
     }
 }
+*/
 
 p, h1, h2, h3, h4, h5, h6, ul, ol, figcaption {
 //     &:first-child {   padding-top:    @sidePadding;  margin-top: 0;    }
 //     &:last-child {    padding-bottom: @sidePadding;  margin-bottom: 0  }
 }
 
+/*
 p, li, blockquote {
     hanging-punctuation: first;
 }
@@ -79,6 +90,7 @@ img, video, figure {
     line-height: .9;
     margin: 0 auto;
 }
+*/
 
 @media (min-width: @contentWidth) {
     .contentBlock {
@@ -95,6 +107,7 @@ img, video, figure {
     }
 }
 
+/*
 iframe {
     width: 100%;
 }
@@ -144,7 +157,9 @@ blockquote {
     padding: 0 @sidePadding;
     margin: 1em 0 1em @sidePadding;
 }
+*/
 
+/*
 pre {
     position:relative;
     max-height:30em;
@@ -216,22 +231,28 @@ th+th, td+td, th+td, td+th {
 tr:nth-child(odd) {  background-color: white;            }
 tr:nth-child(even) { background-color: @colorBackground; }
 tr:hover {           background-color: silver;           }
+*/
 
 
 
-.ownName {
+/*
+.nowrap {
     white-space: nowrap;
 }
+*/
 
 span.searchhighlight {
     background: yellow;
 }
 
 
+/*
 a.sharing i {
     margin: auto 5px;
 }
+*/
 
+/* // moved to portfolio.less
 .morePostInfoBlock {
     ul {
         padding: @sidePadding;
@@ -251,14 +272,17 @@ a.sharing i {
 
     }
 }
+*/
 
 /* To center Instagram embeds
     https://twitter.com/laurentboileau/status/727450850583523329
     https://jsfiddle.net/frxg1yq5/
 */
+/*
 .instagram-media {
     margin: 0 auto !important;
 }
+*/
 
 
 
@@ -330,7 +354,8 @@ aside.contentBlock.noResults {
 }
 
 
-footer#main-footer {
+/*
+footer#pageFooter {
     text-align: center;
     font-style: italic;
     font-size: 15px;
@@ -346,3 +371,4 @@ footer#main-footer {
         &:nth-of-type(3)::selection{ background-color: #21468B; }
     }
 }
+*/

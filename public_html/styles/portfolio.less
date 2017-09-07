@@ -163,6 +163,26 @@ main#contents.portfolio.post h1 {
     @media(min-width: @contentWidth) { font-size: 55px; }
 }
 
+.morePostInfoBlock {
+    ul {
+        padding: @sidePadding;
+        li {
+            padding-left: 10px;
+            ul {
+                padding-bottom: 0;
+                padding-top: 0;
+            }
+        }
+        li i.fa-li {
+            color: @color1;
+        }
+        li+li {
+            margin-top: 5px;
+        }
+
+    }
+}
+
 .morePostInfoBlock { 
     overflow: auto; // to fix a margin issue from the .infoClientLogo img.
                                    border-top: 1px solid @color1;

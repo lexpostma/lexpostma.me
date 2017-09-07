@@ -1,29 +1,6 @@
 @import "variables.less";
 @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,700,700i&subset=latin-ext';
 
-// Variables
-.translucentBackground {
-    background-color: rgba(250,250,250,0.9);
-            backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
-@tabbarHeight: 50.5px;
-@lineThickness: 0.5px;
-.navShowHideTransition {
-    transition: transform 0.2s ease-in-out;
-}
-.firstButtonActiveState {
-    li.tabbarItem#tabbarSpecialItem a.tabbarLink {
-        background-color: @color1;
-        span.tabName {
-            color: white;
-        }
-        svg {
-            fill: white;
-            
-        }
-    }
-}
 
 
 /* ==============
@@ -58,15 +35,6 @@ main#contents {
     }
 }
 
-nav ul,
-ul.cellRowGroup {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    li {
-        display: inline-block;
-    }
-}
 
 header#titleHeader {
     background-color: @color1;
@@ -78,7 +46,7 @@ header#titleHeader {
         line-height: 50px;
         font-size: 24px;
         font-weight: bold;
-        padding-left: 20px;
+        padding-left: @sidePadding;
         a {
             color: white;
             text-decoration: none;
@@ -100,478 +68,250 @@ header#titleHeader {
     }
 }
 
-#navigationElements {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    height: @tabbarHeight;
+
+
+p,
+h1,h2,h3,h4,h5,h6,
+figcaption,caption,
+math {
+    padding-left:  @sidePadding;
+    padding-right: @sidePadding;
+    color: @color1-4;
 }
 
-/* =================
-   TABBAR NAVIGATION
-   ================= */
-
-nav#tabbarNavigation {
-    position: absolute;
-    bottom: 0;
-    z-index: 10;
-    border-top: @lineThickness solid @colorLine;
-    .navShowHideTransition;
-    .translucentBackground;
-    ul#tabbarItemList {
-        display: flex;
-        justify-content: space-around;
-//         .firstButtonActiveState;
-    }
+p {
+    line-height: 160%;
 }
 
-li.tabbarItem {
+a {
+                color: @color2; text-decoration: none;
+    &:link {    color: @color2; text-decoration: none;      }
+    &:hover {   color: @color3; text-decoration: underline; }
+    &:active {  color: @color1; text-decoration: underline; }
+    &:visited { color: @color5;  }
+    @media (monochrome) {       text-decoration: underline; }
+}
+
+ul, ol {
+    padding-right: @sidePadding;
+}
+
+ul {    padding-left: 2.3rem;   }
+ol {    padding-left: 2.6rem;   }
+
+p, li, blockquote {
+    hanging-punctuation: first;
+}
+
+img, video, figure {
+    width: 100%;
+    height: auto;
     display: block;
-    width: 20%;
+    line-height: .9;
+    margin: 0 auto;
+}
+
+iframe {
+    width: 100%;
+}
+
+figure {
+    display: block;
+    margin: 0;
+}
+
+.video-container {
     position: relative;
-    a.tabbarLink {
-        height: 50px;
-        display: block;
-        position: relative;
-        span.tabName {
-            position: absolute;
-            bottom: 2px;
-            left: 0;
-            right: 0;
-            text-align: center;
-            font-size: 10px;
-            color: @colorInactive;
-        }
-        svg {
-            height: 30px;
-            width: 100%;
-            margin: 3.5px auto;
-            fill: @colorInactive;
-        }
-    }
-    a.tabbarLink.noLabel {
-        svg {
-            transition: transform .2s ease-in-out;
-            margin: 10px auto;
-        }
-    }
-    a.tabbarLink.active {
-        span.tabName {
-            color: @color1;
-        }
-        svg {
-            fill: @color1;
-        }
+    padding-bottom: 56.25%;
+//     padding-top: 30px;
+    height: 0; 
+    overflow: hidden;
+    iframe, object, embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
 }
 
-li.tabbarItem:first-child a.tabbarLink {
-    border-right: @lineThickness solid @colorLine;
-}
-
-// Tabbar tooltip
-@keyframes float { // Floating animation from https://codepen.io/MarioDesigns/pen/woJgeo
-	0% {		transform: translateY(0px);	    }
-	50% {		transform: translateY(-3px);	}
-	100% {		transform: translateY(0px);   	}
-}
-
-#tabbarTooltip {
-    position: absolute;
-    background-color: @color1;
-    color: white;
-    bottom: 54px;
-    left: 4px;
-    display: block;
+figcaption {
+    font-style: italic;
     text-align: center;
-    padding: 4px 7px 6px;
-    border-radius: 5px;
-   	animation: float 3s ease-in-out infinite;
-    .navShowHideTransition;
-    transition: bottom .2s ease-in-out;
-    z-index: 1;
-    span {
-        position: relative;
-        z-index: 3;
+    color: @color4;
+    margin-top: @sidePadding;
+}
+
+hr {
+    background-color: @color4;
+    height: 1px;
+    border: none;
+    margin: 0;
+}
+
+blockquote {
+//     opacity: .9;
+    color: rgba(39, 0, 67, .9);
+    p {
+        color: rgba(39, 0, 67, .9);
+        padding: 0 !important;
+    }
+    font-style: italic;
+    text-align: left;
+    border-left: 3px solid @color1;
+    padding: 0 @sidePadding;
+    margin: 1em 0 1em @sidePadding;
+}
+
+pre {
+    position:relative;
+    max-height:30em;
+    line-height: 150%;
+    margin: @sidePadding;
+    padding: @sidePadding;
+            border-radius: @borderRad;
+    -webkit-border-radius: @borderRad;
+    background: @colorBackground;
+}
+
+code {
+    max-height: 29em;
+    font-size: .9em;
+}
+
+:not(pre) > code { // inline code
+    padding: .2em;
+            border-radius: @borderRad;
+    -webkit-border-radius: @borderRad;
+    background-color: @colorBackground;
+}
+
+math {
+    justify-content: center;
+    width: 100%;
+}
+
+/* To center Instagram embeds
+    https://twitter.com/laurentboileau/status/727450850583523329
+    https://jsfiddle.net/frxg1yq5/
+*/
+.instagram-media {
+    margin: 0 auto !important;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+// For the sharing at the end of a portfolio project
+a.sharing i {
+    margin: auto 5px;
+}
+
+// Adjustment for date link in blogposts
+time {
+    a.blend:hover + a {
+        color: @color3;
+        text-decoration: underline;
+    }
+    a.blend:active + a {
+        color: @color1;
+    }
+}
+
+.contentBlock {
+    background-color: white;
+    margin: @objectSpace auto;
+    position: relative;
+}
+
+
+
+
+
+
+/* ======
+   TABLES
+   ====== */
+
+caption {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: .8em;
+    margin-bottom: 5px;
+}
+.table-block {
+    width: 100%;
+    overflow: scroll;
+    margin: 1rem auto;
+    table {
+        margin: 0;
+    }
+}
+table {
+    margin: 1rem auto;
+    width: 100%;
+    font-size: .9em;
+    border-top: 1px solid @color4;
+    border-bottom: 1px solid @color4;
+    th {
+        background-color: @color4;
+        color: white;
         white-space: nowrap;
     }
-    &:after {
-        content: '';
-        width: 15px;
-        height: 15px;
-        background-color: inherit;
-        position: absolute;
-        z-index: 0;
-        bottom: -5px;
-        left: 21px;
-        transform: rotate(45deg);
+    &.nobreak { white-space: nowrap; }
+}
+table:hover th {
+    background-color: @color2;
+}
+th, td {
+    padding: 5px;
+    &.numeric { text-align: right; }
+}
+
+th+th, td+td, th+td, td+th {
+    border-left: 1px solid @color4;
+}
+
+tr:nth-child(odd) {  background-color: white;            }
+tr:nth-child(even) { background-color: @colorBackground; }
+tr:hover {           background-color: silver;           }
+
+
+
+
+
+
+
+/* ======
+   FOOTER
+   ====== */
+
+footer#pageFooter p {
+    font-style: italic;
+    font-size: 15px;
+    color: @color4;
+    margin: @objectSpace 0;
+    a:link, a:visited { 
+        color: @color4;
+        text-decoration: underline;
     }
-    &.changed { // Don't show tooltip again after it's been changed (eg. clicked)
-        display: none;
-    }
+//     a:hover {           color: @color2; }
+//     a:active {          color: @color1; }
 }
 
 
-/* ====================
-   SECUNDARY NAVIGATION
-   ==================== */
-
-nav#secondNavigation {
-    padding: 2px 10px;
-    vertical-align: bottom;
-    a {
-        display: inline-block;
-        text-decoration: none;
-        color: @color1;
-        padding: 5px 10px;
-    }
-}
-
-
-/* =============
-   ACTION DRAWER
-   ============= */
-
-@actionDrawerHeight: ~"calc(100vh - 2.3 * @{tabbarHeight})";
-
-#actionDrawerNavigation {
-    .navShowHideTransition;
-    position: absolute;
-    bottom: 50.5px;
-    width: 100%;
-    max-height: @actionDrawerHeight;
-    transform: translateY(100vh);
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0px 20px 50px black;
-}
-#actionDrawerClosingBackground {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    bottom: 0;
-    display: none;
-    z-index: -1;
-    cursor: pointer;
-}
-#actionDrawerTitleBar {
-    border-top-left-radius:  10px;
-    border-top-right-radius: 10px;
-    border-top:    @lineThickness solid @colorLine;
-
-    background-color: white;
-    border-bottom: @lineThickness solid @colorLine;
-    position: relative;
-    .iOSFontStyling;
-    padding: 7px 15px 8px;
-    span {
-        text-align: center;
-        font-weight: bold;
-        width: 100%;
-        display: block;
-    }
-    a#actionDrawerClose {
-        position: absolute;
-        top: 7px;
-        right: 15px;
-        text-decoration: none;
-        color: @color1;
-    }
-}
-
-#actionDrawerContent {
-    .translucentBackground;
-    align-items: stretch;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-
-
-/* ==========
-   FILTER BAR
-   ========== */
-
-// Add and alter elements when a view is filtered
-#navigationElements.filtered {
-    #filterIndicationBar {
-        display: block;
-        position: absolute;
-        bottom: @tabbarHeight;
-        left: 0;
-        right: 0;
-        z-index: 8;
-        .navShowHideTransition;
-        .translucentBackground;
-        color: @color1;
-        padding: 5px 10px;
-        text-decoration: none;
-        text-align: center;
-        border-top: @lineThickness solid @colorLine;
-    }
-    .firstButtonActiveState;
-}
-
-
-/* =======================
-   TABBAR HIDDEN ON SCROLL
-   ======================= */
-
-   // Minimize the navigation bar on scrolldown, 
-   // show fully on scroll up (if action drawer is not opened)
-
-#navigationElements.tabbarOnScrollDown:not(.actionDrawerToggled) {
-    nav#tabbarNavigation {
-        -webkit-transform: translateY(13px);
-                transform: translateY(13px);
-        a #tabbarTooltip {
-            bottom: -100px;
-            animation: none;
-        }
-    }
-    #filterIndicationBar {
-        transform: translateY(13px);
-    }
-    li.tabbarItem a.tabbarLink.noLabel svg {
-        transform: translateY(-6.5px);
-    }
-}
-
-
-/* =====================
-   ACTION DRAWER TOGGLED
-   ===================== */
-
-   // When the action drawer is toggled, open the drawer, 
-   // lock the tabbar, hide the filterbar, change the button
-   // shrink the main contents and darken the background
-   
-#navigationElements.actionDrawerToggled {
-    #actionDrawerNavigation {
-        transform: translateY(0);
-/*
-        -webkit-transform: translateY(-@tabbarHeight);
-                transform: translateY(-@tabbarHeight);
-*/
-    }
-    #filterIndicationBar {
-        transform: translateY(2* @tabbarHeight);
-    }
-    .firstButtonActiveState;
-    #actionDrawerClosingBackground {
-        display: block;
-    }
-}
-
-main#contents {
-    transition-property: opacity, transform, border-radius;
-    transition-duration: .2s;
-    transition-timing-function: ease-in-out;
-    transform-origin: top;
-    &.actionDrawerToggled {
-        -webkit-transform: scale(.9, .9) translateY(20px);
-                transform: scale(.9, .9) translateY(20px);
-        opacity: .6;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-    }
-}
-
-body.actionDrawerToggled {
-    background-color: black;
-}
-
-body:not(.actionDrawerToggled) {
-    transition: background 0.2s ease-in 0.2s;
-}
-
-
-/* ===========================
-   iOS STYLE CELL ROW ELEMENTS
-   =========================== */
-
-.iOSFontStyling {
-    font-size: 17px;
-    line-height: 29px;
-}
-.cellSeparator {
-    &:after {
-        content:''; 
-        position: absolute;
-        left: 59px;
-        right: 0px;
-        bottom: -@lineThickness;
-        z-index: 8;
-        background: @colorLine;
-        height: @lineThickness;
-    }
-}
-
-ul.cellRowGroup {
-    .iOSFontStyling;
-    display: block;
-    width: 100%;
-    margin: 25px auto;
-    .cellGroupTitle {
-        padding: 0 15px;
-        font-weight: bold;
-    }
-}
-
-li.cellRow {
-    display: block;
-    width: 100%;
-    position: relative;
-    .cellSeparator;
-    &:first-of-type {
-        border-top:    @lineThickness solid @colorLine;
-    }
-    &:last-of-type {
-        &:after {
-            content: none;
-        }
-        border-bottom: @lineThickness solid @colorLine;
-    }
-}
-
-li.cellRow a {
-    .iOSFontStyling;
-    
-    display: flex;
-    justify-content: flex-start;
-    align-content: center;
-    width: 100%;
-    background-color: white;
-    text-decoration: none;
-    padding: 7px 15px 8px;
-}
-
-.cellIcon {
-    height: 29px;
-    width: 29px;
-    border-radius: 6px;
-    background-color: red; // TODO color!
-    overflow: hidden;
-    margin-right: 14px;
-    display: block;
-    text-align: center;
-    i {
-        color: white;
-        &.fa-tag {
-            padding-left: 1px;
-            padding-top: 7px;                
-        }
-        &.fa-building {
-            padding-left: 2px;
-            padding-top: 7px;
-        }
-    }
-}
-
-.cellLabel {
-    display: block;
-    flex-grow: 2;
-    color: @colorBodyText;
-}
-
-.cellValue {
-    color: @colorInactive;
-    text-align: right;
-    max-width: 40%; // TODO
-    overflow: hidden;
-    input, select {
-        background: none;
-        border: none;
-        outline: none;
-        -webkit-appearance: none;
-           -moz-appearance: none;
-                appearance: none;
-        text-decoration: none;
-                border-radius: 0;
-        -webkit-border-radius: 0;
-        text-align: right;
-        direction: rtl;
-        option, optgroup {
-            direction: ltr;
-        }
-    }
-
-}
-
-.cellClosingIcon {
-    height: 29px;
-    float: right;
-    &.download svg {
-        fill: @color1;
-        height: 29px;
-        margin-right: -9px
-    }
-    &.chevron svg {
-        fill: @colorInactive;
-    }
-}
-
-li.cellRow.filterOn a {
-    .cellValue {
-        color: @colorBodyText;
-    }
-    .cellClosingIcon {
-        
-    }
-}
-
-li.cellRow.resetFilters {
-//     margin-top: 10px;
-    .cellLabel {
-        text-align: center;
-        color: red;
-    }
-}
-
-li.cellRow.contactItem a {
-    .cellIcon svg {
-        fill: white;
-        padding-top: 1px;
-    }
-    .cellIcon#contactIcon_snapchat {
-        border: @lineThickness solid @colorLine;
-        svg {
-            margin: -@lineThickness;
-            stroke: black;
-            stroke-width: 2px;
-        }
-    }
-    .cellIcon#contactIcon_instagram {
-        /* Instagram CSS gradient by Ana Tudor https://codepen.io/thebabydino/pen/qZvvBM */
-        background: radial-gradient(circle at 33% 100%, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF);
-    }
-}
-
-li.cellRow.resumeDownloadItem a .cellIcon {
-    background-color: inherit;
-    border: .5px solid @colorLine;
-    svg {    
-        width:  30px;
-        height: 30px;
-        margin: -1px;
-    }
-}
 
 
 /* ===============
    DESKTOP STYLING
    =============== */
 
-nav#tabbarNavigation a:hover div#tabbarTooltip span {
-//     text-decoration: underline;
+/*
+.contentBlock {
+    @media (min-width: @contentWidth) {
+                border-radius: @borderRad;
+        -webkit-border-radius: @borderRad;
+    }
 }
-
-nav#secondNavigation a:hover {
-//     text-decoration: underline;    
-}
-
-#actionDrawerNavigation {
-//     max-width: 400px;
-//     margin: auto calc(.5*(100vw - 400px));
-}
+*/
