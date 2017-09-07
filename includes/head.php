@@ -84,8 +84,7 @@
         <!-- Styles and scripts -->
         <link rel="stylesheet" href="/styles/normalize.css">
 
-<!--         <link rel="stylesheet" href="/styles/global.css"> -->
-        <link rel="stylesheet" href="/styles/global-new.css">
+        <link rel="stylesheet" href="/styles/global.css">
         <link rel="stylesheet" href="/styles/navigation.css">
         <link rel="stylesheet" href="/styles/<?=$basepage?>.css">
         <link rel="stylesheet" href="/fonts/font-awesome/css/font-awesome.min.css">

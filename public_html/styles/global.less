@@ -1,7 +1,75 @@
 @import "variables.less";
-@import "animate-custom.less";
+@import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,700,700i&subset=latin-ext';
 
-/*
+
+
+/* ==============
+   GLOBAL STYLING
+   ============== */
+
+*, *:before, *:after, input[type="search"] {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Source Sans Pro', Georgia, sans-serif;
+}
+
+body {
+    background-color: @color1;
+}
+
+main#contents {
+    margin: auto;
+    overflow: hidden;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: @tabbarHeight;
+    background-color: white;
+    @media (min-width: @sizeChange) {
+        background-color: @colorBackground;
+    }
+}
+
+
+header#titleHeader {
+    background-color: @color1;
+    color: white;
+    width: 100%;
+    height: 50px;
+    position: relative;
+    span#mainTitle {
+        line-height: 50px;
+        font-size: 24px;
+        font-weight: bold;
+        padding-left: @sidePadding;
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    }
+    a#mainLogo {
+        position: absolute;
+        background: @color1;
+        padding: 3px;
+        height: 56px;
+        width: 56px;
+        top: 17px;
+        right: 17px;
+        svg {
+            height: 100%;
+            width: 100%;
+            fill: white;
+        }
+    }
+}
+
+
+
 p,
 h1,h2,h3,h4,h5,h6,
 figcaption,caption,
@@ -10,78 +78,30 @@ math {
     padding-right: @sidePadding;
     color: @color1-4;
 }
-*/
 
-/*
-p, li, footer {
+p {
     line-height: 160%;
 }
-*/
 
-/*
+a {
+                color: @color2; text-decoration: none;
+    &:link {    color: @color2; text-decoration: none;      }
+    &:hover {   color: @color3; text-decoration: underline; }
+    &:active {  color: @color1; text-decoration: underline; }
+    &:visited { color: @color5;  }
+    @media (monochrome) {       text-decoration: underline; }
+}
+
 ul, ol {
     padding-right: @sidePadding;
 }
+
 ul {    padding-left: 2.3rem;   }
 ol {    padding-left: 2.6rem;   }
-*/
 
-
-
-
-
-/*------------------------------------*\
- ~ ~ ~ ~ ~ ~ MAIN CONTENTS ~ ~ ~ ~ ~ ~
-\*------------------------------------*/
-
-
-p, h1, h2, h3, h4, h5, h6, li, blockquote, figcaption {
-/*
-    a {
-                    color: @color2; text-decoration: none;
-//             &:link {    color: @color2; text-decoration: none;      }
-        &:hover {   color: @color3; text-decoration: underline; }
-        &:active {  color: @color1; text-decoration: underline; }
-//             &:visited { color: @color5;  }
-        @media (monochrome) {       text-decoration: underline; }
-    }
-*/
-/*
-    time {
-        a.blend:hover + a {
-            color: @color3;
-            text-decoration: underline;
-        }
-        a.blend:active + a {
-            color: @color1;
-        }
-    }
-*/
-
-}
-
-/*
-.contentBlock {
-    background-color: white;
-    margin: @objectSpace auto;
-    position: relative;
-    @media (min-width: @contentWidth) {
-                border-radius: @borderRad;
-        -webkit-border-radius: @borderRad;
-    }
-}
-*/
-
-p, h1, h2, h3, h4, h5, h6, ul, ol, figcaption {
-//     &:first-child {   padding-top:    @sidePadding;  margin-top: 0;    }
-//     &:last-child {    padding-bottom: @sidePadding;  margin-bottom: 0  }
-}
-
-/*
 p, li, blockquote {
     hanging-punctuation: first;
 }
-
 
 img, video, figure {
     width: 100%;
@@ -90,31 +110,16 @@ img, video, figure {
     line-height: .9;
     margin: 0 auto;
 }
-*/
 
-@media (min-width: @contentWidth) {
-    .contentBlock {
-        img, video, figure {
-            &:first-child {
-                border-top-left-radius: @borderRad;
-                border-top-right-radius: @borderRad;
-            }
-            &:last-child {
-                border-bottom-left-radius: @borderRad;
-                border-bottom-right-radius: @borderRad;
-            }
-        }
-    }
-}
-
-/*
 iframe {
     width: 100%;
 }
+
 figure {
     display: block;
     margin: 0;
 }
+
 .video-container {
     position: relative;
     padding-bottom: 56.25%;
@@ -157,9 +162,7 @@ blockquote {
     padding: 0 @sidePadding;
     margin: 1em 0 1em @sidePadding;
 }
-*/
 
-/*
 pre {
     position:relative;
     max-height:30em;
@@ -188,7 +191,49 @@ math {
     width: 100%;
 }
 
-// Tables
+/* To center Instagram embeds
+    https://twitter.com/laurentboileau/status/727450850583523329
+    https://jsfiddle.net/frxg1yq5/
+*/
+.instagram-media {
+    margin: 0 auto !important;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+// For the sharing at the end of a portfolio project
+a.sharing i {
+    margin: auto 5px;
+}
+
+// Adjustment for date link in blogposts
+time {
+    a.blend:hover + a {
+        color: @color3;
+        text-decoration: underline;
+    }
+    a.blend:active + a {
+        color: @color1;
+    }
+}
+
+.contentBlock {
+    background-color: white;
+    margin: @objectSpace auto;
+    position: relative;
+}
+
+
+
+
+
+
+/* ======
+   TABLES
+   ====== */
+
 caption {
     font-weight: bold;
     text-transform: uppercase;
@@ -231,144 +276,42 @@ th+th, td+td, th+td, td+th {
 tr:nth-child(odd) {  background-color: white;            }
 tr:nth-child(even) { background-color: @colorBackground; }
 tr:hover {           background-color: silver;           }
-*/
-
-
-
-/*
-.nowrap {
-    white-space: nowrap;
-}
-*/
-
-span.searchhighlight {
-    background: yellow;
-}
-
-
-/*
-a.sharing i {
-    margin: auto 5px;
-}
-*/
-
-/* // moved to portfolio.less
-.morePostInfoBlock {
-    ul {
-        padding: @sidePadding;
-        li {
-            padding-left: 10px;
-            ul {
-                padding-bottom: 0;
-                padding-top: 0;
-            }
-        }
-        li i.fa-li {
-            color: @color1;
-        }
-        li+li {
-            margin-top: 5px;
-        }
-
-    }
-}
-*/
-
-/* To center Instagram embeds
-    https://twitter.com/laurentboileau/status/727450850583523329
-    https://jsfiddle.net/frxg1yq5/
-*/
-/*
-.instagram-media {
-    margin: 0 auto !important;
-}
-*/
 
 
 
 
-/*------------------------------------*\
- ~ ~ ~ ~ ~ ~ ~ ~ FOOTER ~ ~ ~ ~ ~ ~ ~ ~
-\*------------------------------------*/
-
-// summation of filters at top
-
-.filterText {
-    max-width: @contentWidth;
-    margin: @sidePadding auto;
-    text-align: center;
-}
-h1.filterText {
-    padding-top: @objectSpace;
-}
-
-p.filterText span span {
-    &:after {                      content: ', ';       }
-    &:first-of-type::after {       content: ' ';        }
-    &:last-of-type::after {        content: '.';        }
-    &:only-of-type::before {	   content: '';         }
-    a {
-        white-space: nowrap;
-        position: relative;
-        text-decoration: none !important;
-        &:hover:before {
-            position: absolute;
-            content: "";
-            left: 0;
-            top: 50%;
-            right: 0;
-            border-top: 2px solid;
-            border-color: @color2;
-            
-            -webkit-transform:rotate(-5deg);
-               -moz-transform:rotate(-5deg);
-                -ms-transform:rotate(-5deg);
-                 -o-transform:rotate(-5deg);
-                    transform:rotate(-5deg);
-        }
-        &:active:before {
-            border-color: @color3;
-        }
-    }
-}
-
-p.filterText:first-child {
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-
-aside.contentBlock.noResults {
-    max-width: 500px;
-    p {
-        color: @color4;
-    }
-    .fa-frown-o {
-        font-size: 200%;
-        margin-top: 10px;
-        -webkit-transform:rotate(-15deg);
-           -moz-transform:rotate(-15deg);
-            -ms-transform:rotate(-15deg);
-             -o-transform:rotate(-15deg);
-                transform:rotate(-15deg);
-    }
-}
 
 
-/*
-footer#pageFooter {
-    text-align: center;
+
+/* ======
+   FOOTER
+   ====== */
+
+footer#pageFooter p {
     font-style: italic;
     font-size: 15px;
     color: @color4;
     margin: @objectSpace 0;
-    a:link, a:visited { color: @color4; }
-    a:hover {           color: @color2; }
-    a:active {          color: @color1; }
-    span {
-        display: block;
-        &:nth-of-type(1)::selection{ background-color: #AE1C28; }
-        &:nth-of-type(2)::selection{ background-color: #FFFFFF; }
-        &:nth-of-type(3)::selection{ background-color: #21468B; }
+    a:link, a:visited { 
+        color: @color4;
+        text-decoration: underline;
+    }
+//     a:hover {           color: @color2; }
+//     a:active {          color: @color1; }
+}
+
+
+
+
+/* ===============
+   DESKTOP STYLING
+   =============== */
+
+/*
+.contentBlock {
+    @media (min-width: @contentWidth) {
+                border-radius: @borderRad;
+        -webkit-border-radius: @borderRad;
     }
 }
 */
