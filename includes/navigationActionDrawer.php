@@ -14,12 +14,24 @@
                     <? include $actionDrawerContentIncludeFile; ?>
                 </div>
                 <div id="actionDrawerClosingBackground" onclick="toggleDrawer()"></div>
-                <script>
-                    function toggleDrawer() { 
-                        $('#navigationElements').toggleClass('actionDrawerToggled');
-                        $('body').toggleClass('actionDrawerToggled');
-                        $('#contents').toggleClass('actionDrawerToggled');
-                    }
-                    function changeItem(id)   { $('#'+id).addClass('changed');  }
-                </script>
             </div>
+
+            <script>
+                function toggleDrawer() { 
+                    $('#navigationElements').toggleClass('actionDrawerToggled');
+                    $('body').toggleClass('actionDrawerToggled');
+                    $('#contents').toggleClass('actionDrawerToggled');
+                }
+
+                function changeItem(id)   { $('#'+id).addClass('changed');  }
+
+/*
+                function focusOnInput(id)   {
+                    if ($('#'+id).hasClass('show')) {
+                        $('#'+id+' form input[type="search"]').focus();
+                    } else {
+                        $('#'+id+' form input[type="search"]').blur();
+                    }
+                }
+*/
+            </script>
