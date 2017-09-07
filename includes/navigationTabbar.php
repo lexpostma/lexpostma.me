@@ -19,52 +19,31 @@
                         <a href="<?=$baseURL?>" title="Back to <? echo $pageTitle ?>" class="tabbarLink noLabel"><? include 'navigationIcons/back.svg'  ?></a>
                     </li>
 <?        
-    } elseif( $basepage == 'about' ){
-?>
-                    <li class="tabbarItem" id="tabbarSpecialItem">
-                        <a href="#" 
-                                title="Get in touch!" 
-                                class="tabbarLink" 
-                                onclick="toggleDrawer(); changeItem('tabbarTooltip')">
-                            <div id="tabbarTooltip">
-                                <span>Get in touch!</span>
-                            </div>
-                            <? include 'navigationIcons/contact.svg'  ?>
-                            <span class="tabName">Let’s talk</span>
-                        </a>
-                        <? include 'navigationActionDrawer.php'  ?>
-                    </li>
-<?        
-    } elseif( $basepage == 'resume' ){
-?>
-                    <li class="tabbarItem" id="tabbarSpecialItem">
-                        <a href="#" 
-                                title="Download my resume"
-                                class="tabbarLink" 
-                                onclick="toggleDrawer(); changeItem('tabbarTooltip')">
-                            <div id="tabbarTooltip">
-                                <span>Download my resume</span>
-                            </div>
-                            <? include 'navigationIcons/download.svg'  ?>
-                            <span class="tabName">Download</span>
-                        </a>
-                        <? include 'navigationActionDrawer.php'  ?>
-                    </li>
-<?        
     } else {
+        if( $basepage == 'about' ){         $tabbarSpecialItemTitle = 'Get in touch!';      $tabbarSpecialItemIconSVG = 'contact.svg';  $tabbarSpecialItemName = 'Let’s talk';     $tabbarSpecialItemTooltip = true; }
+        elseif( $basepage == 'resume' ){    $tabbarSpecialItemTitle = 'Download my resume'; $tabbarSpecialItemIconSVG = 'download.svg'; $tabbarSpecialItemName = 'Download';       $tabbarSpecialItemTooltip = true; }
+        else {                              $tabbarSpecialItemTitle = 'Filters & more';     $tabbarSpecialItemIconSVG = 'filter.svg';   $tabbarSpecialItemName = 'Filters & more'; $tabbarSpecialItemTooltip = false; }
 ?>
                     <li class="tabbarItem" id="tabbarSpecialItem">
-                        <a href="#" 
-                                title="Filter <? echo $pageTitle ?>"
-                                class="tabbarLink"
-                                onclick="toggleDrawer()"  >
-                            <? include 'navigationIcons/filter.svg' ?>
-                            <span class="tabName">Filters & more</span>
+                        <a class="tabbarLink" href="#" 
+                                title="<?=$tabbarSpecialItemTitle?>" 
+                                onclick="toggleDrawer(); changeItem('tabbarTooltip')">
+<?
+        if($tabbarSpecialItemTooltip){
+?>
+                            <div id="tabbarTooltip">
+                                <span><?=$tabbarSpecialItemTitle?></span>
+                            </div>
+<?
+        }
+?>
+                            <? include 'navigationIcons/'.$tabbarSpecialItemIconSVG;  ?>
+                            <span class="tabName"><?=$tabbarSpecialItemName?></span>
                         </a>
-                        <? include 'navigationActionDrawer.php'  ?>
                     </li>
 <?
     };
+
     
 # =============================== #
 # ==== Main navigation items ==== #
@@ -97,4 +76,26 @@
                     </li>
                 </ul>
             </nav>
+            
+<?
+
+# =============================== #
+# ==== Filter indication bar ==== #
+# =============================== #
+
+    if($basepageTwo == 'filtered') {
+?>
+            <a id="filterIndicationBar" onclick="toggleDrawer()" href="#">Filtered by date, tag, author and keyword.</a>
+<?
+    };
+
+# ======================= #
+# ==== Action Drawer ==== #
+# ======================= #
+
+    if ( $basepageTwo == 'home' || $basepageTwo == 'filtered' ){
+        include 'navigationActionDrawer.php';
+    };
+    
+?>
         </div>
