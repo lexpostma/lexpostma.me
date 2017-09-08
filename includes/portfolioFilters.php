@@ -74,7 +74,7 @@
             <div class="cellIcon"><i class="fa fa-fw fa-tag"></i></div>
             <span class="cellLabel">Category</span>
             <div class="cellValue">
-                <select onchange="window.open(this.value,'_self');" onfocus="focusFilter('selectCategory');" onblur="stopFilter('selectCategory');" title="Filter by category">
+                <select onchange="window.open(this.value,'_self');" title="Filter by category">
                 <?=$selectCategory?>
                 </select>
             </div>
@@ -85,7 +85,7 @@
             <div class="cellIcon"><i class="fa fa-fw fa-calendar"></i></div>
             <span class="cellLabel">Year</span>
             <div class="cellValue">
-                <select onchange="window.open(this.value,'_self');" onfocus="focusFilter('selectYear');" onblur="stopFilter('selectYear');" title="Filter by year">
+                <select onchange="window.open(this.value,'_self');" title="Filter by year">
                     <?=$selectYear?>
                 </select>
             </div>
@@ -96,7 +96,7 @@
             <div class="cellIcon"><i class="fa fa-fw fa-building"></i></div>
             <span class="cellLabel">Client</span>
             <div class="cellValue">
-                <select onchange="window.open(this.value,'_self');" onfocus="focusFilter('selectClient');" onblur="stopFilter('selectClient');" title="Filter by client">
+                <select onchange="window.open(this.value,'_self');" title="Filter by client">
                     <?=$selectClient?>
                 </select>
 

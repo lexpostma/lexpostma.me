@@ -56,24 +56,24 @@
 
 <ul class="cellRowGroup">
     <li class="cellRow <?if(isset($searchFilter)){ echo'filterOn';}?>">
-        <a href="#">
+        <a href="#" onclick="focusOnInput('filterInputSearch');">
             <div class="cellIcon"><i class="fa fa-fw fa-search"></i></div>
             <span class="cellLabel">Search</span>
             <div class="cellValue">
-                <form class="contentSearchForm" action="/search.php" method="get">
+                <form action="/search.php" method="get">
                     <input type="hidden" name="rest"   value="<?=makeNewFilterURL('search');?>">
-                    <input type="search" name="search" placeholder="Search for blog posts" title="Search for blog posts"
+                    <input type="search" name="search" placeholder="Search for blog posts" title="Search for blog posts" id="filterInputSearch"
                         <? if(isset($searchFilter)){ echo ' value="'.$searchFilter.'" ';}?>>
                 </form>
             </div>
         </a>
     </li>
     <li class="cellRow <?if(isset($tagFilter)){ echo'filterOn';}?>">
-        <a href="#">
+        <a href="#" onclick="focusOnInput('filterSelectTag');">
             <div class="cellIcon"><i class="fa fa-fw fa-tag"></i></div>
             <span class="cellLabel">Tag</span>
             <div class="cellValue">
-                <select onchange="window.open(this.value,'_self');" onfocus="focusFilter('selectTag');" onblur="stopFilter('selectTag');" title="Filter by tag">
+                <select onchange="window.open(this.value,'_self');" title="Filter by tag" id="filterSelectTag">
                     <?=$selectTag?>
                 </select>
             </div>
@@ -83,11 +83,11 @@
     if(isset($selectAuthor)){
 ?>
     <li class="cellRow <?if(isset($authorFilter)){ echo'filterOn';}?>">
-        <a href="#">
+        <a href="#" onclick="focusOnInput('filterSelectAuthor');">
             <div class="cellIcon"><i class="fa fa-fw fa-user"></i></div>
             <span class="cellLabel">Author</span>
             <div class="cellValue">
-                <select onchange="window.open(this.value,'_self');" onfocus="focusFilter('selectAuthor');" onblur="stopFilter('selectAuthor');" title="Filter by author">
+                <select onchange="window.open(this.value,'_self');" title="Filter by author" id="filterSelectAuthor">
                     <?if(isset($selectAuthor)){ echo $selectAuthor;}?>
                 </select>
             </div>
@@ -97,11 +97,11 @@
     }
 ?>
     <li class="cellRow <?if(isset($dateFilter)){ echo'filterOn';}?>">
-        <a href="#">
+        <a href="#" onclick="focusOnInput('filterSelectDate');">
             <div class="cellIcon"><i class="fa fa-fw fa-calendar"></i></div>
             <span class="cellLabel">Publishing date</span>
             <div class="cellValue">
-                <select onchange="window.open(this.value,'_self');" onfocus="focusFilter('selectDate');" onblur="stopFilter('selectDate');" title="Filter by date">
+                <select onchange="window.open(this.value,'_self');" title="Filter by date" id="filterSelectDate">
                     <?=$selectDate?>
                 </select>
             </div>

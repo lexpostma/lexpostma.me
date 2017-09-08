@@ -21,6 +21,20 @@
                     $('html').toggleClass('actionDrawerToggled');
                 }
                 function changeItem(id) { $('#'+id).addClass('changed'); }
+                function focusOnInput(id) {
+                    $('#'+id).focus();
+                    
+                    
+                    
+
+                    var e = document.createEvent('MouseEvents');
+                    e.initMouseEvent('mousedown');
+                    $('#'+id)[0].dispatchEvent(e);
+                    
+                    
+                    
+                    
+                }
 /*
                 function focusOnInput(id)   {
                     if ($('#'+id).hasClass('show')) {
