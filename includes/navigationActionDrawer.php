@@ -19,14 +19,6 @@
             <script>
                 function toggleDrawer() { 
                     $('html').toggleClass('actionDrawerToggled');
-/*
-                    $(document).bind(
-                        'touchmove',
-                        function(e) {
-                            e.preventDefault();
-                        }
-                    );
-*/
                 }
                 function changeItem(id) { $('#'+id).addClass('changed'); }
 /*
