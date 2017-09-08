@@ -299,7 +299,7 @@ html:not(.actionDrawerToggled) body {
 }
 html.actionDrawerToggled {
   overflow: hidden;
-  height: 100%;
+  -webkit-overflow-scrolling: auto;
 }
 html.actionDrawerToggled body {
   overflow: hidden;
@@ -329,6 +329,9 @@ html.actionDrawerToggled body #navigationElements li.tabbarItem#tabbarSpecialIte
 }
 html.actionDrawerToggled body #navigationElements #actionDrawerClosingBackground {
   display: block;
+}
+html.actionDrawerToggled body #navigationElements #actionDrawerContent {
+  -webkit-overflow-scrolling: touch;
 }
 /* ===========================
    iOS STYLE CELL ROW ELEMENTS
