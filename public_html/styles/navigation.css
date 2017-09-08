@@ -422,6 +422,8 @@ li.cellRow .cellRowContent {
 .cellValue {
   color: #929292;
   text-align: right;
+  max-width: 200px;
+  overflow: hidden;
 }
 .cellValue input,
 .cellValue select {

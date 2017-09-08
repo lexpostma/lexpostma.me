@@ -20,7 +20,7 @@
 ?>
 
     <li class="cellRow contactItem">
-        <a href="<?=$link?>" 
+        <a class="cellRowContent" href="<?=$link?>" 
                 target="_blank" title="<?=$network?>" 
                 onclick="<?=$gaEvent?>">
             <div class="cellIcon <?=$shortname?>" id="contactIcon_<?=$shortname?>" style="background-color: #<?=$brandcolor?>;">

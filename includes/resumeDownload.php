@@ -8,7 +8,7 @@
 
 <ul class="cellRowGroup">
     <li class="cellRow resumeDownloadItem">
-        <a href="/public-files/CV-Lex-Postma-en-web.pdf" 
+        <a class="cellRowContent" href="/public-files/CV-Lex-Postma-en-web.pdf" 
                 download="Lex Postma, web-resume (<? echo date('n/Y')?>).pdf"
                 target="_blank" title="Download a pdf of my resumé in English" 
                 onclick="ga('send', 'event', 'Navigation', 'Download', 'Resumé pdf English');">
@@ -18,7 +18,7 @@
         </a>
     </li>
     <li class="cellRow resumeDownloadItem">
-        <a href="/public-files/CV-Lex-Postma-nl-web.pdf" 
+        <a class="cellRowContent" href="/public-files/CV-Lex-Postma-nl-web.pdf" 
                 download="Lex Postma, web-CV (<? echo date('n/Y')?>).pdf"
                 target="_blank" title="Download een pdf van mijn cv in het Nederlands" 
                     onclick="ga('send', 'event', 'Navigation', 'Download', 'Resumé pdf Nederlands');">
