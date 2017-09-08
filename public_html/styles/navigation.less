@@ -407,7 +407,7 @@ li.cellRow {
     }
 }
 
-li.cellRow a {
+li.cellRow .cellRowContent {
     .iOSFontStyling;
     
     display: flex;
@@ -450,8 +450,8 @@ li.cellRow a {
 .cellValue {
     color: @colorInactive;
     text-align: right;
-    max-width: 40%; // TODO
-    overflow: hidden;
+//     max-width: 40%; // TODO
+//     overflow: hidden;
     input, select {
         background: none;
         border: none;
@@ -463,12 +463,37 @@ li.cellRow a {
                 border-radius: 0;
         -webkit-border-radius: 0;
         text-align: right;
+        &:focus {
+
+        }
+    }
+    input {
+        transition: background .2s ease-in-out;
+        border-radius: 5px;
+        .iOSFontStyling;
+        padding: 0px 5px;
+        margin: 0 -5px;
+        &::-webkit-input-placeholder { color: @colorInactive; }
+             &:-ms-input-placeholder { color: @colorInactive; }
+                  &:-moz-placeholder { color: @colorInactive; }
+                 &::-moz-placeholder { color: @colorInactive; }
+
+        &:focus {
+            text-align: left;
+            background-color: @colorBackground;
+            color: @colorBodyText;
+            &::-webkit-input-placeholder { color: @colorBackground; }
+                 &:-ms-input-placeholder { color: @colorBackground; }
+                      &:-moz-placeholder { color: @colorBackground; }
+                     &::-moz-placeholder { color: @colorBackground; }
+        }
+    }
+    select {
         direction: rtl;
         option, optgroup {
             direction: ltr;
         }
     }
-
 }
 
 .cellClosingIcon {
@@ -482,14 +507,23 @@ li.cellRow a {
     &.chevron svg {
         fill: @colorInactive;
     }
+    &.deleteFilter {
+        font-size: 22px;
+        padding: 10px;
+        margin: -10px -10px -10px 0;
+        display: none;
+        &:hover {
+            text-decoration: none;
+        }
+    }
 }
 
-li.cellRow.filterOn a {
+li.cellRow.filterOn .cellRowContent {
     .cellValue {
         color: @colorBodyText;
     }
-    .cellClosingIcon {
-        
+    .cellClosingIcon.deleteFilter {
+        display: block;
     }
 }
 
