@@ -273,7 +273,7 @@ nav#secondNavigation {
    // Minimize the navigation bar on scrolldown, 
    // show fully on scroll up (if action drawer is not opened)
 
-#navigationElements.tabbarOnScrollDown:not(.actionDrawerToggled) {
+html:not(.actionDrawerToggled) #navigationElements.tabbarOnScrollDown {
     nav#tabbarNavigation {
         -webkit-transform: translateY(13px);
                 transform: translateY(13px);
@@ -325,6 +325,7 @@ html:not(.actionDrawerToggled) body {
 html.actionDrawerToggled {
     overflow: hidden;
     body {
+        overflow: hidden;
         background-color: black;
         main#contents {
             -webkit-transform: scale(.9, .9) translateY(20px);

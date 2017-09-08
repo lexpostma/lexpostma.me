@@ -260,18 +260,18 @@ nav#secondNavigation a {
 /* =======================
    TABBAR HIDDEN ON SCROLL
    ======================= */
-#navigationElements.tabbarOnScrollDown:not(.actionDrawerToggled) nav#tabbarNavigation {
+html:not(.actionDrawerToggled) #navigationElements.tabbarOnScrollDown nav#tabbarNavigation {
   -webkit-transform: translateY(13px);
   transform: translateY(13px);
 }
-#navigationElements.tabbarOnScrollDown:not(.actionDrawerToggled) nav#tabbarNavigation a #tabbarTooltip {
+html:not(.actionDrawerToggled) #navigationElements.tabbarOnScrollDown nav#tabbarNavigation a #tabbarTooltip {
   bottom: -100px;
   animation: none;
 }
-#navigationElements.tabbarOnScrollDown:not(.actionDrawerToggled) #filterIndicationBar {
+html:not(.actionDrawerToggled) #navigationElements.tabbarOnScrollDown #filterIndicationBar {
   transform: translateY(13px);
 }
-#navigationElements.tabbarOnScrollDown:not(.actionDrawerToggled) li.tabbarItem a.tabbarLink.noLabel svg {
+html:not(.actionDrawerToggled) #navigationElements.tabbarOnScrollDown li.tabbarItem a.tabbarLink.noLabel svg {
   transform: translateY(-6.5px);
 }
 /* =====================
@@ -301,6 +301,7 @@ html.actionDrawerToggled {
   overflow: hidden;
 }
 html.actionDrawerToggled body {
+  overflow: hidden;
   background-color: black;
 }
 html.actionDrawerToggled body main#contents {
