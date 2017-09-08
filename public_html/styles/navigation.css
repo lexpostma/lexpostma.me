@@ -195,7 +195,6 @@ nav#secondNavigation a {
   bottom: 0;
   display: none;
   z-index: -1;
-  cursor: pointer;
 }
 #actionDrawerTitleBar {
   border-top-left-radius: 10px;
