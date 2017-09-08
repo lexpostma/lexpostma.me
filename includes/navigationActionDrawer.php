@@ -22,17 +22,13 @@
                 }
                 function changeItem(id) { $('#'+id).addClass('changed'); }
                 function focusOnInput(id) {
+                    
                     $('#'+id).focus();
                     
-                    
-                    
-
+                    // https://stackoverflow.com/questions/27936785/jquery-javascript-onclick-event-to-html-open-select-tag
                     var e = document.createEvent('MouseEvents');
                     e.initMouseEvent('mousedown');
                     $('#'+id)[0].dispatchEvent(e);
-                    
-                    
-                    
                     
                 }
 /*
