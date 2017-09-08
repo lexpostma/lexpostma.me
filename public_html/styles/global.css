@@ -52,6 +52,8 @@ body {
 }
 body {
   background-color: #4B0082;
+  height: 100%;
+  position: relative;
 }
 main#contents {
   margin: auto;
