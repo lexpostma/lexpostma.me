@@ -25,6 +25,12 @@
                     
                     $('#'+id).focus();
                     
+                    if ($('#'+id).is(':checked')) {
+                        $('#'+id).prop('checked', false);
+                    } else {
+                        $('#'+id).prop('checked', true);
+                    }
+                    
                     // https://stackoverflow.com/questions/27936785/jquery-javascript-onclick-event-to-html-open-select-tag
                     var e = document.createEvent('MouseEvents');
                     e.initMouseEvent('mousedown');

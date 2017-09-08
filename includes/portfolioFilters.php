@@ -106,11 +106,20 @@
         </div>
     </li>
     <li class="cellRow">
-        <a class="cellRowContent" href="/videos">
             <div class="cellIcon"><i class="fa fa-fw fa-video-camera"></i></div>
+        <div class="cellRowContent" onclick="focusOnInput('toggleVideosOnly');">
             <span class="cellLabel">Videos only</span>
             <div class="cellClosingIcon chevron"><? include 'navigationIcons/chevron.svg'  ?></div>
         </a>
+            <div class="cellValue">
+            	<form action="">
+            		<input type="checkbox" id="toggleVideosOnly" name="Videos only" value="<?=makeNewFilterURL('client')?>" > <!-- onchange="window.open(this.value,'_self');"  -->
+            		<div class="toggle">
+            			<label for="toggleVideosOnly"><i></i></label>
+            		</div>
+            	</form>
+            </div>
+        </div>
     </li>
     <li class="cellRow resetFilters">
         <a class="cellRowContent" href="/">
