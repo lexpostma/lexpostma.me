@@ -17,14 +17,8 @@
             </div>
 
             <script>
-                function toggleDrawer() { 
-                    $('#navigationElements').toggleClass('actionDrawerToggled');
-                    $('body').toggleClass('actionDrawerToggled');
-                    $('#contents').toggleClass('actionDrawerToggled');
-                }
-
-                function changeItem(id)   { $('#'+id).addClass('changed');  }
-
+                function toggleDrawer() { $('html').toggleClass('actionDrawerToggled'); }
+                function changeItem(id) { $('#'+id).addClass('changed'); }
 /*
                 function focusOnInput(id)   {
                     if ($('#'+id).hasClass('show')) {

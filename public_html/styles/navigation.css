@@ -277,46 +277,56 @@ nav#secondNavigation a {
 /* =====================
    ACTION DRAWER TOGGLED
    ===================== */
-#navigationElements.actionDrawerToggled #actionDrawerNavigation {
-  transform: translateY(0);
-  /*
-        -webkit-transform: translateY(-@tabbarHeight);
-                transform: translateY(-@tabbarHeight);
-*/
-}
-#navigationElements.actionDrawerToggled #filterIndicationBar {
-  transform: translateY(101px);
-}
-#navigationElements.actionDrawerToggled li.tabbarItem#tabbarSpecialItem a.tabbarLink {
-  background-color: #4B0082;
-}
-#navigationElements.actionDrawerToggled li.tabbarItem#tabbarSpecialItem a.tabbarLink span.tabName {
-  color: white;
-}
-#navigationElements.actionDrawerToggled li.tabbarItem#tabbarSpecialItem a.tabbarLink svg {
-  fill: white;
-}
-#navigationElements.actionDrawerToggled #actionDrawerClosingBackground {
-  display: block;
-}
+/* *
+   *    When the action drawer is toggled, do the following:
+   *    - open the drawer
+   *    - lock the tabbar
+   *    - hide the filterbar
+   *    - change the tabbar button
+   *    - shrink the main contents
+   *    - darken the background of body
+   *    - disable scrollign on html
+   * 
+ */
 main#contents {
   transition-property: opacity, transform, border-radius;
   transition-duration: .2s;
   transition-timing-function: ease-in-out;
   transform-origin: top;
 }
-main#contents.actionDrawerToggled {
+html:not(.actionDrawerToggled) body {
+  transition: background 0.2s ease-in 0.2s;
+}
+html.actionDrawerToggled {
+  overflow: hidden;
+}
+html.actionDrawerToggled body {
+  background-color: black;
+}
+html.actionDrawerToggled body main#contents {
   -webkit-transform: scale(0.9, 0.9) translateY(20px);
   transform: scale(0.9, 0.9) translateY(20px);
   opacity: .6;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-body.actionDrawerToggled {
-  background-color: black;
+html.actionDrawerToggled body #navigationElements #actionDrawerNavigation {
+  transform: translateY(0);
 }
-body:not(.actionDrawerToggled) {
-  transition: background 0.2s ease-in 0.2s;
+html.actionDrawerToggled body #navigationElements #filterIndicationBar {
+  transform: translateY(101px);
+}
+html.actionDrawerToggled body #navigationElements li.tabbarItem#tabbarSpecialItem a.tabbarLink {
+  background-color: #4B0082;
+}
+html.actionDrawerToggled body #navigationElements li.tabbarItem#tabbarSpecialItem a.tabbarLink span.tabName {
+  color: white;
+}
+html.actionDrawerToggled body #navigationElements li.tabbarItem#tabbarSpecialItem a.tabbarLink svg {
+  fill: white;
+}
+html.actionDrawerToggled body #navigationElements #actionDrawerClosingBackground {
+  display: block;
 }
 /* ===========================
    iOS STYLE CELL ROW ELEMENTS
