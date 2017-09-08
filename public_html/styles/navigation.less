@@ -423,7 +423,7 @@ li.cellRow .cellRowContent {
     height: 29px;
     width: 29px;
     border-radius: 6px;
-    background-color: red; // TODO color!
+    background-color: @color1;
     overflow: hidden;
     margin-right: 14px;
     display: block;
@@ -534,6 +534,15 @@ li.cellRow.resetFilters {
         color: red;
     }
 }
+
+.cellIcon.search    { background-color: #4885ed; i { color: white; } }
+.cellIcon.date      { background-color: white; i { color: #b70909; } border: @lineThickness solid @colorLine; }
+.cellIcon.tag       { background-color: white; i { color: @color5; } border: @lineThickness solid @colorLine; }
+.cellIcon.archive   { background-color: white; i { color: #a77800; } border: @lineThickness solid @colorLine; }
+.cellIcon.client    { background-color: #545454; i { color: #1CDE56; } }
+.cellIcon.author    { background-color: black; i { color: #FFDCB1; } }
+.cellIcon.about     { background-color: @color1; i { color: white; } }
+.cellIcon.video     { background-color: #ff0000; i { color: white; } }
 
 li.cellRow.contactItem a {
     .cellIcon svg {

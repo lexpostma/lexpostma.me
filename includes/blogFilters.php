@@ -57,7 +57,7 @@
 <ul class="cellRowGroup">
     <li class="cellRow <?if(isset($searchFilter)){ echo'filterOn';}?>">
         <div class="cellRowContent" onclick="focusOnInput('filterInputSearch');">
-            <div class="cellIcon"><i class="fa fa-fw fa-search"></i></div>
+            <div class="cellIcon search"><i class="fa fa-fw fa-search"></i></div>
             <span class="cellLabel">Search</span>
             <div class="cellValue">
                 <form action="/search.php" method="get">
@@ -71,7 +71,7 @@
     </li>
     <li class="cellRow <?if(isset($tagFilter)){ echo'filterOn';}?>">
         <div class="cellRowContent" onclick="focusOnInput('filterSelectTag');">
-            <div class="cellIcon"><i class="fa fa-fw fa-tag"></i></div>
+            <div class="cellIcon tag"><i class="fa fa-fw fa-tag"></i></div>
             <span class="cellLabel">Tag</span>
             <div class="cellValue">
                 <select onchange="window.open(this.value,'_self');" title="Filter by tag" id="filterSelectTag">
@@ -86,7 +86,7 @@
 ?>
     <li class="cellRow <?if(isset($authorFilter)){ echo'filterOn';}?>">
         <div class="cellRowContent" onclick="focusOnInput('filterSelectAuthor');">
-            <div class="cellIcon"><i class="fa fa-fw fa-user"></i></div>
+            <div class="cellIcon author"><i class="fa fa-fw fa-user"></i></div>
             <span class="cellLabel">Author</span>
             <div class="cellValue">
                 <select onchange="window.open(this.value,'_self');" title="Filter by author" id="filterSelectAuthor">
@@ -101,7 +101,7 @@
 ?>
     <li class="cellRow <?if(isset($dateFilter)){ echo'filterOn';}?>">
         <div class="cellRowContent" onclick="focusOnInput('filterSelectDate');">
-            <div class="cellIcon"><i class="fa fa-fw fa-calendar"></i></div>
+            <div class="cellIcon date"><i class="fa fa-fw fa-calendar"></i></div>
             <span class="cellLabel">Publishing date</span>
             <div class="cellValue">
                 <select onchange="window.open(this.value,'_self');" title="Filter by date" id="filterSelectDate">
@@ -124,14 +124,14 @@
 <!--         <span class="cellGroupTitle">Download a pdf of my resume</span> -->
     <li class="cellRow">
         <a class="cellRowContent" href="/archive">
-            <div class="cellIcon"><i class="fa fa-fw fa-archive"></i></div>
+            <div class="cellIcon archive"><i class="fa fa-fw fa-archive"></i></div>
             <span class="cellLabel">Archive</span>
             <div class="cellClosingIcon chevron"><? include 'navigationIcons/chevron.svg'  ?></div>
         </a>
     </li>
     <li class="cellRow">
         <a class="cellRowContent" href="/about">
-            <div class="cellIcon"><i class="fa fa-fw fa-pencil"></i></div>
+            <div class="cellIcon about"><i class="fa fa-fw fa-pencil"></i></div>
             <span class="cellLabel">About this blog</span>
             <div class="cellClosingIcon chevron"><? include 'navigationIcons/chevron.svg'  ?></div>
         </a>

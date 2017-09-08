@@ -397,7 +397,7 @@ li.cellRow .cellRowContent {
   height: 29px;
   width: 29px;
   border-radius: 6px;
-  background-color: red;
+  background-color: #4B0082;
   overflow: hidden;
   margin-right: 14px;
   display: block;
@@ -512,6 +512,57 @@ li.cellRow.filterOn .cellRowContent .cellClosingIcon.deleteFilter {
 li.cellRow.resetFilters .cellLabel {
   text-align: center;
   color: red;
+}
+.cellIcon.search {
+  background-color: #4885ed;
+}
+.cellIcon.search i {
+  color: white;
+}
+.cellIcon.date {
+  background-color: white;
+  border: 0.5px solid #B2B2B2;
+}
+.cellIcon.date i {
+  color: #b70909;
+}
+.cellIcon.tag {
+  background-color: white;
+  border: 0.5px solid #B2B2B2;
+}
+.cellIcon.tag i {
+  color: #27ae60;
+}
+.cellIcon.archive {
+  background-color: white;
+  border: 0.5px solid #B2B2B2;
+}
+.cellIcon.archive i {
+  color: #a77800;
+}
+.cellIcon.client {
+  background-color: #545454;
+}
+.cellIcon.client i {
+  color: #1CDE56;
+}
+.cellIcon.author {
+  background-color: black;
+}
+.cellIcon.author i {
+  color: #FFDCB1;
+}
+.cellIcon.about {
+  background-color: #4B0082;
+}
+.cellIcon.about i {
+  color: white;
+}
+.cellIcon.video {
+  background-color: #ff0000;
+}
+.cellIcon.video i {
+  color: white;
 }
 li.cellRow.contactItem a .cellIcon svg {
   fill: white;
