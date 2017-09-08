@@ -384,6 +384,7 @@ li.cellRow:last-of-type:after {
 li.cellRow .cellRowContent {
   font-size: 17px;
   line-height: 29px;
+  cursor: pointer;
   display: flex;
   justify-content: flex-start;
   align-content: center;
