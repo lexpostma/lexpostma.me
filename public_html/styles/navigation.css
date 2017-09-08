@@ -299,6 +299,7 @@ html:not(.actionDrawerToggled) body {
 }
 html.actionDrawerToggled {
   overflow: hidden;
+  height: 100%;
 }
 html.actionDrawerToggled body {
   overflow: hidden;
