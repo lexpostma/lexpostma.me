@@ -98,7 +98,7 @@
 
     if($basepageTwo == 'filtered') {
 ?>
-            <a id="filterIndicationBar" onclick="toggleDrawer()" href="#">Filtered by date, tag, author and keyword.</a>
+            <a id="filterIndicationBar" onclick="toggleDrawer()" href="#"><span class="filteredByDarker">Filtered by: </span><br><!--  date, tag, author and keyword. --><?=$filterbarText?></a>
 <?
     };
 

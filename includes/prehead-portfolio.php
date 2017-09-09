@@ -110,7 +110,17 @@
                 if(isset($clientFilter)){   $introTitle .= '<span>for <a     title="remove client filter"    href="'.makeNewFilterURL('client').'">'.$clientFilterNice.'</a></span>';  }
                 if(isset($searchFilter)){   $introTitle .= '<span>that include \'<a  title="remove search filter" href="'.makeNewFilterURL('search').'">'.$searchFilter.'</a>\'</span>';  }                
                 $introTitle .= '</span><p>';
+*/
+                $filterbarText = '';
+                if(isset($categoryFilter)){ $filterbarText .= $categoryFilterNice.' design projects';  }
+                else{                       $filterbarText .= 'Projects';}
+                if(isset($yearFilter)){     $filterbarText .= ' from '.$yearFilter;  }
+                if(isset($clientFilter)){   $filterbarText .= ' for '.$clientFilterNice;  }
+                if(isset($searchFilter)){   $filterbarText .= ' that include \''.$searchFilter.'\'';  }
+                if(isset($typeFilter) && $typeFilter == 'video'){   $filterbarText .= '. Videos only'; }
+                $filterbarText .= '.';
             }
+            
         } else { // probably some individual project page
             $projectCheck = mysqli_query($con,"SELECT shortname FROM portfolio WHERE onlineVisible = '1' AND shortname = '$p';"); // check whether it's a project title
             if (mysqli_num_rows($projectCheck)!=0){ // More than 0 matches = project post, individual extended post
