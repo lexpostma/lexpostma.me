@@ -132,9 +132,6 @@ a:active {
   color: #4B0082;
   text-decoration: underline;
 }
-a:visited {
-  color: #27ae60;
-}
 @media (monochrome) {
   a {
     text-decoration: underline;
