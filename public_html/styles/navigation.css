@@ -414,6 +414,11 @@ li.cellRow .cellRowContent {
   display: block;
   text-align: center;
 }
+.cellIcon svg {
+  margin: -0.5px;
+  height: 29px;
+  width: 29px;
+}
 .cellIcon i {
   color: #4B0082;
 }
@@ -547,28 +552,20 @@ li.cellRow.resetFilters .cellLabel {
 }
 li.cellRow.contactItem a .cellIcon svg {
   fill: white;
+}
+li.cellRow.contactItem a .cellIcon:not(#contactIcon_snapchat) {
+  border: none;
+}
+li.cellRow.contactItem a .cellIcon:not(#contactIcon_snapchat) svg {
   padding-top: 1px;
 }
-li.cellRow.contactItem a .cellIcon#contactIcon_snapchat {
-  border: 0.5px solid #B2B2B2;
-}
 li.cellRow.contactItem a .cellIcon#contactIcon_snapchat svg {
-  margin: -0.5px;
   stroke: black;
   stroke-width: 2px;
 }
 li.cellRow.contactItem a .cellIcon#contactIcon_instagram {
   /* Instagram CSS gradient by Ana Tudor https://codepen.io/thebabydino/pen/qZvvBM */
   background: radial-gradient(circle at 33% 100%, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF);
-}
-li.cellRow.resumeDownloadItem a .cellIcon {
-  background-color: inherit;
-  border: 0.5px solid #B2B2B2;
-}
-li.cellRow.resumeDownloadItem a .cellIcon svg {
-  width: 30px;
-  height: 30px;
-  margin: -1px;
 }
 input[type="checkbox"] {
   display: none;

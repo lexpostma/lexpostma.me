@@ -442,6 +442,11 @@ li.cellRow .cellRowContent {
     margin-right: 14px;
     display: block;
     text-align: center;
+    svg {
+        margin: -@lineThickness;
+        height: 29px;
+        width: 29px;
+    }
     i {
         color: @color1;
         &.fa-tag {
@@ -552,6 +557,8 @@ li.cellRow.filterOn .cellRowContent {
 }
 
 li.cellRow.resetFilters {
+
+//     display: none;
 //     margin-top: 10px;
     .cellLabel {
         text-align: center;
@@ -562,12 +569,15 @@ li.cellRow.resetFilters {
 li.cellRow.contactItem a {
     .cellIcon svg {
         fill: white;
-        padding-top: 1px;
+    }
+    .cellIcon:not(#contactIcon_snapchat) {
+        border: none;
+        svg {
+            padding-top: 1px;
+        }
     }
     .cellIcon#contactIcon_snapchat {
-        border: @lineThickness solid @colorLine;
         svg {
-            margin: -@lineThickness;
             stroke: black;
             stroke-width: 2px;
         }
@@ -577,17 +587,6 @@ li.cellRow.contactItem a {
         background: radial-gradient(circle at 33% 100%, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF);
     }
 }
-
-li.cellRow.resumeDownloadItem a .cellIcon {
-    background-color: inherit;
-    border: .5px solid @colorLine;
-    svg {    
-        width:  30px;
-        height: 30px;
-        margin: -1px;
-    }
-}
-
 
 
 
