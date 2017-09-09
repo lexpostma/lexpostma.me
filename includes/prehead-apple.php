@@ -8,6 +8,6 @@
     $seoAuthor      = 'Lex Postma';
     $seoType        = 'website';
 
-    $basepageTwo     = 'home';
+    $basepageTwo     = 'about';
     $includePage    = 'apple.php';
 ?>
