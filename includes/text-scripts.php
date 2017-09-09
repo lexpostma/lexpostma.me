@@ -33,7 +33,6 @@ function bodyScan($input,$unique){
 	return $input;
 };
 
-
 function makeNewFilterURL($filterType){
 
     global $baseURL;
