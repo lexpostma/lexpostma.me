@@ -132,7 +132,7 @@
     <li class="cellRow">
         <a class="cellRowContent" href="/archive">
             <div class="cellIcon archive"><i class="fa fa-fw fa-archive"></i></div>
-            <span class="cellLabel">Oldies, but gooies</span>
+            <span class="cellLabel">Oldies, but goodies</span>
             <div class="cellClosingIcon chevron"><? include 'navigationIcons/chevron.svg'  ?></div>
         </a>
     </li>

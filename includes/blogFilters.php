@@ -90,7 +90,7 @@
             <span class="cellLabel">Author</span>
             <div class="cellValue">
                 <select onchange="window.open(this.value,'_self');" title="Filter by author" id="filterSelectAuthor">
-                    <?if(isset($selectAuthor)){ echo $selectAuthor;}?>
+                    <?=$selectAuthor?>
                 </select>
             </div>
             <a class="cellClosingIcon deleteFilter" href="<?=makeNewFilterURL('author')?>">&times;</a>

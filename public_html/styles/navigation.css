@@ -397,14 +397,15 @@ li.cellRow .cellRowContent {
   height: 29px;
   width: 29px;
   border-radius: 6px;
-  background-color: #4B0082;
+  background-color: white;
+  border: 0.5px solid #B2B2B2;
   overflow: hidden;
   margin-right: 14px;
   display: block;
   text-align: center;
 }
 .cellIcon i {
-  color: white;
+  color: #4B0082;
 }
 .cellIcon i.fa-tag {
   padding-left: 1px;
@@ -413,6 +414,27 @@ li.cellRow .cellRowContent {
 .cellIcon i.fa-building {
   padding-left: 2px;
   padding-top: 7px;
+}
+.cellIcon.search i {
+  color: #4885ed;
+}
+.cellIcon.date i {
+  color: #b70909;
+}
+.cellIcon.tag i {
+  color: #27ae60;
+}
+.cellIcon.archive i {
+  color: #a77800;
+}
+.cellIcon.client i {
+  color: #545454;
+}
+.cellIcon.author i {
+  color: #FFDCB1;
+}
+.cellIcon.video i {
+  color: #ff0000;
 }
 .cellLabel {
   display: block;
@@ -512,57 +534,6 @@ li.cellRow.filterOn .cellRowContent .cellClosingIcon.deleteFilter {
 li.cellRow.resetFilters .cellLabel {
   text-align: center;
   color: red;
-}
-.cellIcon.search {
-  background-color: #4885ed;
-}
-.cellIcon.search i {
-  color: white;
-}
-.cellIcon.date {
-  background-color: white;
-  border: 0.5px solid #B2B2B2;
-}
-.cellIcon.date i {
-  color: #b70909;
-}
-.cellIcon.tag {
-  background-color: white;
-  border: 0.5px solid #B2B2B2;
-}
-.cellIcon.tag i {
-  color: #27ae60;
-}
-.cellIcon.archive {
-  background-color: white;
-  border: 0.5px solid #B2B2B2;
-}
-.cellIcon.archive i {
-  color: #a77800;
-}
-.cellIcon.client {
-  background-color: #545454;
-}
-.cellIcon.client i {
-  color: #1CDE56;
-}
-.cellIcon.author {
-  background-color: black;
-}
-.cellIcon.author i {
-  color: #FFDCB1;
-}
-.cellIcon.about {
-  background-color: #4B0082;
-}
-.cellIcon.about i {
-  color: white;
-}
-.cellIcon.video {
-  background-color: #ff0000;
-}
-.cellIcon.video i {
-  color: white;
 }
 li.cellRow.contactItem a .cellIcon svg {
   fill: white;
