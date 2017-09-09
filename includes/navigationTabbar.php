@@ -17,7 +17,11 @@
     if( $basepageTwo !== 'home' && $basepageTwo !== 'filtered' ){
 ?>
                     <li class="tabbarItem" id="tabbarSpecialItem">
-                        <a href="<?=$baseURL?>" title="Back to <?=$basepageTitle ?>" class="tabbarLink noLabel" onclick="ga(<?=$gaMainNavEvent?> 'Back to <?=$basepage?>');"><? include 'navigationIcons/back.svg'  ?></a>
+                        <a href="<?=$baseURL?>" title="Back to <?=$basepageTitle ?>" 
+                                class="tabbarLink noLabel" 
+                                onclick="ga(<?=$gaMainNavEvent?> 'Back to <?=$basepage?>');">
+                            <? include 'navigationIcons/back.svg'  ?>
+                        </a>
                     </li>
 <?        
     } else {

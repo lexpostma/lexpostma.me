@@ -20,6 +20,7 @@
         if($p == 'feed' || $p == 'rss' || $p == 'feeds' || $p == 'subscribe') { // redirect to rss feed
             header ("Location: http://feed.lexpostma.me/portfolio");
 
+/*
         } else if($p == 'videos' || $p == 'video') { // videos grid
             $seoTitle       = 'Lex’ video portfolio';
             $seoDescription = 'Videos by Lex Postma.';
@@ -44,12 +45,15 @@
             $iconFilter    = 1;
             $introTitle = '<p class="filterText">Icons I made, mostly for fun.</p>';
         
+*/
+/*
         } else if($p == 'apple'){  // Apple page
             $seoTitle       = 'Lex Postma → ';
             $seoDescription = 'Motivation letter from Lex Postma to Apple.';
             $seoKeywords    = 'Apple,design,iOS,culture,passion,software,hardware,prototyping';
             $basepageTwo     = 'apple';
             $includePage    = 'apple.php';  
+*/
 
 
         } else if($p == 'filter') { // big overview grid filtered
@@ -86,6 +90,16 @@
                     $corePortfolioSQLquery .= " AND shortclient LIKE '%$clientFilter%' ";
                 };
             };
+            if(isset($_GET['type'])){
+                $typeCheckVar = mysqli_real_escape_string($con,$_GET['type']);
+                if ($typeCheckVar == 'video') {
+                    $typeCheck = mysqli_query($con,"SELECT videoid FROM portfolio WHERE videoid != '';");
+                    if (mysqli_num_rows($typeCheck)!=0){ // More than 0 matches = existing client
+                        $typeFilter = 'video';
+                        $corePortfolioSQLquery .= " AND videoid != '' ";
+                    };
+                };
+            };
             if(isset($_GET['search'])){
                 $searchFilter = mysqli_real_escape_string($con,$_GET['search']);
                 $searchExploded = explode(" ", addslashes(urldecode($searchFilter)));
@@ -98,11 +112,10 @@
     			};
             };
     
-            if(empty($yearFilter) && empty($clientFilter) && empty($categoryFilter) && empty($searchFilter)){
+            if(empty($yearFilter) && empty($clientFilter) && empty($categoryFilter) && empty($typeFilter) && empty($searchFilter)){
                 echo '<script language="Javascript">document.location.href="/";</script>';
-            }
-    
-            else {
+            } else {
+/*
                 $introTitle = '<p class="filterText"><span>';
                 if(isset($categoryFilter)){ $introTitle .= '<span><a      title="remove category filter" href="'.makeNewFilterURL('category').'">'.$categoryFilterNice.'</a> design projects</span> ';  }
                 else{                       $introTitle .= 'Projects ';}
