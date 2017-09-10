@@ -610,6 +610,11 @@ li.cellRow.contactItem a .cellIcon#contactIcon_instagram {
   /* Instagram CSS gradient by Ana Tudor https://codepen.io/thebabydino/pen/qZvvBM */
   background: radial-gradient(circle at 33% 100%, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF);
 }
+/* *
+   * iOS style toggle (checkbox)
+   * https://codepen.io/o_ti/pen/bkEco
+   * 
+ */
 input[type="checkbox"] {
   display: none;
 }
@@ -636,7 +641,7 @@ input[type="checkbox"] {
   border: 2px solid #e5e5e5;
   transition: all 0.30s ease;
 }
-.toggle i {
+.toggle .toggle i {
   position: absolute;
   top: 2px;
   left: 2px;
