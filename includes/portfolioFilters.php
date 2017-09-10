@@ -89,6 +89,18 @@
         $selectYear .= ">".$row['year']."</option>";
         
     };
+    
+# ====================== #
+# ==== Video filter ==== #
+# ====================== #
+
+    if(isset($typeFilter) && $typeFilter == 'video'){ 
+        $videoCheckbox = ' checked value="'.makeNewFilterURL('type').'" ';
+    } else {
+        $videoCheckbox = 'value="'.makeNewFilterURL('type').'&type=video" ';
+    };
+
+
 ?>
 
 <ul class="cellRowGroup">
@@ -148,16 +160,7 @@
             <span class="cellLabel">Videos only</span>
             <div class="cellValue">
             	<form action="">
-            		<input type="checkbox" id="toggleVideosOnly" name="Videos only" 
-<?
-    if(isset($typeFilter) && $typeFilter == 'video'){ 
-        echo ' checked ';
-        echo 'value="'.makeNewFilterURL('type').'" ';
-    } else {
-        echo 'value="'.makeNewFilterURL('type').'&type=video" ';
-    }
-    
-?> 
+            		<input type="checkbox" id="toggleVideosOnly" name="Videos only" <?=$videoCheckbox?>
             		        onchange="window.open(this.value,'_self');" >
             		<div class="toggle">
             			<label for="toggleVideosOnly"><i></i></label>

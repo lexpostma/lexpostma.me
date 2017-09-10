@@ -21,7 +21,7 @@
         <a class="cellRowContent" href="/public-files/CV-Lex-Postma-nl-web.pdf" 
                 download="Lex Postma, web-CV (<? echo date('n/Y')?>).pdf"
                 target="_blank" title="Download een pdf van mijn cv in het Nederlands" 
-                    onclick="ga('send', 'event', 'Navigation', 'Download', 'Resumé pdf Nederlands');">
+                onclick="ga('send', 'event', 'Navigation', 'Download', 'Resumé pdf Nederlands');">
             <div class="cellIcon"><? include 'navigationIcons/flagNL.svg'  ?></div>
             <span class="cellLabel">CV in het Nederlands</span>
             <div class="cellClosingIcon download"><? include 'navigationIcons/download.svg'  ?></div>
