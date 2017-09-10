@@ -267,6 +267,17 @@ nav#secondNavigation a {
         text-overflow: ellipsis;
 */
 }
+#navigationElements.filtered #filterIndicationBar span {
+  white-space: nowrap;
+}
+#navigationElements.filtered #filterIndicationBar span:before {
+  content: ", ";
+  white-space: normal;
+}
+#navigationElements.filtered #filterIndicationBar span:first-of-type:before,
+#navigationElements.filtered #filterIndicationBar span:nth-of-type(2):before {
+  content: " ";
+}
 #navigationElements.filtered #filterIndicationBar span.filteredByDarker {
   color: #270043;
 }

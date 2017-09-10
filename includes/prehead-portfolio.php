@@ -125,12 +125,13 @@
                 $introTitle .= '</span><p>';
 */
                 $filterbarText = '';
-                if(isset($categoryFilter)){ $filterbarText .= $categoryFilterNice.' design projects';  }
-                else{                       $filterbarText .= 'Projects';}
-                if(isset($yearFilter)){     $filterbarText .= ' from '.$yearFilter;  }
-                if(isset($clientFilter)){   $filterbarText .= ' for '.$clientFilterNice;  }
-                if(isset($searchFilter)){   $filterbarText .= ' that include \''.$searchFilter.'\'';  }
-                if(isset($typeFilter) && $typeFilter == 'video'){   $filterbarText .= '. Videos only'; }
+                if(isset($categoryFilter)){                         $filterbarText .= $categoryFilterNice.' design projects';  }
+                else{                                               $filterbarText .= 'Projects';}
+                if(isset($searchFilter)){                           $filterbarText .= '<span>that include \''.$searchFilter.'\'</span>';  }
+                if(isset($typeFilter) && $typeFilter == 'video'){   $filterbarText .= '<span>with videos</span>'; }
+                if(isset($yearFilter)){                             $filterbarText .= '<span>from '.$yearFilter.'</span>';  }
+                if(isset($clientFilter)){                           $filterbarText .= '<span>for '.$clientFilterNice.'</span>';  }
+
                 $filterbarText .= '.';
             }
             

@@ -279,7 +279,19 @@ nav#secondNavigation {
         overflow: hidden;
         text-overflow: ellipsis;
 */
-        
+        span {
+            white-space: nowrap;
+            &:before {
+                content: ", ";
+                white-space: normal;
+            }
+            &:first-of-type,
+            &:nth-of-type(2) {
+                &:before {
+                    content: " ";
+                }
+            }
+        }
         span.filteredByDarker {
             color: @colorBodyText;
         }
