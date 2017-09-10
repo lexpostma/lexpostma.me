@@ -127,7 +127,7 @@
                 $filterbarText = '';
                 if(isset($categoryFilter)){                         $filterbarText .= $categoryFilterNice.' design projects';  }
                 else{                                               $filterbarText .= 'Projects';}
-                if(isset($searchFilter)){                           $filterbarText .= '<span>that include \''.$searchFilter.'\'</span>';  }
+                if(isset($searchFilter)){                           $filterbarText .= '<span>that include \'<span class="searchTerms">'.$searchFilter.'</span>\'</span>';  }
                 if(isset($typeFilter) && $typeFilter == 'video'){   $filterbarText .= '<span>with videos</span>'; }
                 if(isset($yearFilter)){                             $filterbarText .= '<span>from '.$yearFilter.'</span>';  }
                 if(isset($clientFilter)){                           $filterbarText .= '<span>for '.$clientFilterNice.'</span>';  }

@@ -106,8 +106,8 @@
                 } elseif(isset($yearFilter)){ $filterbarText .= '<span>published in '.$yearFilter.'</span>';  }
                 if(isset($authorFilter)){     $filterbarText .= '<span>written by '.$authorFilterNice.'</span>';  }
                 if(isset($tagFilter)){        $filterbarText .= '<span>tagged with '.$tagFilterNice.'</span>';  }
-                if(isset($sourceFilter)){     $filterbarText .= '<span>where the original source includes \''.$sourceFilter.'\'</span>';  }
-                if(isset($searchFilter)){     $filterbarText .= '<span>that include \''.$searchFilter.'\'</span>';  }                
+                if(isset($sourceFilter)){     $filterbarText .= '<span>where the original source includes \'<span class="sourceTerms">'.$sourceFilter.'</span>\'</span>';  }
+                if(isset($searchFilter)){     $filterbarText .= '<span>that include \'<span class="searchTerms">'.$searchFilter.'</span>\'</span>';  }                
                 $filterbarText .= '.';
             }
 //             if($pageFilter > 1){            $introTitle .= '<span><a                                          title="remove page filter"   href="'.makeNewFilterURL('page'  ).'">page '.$pageFilter.'</a></span>';  }

@@ -275,12 +275,7 @@ nav#secondNavigation {
         font-size: 12px;
         line-height: 14px;
         color: @color1;
-/*
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-*/
-        span {
+        span:not(.searchTerms) {
             white-space: nowrap;
             &:before {
                 content: ", ";
@@ -293,8 +288,27 @@ nav#secondNavigation {
                 }
             }
         }
+        span.sourceTerms,
+        span.searchTerms {
+            display: inline-block; 
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        span.searchTerms {
+            max-width: 70%;
+        }
+        span.sourceTerms {
+            max-width: 40%;
+        }
         span.filteredByDarker {
             color: @colorBodyText;
+        }
+        br:nth-last-child(4),
+        br:nth-last-child(5),
+        br:nth-last-child(6),
+        br:nth-last-child(7),
+        br:nth-last-child(8), { // No line break of there are too many spans in the filterbar
+            display: none;
         }
     }
     .firstButtonActiveState;

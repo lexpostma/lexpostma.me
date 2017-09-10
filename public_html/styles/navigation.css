@@ -262,25 +262,39 @@ nav#secondNavigation a {
   font-size: 12px;
   line-height: 14px;
   color: #4B0082;
-  /*
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-*/
 }
-#navigationElements.filtered #filterIndicationBar span {
+#navigationElements.filtered #filterIndicationBar span:not(.searchTerms) {
   white-space: nowrap;
 }
-#navigationElements.filtered #filterIndicationBar span:before {
+#navigationElements.filtered #filterIndicationBar span:not(.searchTerms):before {
   content: ", ";
   white-space: normal;
 }
-#navigationElements.filtered #filterIndicationBar span:first-of-type:before,
-#navigationElements.filtered #filterIndicationBar span:nth-of-type(2):before {
+#navigationElements.filtered #filterIndicationBar span:not(.searchTerms):first-of-type:before,
+#navigationElements.filtered #filterIndicationBar span:not(.searchTerms):nth-of-type(2):before {
   content: " ";
+}
+#navigationElements.filtered #filterIndicationBar span.sourceTerms,
+#navigationElements.filtered #filterIndicationBar span.searchTerms {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#navigationElements.filtered #filterIndicationBar span.searchTerms {
+  max-width: 70%;
+}
+#navigationElements.filtered #filterIndicationBar span.sourceTerms {
+  max-width: 40%;
 }
 #navigationElements.filtered #filterIndicationBar span.filteredByDarker {
   color: #270043;
+}
+#navigationElements.filtered #filterIndicationBar br:nth-last-child(4),
+#navigationElements.filtered #filterIndicationBar br:nth-last-child(5),
+#navigationElements.filtered #filterIndicationBar br:nth-last-child(6),
+#navigationElements.filtered #filterIndicationBar br:nth-last-child(7),
+#navigationElements.filtered #filterIndicationBar br:nth-last-child(8) {
+  display: none;
 }
 #navigationElements.filtered li.tabbarItem#tabbarSpecialItem a.tabbarLink {
   background-color: #4B0082;
