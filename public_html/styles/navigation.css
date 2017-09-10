@@ -41,6 +41,12 @@
 .firstButtonActiveState li.tabbarItem#tabbarSpecialItem a.tabbarLink svg {
   fill: white;
 }
+.firstButtonActiveState li.tabbarItem#tabbarSpecialItem a.tabbarLink svg:first-of-type {
+  display: none;
+}
+.firstButtonActiveState li.tabbarItem#tabbarSpecialItem a.tabbarLink svg:last-of-type {
+  display: inline;
+}
 /* ===================
    NAVIGATION ELEMENTS
    =================== */
@@ -112,6 +118,12 @@ li.tabbarItem a.tabbarLink.active span.tabName {
 }
 li.tabbarItem a.tabbarLink.active svg {
   fill: #4B0082;
+}
+li.tabbarItem#tabbarSpecialItem a.tabbarLink svg:last-of-type {
+  display: none;
+}
+li.tabbarItem#tabbarSpecialItem a.tabbarLink svg:first-of-type {
+  display: inline;
 }
 li.tabbarItem:first-child a.tabbarLink {
   border-right: 0.5px solid #B2B2B2;
@@ -267,6 +279,12 @@ nav#secondNavigation a {
 #navigationElements.filtered li.tabbarItem#tabbarSpecialItem a.tabbarLink svg {
   fill: white;
 }
+#navigationElements.filtered li.tabbarItem#tabbarSpecialItem a.tabbarLink svg:first-of-type {
+  display: none;
+}
+#navigationElements.filtered li.tabbarItem#tabbarSpecialItem a.tabbarLink svg:last-of-type {
+  display: inline;
+}
 /* =======================
    TABBAR HIDDEN ON SCROLL
    ======================= */
@@ -335,6 +353,12 @@ html.actionDrawerToggled body #navigationElements li.tabbarItem#tabbarSpecialIte
 }
 html.actionDrawerToggled body #navigationElements li.tabbarItem#tabbarSpecialItem a.tabbarLink svg {
   fill: white;
+}
+html.actionDrawerToggled body #navigationElements li.tabbarItem#tabbarSpecialItem a.tabbarLink svg:first-of-type {
+  display: none;
+}
+html.actionDrawerToggled body #navigationElements li.tabbarItem#tabbarSpecialItem a.tabbarLink svg:last-of-type {
+  display: inline;
 }
 html.actionDrawerToggled body #navigationElements #actionDrawerClosingBackground {
   display: block;

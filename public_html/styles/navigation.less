@@ -8,7 +8,12 @@
         }
         svg {
             fill: white;
-            
+        }
+        svg:first-of-type {
+            display: none;
+        }        
+        svg:last-of-type {
+            display: inline;
         }
     }
 }
@@ -100,6 +105,14 @@ li.tabbarItem {
         svg {
             fill: @color1;
         }
+    }
+    &#tabbarSpecialItem a.tabbarLink {
+        svg:last-of-type {
+            display: none;
+        }
+        svg:first-of-type {
+            display: inline;
+        }        
     }
 }
 

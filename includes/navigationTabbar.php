@@ -25,9 +25,9 @@
                     </li>
 <?        
     } else {
-        if( $basepage == 'about' ){         $tabbarSpecialItemTitle = 'Get in touch!';      $tabbarSpecialItemIconSVG = 'contact.svg';  $tabbarSpecialItemName = 'Let’s talk';     $tabbarSpecialItemTooltip = true; }
-        elseif( $basepage == 'resume' ){    $tabbarSpecialItemTitle = 'Download my resume'; $tabbarSpecialItemIconSVG = 'download.svg'; $tabbarSpecialItemName = 'Download';       $tabbarSpecialItemTooltip = true; }
-        else {                              $tabbarSpecialItemTitle = 'Filters & more';     $tabbarSpecialItemIconSVG = 'filter.svg';   $tabbarSpecialItemName = 'Filters & more'; $tabbarSpecialItemTooltip = false; }
+        if( $basepage == 'about' ){         $tabbarSpecialItemTitle = 'Get in touch!';      $tabbarSpecialItemIconSVG = 'contact';  $tabbarSpecialItemName = 'Let’s talk';     $tabbarSpecialItemTooltip = true; }
+        elseif( $basepage == 'resume' ){    $tabbarSpecialItemTitle = 'Download my resume'; $tabbarSpecialItemIconSVG = 'download'; $tabbarSpecialItemName = 'Download';       $tabbarSpecialItemTooltip = true; }
+        else {                              $tabbarSpecialItemTitle = 'Filters & more';     $tabbarSpecialItemIconSVG = 'filter';   $tabbarSpecialItemName = 'Filters & more'; $tabbarSpecialItemTooltip = false; }
 ?>
                     <li class="tabbarItem" id="tabbarSpecialItem">
                         <a class="tabbarLink" href="#" 
@@ -41,8 +41,9 @@
                             </div>
 <?
         }
+                                include 'navigationIcons/'.$tabbarSpecialItemIconSVG.'.svg';
+                                include 'navigationIcons/'.$tabbarSpecialItemIconSVG.'-active.svg';
 ?>
-                            <? include 'navigationIcons/'.$tabbarSpecialItemIconSVG;  ?>
                             <span class="tabName"><?=$tabbarSpecialItemName?></span>
                         </a>
                     </li>
@@ -60,7 +61,13 @@
                                 href="<?=$portURL?>" 
                                 onclick="ga(<?=$gaMainNavEvent?> 'Portfolio');"
                                 title="Portfolio" >
-                            <? include 'navigationIcons/portfolio.svg'?>
+                            <? 
+                                if( $basepage == 'portfolio'){
+                                    include 'navigationIcons/portfolio-active.svg';
+                                } else {
+                                    include 'navigationIcons/portfolio.svg';
+                                }
+                            ?>
                             <span class="tabName">Portfolio</span>
                         </a>
                     </li>
@@ -69,7 +76,13 @@
                                 href="<?=$blogURL?>" 
                                 onclick="ga(<?=$gaMainNavEvent?> 'Blog');"
                                 title="Blog" >
-                            <? include 'navigationIcons/blog.svg'     ?>
+                            <? 
+                                if( $basepage == 'blog'){
+                                    include 'navigationIcons/blog-active.svg';
+                                } else {
+                                    include 'navigationIcons/blog.svg';
+                                }
+                            ?>
                             <span class="tabName">Blog</span>
                         </a>
                     </li>
@@ -78,7 +91,14 @@
                                 href="<?=$resuURL?>"
                                 onclick="ga(<?=$gaMainNavEvent?> 'Resumé');"
                                 title="Resumé" >
-                            <? include 'navigationIcons/resume.svg'   ?>
+                            <? 
+                                if( $basepage == 'resume'){
+                                    include 'navigationIcons/resume-active.svg';
+                                } else {
+                                    include 'navigationIcons/resume.svg';
+                                }
+                            ?>
+
                             <span class="tabName">Resumé</span>
                         </a>
                     </li>
@@ -87,7 +107,14 @@
                                 href="<?=$abouURL?>" 
                                 onclick="ga(<?=$gaMainNavEvent?> 'About');"
                                 title="About Lex" >
-                            <? include 'navigationIcons/about.svg'    ?>
+                            <? 
+                                if( $basepage == 'about'){ 
+                                    include 'navigationIcons/about-active.svg';
+                                } else {
+                                    include 'navigationIcons/about.svg';
+                                }
+                            ?>
+
                             <span class="tabName">About Lex</span>
                         </a>
                     </li>
