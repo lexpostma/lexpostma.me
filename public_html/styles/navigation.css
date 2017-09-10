@@ -218,7 +218,7 @@ nav#secondNavigation a {
   position: relative;
   font-size: 17px;
   line-height: 29px;
-  padding: 7px 15px 8px;
+  padding: 7px 20px 8px;
 }
 #actionDrawerTitleBar span {
   text-align: center;
@@ -229,7 +229,7 @@ nav#secondNavigation a {
 #actionDrawerTitleBar a#actionDrawerClose {
   position: absolute;
   top: 7px;
-  right: 15px;
+  right: 20px;
   text-decoration: none;
   color: #4B0082;
 }
@@ -385,7 +385,7 @@ html.actionDrawerToggled body #navigationElements #actionDrawerClosingBackground
 .cellSeparator:after {
   content: '';
   position: absolute;
-  left: 59px;
+  left: 64px;
   right: 0px;
   bottom: -0.5px;
   z-index: 8;
@@ -400,7 +400,7 @@ ul.cellRowGroup {
   margin: 25px auto;
 }
 ul.cellRowGroup .cellGroupTitle {
-  padding: 0 15px;
+  padding: 0 20px;
   font-weight: bold;
 }
 li.cellRow {
@@ -411,7 +411,7 @@ li.cellRow {
 li.cellRow:after {
   content: '';
   position: absolute;
-  left: 59px;
+  left: 64px;
   right: 0px;
   bottom: -0.5px;
   z-index: 8;
@@ -431,13 +431,16 @@ li.cellRow .cellRowContent {
   font-size: 17px;
   line-height: 29px;
   cursor: pointer;
-  display: flex;
-  justify-content: flex-start;
-  align-content: center;
+  /*
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+*/
+  display: block;
   width: 100%;
   background-color: white;
   text-decoration: none;
-  padding: 7px 15px 8px;
+  padding: 7px 20px 8px;
 }
 .cellIcon {
   height: 29px;
@@ -446,8 +449,8 @@ li.cellRow .cellRowContent {
   background-color: white;
   border: 0.5px solid #B2B2B2;
   overflow: hidden;
-  margin-right: 14px;
-  display: block;
+  margin-right: 15px;
+  display: inline-block;
   text-align: center;
 }
 .cellIcon svg {
@@ -488,11 +491,13 @@ li.cellRow .cellRowContent {
   color: #ff0000;
 }
 .cellLabel {
-  display: block;
+  display: inline-block;
   flex-grow: 2;
   color: #270043;
+  white-space: nowrap;
 }
 .cellValue {
+  display: inline-block;
   color: #929292;
   text-align: right;
   max-width: 200px;
@@ -582,8 +587,10 @@ li.cellRow.filterOn .cellRowContent .cellValue {
 li.cellRow.filterOn .cellRowContent .cellClosingIcon.deleteFilter {
   display: block;
 }
-li.cellRow.resetFilters .cellLabel {
+li.cellRow.resetFilters {
   text-align: center;
+}
+li.cellRow.resetFilters .cellLabel {
   color: red;
 }
 li.cellRow.contactItem a .cellIcon svg {
@@ -610,7 +617,7 @@ input[type="checkbox"] {
   position: absolute;
   top: 0;
   bottom: 0;
-  right: 9px;
+  right: 20px;
   margin: auto;
   width: 51px;
   height: 31px;

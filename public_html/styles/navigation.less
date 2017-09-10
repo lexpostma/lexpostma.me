@@ -223,7 +223,7 @@ nav#secondNavigation {
     border-bottom: @lineThickness solid @colorLine;
     position: relative;
     .iOSFontStyling;
-    padding: 7px 15px 8px;
+    padding: 7px @sidePadding 8px;
     span {
         text-align: center;
         font-weight: bold;
@@ -233,7 +233,7 @@ nav#secondNavigation {
     a#actionDrawerClose {
         position: absolute;
         top: 7px;
-        right: 15px;
+        right: @sidePadding;
         text-decoration: none;
         color: @color1;
     }
@@ -410,7 +410,7 @@ html.actionDrawerToggled {
     &:after {
         content:''; 
         position: absolute;
-        left: 59px;
+        left: 64px;
         right: 0px;
         bottom: -@lineThickness;
         z-index: 8;
@@ -425,7 +425,7 @@ ul.cellRowGroup {
     width: 100%;
     margin: 25px auto;
     .cellGroupTitle {
-        padding: 0 15px;
+        padding: 0 @sidePadding;
         font-weight: bold;
     }
 }
@@ -449,13 +449,17 @@ li.cellRow {
 li.cellRow .cellRowContent {
     .iOSFontStyling;
     cursor: pointer;
+/*
     display: flex;
     justify-content: flex-start;
     align-content: center;
+*/
+    display: block;
+
     width: 100%;
     background-color: white;
     text-decoration: none;
-    padding: 7px 15px 8px;
+    padding: 7px @sidePadding 8px;
 }
 
 .cellIcon {
@@ -465,8 +469,9 @@ li.cellRow .cellRowContent {
     background-color: white; 
     border: @lineThickness solid @colorLine;
     overflow: hidden;
-    margin-right: 14px;
-    display: block;
+    margin-right: 15px;
+    display: inline-block;
+//     display: block;
     text-align: center;
     svg {
         margin: -@lineThickness;
@@ -497,12 +502,15 @@ li.cellRow .cellRowContent {
 
 
 .cellLabel {
-    display: block;
+    display: inline-block;
+//     display: block;
     flex-grow: 2;
     color: @colorBodyText;
+    white-space: nowrap;
 }
 
 .cellValue {
+    display: inline-block;
     color: @colorInactive;
     text-align: right;
     max-width: 200px; // TODO
@@ -583,11 +591,8 @@ li.cellRow.filterOn .cellRowContent {
 }
 
 li.cellRow.resetFilters {
-
-//     display: none;
-//     margin-top: 10px;
-    .cellLabel {
         text-align: center;
+    .cellLabel {
         color: red;
     }
 }
@@ -627,7 +632,7 @@ input[type="checkbox"] {
 	position: absolute;
 	top: 0;
 	bottom: 0;
-	right: 9px;
+	right: @sidePadding;
 	margin: auto;
 	width: 51px;
 	height: 31px;
