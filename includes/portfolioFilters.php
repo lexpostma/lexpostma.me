@@ -148,7 +148,17 @@
             <span class="cellLabel">Videos only</span>
             <div class="cellValue">
             	<form action="">
-            		<input type="checkbox" id="toggleVideosOnly" name="Videos only" <?if(isset($typeFilter) && $typeFilter == 'video'){ echo'checked';}?> value="<?=makeNewFilterURL('client')?>" > <!-- onchange="window.open(this.value,'_self');"  -->
+            		<input type="checkbox" id="toggleVideosOnly" name="Videos only" 
+<?
+    if(isset($typeFilter) && $typeFilter == 'video'){ 
+        echo ' checked ';
+        echo 'value="'.makeNewFilterURL('type').'" ';
+    } else {
+        echo 'value="'.makeNewFilterURL('type').'&type=video" ';
+    }
+    
+?> 
+            		        onchange="window.open(this.value,'_self');" >
             		<div class="toggle">
             			<label for="toggleVideosOnly"><i></i></label>
             		</div>
