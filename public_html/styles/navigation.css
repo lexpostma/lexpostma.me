@@ -641,7 +641,7 @@ input[type="checkbox"] {
   border: 2px solid #e5e5e5;
   transition: all 0.30s ease;
 }
-.toggle .toggle i {
+.toggle i {
   position: absolute;
   top: 2px;
   left: 2px;
