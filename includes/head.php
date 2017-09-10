@@ -13,7 +13,7 @@
 ?>
         
         <!-- Icons -->
-        <link rel="mask-icon" href="/images/icons/Safari-pinnedtab.svg" color="#4B0082">
+        <link rel="mask-icon" href="/images/icons/safariPinnedTabPixelBounds.svg" color="#4B0082">
         <link rel="shortcut icon" type="image/ico" href="/images/icons/favicon.png" />
         <link rel="fluid-icon" type="image/png" href="/images/icons/Fluid-icon.png" />
         
