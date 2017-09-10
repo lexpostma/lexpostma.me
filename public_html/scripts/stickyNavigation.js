@@ -45,3 +45,5 @@ function hasScrolled() {
 
     lastScrollPosition = scrollPosition;
 }
+
+// $('body').addClass('darkBackgroundLaterToFixScrollbarColor');

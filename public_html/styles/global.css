@@ -53,8 +53,13 @@ body {
 }
 body {
   height: 100%;
-  background-color: #4B0082;
+  background-color: white;
 }
+/*
+body.darkBackgroundLaterToFixScrollbarColor {
+    background-color: @color1;    
+}
+*/
 main#contents {
   margin: auto;
   overflow: hidden;
