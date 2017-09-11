@@ -69,18 +69,25 @@
         <meta name="apple-mobile-web-app-title" content="Lex Postma" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link rel="apple-touch-icon-precomposed" 	sizes="120x120"		href="/images/icons/Icon-60@2x.png" />
-        <link rel="apple-touch-icon-precomposed" 	sizes="180x180"		href="/images/icons/Icon-60@3x.png" />
-        <link rel="apple-touch-icon-precomposed" 	sizes="76x76"		href="/images/icons/Icon-76.png" />
-        <link rel="apple-touch-icon-precomposed" 	sizes="152x152"		href="/images/icons/Icon-76@2x.png" />
-        <link rel="apple-touch-icon-precomposed" 	sizes="167x167"		href="/images/icons/Icon-83.5@2x.png" />
-        <link rel="apple-touch-icon-precomposed" 	sizes="80x80"		href="/images/icons/Icon-Small-40@2x.png" />
-        <link rel="apple-touch-icon-precomposed" 	sizes="60x60"		href="/images/icons/Icon-Small-60.png" />
-        <link rel="apple-touch-icon-precomposed" 	sizes="120x120"		href="/images/icons/Icon-Small-60@2x.png" />
-        <link rel="apple-touch-icon-precomposed" 	sizes="180x180"		href="/images/icons/Icon-Small-60@3x.png" />
-        <link rel="apple-touch-icon-precomposed" 	sizes="29x29"		href="/images/icons/Icon-Small.png" />
-        <link rel="apple-touch-icon-precomposed" 	sizes="58x58"		href="/images/icons/Icon-Small@2x.png" />
-        <link rel="apple-touch-icon-precomposed" 	sizes="87x87"		href="/images/icons/Icon-Small@3x.png" />
+<?
+    if($currentEnvironment == 'production' ){
+        $iconPath = '/images/icons/';
+    } else {
+        $iconPath = '/images/icons/test/';
+    }
+?>
+        <link rel="apple-touch-icon-precomposed" 	sizes="120x120"		href="<?=$iconPath?>Icon-60@2x.png" />
+        <link rel="apple-touch-icon-precomposed" 	sizes="180x180"		href="<?=$iconPath?>Icon-60@3x.png" />
+        <link rel="apple-touch-icon-precomposed" 	sizes="76x76"		href="<?=$iconPath?>Icon-76.png" />
+        <link rel="apple-touch-icon-precomposed" 	sizes="152x152"		href="<?=$iconPath?>Icon-76@2x.png" />
+        <link rel="apple-touch-icon-precomposed" 	sizes="167x167"		href="<?=$iconPath?>Icon-83.5@2x.png" />
+        <link rel="apple-touch-icon-precomposed" 	sizes="80x80"		href="<?=$iconPath?>Icon-Small-40@2x.png" />
+        <link rel="apple-touch-icon-precomposed" 	sizes="60x60"		href="<?=$iconPath?>Icon-Small-60.png" />
+        <link rel="apple-touch-icon-precomposed" 	sizes="120x120"		href="<?=$iconPath?>Icon-Small-60@2x.png" />
+        <link rel="apple-touch-icon-precomposed" 	sizes="180x180"		href="<?=$iconPath?>Icon-Small-60@3x.png" />
+        <link rel="apple-touch-icon-precomposed" 	sizes="29x29"		href="<?=$iconPath?>Icon-Small.png" />
+        <link rel="apple-touch-icon-precomposed" 	sizes="58x58"		href="<?=$iconPath?>Icon-Small@2x.png" />
+        <link rel="apple-touch-icon-precomposed" 	sizes="87x87"		href="<?=$iconPath?>Icon-Small@3x.png" />
 
         <!-- Microsoft / Metro -->
         <meta name="msapplication-TileColor" content="#47257E">
