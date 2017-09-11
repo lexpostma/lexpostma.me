@@ -71,8 +71,10 @@
 <?
     if($currentEnvironment == 'production' ){
         $iconPath = '/images/icons/';
-    } else {
+    } elseif($currentEnvironment == 'test' ){
         $iconPath = '/images/icons/test/';
+    } else {
+        $iconPath = '/images/icons/dev/';
     }
 ?>
         <link rel="apple-touch-icon-precomposed" 	sizes="120x120"		href="<?=$iconPath?>Icon-60@2x.png" />
