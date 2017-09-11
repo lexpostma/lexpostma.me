@@ -23,6 +23,7 @@
                 function changeItem(id) { $('#'+id).addClass('changed'); }
                 function focusOnInput(id) {
                     
+/*
                     $('#'+id).focus();
                     
                     if ($('#'+id).is(':checked')) {
@@ -35,6 +36,7 @@
                     var e = document.createEvent('MouseEvents');
                     e.initMouseEvent('mousedown');
                     $('#'+id)[0].dispatchEvent(e);
+*/
                     
                 }
 /*

@@ -27,7 +27,7 @@
 ?>
 
 <!DOCTYPE HTML>
-<html lang="en" class=""> <!-- TODO: actionDrawerToggled -->
+<html lang="en" class="actionDrawerToggled"> <!-- TODO: actionDrawerToggled -->
 <?  include '../includes/head.php'; ?>
 
     <body>
