@@ -446,6 +446,19 @@ li.cellRow {       background: red;    }
         height: @lineThickness;
     }
 }
+.stripStylingFromFormItems {
+    margin: 0 0 0 auto;
+	padding: 0;
+    background: none;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    text-decoration: none;
+            border-radius: 0;
+    -webkit-border-radius: 0;
+}
 
 ul.cellRowGroup {
     .iOSFontStyling;
@@ -531,26 +544,17 @@ li.cellRow {
 //     float: left;
 }
 
-.cellValue {
-//     display: block;
-//     float: right;
+input.cellValue,
+select.cellValue {
+    .stripStylingFromFormItems;
     margin-left: auto;
-    input, select {
-//         background: none;
-        border: none;
-        outline: none;
-        -webkit-appearance: none;
-           -moz-appearance: none;
-                appearance: none;
-        text-decoration: none;
-                border-radius: 0;
-        -webkit-border-radius: 0;
-        &:focus {
-
-        }
-    }
-
 }
+
+span.widthForSelectHidden {
+    background: red;
+/*     display: none; */
+}
+
 
 .cellClosingIcon {
 //     display: block; 
@@ -570,6 +574,7 @@ li.cellRow {
         fill: @colorInactive;
     }
     &.deleteFilter {
+        .stripStylingFromFormItems;
         font-size: 22px;
         right: 0px;
         padding: 10px 20px 10px 15px;
@@ -616,8 +621,6 @@ li.cellRow.contactItem {
    * https://codepen.io/o_ti/pen/bkEco
    * 
  */
-
-
 
 input[type="checkbox"] {
 	display: none;

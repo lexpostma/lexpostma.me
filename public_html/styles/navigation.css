@@ -418,6 +418,19 @@ li.cellRow {       background: red;    }
   background: #B2B2B2;
   height: 0.5px;
 }
+.stripStylingFromFormItems {
+  margin: 0 0 0 auto;
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-decoration: none;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+}
 ul.cellRowGroup {
   font-size: 17px;
   line-height: 29px;
@@ -500,11 +513,11 @@ li.cellRow:last-of-type:after {
 .cellIcon.video i {
   color: #ff0000;
 }
-.cellValue {
-  margin-left: auto;
-}
-.cellValue input,
-.cellValue select {
+input.cellValue,
+select.cellValue {
+  margin: 0 0 0 auto;
+  padding: 0;
+  background: none;
   border: none;
   outline: none;
   -webkit-appearance: none;
@@ -513,6 +526,11 @@ li.cellRow:last-of-type:after {
   text-decoration: none;
   border-radius: 0;
   -webkit-border-radius: 0;
+  margin-left: auto;
+}
+span.widthForSelectHidden {
+  background: red;
+  /*     display: none; */
 }
 .cellClosingIcon {
   height: 29px;
@@ -528,6 +546,17 @@ li.cellRow:last-of-type:after {
   fill: #929292;
 }
 .cellClosingIcon.deleteFilter {
+  margin: 0 0 0 auto;
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-decoration: none;
+  border-radius: 0;
+  -webkit-border-radius: 0;
   font-size: 22px;
   right: 0px;
   padding: 10px 20px 10px 15px;
