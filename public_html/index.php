@@ -50,6 +50,9 @@
         
         <!-- Hide tabbar on scrolling down, but show on scroll up -->
         <script src="/scripts/stickyNavigation.js"></script>
+        
+        <!-- Action drawer functions and interaction details -->
+        <script src="/scripts/actionDrawer.js"></script>
 <?
     if(isset($tweetOn)){
 ?>
