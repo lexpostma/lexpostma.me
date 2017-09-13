@@ -460,7 +460,7 @@ li.cellRow:last-of-type:after {
 }
 .cellRowContent {
   width: 100%;
-  padding: 7px 45px 8px 20px;
+  padding: 7px 20px 8px;
   background-color: white;
   display: flex;
   align-content: center;
@@ -492,26 +492,8 @@ li.cellRow:last-of-type:after {
   padding-left: 2px;
   padding-top: 7px;
 }
-.cellIcon.search i {
-  color: #4885ed;
-}
-.cellIcon.date i {
-  color: #b70909;
-}
-.cellIcon.tag i {
-  color: #27ae60;
-}
-.cellIcon.archive i {
-  color: #a77800;
-}
-.cellIcon.client i {
-  color: #545454;
-}
-.cellIcon.author i {
-  color: #FFDCB1;
-}
-.cellIcon.video i {
-  color: #ff0000;
+.cellLabel {
+  padding-right: 10px;
 }
 input.cellValue,
 select.cellValue {
@@ -527,10 +509,92 @@ select.cellValue {
   border-radius: 0;
   -webkit-border-radius: 0;
   margin-left: auto;
+  color: #929292;
 }
-span.widthForSelectHidden {
+.placeholderStyling {
+  color: #929292;
+  transform: translateX(90px);
+  transition-property: opacity, transform;
+  transition-duration: .2s;
+  transition-timing-function: ease-in-out;
+}
+.placeholderFocusStyling {
+  opacity: 0;
+  transform: translateX(0px);
+}
+input.cellValue#inputSearch {
+  width: 135px;
+  padding: 0 5px;
+  margin-right: -5px;
+  border-radius: 5px;
+  background-color: white;
+  transition: background 0.2s ease-in-out;
+}
+input.cellValue#inputSearch::-webkit-input-placeholder {
+  color: #929292;
+  transform: translateX(90px);
+  transition-property: opacity, transform;
+  transition-duration: .2s;
+  transition-timing-function: ease-in-out;
+}
+input.cellValue#inputSearch:-ms-input-placeholder {
+  color: #929292;
+  transform: translateX(90px);
+  transition-property: opacity, transform;
+  transition-duration: .2s;
+  transition-timing-function: ease-in-out;
+}
+input.cellValue#inputSearch::-ms-input-placeholder {
+  color: #929292;
+  transform: translateX(90px);
+  transition-property: opacity, transform;
+  transition-duration: .2s;
+  transition-timing-function: ease-in-out;
+}
+input.cellValue#inputSearch:-moz-placeholder {
+  color: #929292;
+  transform: translateX(90px);
+  transition-property: opacity, transform;
+  transition-duration: .2s;
+  transition-timing-function: ease-in-out;
+}
+input.cellValue#inputSearch::-moz-placeholder {
+  color: #929292;
+  transform: translateX(90px);
+  transition-property: opacity, transform;
+  transition-duration: .2s;
+  transition-timing-function: ease-in-out;
+}
+input.cellValue#inputSearch:focus {
+  background-color: #F7F7F7;
+}
+input.cellValue#inputSearch:focus::-webkit-input-placeholder {
+  opacity: 0;
+  transform: translateX(0px);
+}
+input.cellValue#inputSearch:focus:-ms-input-placeholder {
+  opacity: 0;
+  transform: translateX(0px);
+}
+input.cellValue#inputSearch:focus::-ms-input-placeholder {
+  opacity: 0;
+  transform: translateX(0px);
+}
+input.cellValue#inputSearch:focus:-moz-placeholder {
+  opacity: 0;
+  transform: translateX(0px);
+}
+input.cellValue#inputSearch:focus::-moz-placeholder {
+  opacity: 0;
+  transform: translateX(0px);
+}
+span.widthForInputHidden {
   background: red;
-  /*     display: none; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  display: none;
 }
 .cellClosingIcon {
   height: 29px;
@@ -557,14 +621,30 @@ span.widthForSelectHidden {
   text-decoration: none;
   border-radius: 0;
   -webkit-border-radius: 0;
+  display: none;
   font-size: 22px;
   right: 0px;
   padding: 10px 20px 10px 15px;
   margin-top: -10px;
   height: 44px;
+  color: #F04400;
 }
 .cellClosingIcon.deleteFilter:hover {
+  color: #7D01D7;
   text-decoration: none;
+}
+.cellRow.filterOn .cellRowContent {
+  padding-right: 45px;
+}
+.cellRow.filterOn input.cellValue,
+.cellRow.filterOn select.cellValue {
+  color: #4B0082;
+}
+.cellRow.filterOn input.cellValue#inputSearch {
+  background-color: #F7F7F7;
+}
+.cellRow.filterOn .cellClosingIcon.deleteFilter {
+  display: inline-block;
 }
 li.cellRow.contactItem .cellIcon svg {
   fill: white;
@@ -581,6 +661,27 @@ li.cellRow.contactItem .cellIcon#contactIcon_snapchat svg {
 }
 li.cellRow.contactItem .cellIcon#contactIcon_instagram {
   background: radial-gradient(circle at 33% 100%, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF);
+}
+.cellIcon.search i {
+  color: #4885ed;
+}
+.cellIcon.date i {
+  color: #b70909;
+}
+.cellIcon.tag i {
+  color: #27ae60;
+}
+.cellIcon.archive i {
+  color: #a77800;
+}
+.cellIcon.client i {
+  color: #545454;
+}
+.cellIcon.author i {
+  color: #FFDCB1;
+}
+.cellIcon.video i {
+  color: #ff0000;
 }
 /* *
    * iOS style toggle (checkbox)
