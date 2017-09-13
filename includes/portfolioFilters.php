@@ -100,47 +100,50 @@
 
 <ul class="cellRowGroup">
     <form action="/filtering.php" method="get">
-        <li class="cellRow <?if(isset($searchFilter)){ echo'filterOn';}?>">
+        <li class="cellRow">
             <div class="cellRowContent">
                 <div class="cellIcon search"><i class="fa fa-fw fa-search"></i></div>
                 <label for="inputSearch" class="cellLabel">Search</label>
-                <input class="cellValue" title="Search for projects" type="search" name="search" id="inputSearch" placeholder="Type" <? if(isset($searchFilter)){ echo ' value="'.$searchFilter.'" ';}?>>
+                <input class="cellValue" title="Search for projects" type="search" name="search" id="inputSearch" placeholder="Type" 
+                    <? if(isset($searchFilter)){ echo ' value="'.$searchFilter.'" ';}?>
+                    onkeyup="toggleFilterOnOff('inputSearch');">
+                <span id="inputSearchWidth" class="widthForInputHidden"></span>
                 <button type="button" class="cellClosingIcon deleteFilter" onclick="clearInput('inputSearch')">&times;</button>
             </div>
         </li>
 
 
         
-        <li class="cellRow <?if(isset($categoryFilter)){ echo'filterOn';}?>">        
+        <li class="cellRow">
             <div class="cellRowContent">
                 <div class="cellIcon tag"><i class="fa fa-fw fa-tag"></i></div>
                 <label for="inputCategory" class="cellLabel">Category</label>
                 <select class="cellValue" title="Filter by category" name= "category" id="inputCategory"><?=$selectCategory?></select>
-                <span id="inputCategoryWidth" class="widthForSelectHidden"></span>
+                <span id="inputCategoryWidth" class="widthForInputHidden"></span>
                 <button type="button" class="cellClosingIcon deleteFilter" onclick="clearInput('inputCategory')">&times;</button>
             </div>
         </li>
 
 
 
-        <li class="cellRow <?if(isset($yearFilter)){ echo'filterOn';}?>">        
+        <li class="cellRow">
             <div class="cellRowContent">
                 <div class="cellIcon date"><i class="fa fa-fw fa-calendar"></i></div>
                 <label for="inputYear" class="cellLabel">Year</label>
                 <select class="cellValue" title="Filter by year" name= "year" id="inputYear"><?=$selectYear?></select>
-                <span id="inputYearWidth" class="widthForSelectHidden"></span>
+                <span id="inputYearWidth" class="widthForInputHidden"></span>
                 <button type="button" class="cellClosingIcon deleteFilter" onclick="clearInput('inputYear')">&times;</button>
             </div>
         </li>
         
 
 
-        <li class="cellRow <?if(isset($clientFilter)){ echo'filterOn';}?>">        
+        <li class="cellRow">
             <div class="cellRowContent">
                 <div class="cellIcon client"><i class="fa fa-fw fa-building"></i></div>
                 <label for="inputClient" class="cellLabel">Client</label>
                 <select class="cellValue" title="Filter by client" name= "client" id="inputClient"><?=$selectClient?></select>
-                <span id="inputClientWidth" class="widthForSelectHidden"></span>
+                <span id="inputClientWidth" class="widthForInputHidden"></span>
                 <button type="button" class="cellClosingIcon deleteFilter" onclick="clearInput('inputClient')">&times;</button>
             </div>
         </li>

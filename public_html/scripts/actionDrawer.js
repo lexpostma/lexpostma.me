@@ -1,17 +1,3 @@
-$(document).ready(function() {
-
-    
-    $('#actionDrawerNavigation select').each(function() {
-        setWidthOfSelect($(this).attr('id'))
-    });
-
-    $('#actionDrawerNavigation select').change(function() {
-        setWidthOfSelect($(this).attr('id'))
-    });
-});
-
-
-
 function toggleDrawer() { 
     $('html').toggleClass('actionDrawerToggled');
 }
@@ -20,22 +6,58 @@ function changeItem(id) {
     $('#'+id).addClass('changed');
 }
 
+
+
+$(document).ready(function() {
+
+    $('#actionDrawerNavigation select').each(function() {
+        setWidthOfInput($(this).attr('id'));
+        toggleFilterOnOff($(this).attr('id'));
+    });
+
+    $('#actionDrawerNavigation select').change(function() {
+        setWidthOfInput($(this).attr('id'));
+        toggleFilterOnOff($(this).attr('id'))
+    });
+    
+    toggleFilterOnOff('inputSearch');
+
+});
+
 function clearInput(id) {
-    $('#'+id).get(0).selectedIndex= 0;
-    $('#'+id).removeAttr('value');
-    setWidthOfSelect(id)
+
+    if (id == 'inputSearch') {
+        $('#'+id).val('');
+    } else {
+        $('#'+id).get(0).selectedIndex= 0;        
+        setWidthOfInput(id);
+    }
+
+    toggleFilterOnOff(id);
 }
 
-function setWidthOfSelect(id) {
-    $('#'+id).width( 
-        $('#'+id+' + span').html(
-            $('#'+id).find(":selected").text()
-        ).width()
-    )
-};
+function setWidthOfInput(id) {
+    
+    if (id !== 'inputSearch') {
 
+        widthDefiningText = $('#'+id).find(":selected").text()
 
+        $('#'+id).width( 
+            $('#'+id+' + span').html( widthDefiningText ).width()
+        )
+    }
 
+}
+
+function toggleFilterOnOff(id) {
+
+    if( ($('#'+id).get(0).selectedIndex == 0) || ($('#'+id).val() == '') ) {
+        $('#'+id).parents('li.cellRow').removeClass('filterOn');
+    } else {
+        $('#'+id).parents('li.cellRow').addClass('filterOn');
+    }
+
+}
 
 
 function focusOnInput(id) {
@@ -56,16 +78,15 @@ function focusOnInput(id) {
     e.initMouseEvent('mousedown');
     $('#'+id)[0].dispatchEvent(e);
 */
-    
-}
-
-
+  
+  
+  
 /*
-function focusOnInput(id)   {
     if ($('#'+id).hasClass('show')) {
         $('#'+id+' form input[type="search"]').focus();
     } else {
         $('#'+id+' form input[type="search"]').blur();
     }
-}
 */
+  
+}
