@@ -163,7 +163,10 @@
         	$nextPage = $pageFilter+1;
         	$prevPostURL = makeNewFilterURL('page').'&page='.$nextPage;
         	$prevPostTitle = 'Older articles';
+    	} else {
+        	$nextPage = 1;
     	};
+    	
     	if($pageFilter != 1){
         	$prevPage = $pageFilter-1;
         	if($prevPage <= 1){  $nextPostURL = makeNewFilterURL('page');   }
