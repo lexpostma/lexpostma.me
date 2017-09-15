@@ -502,6 +502,7 @@ a.cellRowContent {
   text-align: center;
   font-weight: bold;
   display: block;
+  color: #4B0082;
   /*
     &:disabled {
         color: @colorInactive;
