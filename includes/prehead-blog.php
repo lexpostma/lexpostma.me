@@ -97,15 +97,6 @@
             if(empty($dateFilter) && empty($tagFilter) && empty($authorFilter) && empty($searchFilter) && empty($sourceFilter) && $pageFilter <= 1){
                 echo '<script language="Javascript">document.location.href="/";</script>';
             } else {
-/*
-                $introTitle = '<p class="filterText"><span><span>Blog posts</span>';
-                if(isset($monthFilter)){    $introTitle .= '<span>published in <a                             title="remove date filter"   href="'.makeNewFilterURL('date'  ).'">'.$monthFilterName.' '.$yearFilter.'</a></span>';  }
-                elseif(isset($yearFilter)){ $introTitle .= '<span>published in <a                             title="remove date filter"   href="'.makeNewFilterURL('date'  ).'">'.$yearFilter.'</a></span>';  }
-                if(isset($authorFilter)){   $introTitle .= '<span>written by <a                               title="remove author filter" href="'.makeNewFilterURL('author').'">'.$authorFilterNice.'</a></span>';  }
-                if(isset($tagFilter)){      $introTitle .= '<span>tagged with <a                              title="remove tag filter"    href="'.makeNewFilterURL('tag'   ).'">'.$tagFilterNice.'</a></span>';  }
-                if(isset($sourceFilter)){   $introTitle .= '<span>where the original source includes \'<a     title="remove source filter" href="'.makeNewFilterURL('source').'">'.$sourceFilter.'</a>\'</span>';  }
-                if(isset($searchFilter)){   $introTitle .= '<span>that include \'<a                           title="remove search filter" href="'.makeNewFilterURL('search').'">'.$searchFilter.'</a>\'</span>';  }                
-*/
                 $filterbarText = 'Blog posts';
                 if(isset($monthFilter)){      $filterbarText .= '<span>published in '.$monthFilterName.' '.$yearFilter.'</span>';
                 } elseif(isset($yearFilter)){ $filterbarText .= '<span>published in '.$yearFilter.'</span>';  }
@@ -115,8 +106,6 @@
                 if(isset($searchFilter)){     $filterbarText .= '<span>that include \'<span class="searchTerms">'.$searchFilter.'</span>\'</span>';  }                
                 $filterbarText .= '.';
             }
-//             if($pageFilter > 1){            $introTitle .= '<span><a                                          title="remove page filter"   href="'.makeNewFilterURL('page'  ).'">page '.$pageFilter.'</a></span>';  }
-//             $introTitle .= '</span></p>';
         } else if(isset($p)){ // Check if it's an existing blogpost
             $postCheck  = mysqli_query($con,"SELECT shortname FROM blog WHERE published = '$pubTest' AND shortname = '$p';"); // check whether it's a blog post title
             if (mysqli_num_rows($postCheck)!=0){ // More than 0 matches = blog post

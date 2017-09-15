@@ -113,15 +113,6 @@
             if(empty($yearFilter) && empty($clientFilter) && empty($categoryFilter) && empty($typeFilter) && empty($searchFilter)){
                 echo '<script language="Javascript">document.location.href="/";</script>';
             } else {
-/*
-                $introTitle = '<p class="filterText"><span>';
-                if(isset($categoryFilter)){ $introTitle .= '<span><a      title="remove category filter" href="'.makeNewFilterURL('category').'">'.$categoryFilterNice.'</a> design projects</span> ';  }
-                else{                       $introTitle .= 'Projects ';}
-                if(isset($yearFilter)){     $introTitle .= '<span>from <a    title="remove year filter"   href="'.makeNewFilterURL('year').'">'.$yearFilter.'</a></span>';  }
-                if(isset($clientFilter)){   $introTitle .= '<span>for <a     title="remove client filter"    href="'.makeNewFilterURL('client').'">'.$clientFilterNice.'</a></span>';  }
-                if(isset($searchFilter)){   $introTitle .= '<span>that include \'<a  title="remove search filter" href="'.makeNewFilterURL('search').'">'.$searchFilter.'</a>\'</span>';  }                
-                $introTitle .= '</span><p>';
-*/
                 $filterbarText = '';
                 if(isset($categoryFilter)){                         $filterbarText .= $categoryFilterNice.' design projects';  }
                 else{                                               $filterbarText .= 'Projects';}
