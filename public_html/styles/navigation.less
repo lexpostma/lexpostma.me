@@ -205,6 +205,7 @@ nav#secondNavigation {
     flex-direction: column;
     box-shadow: 0px 20px 50px black;
 }
+
 #actionDrawerClosingBackground {
     width: 100vw;
     height: 100vh;
@@ -212,8 +213,8 @@ nav#secondNavigation {
     bottom: 0;
     display: none;
     z-index: -1;
-//     cursor: pointer;
 }
+
 #actionDrawerTitleBar {
     border-top-left-radius:  10px;
     border-top-right-radius: 10px;
@@ -222,7 +223,6 @@ nav#secondNavigation {
     background-color: white;
     border-bottom: @lineThickness solid @colorLine;
     position: relative;
-    .iOSFontStyling;
     padding: 7px @sidePadding 8px;
     span {
         text-align: center;
@@ -230,12 +230,23 @@ nav#secondNavigation {
         width: 100%;
         display: block;
     }
-    a#actionDrawerClose {
+    input.actionDrawerTitleButton {
         position: absolute;
         top: 7px;
-        right: @sidePadding;
         text-decoration: none;
         color: @color1;
+    }
+    input#formCancel {
+        left: @sidePadding;
+    }
+    input#formReset {
+        right: @sidePadding;
+        color: red;
+        &:disabled {
+            color: @colorInactive;
+            opacity: .3;
+        }
+
     }
 }
 
@@ -412,22 +423,9 @@ html.actionDrawerToggled {
 
 
 
-/* ===========================
-   iOS STYLE CELL ROW ELEMENTS
-   =========================== */
-
-/*
-li.cellRow {       background: red;    }
-.cellRowContent {  background: pink;   }
-.cellLabel {       background: yellow; }
-.cellValue {       background: orange; }
-.cellClosingIcon { background: lime;   }
-.cellValue {
-    select, input {
-        background: aqua;
-    }
-}
-*/
+/* ===================================
+   iOS STYLE CELL ROW ELEMENTS IN FORM
+   =================================== */
 
 .iOSFontStyling {
     font-size: 17px;
@@ -447,27 +445,27 @@ li.cellRow {       background: red;    }
     }
 }
 
-.stripStylingFromFormItems {
-    margin: 0 0 0 auto;
-	padding: 0;
-    background: none;
-    border: none;
-    outline: none;
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
-    text-decoration: none;
-            border-radius: 0;
-    -webkit-border-radius: 0;
+// Strip default styling from form items {
+.actionDrawer {
+    .iOSFontStyling;
+    select, button, input {
+        .iOSFontStyling;
+        margin: 0 0 0 auto;
+    	padding: 0;
+        background: none;
+        border: none;
+        outline: none;
+        -webkit-appearance: none;
+           -moz-appearance: none;
+                appearance: none;
+        text-decoration: none;
+                border-radius: 0;
+        -webkit-border-radius: 0;
+    }
 }
 
 ul.cellRowGroup {
-    .iOSFontStyling;
     margin: 25px auto;
-    .cellGroupTitle {
-//         padding: 0 @sidePadding;
-//         font-weight: bold;
-    }
 }
 
 li.cellRow {
@@ -484,25 +482,36 @@ li.cellRow {
     }
 }
 
-.cellRowContent {
-
-//     display: block;
+.cellRowContent,
+input.cellRowContent {
     width: 100%; 
-//     height: 44px;
-    
     padding: 7px 20px 8px;
     background-color: white;
     
     display: flex;
     align-content: center;
     flex-flow: row wrap;
-//     justify-content: space-between;
+}
+
+a.cellRowContent {
+    color: @colorBodyText;
+    text-decoration: none;
+}
+
+
+.cellRowContent#formApplyFilters {
+    text-align: center;
+    font-weight: bold;
+    display: block;
+/*
+    &:disabled {
+        color: @colorInactive;
+        font-weight: normal;
+    }
+*/
 }
 
 .cellIcon {
-//     display: block; 
-//     float: left;
-    
     height: 29px;
     width: 29px;
     border-radius: 6px;
@@ -519,27 +528,16 @@ li.cellRow {
     }
     i {
         color: @color1;
-        &.fa-tag {
-            padding-left: 1px;
-            padding-top: 7px;                
-        }
-        &.fa-building {
-            padding-left: 2px;
-            padding-top: 7px;
-        }
     }
 
 }
 
-
-
-.cellLabel { 
+.cellLabel {
     padding-right: 10px;
 }
 
 input.cellValue,
 select.cellValue {
-    .stripStylingFromFormItems;
     margin-left: auto;
     color: @colorInactive;
 }
@@ -590,14 +588,9 @@ span.widthForInputHidden {
 
 
 .cellClosingIcon {
-//     display: block; 
-//     float: right;
-
     height: 29px;
     position: absolute;
-
     right: 20px;
-
     &.download svg {
         fill: @color1;
         height: 29px;
@@ -607,20 +600,18 @@ span.widthForInputHidden {
         fill: @colorInactive;
     }
     &.deleteFilter {
-        .stripStylingFromFormItems;
         display: none;
         font-size: 22px;
         right: 0px;
         padding: 10px 20px 10px 15px;
         margin-top: -10px;
         height: 44px;
-        color: @color2;
+        color: red;
         &:hover {
             color: @color3;
             text-decoration: none;
         }
     }
-
 }
 
 
@@ -664,9 +655,22 @@ li.cellRow.contactItem {
     }
 }
 
+.cellIcon i {
+    &.fa-tag {
+        padding-left: 1px;
+        padding-top: 7px;                
+    }
+    &.fa-building {
+        padding-left: 2px;
+        padding-top: 7px;
+    }
+}
+
 .cellIcon.search    i { color: #4885ed; }
-.cellIcon.date      i { color: #b70909; }
-.cellIcon.tag       i { color: @color5; }
+.cellIcon.date      i,
+.cellIcon.year      i { color: #b70909; }
+.cellIcon.tag       i,
+.cellIcon.category  i { color: @color5; }
 .cellIcon.archive   i { color: #a77800; }
 .cellIcon.client    i { color: #545454; }
 .cellIcon.author    i { color: #FFDCB1; }

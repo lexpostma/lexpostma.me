@@ -24,6 +24,13 @@
                             <i class="fa fa-twitter"></i>
                         </a>
                     </li>
+                    <li>
+                        <a href="/archive"
+                                title="Archive" 
+                                onclick="ga(<?=$gaSecondaryNavEvent?> 'Follow @lexpostmame');" >Archive</a>
+                    </li>
+
+
 <?
     } elseif ( $basepage == 'resume' ){
 ?>

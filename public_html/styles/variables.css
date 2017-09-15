@@ -25,7 +25,12 @@
   color: DarkGray;
 }
 .navShowHideTransition {
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out 0s;
+  -webkit-transition: transform 0.2s ease-in-out 0s;
+  -o-transition: transform 0.2s ease-in-out 0s;
+  -moz-transition: transform 0.2s ease-in-out 0s;
+  -ms-transition: transform 0.2s ease-in-out 0s;
+  -kthtml-transition: transform 0.2s ease-in-out 0s;
 }
 .translucentBackground {
   background-color: rgba(250, 250, 250, 0.9);
