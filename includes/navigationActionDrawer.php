@@ -21,6 +21,5 @@
                 <div id="actionDrawerContent">
                     <? include $actionDrawerContentIncludeFile; ?>
                 </div>
-                <input class="actionDrawerTitleButton" id="actionDrawerClosingBackground" type="reset" value="Cancel" form="filteringForm" onclick="toggleDrawer()">
-<!--                 <div id="actionDrawerClosingBackground" onclick="toggleDrawer()"></div> -->
+                <input class="actionDrawerTitleButton" id="actionDrawerClosingBackground" value="" type="reset" form="filteringForm" onclick="toggleDrawer()">
             </div>
