@@ -211,6 +211,9 @@ nav#secondNavigation {
     display: flex;
     flex-direction: column;
     box-shadow: 0px 20px 50px black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;            
+
 }
 
 #actionDrawerClosingBackground {
@@ -845,8 +848,43 @@ input[type="checkbox"] {
     }
 }
 
-@media screen and (min-width: @screenSizeAtLandscapeTall) {
+@media screen and (min-width: @screenSizeAtLandscapeTallWidth) and (min-height: @screenSizeAtLandscapeTallHeight) {
     
+    #actionDrawerNavigation {
+        border-radius: 10px;
+        border-radius: 10px;
+        transform-origin: top;
+        top: 0;
+        bottom: auto;
+        box-shadow: 0px 0px 50px black;
+        transform: translateY(110vh);
+    }
+    #actionDrawerContent {
+        height: 400px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    #actionDrawerClosingBackground {
+        top: -150px;
+    }
+
+    html.actionDrawerToggled {
+        body {
+            main#contents {
+                -webkit-transform: scale(.9, .9) translateY(~"calc(100vw * 0.05)");
+                        transform: scale(.9, .9) translateY(~"calc(100vw * 0.05)");
+                border-radius: 10px;
+            }
+
+            #navigationElements {
+                #actionDrawerNavigation {
+                    transform: translateY(150px);
+                }
+            }
+        }
+    }
+
 }
 
 @media screen and (min-width: @screenSizeAtDesktop) {}
