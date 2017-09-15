@@ -25,11 +25,11 @@
                     </li>
 <?        
     } else {
-        if( $basepage == 'about' ){           $tabbarSpecialItemTitle = 'Get in touch!';       $tabbarSpecialItemIconSVG = 'contact';   $tabbarSpecialItemName = 'Let’s talk';       $tabbarSpecialItemTooltip = true;
-        } elseif( $basepage == 'resume' ){    $tabbarSpecialItemTitle = 'Download my resume';  $tabbarSpecialItemIconSVG = 'download';  $tabbarSpecialItemName = 'Download';         $tabbarSpecialItemTooltip = true; 
-        } elseif( $basepage == 'portfolio' ){ $tabbarSpecialItemTitle = 'Filter projects';     $tabbarSpecialItemIconSVG = 'filter';    $tabbarSpecialItemName = 'Filter projects';  $tabbarSpecialItemTooltip = false; 
-        } elseif( $basepage == 'blog' ){      $tabbarSpecialItemTitle = 'Filter blog posts';   $tabbarSpecialItemIconSVG = 'filter';    $tabbarSpecialItemName = 'Filter posts';     $tabbarSpecialItemTooltip = false; 
-        } else {                              $tabbarSpecialItemTitle = 'Filter';              $tabbarSpecialItemIconSVG = 'filter';    $tabbarSpecialItemName = 'Filter';           $tabbarSpecialItemTooltip = false;
+        if( $basepage == 'about' ){           $tabbarSpecialItemTitle = 'Get in touch!';       $tabbarSpecialItemIconSVG = 'contact';   $tabbarSpecialItemName = 'Let’s talk'; $tabbarSpecialItemTooltip = true;
+        } elseif( $basepage == 'resume' ){    $tabbarSpecialItemTitle = 'Download my resume';  $tabbarSpecialItemIconSVG = 'download';  $tabbarSpecialItemName = 'Download';   $tabbarSpecialItemTooltip = true; 
+        } elseif( $basepage == 'portfolio' ){ $tabbarSpecialItemTitle = 'Filter projects';     $tabbarSpecialItemIconSVG = 'filter';    $tabbarSpecialItemName = 'Filter';     $tabbarSpecialItemTooltip = false; 
+        } elseif( $basepage == 'blog' ){      $tabbarSpecialItemTitle = 'Filter blog posts';   $tabbarSpecialItemIconSVG = 'filter';    $tabbarSpecialItemName = 'Filter';     $tabbarSpecialItemTooltip = false; 
+        } else {                              $tabbarSpecialItemTitle = 'Filter';              $tabbarSpecialItemIconSVG = 'filter';    $tabbarSpecialItemName = 'Filter';     $tabbarSpecialItemTooltip = false;
         }
 ?>
                     <li class="tabbarItem" id="tabbarSpecialItem">
