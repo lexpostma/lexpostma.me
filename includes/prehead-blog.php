@@ -35,17 +35,23 @@
             $anyFilter = 1;
             if(isset($_GET['date'])){
                 $dateFilter = mysqli_real_escape_string($con,$_GET['date']);
-                $coreBlogSQLquery .= "AND datePublished BETWEEN ";
-				if (strlen($dateFilter)==2){		      $monthFilter=$dateFilter;     $yearFilter=date('Y');       $coreBlogSQLquery .= " '$yearFilter-$monthFilter-01 00:00:00' AND '$yearFilter-$monthFilter-31 23:59:59' ";  }
-				elseif (strlen($dateFilter)==4){	                                    $yearFilter=$dateFilter;     $coreBlogSQLquery .= " '$yearFilter-01-01 00:00:00' AND '$yearFilter-12-31 23:59:59'    ";                   }
-				elseif (strlen($dateFilter)==7){
-					$explodeDate = explode("-", $dateFilter);
-					if (    strlen($explodeDate[0])==2){  $monthFilter=$explodeDate[0];	$yearFilter=$explodeDate[1]; $coreBlogSQLquery .= " '$yearFilter-$monthFilter-01 00:00:00' AND '$yearFilter-$monthFilter-31 23:59:59' ";  }
-					elseif (strlen($explodeDate[0])==4){  $monthFilter=$explodeDate[1];	$yearFilter=$explodeDate[0]; $coreBlogSQLquery .= " '$yearFilter-$monthFilter-01 00:00:00' AND '$yearFilter-$monthFilter-31 23:59:59' ";  }
-				};
-				if(isset($monthFilter)){
-    				$monthFilterName = date("F", mktime(0, 0, 0, $monthFilter, 10));
-				}
+                $dateFilter = preg_replace("/[^0-9-]/", "", $dateFilter);
+                
+                if ($dateFilter !== '') {
+
+                    $coreBlogSQLquery .= "AND datePublished BETWEEN ";
+    				if (strlen($dateFilter)==2){		      $monthFilter=$dateFilter;     $yearFilter=date('Y');       $coreBlogSQLquery .= " '$yearFilter-$monthFilter-01 00:00:00' AND '$yearFilter-$monthFilter-31 23:59:59' ";  }
+    				elseif (strlen($dateFilter)==4){	                                    $yearFilter=$dateFilter;     $coreBlogSQLquery .= " '$yearFilter-01-01 00:00:00' AND '$yearFilter-12-31 23:59:59'    ";                   }
+    				elseif (strlen($dateFilter)==7){
+    					$explodeDate = explode("-", $dateFilter);
+    					if (    strlen($explodeDate[0])==2){  $monthFilter=$explodeDate[0];	$yearFilter=$explodeDate[1]; $coreBlogSQLquery .= " '$yearFilter-$monthFilter-01 00:00:00' AND '$yearFilter-$monthFilter-31 23:59:59' ";  }
+    					elseif (strlen($explodeDate[0])==4){  $monthFilter=$explodeDate[1];	$yearFilter=$explodeDate[0]; $coreBlogSQLquery .= " '$yearFilter-$monthFilter-01 00:00:00' AND '$yearFilter-$monthFilter-31 23:59:59' ";  }
+    				};
+    				if(isset($monthFilter)){
+        				$monthFilterName = date("F", mktime(0, 0, 0, $monthFilter, 10));
+    				}
+   
+                }                
             };
             if(isset($_GET['tag'])){
                 $tagCheckVar = mysqli_real_escape_string($con,$_GET['tag']);

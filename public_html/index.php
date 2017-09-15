@@ -27,7 +27,7 @@
 ?>
 
 <!DOCTYPE HTML>
-<html lang="en" class=""> <!-- TODO: actionDrawerToggled -->
+<html lang="en" class="actionDrawerToggled"> <!-- TODO: actionDrawerToggled -->
 <?  include '../includes/head.php'; ?>
 
     <body>
@@ -50,6 +50,9 @@
         
         <!-- Hide tabbar on scrolling down, but show on scroll up -->
         <script src="/scripts/stickyNavigation.js"></script>
+        
+        <!-- Action drawer functions and interaction details -->
+        <script src="/scripts/actionDrawer.js"></script>
 <?
     if(isset($tweetOn)){
 ?>

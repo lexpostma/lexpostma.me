@@ -25,7 +25,12 @@
   color: DarkGray;
 }
 .navShowHideTransition {
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out 0s;
+  -webkit-transition: transform 0.2s ease-in-out 0s;
+  -o-transition: transform 0.2s ease-in-out 0s;
+  -moz-transition: transform 0.2s ease-in-out 0s;
+  -ms-transition: transform 0.2s ease-in-out 0s;
+  -kthtml-transition: transform 0.2s ease-in-out 0s;
 }
 .translucentBackground {
   background-color: rgba(250, 250, 250, 0.9);
@@ -75,7 +80,12 @@ nav#tabbarNavigation {
   bottom: 0;
   z-index: 10;
   border-top: 0.5px solid #B2B2B2;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out 0s;
+  -webkit-transition: transform 0.2s ease-in-out 0s;
+  -o-transition: transform 0.2s ease-in-out 0s;
+  -moz-transition: transform 0.2s ease-in-out 0s;
+  -ms-transition: transform 0.2s ease-in-out 0s;
+  -kthtml-transition: transform 0.2s ease-in-out 0s;
   background-color: rgba(250, 250, 250, 0.9);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -151,7 +161,12 @@ li.tabbarItem:first-child a.tabbarLink {
   padding: 4px 7px 6px;
   border-radius: 5px;
   animation: float 3s ease-in-out infinite;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out 0s;
+  -webkit-transition: transform 0.2s ease-in-out 0s;
+  -o-transition: transform 0.2s ease-in-out 0s;
+  -moz-transition: transform 0.2s ease-in-out 0s;
+  -ms-transition: transform 0.2s ease-in-out 0s;
+  -kthtml-transition: transform 0.2s ease-in-out 0s;
   transition: bottom 0.2s ease-in-out;
   z-index: 1;
 }
@@ -191,7 +206,12 @@ nav#secondNavigation a {
    ACTION DRAWER
    ============= */
 #actionDrawerNavigation {
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out 0s;
+  -webkit-transition: transform 0.2s ease-in-out 0s;
+  -o-transition: transform 0.2s ease-in-out 0s;
+  -moz-transition: transform 0.2s ease-in-out 0s;
+  -ms-transition: transform 0.2s ease-in-out 0s;
+  -kthtml-transition: transform 0.2s ease-in-out 0s;
   position: absolute;
   bottom: 50.5px;
   width: 100%;
@@ -216,8 +236,6 @@ nav#secondNavigation a {
   background-color: white;
   border-bottom: 0.5px solid #B2B2B2;
   position: relative;
-  font-size: 17px;
-  line-height: 29px;
   padding: 7px 20px 8px;
 }
 #actionDrawerTitleBar span {
@@ -226,12 +244,22 @@ nav#secondNavigation a {
   width: 100%;
   display: block;
 }
-#actionDrawerTitleBar a#actionDrawerClose {
+#actionDrawerTitleBar input.actionDrawerTitleButton {
   position: absolute;
   top: 7px;
-  right: 20px;
   text-decoration: none;
   color: #4B0082;
+}
+#actionDrawerTitleBar input#formCancel {
+  left: 20px;
+}
+#actionDrawerTitleBar input#formReset {
+  right: 20px;
+  color: red;
+}
+#actionDrawerTitleBar input#formReset:disabled {
+  color: #929292;
+  opacity: .3;
 }
 #actionDrawerContent {
   background-color: rgba(250, 250, 250, 0.9);
@@ -251,7 +279,12 @@ nav#secondNavigation a {
   left: 0;
   right: 0;
   z-index: 8;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out 0s;
+  -webkit-transition: transform 0.2s ease-in-out 0s;
+  -o-transition: transform 0.2s ease-in-out 0s;
+  -moz-transition: transform 0.2s ease-in-out 0s;
+  -ms-transition: transform 0.2s ease-in-out 0s;
+  -kthtml-transition: transform 0.2s ease-in-out 0s;
   background-color: rgba(250, 250, 250, 0.9);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -389,9 +422,9 @@ html.actionDrawerToggled body #navigationElements li.tabbarItem#tabbarSpecialIte
 html.actionDrawerToggled body #navigationElements #actionDrawerClosingBackground {
   display: block;
 }
-/* ===========================
-   iOS STYLE CELL ROW ELEMENTS
-   =========================== */
+/* ===================================
+   iOS STYLE CELL ROW ELEMENTS IN FORM
+   =================================== */
 .iOSFontStyling {
   font-size: 17px;
   line-height: 29px;
@@ -406,20 +439,31 @@ html.actionDrawerToggled body #navigationElements #actionDrawerClosingBackground
   background: #B2B2B2;
   height: 0.5px;
 }
-ul.cellRowGroup {
+.actionDrawer {
   font-size: 17px;
   line-height: 29px;
-  display: block;
-  width: 100%;
+}
+.actionDrawer select,
+.actionDrawer button,
+.actionDrawer input {
+  font-size: 17px;
+  line-height: 29px;
+  margin: 0 0 0 auto;
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-decoration: none;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+}
+ul.cellRowGroup {
   margin: 25px auto;
 }
-ul.cellRowGroup .cellGroupTitle {
-  padding: 0 20px;
-  font-weight: bold;
-}
 li.cellRow {
-  display: block;
-  width: 100%;
   position: relative;
 }
 li.cellRow:after {
@@ -441,20 +485,29 @@ li.cellRow:last-of-type {
 li.cellRow:last-of-type:after {
   content: none;
 }
-li.cellRow .cellRowContent {
-  font-size: 17px;
-  line-height: 29px;
-  cursor: pointer;
-  /*
-    display: flex;
-    justify-content: flex-start;
-    align-content: center;
-*/
-  display: block;
+.cellRowContent,
+input.cellRowContent {
   width: 100%;
-  background-color: white;
-  text-decoration: none;
   padding: 7px 20px 8px;
+  background-color: white;
+  display: flex;
+  align-content: center;
+  flex-flow: row wrap;
+}
+a.cellRowContent {
+  color: #270043;
+  text-decoration: none;
+}
+.cellRowContent#formApplyFilters {
+  text-align: center;
+  font-weight: bold;
+  display: block;
+  /*
+    &:disabled {
+        color: @colorInactive;
+        font-weight: normal;
+    }
+*/
 }
 .cellIcon {
   height: 29px;
@@ -463,9 +516,8 @@ li.cellRow .cellRowContent {
   background-color: white;
   border: 0.5px solid #B2B2B2;
   overflow: hidden;
-  margin-right: 15px;
-  display: inline-block;
   text-align: center;
+  margin-right: 15px;
 }
 .cellIcon svg {
   margin: -0.5px;
@@ -474,6 +526,154 @@ li.cellRow .cellRowContent {
 }
 .cellIcon i {
   color: #4B0082;
+}
+.cellLabel {
+  padding-right: 10px;
+}
+input.cellValue,
+select.cellValue {
+  margin-left: auto;
+  color: #929292;
+}
+.placeholderStyling {
+  color: #929292;
+  transform: translateX(90px);
+  transition-property: opacity, transform;
+  transition-duration: .2s;
+  transition-timing-function: ease-in-out;
+}
+.placeholderFocusStyling {
+  opacity: 0;
+  transform: translateX(0px);
+}
+input.cellValue#inputSearch {
+  width: 135px;
+  padding: 0 5px;
+  margin-right: -5px;
+  border-radius: 5px;
+  background-color: white;
+  transition: background 0.2s ease-in-out;
+}
+input.cellValue#inputSearch::-webkit-input-placeholder {
+  color: #929292;
+  transform: translateX(90px);
+  transition-property: opacity, transform;
+  transition-duration: .2s;
+  transition-timing-function: ease-in-out;
+}
+input.cellValue#inputSearch:-ms-input-placeholder {
+  color: #929292;
+  transform: translateX(90px);
+  transition-property: opacity, transform;
+  transition-duration: .2s;
+  transition-timing-function: ease-in-out;
+}
+input.cellValue#inputSearch::-ms-input-placeholder {
+  color: #929292;
+  transform: translateX(90px);
+  transition-property: opacity, transform;
+  transition-duration: .2s;
+  transition-timing-function: ease-in-out;
+}
+input.cellValue#inputSearch:-moz-placeholder {
+  color: #929292;
+  transform: translateX(90px);
+  transition-property: opacity, transform;
+  transition-duration: .2s;
+  transition-timing-function: ease-in-out;
+}
+input.cellValue#inputSearch::-moz-placeholder {
+  color: #929292;
+  transform: translateX(90px);
+  transition-property: opacity, transform;
+  transition-duration: .2s;
+  transition-timing-function: ease-in-out;
+}
+input.cellValue#inputSearch:focus {
+  background-color: #F7F7F7;
+}
+input.cellValue#inputSearch:focus::-webkit-input-placeholder {
+  opacity: 0;
+  transform: translateX(0px);
+}
+input.cellValue#inputSearch:focus:-ms-input-placeholder {
+  opacity: 0;
+  transform: translateX(0px);
+}
+input.cellValue#inputSearch:focus::-ms-input-placeholder {
+  opacity: 0;
+  transform: translateX(0px);
+}
+input.cellValue#inputSearch:focus:-moz-placeholder {
+  opacity: 0;
+  transform: translateX(0px);
+}
+input.cellValue#inputSearch:focus::-moz-placeholder {
+  opacity: 0;
+  transform: translateX(0px);
+}
+span.widthForInputHidden {
+  background: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  display: none;
+}
+.cellClosingIcon {
+  height: 29px;
+  position: absolute;
+  right: 20px;
+}
+.cellClosingIcon.download svg {
+  fill: #4B0082;
+  height: 29px;
+  margin-right: -9px;
+}
+.cellClosingIcon.chevron svg {
+  fill: #929292;
+}
+.cellClosingIcon.deleteFilter {
+  display: none;
+  font-size: 22px;
+  right: 0px;
+  padding: 10px 20px 10px 15px;
+  margin-top: -10px;
+  height: 44px;
+  color: red;
+}
+.cellClosingIcon.deleteFilter:hover {
+  color: #7D01D7;
+  text-decoration: none;
+}
+.cellRow.filterOn .cellRowContent {
+  padding-right: 45px;
+}
+.cellRow.filterOn input.cellValue,
+.cellRow.filterOn select.cellValue {
+  color: #4B0082;
+}
+.cellRow.filterOn input.cellValue#inputSearch {
+  background-color: #F7F7F7;
+}
+.cellRow.filterOn .cellClosingIcon.deleteFilter {
+  display: inline-block;
+}
+li.cellRow.contactItem .cellIcon svg {
+  fill: white;
+}
+li.cellRow.contactItem .cellIcon:not(#contactIcon_snapchat) {
+  border: none;
+}
+li.cellRow.contactItem .cellIcon:not(#contactIcon_snapchat) svg {
+  padding-top: 1px;
+}
+li.cellRow.contactItem .cellIcon#contactIcon_snapchat svg {
+  stroke: black;
+  stroke-width: 2px;
+}
+li.cellRow.contactItem .cellIcon#contactIcon_instagram {
+  background: radial-gradient(circle at 33% 100%, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF);
 }
 .cellIcon i.fa-tag {
   padding-left: 1px;
@@ -486,10 +686,12 @@ li.cellRow .cellRowContent {
 .cellIcon.search i {
   color: #4885ed;
 }
-.cellIcon.date i {
+.cellIcon.date i,
+.cellIcon.year i {
   color: #b70909;
 }
-.cellIcon.tag i {
+.cellIcon.tag i,
+.cellIcon.category i {
   color: #27ae60;
 }
 .cellIcon.archive i {
@@ -503,126 +705,6 @@ li.cellRow .cellRowContent {
 }
 .cellIcon.video i {
   color: #ff0000;
-}
-.cellLabel {
-  display: inline-block;
-  flex-grow: 2;
-  color: #270043;
-  white-space: nowrap;
-}
-.cellValue {
-  display: inline-block;
-  color: #929292;
-  text-align: right;
-  max-width: 200px;
-  overflow: hidden;
-}
-.cellValue input,
-.cellValue select {
-  background: none;
-  border: none;
-  outline: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  text-decoration: none;
-  border-radius: 0;
-  -webkit-border-radius: 0;
-  text-align: right;
-}
-.cellValue input {
-  transition: background 0.2s ease-in-out;
-  border-radius: 5px;
-  font-size: 17px;
-  line-height: 29px;
-  padding: 0px 5px;
-  margin: 0 -5px;
-}
-.cellValue input::-webkit-input-placeholder {
-  color: #929292;
-}
-.cellValue input:-ms-input-placeholder {
-  color: #929292;
-}
-.cellValue input:-moz-placeholder {
-  color: #929292;
-}
-.cellValue input::-moz-placeholder {
-  color: #929292;
-}
-.cellValue input:focus {
-  text-align: left;
-  background-color: #F7F7F7;
-  color: #270043;
-}
-.cellValue input:focus::-webkit-input-placeholder {
-  color: #F7F7F7;
-}
-.cellValue input:focus:-ms-input-placeholder {
-  color: #F7F7F7;
-}
-.cellValue input:focus:-moz-placeholder {
-  color: #F7F7F7;
-}
-.cellValue input:focus::-moz-placeholder {
-  color: #F7F7F7;
-}
-.cellValue select {
-  direction: rtl;
-}
-.cellValue select option,
-.cellValue select optgroup {
-  direction: ltr;
-}
-.cellClosingIcon {
-  height: 29px;
-  float: right;
-}
-.cellClosingIcon.download svg {
-  fill: #4B0082;
-  height: 29px;
-  margin-right: -9px;
-}
-.cellClosingIcon.chevron svg {
-  fill: #929292;
-}
-.cellClosingIcon.deleteFilter {
-  font-size: 22px;
-  padding: 10px;
-  margin: -10px -10px -10px 0;
-  display: none;
-}
-.cellClosingIcon.deleteFilter:hover {
-  text-decoration: none;
-}
-li.cellRow.filterOn .cellRowContent .cellValue {
-  color: #270043;
-}
-li.cellRow.filterOn .cellRowContent .cellClosingIcon.deleteFilter {
-  display: block;
-}
-li.cellRow.resetFilters {
-  text-align: center;
-}
-li.cellRow.resetFilters .cellLabel {
-  color: red;
-}
-li.cellRow.contactItem a .cellIcon svg {
-  fill: white;
-}
-li.cellRow.contactItem a .cellIcon:not(#contactIcon_snapchat) {
-  border: none;
-}
-li.cellRow.contactItem a .cellIcon:not(#contactIcon_snapchat) svg {
-  padding-top: 1px;
-}
-li.cellRow.contactItem a .cellIcon#contactIcon_snapchat svg {
-  stroke: black;
-  stroke-width: 2px;
-}
-li.cellRow.contactItem a .cellIcon#contactIcon_instagram {
-  /* Instagram CSS gradient by Ana Tudor https://codepen.io/thebabydino/pen/qZvvBM */
-  background: radial-gradient(circle at 33% 100%, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF);
 }
 /* *
    * iOS style toggle (checkbox)

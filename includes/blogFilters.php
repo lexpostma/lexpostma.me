@@ -12,14 +12,13 @@
                                  
 	$yearFilterSelection = mysqli_query($con,$yearFilterSelectionQuery);
 
-	if(empty($dateFilter)){  $selectDate = "<option>Select</option>"; }
-	else{                    $selectDate = ""; }
+    $selectDate = "<option value='' >Select</option>";
 
 	while($row = mysqli_fetch_array($yearFilterSelection)){
 		$year = date("Y", strtotime($row['datePublished']));
 		$selectDate .= "<option disabled></option><optgroup label='$year'>";
 
-        $selectDate .= "<option value='".makeNewFilterURL('date')."&date=$year' ";
+        $selectDate .= "<option value='$year' ";
 		if(isset($dateFilter) && $dateFilter == $year){ $selectDate .= "selected";  };
         $selectDate .= ">throughout $year</option>";
 
@@ -36,7 +35,7 @@
 			$month = date("F", $datetime);
 			$monthNum = date("m", $datetime);
             
-            $selectDate .= "<option value='".makeNewFilterURL('date')."&date=$year-$monthNum' ";
+            $selectDate .= "<option value='$year-$monthNum' ";
 			if(isset($dateFilter) && isset($monthFilter) && $monthFilter == $monthNum && $yearFilter == $year){ $selectDate .= "selected"; };
             $selectDate .= ">$month";
 			if(isset($dateFilter) && isset($monthFilter) && $monthFilter == $monthNum && $yearFilter == $year){ $selectDate .= " $year"; };
@@ -58,14 +57,13 @@
     $authorFilterSelection = mysqli_query($con,$authorFilterSelectionQuery);
 
 	if(mysqli_num_rows($authorFilterSelection)>1){
-    	if(empty($authorFilter)){ $selectAuthor = "<option>Select</option><option disabled></option>"; }
-    	else{                     $selectAuthor = ""; };
+    	$selectAuthor = "<option>Select</option><option disabled></option>";
 
         while($row = mysqli_fetch_array($authorFilterSelection)){
     		$shortauthor = $row['username'];
     		$author = $row['author'];
     		
-    		$selectAuthor .= "<option value='".makeNewFilterURL('author')."&author=$shortauthor' ";
+    		$selectAuthor .= "<option value='$shortauthor' ";
     		if(isset($authorFilter) && $authorFilter == $shortauthor){  $selectAuthor .= "selected"; };
     		$selectAuthor .= ">$author</option>";
 
@@ -76,8 +74,7 @@
 # ==== Tag filter ==== #
 # ==================== #
 
-	if(empty($tagFilter)){    $selectTag = "<option>Select</option><option disabled></option>"; }
-	else{                     $selectTag = ""; };
+    $selectTag = "<option>Select</option><option disabled></option>";
     
     $tagFilterSelectionQuery = "SELECT blog_tags.tag,blog_tags.shorttag 
                                 FROM blog 
@@ -88,90 +85,19 @@
                                 ORDER BY tag ASC;";
 
     $tagFilterSelection = mysqli_query($con,$tagFilterSelectionQuery);
+    
     while($row = mysqli_fetch_array($tagFilterSelection)){
 		$shorttag = $row['shorttag'];
 		$tag = $row['tag'];
 
-        $selectTag .= "<option value='".makeNewFilterURL('tag')."&tag=$shorttag' ";
+        $selectTag .= "<option value='$shorttag' ";
 		if(isset($tagFilter) && $tagFilter == $shorttag){   $selectTag .= "selected"; };
 		$selectTag .= ">$tag</option>";
     }
 ?>
 
+<!--
 <ul class="cellRowGroup">
-    <li class="cellRow <?if(isset($searchFilter)){ echo'filterOn';}?>">
-        <div class="cellRowContent" onclick="focusOnInput('filterInputSearch');">
-            <div class="cellIcon search"><i class="fa fa-fw fa-search"></i></div>
-            <span class="cellLabel">Search</span>
-            <div class="cellValue">
-                <form action="/search.php" method="get">
-                    <input type="hidden" name="rest"   value="<?=makeNewFilterURL('search');?>">
-                    <input type="search" name="search" placeholder="Type" title="Search for blog posts" id="filterInputSearch"
-                        <? if(isset($searchFilter)){ echo ' value="'.$searchFilter.'" ';}?>>
-                </form>
-            </div>
-            <a class="cellClosingIcon deleteFilter" href="<?=makeNewFilterURL('search')?>">&times;</a>
-        </div>
-    </li>
-    <li class="cellRow <?if(isset($tagFilter)){ echo'filterOn';}?>">
-        <div class="cellRowContent" onclick="focusOnInput('filterSelectTag');">
-            <div class="cellIcon tag"><i class="fa fa-fw fa-tag"></i></div>
-            <span class="cellLabel">Tag</span>
-            <div class="cellValue">
-                <select onchange="window.open(this.value,'_self');" title="Filter by tag" id="filterSelectTag">
-                    <?=$selectTag?>
-                </select>
-            </div>
-            <a class="cellClosingIcon deleteFilter" href="<?=makeNewFilterURL('tag')?>">&times;</a>
-        </div>
-    </li>
-<?
-    if(isset($selectAuthor)){
-?>
-    <li class="cellRow <?if(isset($authorFilter)){ echo'filterOn';}?>">
-        <div class="cellRowContent" onclick="focusOnInput('filterSelectAuthor');">
-            <div class="cellIcon author"><i class="fa fa-fw fa-user"></i></div>
-            <span class="cellLabel">Author</span>
-            <div class="cellValue">
-                <select onchange="window.open(this.value,'_self');" title="Filter by author" id="filterSelectAuthor">
-                    <?=$selectAuthor?>
-                </select>
-            </div>
-            <a class="cellClosingIcon deleteFilter" href="<?=makeNewFilterURL('author')?>">&times;</a>
-        </div>
-    </li>
-<?
-    }
-?>
-    <li class="cellRow <?if(isset($dateFilter)){ echo'filterOn';}?>">
-        <div class="cellRowContent" onclick="focusOnInput('filterSelectDate');">
-            <div class="cellIcon date"><i class="fa fa-fw fa-calendar"></i></div>
-            <span class="cellLabel">Publishing date</span>
-            <div class="cellValue">
-                <select onchange="window.open(this.value,'_self');" title="Filter by date" id="filterSelectDate">
-                    <?=$selectDate?>
-                </select>
-            </div>
-            <a class="cellClosingIcon deleteFilter" href="<?=makeNewFilterURL('date')?>">&times;</a>
-        </div>
-    </li>
-<?
-    if($basepageTwo == 'filtered') {
-?>
-    <li class="cellRow resetFilters">
-        <a class="cellRowContent" href="/">
-            <span class="cellLabel">Reset all filters</span>
-        </a>
-    </li>
-<?
-    }
-?>
-</ul>
-
-
-
-<ul class="cellRowGroup">
-<!--         <span class="cellGroupTitle">Download a pdf of my resume</span> -->
     <li class="cellRow">
         <a class="cellRowContent" href="/archive">
             <div class="cellIcon archive"><i class="fa fa-fw fa-archive"></i></div>
@@ -179,6 +105,9 @@
             <div class="cellClosingIcon chevron"><? include 'navigationIcons/chevron.svg'  ?></div>
         </a>
     </li>
+
+
+
     <li class="cellRow">
         <a class="cellRowContent" href="/about">
             <div class="cellIcon about"><i class="fa fa-fw fa-pencil"></i></div>
@@ -186,4 +115,54 @@
             <div class="cellClosingIcon chevron"><? include 'navigationIcons/chevron.svg'  ?></div>
         </a>
     </li>
+
 </ul>
+-->
+
+
+<ul class="cellRowGroup">
+    <form action="/filtering.php" method="get" id="filteringForm">
+
+<?
+    $inputSearchForWhat = 'blog posts';
+    include 'filterSearchRow.php';
+
+
+
+    $cellIconClass = 'tag';
+    $cellIconFontAwesome = 'tag';
+    $cellLabel = 'Tag';
+    $selectItems = $selectTag;
+    
+    include 'filterSelectRow.php';
+
+
+
+    $cellIconClass = 'date';
+    $cellIconFontAwesome = 'calendar';
+    $cellLabel = 'Publishing date';
+    $selectItems = $selectDate;
+    
+    include 'filterSelectRow.php';
+
+
+    if ( isset($selectAuthor) ) {
+        $cellIconClass = 'author';
+        $cellIconFontAwesome = 'user';
+        $cellLabel = 'Author';
+        $selectItems = $selectAuthor;
+        
+        include 'filterSelectRow.php';   
+    }
+
+?>
+
+
+
+    </form>
+</ul>
+
+
+<? 
+    include 'filterFinalButton.php';
+?>

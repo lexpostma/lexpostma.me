@@ -205,6 +205,7 @@ nav#secondNavigation {
     flex-direction: column;
     box-shadow: 0px 20px 50px black;
 }
+
 #actionDrawerClosingBackground {
     width: 100vw;
     height: 100vh;
@@ -212,8 +213,8 @@ nav#secondNavigation {
     bottom: 0;
     display: none;
     z-index: -1;
-//     cursor: pointer;
 }
+
 #actionDrawerTitleBar {
     border-top-left-radius:  10px;
     border-top-right-radius: 10px;
@@ -222,7 +223,6 @@ nav#secondNavigation {
     background-color: white;
     border-bottom: @lineThickness solid @colorLine;
     position: relative;
-    .iOSFontStyling;
     padding: 7px @sidePadding 8px;
     span {
         text-align: center;
@@ -230,12 +230,23 @@ nav#secondNavigation {
         width: 100%;
         display: block;
     }
-    a#actionDrawerClose {
+    input.actionDrawerTitleButton {
         position: absolute;
         top: 7px;
-        right: @sidePadding;
         text-decoration: none;
         color: @color1;
+    }
+    input#formCancel {
+        left: @sidePadding;
+    }
+    input#formReset {
+        right: @sidePadding;
+        color: red;
+        &:disabled {
+            color: @colorInactive;
+            opacity: .3;
+        }
+
     }
 }
 
@@ -412,14 +423,15 @@ html.actionDrawerToggled {
 
 
 
-/* ===========================
-   iOS STYLE CELL ROW ELEMENTS
-   =========================== */
+/* ===================================
+   iOS STYLE CELL ROW ELEMENTS IN FORM
+   =================================== */
 
 .iOSFontStyling {
     font-size: 17px;
     line-height: 29px;
 }
+
 .cellSeparator {
     &:after {
         content:''; 
@@ -433,20 +445,30 @@ html.actionDrawerToggled {
     }
 }
 
-ul.cellRowGroup {
+// Strip default styling from form items {
+.actionDrawer {
     .iOSFontStyling;
-    display: block;
-    width: 100%;
-    margin: 25px auto;
-    .cellGroupTitle {
-        padding: 0 @sidePadding;
-        font-weight: bold;
+    select, button, input {
+        .iOSFontStyling;
+        margin: 0 0 0 auto;
+    	padding: 0;
+        background: none;
+        border: none;
+        outline: none;
+        -webkit-appearance: none;
+           -moz-appearance: none;
+                appearance: none;
+        text-decoration: none;
+                border-radius: 0;
+        -webkit-border-radius: 0;
     }
 }
 
+ul.cellRowGroup {
+    margin: 25px auto;
+}
+
 li.cellRow {
-    display: block;
-    width: 100%;
     position: relative;
     .cellSeparator;
     &:first-of-type {
@@ -460,20 +482,33 @@ li.cellRow {
     }
 }
 
-li.cellRow .cellRowContent {
-    .iOSFontStyling;
-    cursor: pointer;
-/*
-    display: flex;
-    justify-content: flex-start;
-    align-content: center;
-*/
-    display: block;
-
-    width: 100%;
+.cellRowContent,
+input.cellRowContent {
+    width: 100%; 
+    padding: 7px 20px 8px;
     background-color: white;
+    
+    display: flex;
+    align-content: center;
+    flex-flow: row wrap;
+}
+
+a.cellRowContent {
+    color: @colorBodyText;
     text-decoration: none;
-    padding: 7px @sidePadding 8px;
+}
+
+
+.cellRowContent#formApplyFilters {
+    text-align: center;
+    font-weight: bold;
+    display: block;
+/*
+    &:disabled {
+        color: @colorInactive;
+        font-weight: normal;
+    }
+*/
 }
 
 .cellIcon {
@@ -483,10 +518,9 @@ li.cellRow .cellRowContent {
     background-color: white; 
     border: @lineThickness solid @colorLine;
     overflow: hidden;
-    margin-right: 15px;
-    display: inline-block;
-//     display: block;
     text-align: center;
+
+    margin-right: 15px;
     svg {
         margin: -@lineThickness;
         height: 29px;
@@ -494,88 +528,69 @@ li.cellRow .cellRowContent {
     }
     i {
         color: @color1;
-        &.fa-tag {
-            padding-left: 1px;
-            padding-top: 7px;                
-        }
-        &.fa-building {
-            padding-left: 2px;
-            padding-top: 7px;
-        }
     }
+
 }
-
-.cellIcon.search    i { color: #4885ed; }
-.cellIcon.date      i { color: #b70909; }
-.cellIcon.tag       i { color: @color5; }
-.cellIcon.archive   i { color: #a77800; }
-.cellIcon.client    i { color: #545454; }
-.cellIcon.author    i { color: #FFDCB1; }
-.cellIcon.video     i { color: #ff0000; }
-// .cellIcon.about     i { color: @color1; }
-
 
 .cellLabel {
-    display: inline-block;
-//     display: block;
-    flex-grow: 2;
-    color: @colorBodyText;
-    white-space: nowrap;
+    padding-right: 10px;
 }
 
-.cellValue {
-    display: inline-block;
+input.cellValue,
+select.cellValue {
+    margin-left: auto;
     color: @colorInactive;
-    text-align: right;
-    max-width: 200px; // TODO
-    overflow: hidden;
-    input, select {
-        background: none;
-        border: none;
-        outline: none;
-        -webkit-appearance: none;
-           -moz-appearance: none;
-                appearance: none;
-        text-decoration: none;
-                border-radius: 0;
-        -webkit-border-radius: 0;
-        text-align: right;
-        &:focus {
+}
 
-        }
-    }
-    input {
-        transition: background .2s ease-in-out;
-        border-radius: 5px;
-        .iOSFontStyling;
-        padding: 0px 5px;
-        margin: 0 -5px;
-        &::-webkit-input-placeholder { color: @colorInactive; }
-             &:-ms-input-placeholder { color: @colorInactive; }
-                  &:-moz-placeholder { color: @colorInactive; }
-                 &::-moz-placeholder { color: @colorInactive; }
+.placeholderStyling {
+    color: @colorInactive;
+    transform: translateX(90px); 
+    transition-property: opacity, transform; 
+    transition-duration: .2s;
+    transition-timing-function: ease-in-out;
+}
 
-        &:focus {
-            text-align: left;
-            background-color: @colorBackground;
-            color: @colorBodyText;
-            &::-webkit-input-placeholder { color: @colorBackground; }
-                 &:-ms-input-placeholder { color: @colorBackground; }
-                      &:-moz-placeholder { color: @colorBackground; }
-                     &::-moz-placeholder { color: @colorBackground; }
-        }
-    }
-    select {
-        direction: rtl;
-        option, optgroup {
-            direction: ltr;
-        }
+.placeholderFocusStyling {
+    opacity: 0;
+    transform: translateX(0px);
+}
+
+input.cellValue#inputSearch {
+    width: 135px;
+    padding: 0 5px;
+    margin-right: -5px;
+    border-radius: 5px;
+    background-color: white;
+    transition: background .2s ease-in-out;
+    &::-webkit-input-placeholder { .placeholderStyling; }
+         &:-ms-input-placeholder { .placeholderStyling; }
+        &::-ms-input-placeholder { .placeholderStyling; }
+              &:-moz-placeholder { .placeholderStyling; }
+             &::-moz-placeholder { .placeholderStyling; }
+    &:focus {
+        background-color: @colorBackground;
+        &::-webkit-input-placeholder { .placeholderFocusStyling; }
+             &:-ms-input-placeholder { .placeholderFocusStyling; }
+            &::-ms-input-placeholder { .placeholderFocusStyling; }
+                  &:-moz-placeholder { .placeholderFocusStyling; }
+                 &::-moz-placeholder { .placeholderFocusStyling; }
     }
 }
+
+span.widthForInputHidden {
+    background: red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;    
+    display: none;
+}
+
 
 .cellClosingIcon {
     height: 29px;
-    float: right;
+    position: absolute;
+    right: 20px;
     &.download svg {
         fill: @color1;
         height: 29px;
@@ -585,33 +600,41 @@ li.cellRow .cellRowContent {
         fill: @colorInactive;
     }
     &.deleteFilter {
-        font-size: 22px;
-        padding: 10px;
-        margin: -10px -10px -10px 0;
         display: none;
+        font-size: 22px;
+        right: 0px;
+        padding: 10px 20px 10px 15px;
+        margin-top: -10px;
+        height: 44px;
+        color: red;
         &:hover {
+            color: @color3;
             text-decoration: none;
         }
     }
 }
 
-li.cellRow.filterOn .cellRowContent {
-    .cellValue {
-        color: @colorBodyText;
+
+// Change styling when a filter is active
+.cellRow.filterOn {
+    .cellRowContent {
+        padding-right: 45px;
+    }
+    input.cellValue,
+    select.cellValue {
+        color: @color1;
+    }
+    input.cellValue#inputSearch {
+        background-color: @colorBackground;
     }
     .cellClosingIcon.deleteFilter {
-        display: block;
+        display: inline-block;
     }
 }
 
-li.cellRow.resetFilters {
-        text-align: center;
-    .cellLabel {
-        color: red;
-    }
-}
 
-li.cellRow.contactItem a {
+// Exceptions and specifics
+li.cellRow.contactItem {
     .cellIcon svg {
         fill: white;
     }
@@ -627,11 +650,32 @@ li.cellRow.contactItem a {
             stroke-width: 2px;
         }
     }
-    .cellIcon#contactIcon_instagram {
-        /* Instagram CSS gradient by Ana Tudor https://codepen.io/thebabydino/pen/qZvvBM */
+    .cellIcon#contactIcon_instagram { // Instagram CSS gradient by Ana Tudor https://codepen.io/thebabydino/pen/qZvvBM
         background: radial-gradient(circle at 33% 100%, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF);
     }
 }
+
+.cellIcon i {
+    &.fa-tag {
+        padding-left: 1px;
+        padding-top: 7px;                
+    }
+    &.fa-building {
+        padding-left: 2px;
+        padding-top: 7px;
+    }
+}
+
+.cellIcon.search    i { color: #4885ed; }
+.cellIcon.date      i,
+.cellIcon.year      i { color: #b70909; }
+.cellIcon.tag       i,
+.cellIcon.category  i { color: @color5; }
+.cellIcon.archive   i { color: #a77800; }
+.cellIcon.client    i { color: #545454; }
+.cellIcon.author    i { color: #FFDCB1; }
+.cellIcon.video     i { color: #ff0000; }
+
 
 
 
@@ -701,9 +745,6 @@ input[type="checkbox"]:checked:active + .toggle label {
 input[type="checkbox"]:checked:active + .toggle i {
 	left: 14px;
 }
-
-
-
 
 
 
