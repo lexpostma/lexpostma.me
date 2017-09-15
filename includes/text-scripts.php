@@ -38,10 +38,15 @@ function makeNewFilterURL($filterType){
     global $baseURL;
     
     foreach ($_GET as $filter => $value) {
-    	$query[$filter]=$value;
+        
+        // Strip empty values from the query
+        if( !empty($value) ) {
+        	$query[$filter]=$value;            
+        }
+
     };
     
-    if(empty($query)){ $query = array();}; // To prevent errors
+    if(empty($query)){ $query = array(); }; // To prevent errors
 
     // Empty/unset legacy query variables
     unset($query['post']);
@@ -50,9 +55,16 @@ function makeNewFilterURL($filterType){
     unset($query['s']);
     unset($query['month']);
 
-    unset($query['page']); // always start new filter on first page
-    unset($query['p']); // make sure p=filter, later add it back
-    unset($query[$filterType]); // remove the requested filter
+    // Always start new filter on first page
+    unset($query['page']); 
+    
+    // Make sure p=filter, later add it back
+    unset($query['p']); 
+    
+    // Remove the requested filter
+    unset($query[$filterType]); 
+    
+    
     $cleanQuery = http_build_query($query);
 
     if($cleanQuery == ''){  $newQuery = 'filter/';    }  // no more existing filters
