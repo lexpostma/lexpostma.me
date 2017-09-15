@@ -12,13 +12,13 @@
                                  
 	$yearFilterSelection = mysqli_query($con,$yearFilterSelectionQuery);
 
-    $selectDate = "<option value='' >Select</option>";
+    $selectDate = "<option value=''>Select</option>";
 
 	while($row = mysqli_fetch_array($yearFilterSelection)){
 		$year = date("Y", strtotime($row['datePublished']));
 		$selectDate .= "<option disabled></option><optgroup label='$year'>";
 
-        $selectDate .= "<option value='$year' ";
+        $selectDate .= "<option value='$year' class='fullYear' ";
 		if(isset($dateFilter) && $dateFilter == $year){ $selectDate .= "selected";  };
         $selectDate .= ">throughout $year</option>";
 
@@ -37,9 +37,7 @@
             
             $selectDate .= "<option value='$year-$monthNum' ";
 			if(isset($dateFilter) && isset($monthFilter) && $monthFilter == $monthNum && $yearFilter == $year){ $selectDate .= "selected"; };
-            $selectDate .= ">$month";
-			if(isset($dateFilter) && isset($monthFilter) && $monthFilter == $monthNum && $yearFilter == $year){ $selectDate .= " $year"; };
-            $selectDate .= "</option>";            
+            $selectDate .= ">$month $year</option>";            
         };
 		$selectDate .= "</optgroup>";
     }
@@ -57,7 +55,7 @@
     $authorFilterSelection = mysqli_query($con,$authorFilterSelectionQuery);
 
 	if(mysqli_num_rows($authorFilterSelection)>1){
-    	$selectAuthor = "<option>Select</option><option disabled></option>";
+    	$selectAuthor = "<option value=''>Select</option><option disabled></option>";
 
         while($row = mysqli_fetch_array($authorFilterSelection)){
     		$shortauthor = $row['username'];
@@ -74,7 +72,7 @@
 # ==== Tag filter ==== #
 # ==================== #
 
-    $selectTag = "<option>Select</option><option disabled></option>";
+    $selectTag = "<option value=''>Select</option><option disabled></option>";
     
     $tagFilterSelectionQuery = "SELECT blog_tags.tag,blog_tags.shorttag 
                                 FROM blog 
