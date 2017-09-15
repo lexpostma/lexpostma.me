@@ -96,35 +96,3 @@ function resetForm(id) {
     $('#actionDrawerNavigation input').each(function() {         clearInput( $(this).attr('id') );    });
 
 }
-
-
-function focusOnInput(id) {
-
-
-    
-/*
-    $('#'+id).focus();
-    
-    if ($('#'+id).is(':checked')) {
-        $('#'+id).prop('checked', false);
-    } else {
-        $('#'+id).prop('checked', true);
-    }
-    
-    // https://stackoverflow.com/questions/27936785/jquery-javascript-onclick-event-to-html-open-select-tag
-    var e = document.createEvent('MouseEvents');
-    e.initMouseEvent('mousedown');
-    $('#'+id)[0].dispatchEvent(e);
-*/
-  
-  
-  
-/*
-    if ($('#'+id).hasClass('show')) {
-        $('#'+id+' form input[type="search"]').focus();
-    } else {
-        $('#'+id+' form input[type="search"]').blur();
-    }
-*/
-  
-}
