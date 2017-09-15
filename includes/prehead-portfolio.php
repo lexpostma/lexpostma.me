@@ -45,8 +45,6 @@
             $iconFilter    = 1;
             $introTitle = '<p class="filterText">Icons I made, mostly for fun.</p>';
         
-*/
-/*
         } else if($p == 'apple'){  // Apple page
             $seoTitle       = 'Lex Postma → ';
             $seoDescription = 'Motivation letter from Lex Postma to Apple.';
