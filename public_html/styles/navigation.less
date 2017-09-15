@@ -94,7 +94,7 @@ li.tabbarItem {
     }
     a.tabbarLink.noLabel {
         svg {
-            transition: transform .2s ease-in-out;
+            .transitionPlus(transform; 0.2s; 0s);
             margin: 10px auto;
         }
     }
@@ -139,8 +139,7 @@ li.tabbarItem:first-child a.tabbarLink {
     padding: 4px 7px 6px;
     border-radius: 5px;
    	animation: float 3s ease-in-out infinite;
-    .navShowHideTransition;
-    transition: bottom .2s ease-in-out;
+    .transitionPlus(bottom; 0.2s; 0s);
     z-index: 1;
     span {
         position: relative;
@@ -380,7 +379,7 @@ main#contents {
 }
 
 html:not(.actionDrawerToggled) body {
-    transition: background 0.2s ease-in 0.2s;
+    .transitionPlus(background; 0.2s; 0s);
 }
 
 html.actionDrawerToggled {
@@ -559,7 +558,7 @@ input.cellValue#inputSearch {
     margin-right: -5px;
     border-radius: 5px;
     background-color: white;
-    transition: background .2s ease-in-out;
+    .transitionPlus(background; 0.2s; 0s);
     &::-webkit-input-placeholder { .placeholderStyling; }
          &:-ms-input-placeholder { .placeholderStyling; }
         &::-ms-input-placeholder { .placeholderStyling; }
