@@ -37,18 +37,9 @@ function checkFiltersForWidthAndActive() {
 
 function clearInput(id) {
 
-    if ( $('#'+id).is('input[type="search"]') == true ) {
-        
-        $('#'+id).val('');
-        
-    } else if ( $('#'+id).is('input:checkbox') == true ) {
-        
-        $('#'+id).prop( "checked", false );
-        
-    } else if ( $('#'+id).is('select') == true ) {
-        
-        $('#'+id).get(0).selectedIndex= 0;        
-
+    if ( $('#'+id).is('input[type="search"]') == true ) {        $('#'+id).val('');
+    } else if ( $('#'+id).is('input:checkbox') == true ) {       $('#'+id).prop( "checked", false );
+    } else if ( $('#'+id).is('select') == true ) {               $('#'+id).get(0).selectedIndex= 0;
     }
 
     setWidthOfInput(id);
@@ -73,30 +64,24 @@ function toggleFilterOnOff(id) {
 
     if ( $('#'+id).is('select') == true ) {
         
-        if ( $('select#'+id).get(0).selectedIndex !== 0) {
-            filterOn(id)
-        } else {
-            filterOff(id)
+        if ( $('select#'+id).get(0).selectedIndex !== 0) { filterOn(id)
+        } else {                                           filterOff(id)
         }
     }
 
 
     if ( $('#'+id).is('input[type="search"]') == true ) {
         
-        if ( $('#'+id).val() !== '' ) {
-            filterOn(id)
-        } else {
-            filterOff(id)
+        if ( $('#'+id).val() !== '' ) { filterOn(id)
+        } else {                        filterOff(id)
         }
     }
 
 
     if ( $('#'+id).is('input:checkbox') == true ) {
         
-        if ( $('#'+id).is(':checked') == true) {
-            filterOn(id)
-        } else {
-            filterOff(id)
+        if ( $('#'+id).is(':checked') == true) { filterOn(id)
+        } else {                                 filterOff(id)
         }
     }
 
