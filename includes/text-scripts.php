@@ -110,5 +110,4 @@ function postCount(){
     return $postCount;
 }
 
-
 ?>

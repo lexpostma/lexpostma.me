@@ -57,7 +57,7 @@
 
 
         } else if($p == 'filter') { // big overview grid filtered
-            $seoTitle    = 'Lex’ portfolio filtered';
+            $seoTitle    .= ' filtered';
     
             $includePage = 'portfolioOverview.php';
             $basepageTwo  = 'filtered';
@@ -111,8 +111,12 @@
             };
     
             if(empty($yearFilter) && empty($clientFilter) && empty($categoryFilter) && empty($typeFilter) && empty($searchFilter)){
+
+                // If all filters are empty, redirect to the homepage
                 echo '<script language="Javascript">document.location.href="/";</script>';
+                
             } else {
+
                 $filterbarText = '';
                 if(isset($categoryFilter)){                         $filterbarText .= $categoryFilterNice.' design projects';  }
                 else{                                               $filterbarText .= 'Projects';}

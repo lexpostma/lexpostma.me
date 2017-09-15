@@ -31,7 +31,7 @@
         else{                         $pageFilter = 1;      };
 
         if(isset($p) && $p == 'filter'){ // filters are enabled
-            $seoTitle  = 'Lex’ blog filtered';
+
             if(isset($_GET['date'])){
                 $dateFilter = mysqli_real_escape_string($con,$_GET['date']);
                 $dateFilter = preg_replace("/[^0-9-]/", "", $dateFilter);
@@ -92,11 +92,19 @@
     				};
     			};
             };
-            $basepageTwo = 'filtered';
+
 
             if(empty($dateFilter) && empty($tagFilter) && empty($authorFilter) && empty($searchFilter) && empty($sourceFilter) && $pageFilter <= 1){
+
+                // If all filters are empty, redirect to the homepage
                 echo '<script language="Javascript">document.location.href="/";</script>';
-            } else {
+
+            } elseif (!empty($dateFilter) || !empty($tagFilter) || !empty($authorFilter) || !empty($searchFilter) || !empty($sourceFilter)) {
+
+                // If not all filters are empty, than the page is filtered
+                $seoTitle  .= ' filtered';
+                $basepageTwo = 'filtered';
+
                 $filterbarText = 'Blog posts';
                 if(isset($monthFilter)){      $filterbarText .= '<span>published in '.$monthFilterName.' '.$yearFilter.'</span>';
                 } elseif(isset($yearFilter)){ $filterbarText .= '<span>published in '.$yearFilter.'</span>';  }
@@ -105,7 +113,14 @@
                 if(isset($sourceFilter)){     $filterbarText .= '<span>where the original source includes \'<span class="sourceTerms">'.$sourceFilter.'</span>\'</span>';  }
                 if(isset($searchFilter)){     $filterbarText .= '<span>that include \'<span class="searchTerms">'.$searchFilter.'</span>\'</span>';  }                
                 $filterbarText .= '.';
+
             }
+
+            if($pageFilter > 1){
+                $seoTitle  .= ', page '.$pageFilter;
+            }
+
+
         } else if(isset($p)){ // Check if it's an existing blogpost
             $postCheck  = mysqli_query($con,"SELECT shortname FROM blog WHERE published = '$pubTest' AND shortname = '$p';"); // check whether it's a blog post title
             if (mysqli_num_rows($postCheck)!=0){ // More than 0 matches = blog post
