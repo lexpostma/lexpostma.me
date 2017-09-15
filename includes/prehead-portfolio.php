@@ -62,8 +62,6 @@
             $includePage = 'portfolioOverview.php';
             $basepageTwo  = 'filtered';
     
-            $anyFilter   = 1;
-    
             if(isset($_GET['category'])){
                 $categoryCheckVar = mysqli_real_escape_string($con,$_GET['category']);
                 $categoryCheck = mysqli_query($con,"SELECT shortcategory,category FROM portfolio_categories WHERE shortcategory = '$categoryCheckVar';");

@@ -32,7 +32,6 @@
 
         if(isset($p) && $p == 'filter'){ // filters are enabled
             $seoTitle  = 'Lex’ blog filtered';
-            $anyFilter = 1;
             if(isset($_GET['date'])){
                 $dateFilter = mysqli_real_escape_string($con,$_GET['date']);
                 $dateFilter = preg_replace("/[^0-9-]/", "", $dateFilter);
