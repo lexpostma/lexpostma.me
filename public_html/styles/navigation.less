@@ -260,8 +260,6 @@ nav#secondNavigation {
 
 
 
-
-
 /* ==========
    FILTER BAR
    ========== */
@@ -324,7 +322,6 @@ nav#secondNavigation {
     }
     .firstButtonActiveState;
 }
-
 
 
 
@@ -724,26 +721,32 @@ input[type="checkbox"] {
     }
 }
 
-input[type="checkbox"]:active + .toggle i {
-	width: 35px;
+input[type="checkbox"] {
+    &:active + .toggle i {
+    	width: 35px;
+    }
+    
+    &:active + .toggle label,
+    &:checked + .toggle label {
+    	border: 16px solid #4cd964;
+    }
+    
+    &:checked + .toggle i {
+    	left: 21px;
+    }
+    
+    &:checked:active + .toggle label {
+    	border: 16px solid #e5e5e5;
+    }
+    
+    &:checked:active + .toggle i {
+    	left: 14px;
+    }   
 }
 
-input[type="checkbox"]:active + .toggle label,
-input[type="checkbox"]:checked + .toggle label {
-	border: 16px solid #4cd964;
-}
 
-input[type="checkbox"]:checked + .toggle i {
-	left: 21px;
-}
 
-input[type="checkbox"]:checked:active + .toggle label {
-	border: 16px solid #e5e5e5;
-}
 
-input[type="checkbox"]:checked:active + .toggle i {
-	left: 14px;
-}
 
 
 
