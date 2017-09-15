@@ -255,7 +255,7 @@ nav#secondNavigation a {
 }
 #actionDrawerTitleBar input#formReset {
   right: 20px;
-  color: red;
+  color: #F04400;
 }
 #actionDrawerTitleBar input#formReset:disabled {
   color: #929292;
@@ -614,7 +614,6 @@ input.cellValue#inputSearch:focus::-moz-placeholder {
   transform: translateX(0px);
 }
 span.widthForInputHidden {
-  background: red;
   position: absolute;
   top: 0;
   left: 0;
@@ -641,7 +640,7 @@ span.widthForInputHidden {
   padding: 10px 20px 10px 15px;
   margin-top: -10px;
   height: 44px;
-  color: red;
+  color: #F04400;
 }
 .cellClosingIcon.deleteFilter:hover {
   color: #7D01D7;
