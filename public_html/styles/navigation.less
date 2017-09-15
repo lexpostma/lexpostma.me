@@ -121,11 +121,18 @@ li.tabbarItem:first-child a.tabbarLink {
 }
 
 // Tabbar tooltip
-@keyframes float { // Floating animation from https://codepen.io/MarioDesigns/pen/woJgeo
+@keyframes floatVertically { // Floating animation from https://codepen.io/MarioDesigns/pen/woJgeo
 	0% {		transform: translateY(0px);	    }
 	50% {		transform: translateY(-3px);	}
 	100% {		transform: translateY(0px);   	}
 }
+
+@keyframes floatHorizontally {
+	0% {		transform: translateX(0px);	    }
+	50% {		transform: translateX(-3px);	}
+	100% {		transform: translateX(0px);   	}
+}
+
 
 #tabbarTooltip {
     position: absolute;
@@ -138,7 +145,7 @@ li.tabbarItem:first-child a.tabbarLink {
     text-align: center;
     padding: 4px 7px 6px;
     border-radius: 5px;
-   	animation: float 3s ease-in-out infinite;
+   	animation: floatVertically 3s ease-in-out infinite;
     .transitionPlus(bottom; 0.2s; 0s);
     z-index: 1;
     span {
@@ -157,6 +164,7 @@ li.tabbarItem:first-child a.tabbarLink {
         left: 21px;
         transform: rotate(45deg);
     }
+    display: none; // Until I decide what to do with the tooltip
     &.changed { // Don't show tooltip again after it's been changed (eg. clicked)
         display: none;
     }
@@ -343,10 +351,12 @@ html:not(.actionDrawerToggled) #navigationElements.tabbarOnScrollDown {
         }
     }
     #filterIndicationBar {
-        transform: translateY(13px);
+        -webkit-transform: translateY(13px);
+                transform: translateY(13px);
     }
     li.tabbarItem a.tabbarLink.noLabel svg {
-        transform: translateY(-6.5px);
+        -webkit-transform: translateY(-6.5px);
+                transform: translateY(-6.5px);
     }
 }
 
@@ -746,6 +756,100 @@ input[type="checkbox"] {
 
 
 
+/* ========================
+   WIDER SCREEN (LANDSCAPE)
+   ======================== */
+
+@media screen and (min-width: @screenSizeAtLandscapeShort) {
+    
+    #navigationElements {
+        top: 0;
+        right: auto;
+        width: @tabbarHeight;
+        height: auto;
+    }
+    
+    nav#tabbarNavigation {
+        top: 0;
+        border-top: none;
+        border-right: @lineThickness solid @colorLine;
+        ul#tabbarItemList {
+            flex-direction: column;
+            height: 100%;
+            max-height: 414px;
+        }
+    }
+    
+    li.tabbarItem {
+        width: 100%;
+        height: 20%;
+        a.tabbarLink {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            span.tabName {
+                position: relative;
+            }
+        }
+    }
+    
+    li.tabbarItem:first-child a.tabbarLink {
+        border-right: none;
+        border-bottom: @lineThickness solid @colorLine;
+    }
+
+    
+    main#contents {
+        margin-left: @tabbarHeight;
+    }
+    
+    #tabbarTooltip {
+        animation: floatHorizontally 3s ease-in-out infinite;
+        bottom: auto;
+        left: 55px;
+        margin-left: 0;
+        &:after {
+            left: -6px;
+            bottom: 7px;
+        }
+    }
+    
+    @actionDrawerWidth: 420px;
+    #actionDrawerNavigation {
+        left: ~"calc(50vw + @{tabbarHeight} /2)";
+        width: @actionDrawerWidth;
+        margin-left: ~"calc( -@{actionDrawerWidth} / 2 )";
+        bottom: 0;
+        max-height: 90%;
+    }
+    
+    #actionDrawerClosingBackground {
+        left: ~"calc(-50vw + @{actionDrawerWidth} / 2 - @{tabbarHeight} /2)";
+    }
+    
+    
+    html:not(.actionDrawerToggled) #navigationElements.tabbarOnScrollDown {
+        nav#tabbarNavigation {
+            -webkit-transform: translateY(0);
+                    transform: translateY(0);
+        }
+        #filterIndicationBar {
+            -webkit-transform: translateY(0);
+                    transform: translateY(0);
+        }
+        li.tabbarItem a.tabbarLink.noLabel svg {
+            -webkit-transform: translateY(0);
+                    transform: translateY(0);
+        }
+    }
+}
+
+@media screen and (min-width: @screenSizeAtLandscapeTall) {
+    
+}
+
+@media screen and (min-width: @screenSizeAtDesktop) {}
 
 
 
