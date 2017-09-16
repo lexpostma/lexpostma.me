@@ -2,7 +2,7 @@
     $gaSecondaryNavEvent = " 'send', 'event', 'Navigation', 'Navigate title bar',";
 ?>
             <header id="titleHeader">
-                <span id="mainTitle"><a href="<?=$baseURL ?>"><?=$basepageTitle ?></a></span>
+                <a id="mainTitle" href="<?=$baseURL ?>"><?=$basepageTitle ?></a>
                 <a id="mainLogo" href="/">
                     <? include '../public_html/images/lex-logo.svg'; ?>
                 </a>
