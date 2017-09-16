@@ -10,13 +10,13 @@
                     <? include '../public_html/images/lex-logo.svg'; ?>
                 </a>
             </header>
-<?
-    if( $basepage == 'blog' || $basepage == 'resume' ){
-?>
-           <nav id="secondNavigation">
+            <nav id="secondNavigation">
                 <ul>
 <?
-        if( $basepage == 'blog' ){
+    $specialButtonLocation = 'secondarybar';
+    include 'navigationSpecialFirstTabbarButton.php';
+
+    if( $basepage == 'blog' ){
 ?>
                     <li>
                         <a href="<?=$blogFeedURL?>" 
@@ -38,7 +38,7 @@
 
 
 <?
-        } elseif ( $basepage == 'resume' ){
+    } elseif ( $basepage == 'resume' ){
 ?>
                     <li>
                         <a href="#references"
@@ -53,10 +53,7 @@
                         </a>
                     </li>
 <?
-        }
+    }
 ?>
                 </ul>
             </nav>
-<?
-    }
-?>
