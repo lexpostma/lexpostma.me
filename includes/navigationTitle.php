@@ -7,10 +7,13 @@
                     <? include '../public_html/images/lex-logo.svg'; ?>
                 </a>
             </header>
+<?
+    if( $basepage == 'blog' || $basepage == 'resume' ){
+?>
            <nav id="secondNavigation">
                 <ul>
 <?
-    if( $basepage == 'blog' ){
+        if( $basepage == 'blog' ){
 ?>
                     <li>
                         <a href="<?=$blogFeedURL?>" 
@@ -32,7 +35,7 @@
 
 
 <?
-    } elseif ( $basepage == 'resume' ){
+        } elseif ( $basepage == 'resume' ){
 ?>
                     <li>
                         <a href="#references"
@@ -47,12 +50,10 @@
                         </a>
                     </li>
 <?
-    } else {
-?>
-                    <li>
-                    </li>
-<?
-    }
+        }
 ?>
                 </ul>
             </nav>
+<?
+    }
+?>
