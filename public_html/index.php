@@ -27,7 +27,7 @@
 ?>
 
 <!DOCTYPE HTML>
-<html lang="en" class=""> <!-- TODO: actionDrawerToggled -->
+<html lang="en" class=" <?=$basepageTwo ?> ">
 <?  include '../includes/head.php'; ?>
 
     <body>

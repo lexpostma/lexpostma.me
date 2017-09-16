@@ -352,7 +352,7 @@ nav#secondNavigation a {
 /* ==========
    FILTER BAR
    ========== */
-#navigationElements.filtered #filterIndicationBar {
+html.filtered #filterIndicationBar {
   display: block;
   position: absolute;
   bottom: 50.5px;
@@ -376,52 +376,52 @@ nav#secondNavigation a {
   line-height: 14px;
   color: #4B0082;
 }
-#navigationElements.filtered #filterIndicationBar span:not(.searchTerms) {
+html.filtered #filterIndicationBar span:not(.searchTerms) {
   white-space: nowrap;
 }
-#navigationElements.filtered #filterIndicationBar span:not(.searchTerms):before {
+html.filtered #filterIndicationBar span:not(.searchTerms):before {
   content: ", ";
   white-space: normal;
 }
-#navigationElements.filtered #filterIndicationBar span:not(.searchTerms):first-of-type:before,
-#navigationElements.filtered #filterIndicationBar span:not(.searchTerms):nth-of-type(2):before {
+html.filtered #filterIndicationBar span:not(.searchTerms):first-of-type:before,
+html.filtered #filterIndicationBar span:not(.searchTerms):nth-of-type(2):before {
   content: " ";
 }
-#navigationElements.filtered #filterIndicationBar span.sourceTerms,
-#navigationElements.filtered #filterIndicationBar span.searchTerms {
+html.filtered #filterIndicationBar span.sourceTerms,
+html.filtered #filterIndicationBar span.searchTerms {
   display: inline-block;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-#navigationElements.filtered #filterIndicationBar span.searchTerms {
+html.filtered #filterIndicationBar span.searchTerms {
   max-width: 70%;
 }
-#navigationElements.filtered #filterIndicationBar span.sourceTerms {
+html.filtered #filterIndicationBar span.sourceTerms {
   max-width: 40%;
 }
-#navigationElements.filtered #filterIndicationBar span.filteredByDarker {
+html.filtered #filterIndicationBar span.filteredByDarker {
   color: #270043;
 }
-#navigationElements.filtered #filterIndicationBar br:nth-last-child(4),
-#navigationElements.filtered #filterIndicationBar br:nth-last-child(5),
-#navigationElements.filtered #filterIndicationBar br:nth-last-child(6),
-#navigationElements.filtered #filterIndicationBar br:nth-last-child(7),
-#navigationElements.filtered #filterIndicationBar br:nth-last-child(8) {
+html.filtered #filterIndicationBar br:nth-last-child(4),
+html.filtered #filterIndicationBar br:nth-last-child(5),
+html.filtered #filterIndicationBar br:nth-last-child(6),
+html.filtered #filterIndicationBar br:nth-last-child(7),
+html.filtered #filterIndicationBar br:nth-last-child(8) {
   display: none;
 }
-#navigationElements.filtered li.tabbarItem#tabbarSpecialItem a.tabbarLink {
+html.filtered li.tabbarItem#tabbarSpecialItem a.tabbarLink {
   background-color: #4B0082;
 }
-#navigationElements.filtered li.tabbarItem#tabbarSpecialItem a.tabbarLink span.tabName {
+html.filtered li.tabbarItem#tabbarSpecialItem a.tabbarLink span.tabName {
   color: white;
 }
-#navigationElements.filtered li.tabbarItem#tabbarSpecialItem a.tabbarLink svg {
+html.filtered li.tabbarItem#tabbarSpecialItem a.tabbarLink svg {
   fill: white;
 }
-#navigationElements.filtered li.tabbarItem#tabbarSpecialItem a.tabbarLink svg:first-of-type {
+html.filtered li.tabbarItem#tabbarSpecialItem a.tabbarLink svg:first-of-type {
   display: none;
 }
-#navigationElements.filtered li.tabbarItem#tabbarSpecialItem a.tabbarLink svg:last-of-type {
+html.filtered li.tabbarItem#tabbarSpecialItem a.tabbarLink svg:last-of-type {
   display: inline;
 }
 /* =======================
@@ -942,12 +942,12 @@ input[type="checkbox"]:checked:active + .toggle i {
   #actionDrawerClosingBackground {
     left: calc(-50vw + 420px / 2 - 50.5px /2);
   }
-  #navigationElements.filtered #filterIndicationBar {
+  html.filtered #filterIndicationBar {
     width: calc(100vw - 50.5px);
     left: 50.5px;
     bottom: 0;
   }
-  #navigationElements.filtered #filterIndicationBar br {
+  html.filtered #filterIndicationBar br {
     display: none;
   }
   html:not(.actionDrawerToggled) #navigationElements.tabbarOnScrollDown nav#tabbarNavigation {
@@ -1113,20 +1113,29 @@ input[type="checkbox"]:checked:active + .toggle i {
   #actionDrawerClosingBackground {
     left: calc(-50vw + 420px / 2 - 200px /2);
   }
-  #navigationElements.filtered #filterIndicationBar {
-    width: calc(100vw - 200px);
-    left: 200px;
-    font-size: 17px;
-    line-height: 29px;
-    /*
-            bottom: auto;
-            border-top: none;
-            border-bottom: @lineThickness solid @colorLine;
-            top: 50px;
-*/
+  html.filtered #filterIndicationBar {
+    z-index: 500;
+    text-align: left;
+    padding: 20px;
+    top: 400px;
+    width: 200px;
+    left: 0;
+    bottom: 0;
+    line-height: 18px;
+    overflow-y: scroll;
   }
-  #navigationElements.filtered #filterIndicationBar br {
+  html.filtered #filterIndicationBar br {
+    display: inline !important;
+  }
+  html.filtered #filterIndicationBar span:not(.searchTerms) {
+    white-space: normal;
+  }
+  html.filtered #filterIndicationBar span.searchTerms,
+  html.filtered #filterIndicationBar span.sourceTerms {
     display: inline;
+  }
+  html.filtered nav#secondNavigation #specialItemFromTabbar a {
+    font-weight: bold;
   }
   html:not(.actionDrawerToggled) body nav#secondNavigation {
     transition-delay: 0s;

@@ -324,7 +324,7 @@ nav#secondNavigation {
    ========== */
 
 // Add and alter elements when a view is filtered
-#navigationElements.filtered {
+html.filtered {
     #filterIndicationBar {
         display: block;
         position: absolute;
@@ -905,7 +905,7 @@ input[type="checkbox"] {
         left: ~"calc(-50vw + @{actionDrawerWidth} / 2 - @{tabbarHeight} /2)";
     }
     
-    #navigationElements.filtered {
+    html.filtered {
         #filterIndicationBar {
             width: ~"calc(100vw - @{tabbarHeight})";
             left: @tabbarHeight;
@@ -1130,19 +1130,32 @@ input[type="checkbox"] {
     }
 
 
-    #navigationElements.filtered {
+    html.filtered {
         #filterIndicationBar {
-            width: ~"calc(100vw - @{navigationWidthDesktop})";
-            left: @navigationWidthDesktop;
-            .iOSFontStyling;
-/*
-            bottom: auto;
-            border-top: none;
-            border-bottom: @lineThickness solid @colorLine;
-            top: 50px;
-*/
+            z-index: 500;
+            text-align: left;
+            padding: @sidePadding;
+            top: 400px;
+            width: @navigationWidthDesktop;
+            left: 0;
+            bottom: 0;
+            line-height: 18px;
+            overflow-y: scroll; 
+            
             br {
+                display: inline !important;
+            }
+            span:not(.searchTerms) {
+                white-space: normal;
+            }
+            span.searchTerms,
+            span.sourceTerms {
                 display: inline;
+            }
+        }
+        nav#secondNavigation {
+            #specialItemFromTabbar a {
+                font-weight: bold;
             }
         }
     }

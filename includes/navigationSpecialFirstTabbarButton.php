@@ -26,6 +26,9 @@
         } else {                              $tabbarSpecialItemTitle = 'Oops';                $tabbarSpecialItemIconSVG = 'contact';   $tabbarSpecialItemName = 'Oops';       $tabbarSpecialItemTooltip = false;
         };
         
+        if ($tabbarSpecialItemName == 'Filter' && $basepageTwo == 'filtered') {
+            $tabbarSpecialItemName = 'Filtered';
+        };
 
         if ($specialButtonLocation == 'tabbar') {
 ?>

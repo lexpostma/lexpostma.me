@@ -1,4 +1,4 @@
-        <div id="navigationElements" class="<? echo $basepageTwo ?>">
+        <div id="navigationElements">
 
 <?
 
