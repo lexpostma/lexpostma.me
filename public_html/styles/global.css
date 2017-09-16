@@ -80,6 +80,7 @@ main#contents {
   overflow: hidden;
   min-height: 100vh;
   position: relative;
+  margin-top: calc(84.5px);
   padding-bottom: 50.5px;
   background-color: white;
 }
@@ -87,37 +88,6 @@ main#contents {
   main#contents {
     background-color: #F7F7F7;
   }
-}
-header#titleHeader {
-  background-color: #4B0082;
-  color: white;
-  width: 100%;
-  height: 50px;
-  position: relative;
-}
-header#titleHeader span#mainTitle {
-  line-height: 50px;
-  font-size: 24px;
-  font-weight: bold;
-  padding-left: 20px;
-}
-header#titleHeader span#mainTitle a {
-  color: white;
-  text-decoration: none;
-}
-header#titleHeader a#mainLogo {
-  position: absolute;
-  background: #4B0082;
-  padding: 3px;
-  height: 56px;
-  width: 56px;
-  top: 17px;
-  right: 17px;
-}
-header#titleHeader a#mainLogo svg {
-  height: 100%;
-  width: 100%;
-  fill: white;
 }
 p,
 h1,
