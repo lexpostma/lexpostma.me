@@ -3,6 +3,9 @@
 ?>
             <header id="titleHeader">
                 <a id="mainTitle" href="<?=$baseURL ?>"><?=$basepageTitle ?></a>
+                <a id="mainLogoDesktop" href="/">
+                    <? include '../public_html/images/lex-logo.svg'; ?>
+                </a>
                 <a id="mainLogo" href="/">
                     <? include '../public_html/images/lex-logo.svg'; ?>
                 </a>
