@@ -280,6 +280,9 @@ nav#secondNavigation a {
   color: #4B0082;
   padding: 5px 10px;
 }
+nav#secondNavigation a.active {
+  font-weight: bold;
+}
 /* =============
    ACTION DRAWER
    ============= */
