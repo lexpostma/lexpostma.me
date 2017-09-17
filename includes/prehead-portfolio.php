@@ -20,6 +20,16 @@
         if($p == 'feed' || $p == 'rss' || $p == 'feeds' || $p == 'subscribe') { // redirect to rss feed
             header ("Location: http://feed.lexpostma.me/portfolio");
 
+        } else if($p == 'archive') { // Oldies but goodies, aka the archive
+            
+            $seoTitle       .= ' archive';
+            $seoDescription = 'Older portfolio projects by Lex Postma.';
+    
+            $corePortfolioSQLquery .= " AND archived = '1' ";
+            $includePage = 'portfolioOverview.php';
+            $basepageTwo     = 'archive';
+            
+
 /*
         } else if($p == 'videos' || $p == 'video') { // videos grid
             $seoTitle       = 'Lex’ video portfolio';

@@ -24,7 +24,7 @@
                                 onclick="ga(<?=$gaSecondaryNavEvent?> 'Subscribe to RSS');" >Subscribe</a>
                     </li>
                     <li>
-                        <a href="<?=$blogTwitterURL ?>"
+                        <a href="<?=$blogTwitterURL ?>" 
                                 title="Follow @lexpostmame on Twitter" 
                                 onclick="ga(<?=$gaSecondaryNavEvent?> 'Follow @lexpostmame');" >
                             <i class="fa fa-twitter"></i>
@@ -32,10 +32,28 @@
                     </li>
                     <li>
                         <a href="/archive"
+                                <? if( $basepageTwo == 'archive'){ echo(' class="active" '); } ?>
                                 title="Archive" 
-                                onclick="ga(<?=$gaSecondaryNavEvent?> 'Follow @lexpostmame');" >Archive</a>
+                                onclick="ga(<?=$gaSecondaryNavEvent?> 'Blog archive');" >Archive</a>
                     </li>
 
+
+<?
+    } elseif ( $basepage == 'portfolio' ){
+?>
+                    <li>
+                        <a href="<?=$dribbbleURL ?>"
+                                title="Check out my Dribbble shots" 
+                                onclick="ga(<?=$gaSecondaryNavEvent?> 'Dribbble');" >
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/archive"
+                                <? if( $basepageTwo == 'archive'){ echo(' class="active" '); } ?>
+                                title="Older projects" 
+                                onclick="ga(<?=$gaSecondaryNavEvent?> 'Portfolio archive');" >Archive</a>
+                    </li>
 
 <?
     } elseif ( $basepage == 'resume' ){
