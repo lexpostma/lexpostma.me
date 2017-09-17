@@ -8,14 +8,14 @@
     $seoAuthor      = 'Lex Postma';
     $seoType        = 'website';
 
-    $introTitle = '<p class="filterText">A selection of the projects that I worked on, both individually and in teams.</p>';
+//     $introTitle = '<p class="filterText">A selection of the projects that I worked on, both individually and in teams.</p>';
     
     $corePortfolioSQLquery = "
         SELECT *, portfolio.id AS postID FROM portfolio
         JOIN portfolio_client_relations ON portfolio.id=portfolio_client_relations.project_id
         JOIN portfolio_clients ON portfolio_client_relations.client_id=portfolio_clients.id
         JOIN portfolio_categories on portfolio.category_id=portfolio_categories.id
-        WHERE onlineVisible = '1' ";
+        WHERE published = '1' ";
     if(isset($p)) {
         if($p == 'feed' || $p == 'rss' || $p == 'feeds' || $p == 'subscribe') { // redirect to rss feed
             header ("Location: http://feed.lexpostma.me/portfolio");
@@ -164,7 +164,7 @@
     }
     else {
         $includePage = 'portfolioOverview.php';
-        $corePortfolioSQLquery .= " AND partOfFrontpageSelection = '1' ";
+        $corePortfolioSQLquery .= " AND archived = '0' ";
     }
     
     $corePortfolioSQLquery .= "

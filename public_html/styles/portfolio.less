@@ -1,5 +1,151 @@
 @import "variables.less";
 
+.overviewPortfolio {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: 1600px;
+    margin: auto;
+}
+
+.portfolioItem {
+    position: relative;
+    margin: 0;
+    width: 100%;
+    a.projectTitle {
+        display: block;
+        width: 100%;
+        padding: @sidePadding;
+        font-weight: bold;
+//         text-transform: uppercase;
+    }
+    p {
+        margin-top: calc(@sidePadding / -2);
+    }
+    hr {
+        width: 200px;
+        margin: 0 @sidePadding @objectSpace;
+    }
+}
+
+.portfolioItemImage {
+    width: 100%;
+    padding-bottom: 56.25%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    a.play {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 10px;
+        z-index: 1;
+        svg {
+            display: block;
+            width: 25px;
+            height: 25px;
+            padding: 1px;
+            fill: rgba(255, 255, 255, .9);
+            stroke: @color2;
+            stroke-width: 1px;
+
+        }
+    }
+    .video-container {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        display: none;
+        &.show {
+            display: block;
+        }
+    }
+}
+
+
+
+
+
+
+/* ===============
+   LANDSCAPE SHORT
+   =============== */
+
+@media screen and (min-width: @screenSizeAtLandscapeShort) {
+    
+    .overviewPortfolio {
+        padding: @sidePadding;
+    }
+
+    .portfolioItem {
+        width: ~"calc( 50% - @{sidePadding} / 2 )";
+        margin-bottom: @itemMargin;
+        &:nth-of-type(odd){   margin-right: calc( @sidePadding / 2 );  }
+        &:nth-of-type(even){  margin-left:  calc( @sidePadding / 2 );  }
+        
+        a.projectTitle,
+        p {
+            padding-left:  10px;
+            padding-right: 10px;
+        }
+        hr {
+            display: none;
+        }
+    }
+
+    .portfolioItemImage {
+        border-radius: @borderRad;
+    }
+
+}
+
+/* ==============
+   LANDSCAPE TALL
+   ============== */
+
+
+@media screen and (min-width: @screenSizeAtLandscapeShort) and (min-height: @screenSizeAtLandscapeTallHeight) {
+
+}
+
+/* =======
+   DESKTOP
+   ======= */
+
+
+@media screen and (min-width: @screenSizeAtDesktopWidth) {
+
+    .overviewPortfolio {
+        padding: @itemMargin calc( @itemMargin / 2 );
+    }
+
+    .portfolioItem,    
+    .portfolioItem:nth-of-type(even),
+    .portfolioItem:nth-of-type(odd) {
+        width: ~"calc( 33.3% - @{itemMargin} )";
+        margin-left:  calc( @itemMargin / 2 );
+        margin-right: calc( @itemMargin / 2 );
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+
 main#contents {
 //     max-width: 1400px;
 }
@@ -114,6 +260,7 @@ main#contents {
         display: block;
     }
 }
+*/
 
 
 
@@ -124,7 +271,7 @@ main#contents {
 main#contents.portfolio.post {
 //     max-width: @contentWidth;
     h1.title {
-        margin-top: @objectSpace;
+//         margin-top: @objectSpace;
     }
 }
 /*
@@ -147,6 +294,8 @@ main#contents.portfolio.post {
     }
 }
 */
+
+/*
 
 article.projectPost {
     overflow: hidden;
@@ -225,3 +374,4 @@ p#downloads {
         &:last-of-type { float: right; }
     }
 }
+*/
