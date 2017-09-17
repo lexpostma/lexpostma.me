@@ -47,6 +47,39 @@
   font-size: .9em;
   color: DarkGray;
 }
+.iOSFontStyling {
+  font-size: 17px;
+  line-height: 29px;
+}
+.cellSeparatorGeneral {
+  content: '';
+  position: absolute;
+  right: 0px;
+  bottom: -0.5px;
+  z-index: 8;
+  background: #B2B2B2;
+  height: 0.5px;
+}
+.cellSeparatorWithIcon:after {
+  content: '';
+  position: absolute;
+  right: 0px;
+  bottom: -0.5px;
+  z-index: 8;
+  background: #B2B2B2;
+  height: 0.5px;
+  left: 64px;
+}
+.cellSeparatorWithoutIcon:after {
+  content: '';
+  position: absolute;
+  right: 0px;
+  bottom: -0.5px;
+  z-index: 8;
+  background: #B2B2B2;
+  height: 0.5px;
+  left: 20px;
+}
 .firstButtonActiveState li.tabbarItem#tabbarSpecialItem a.tabbarLink {
   background-color: #4B0082;
 }
@@ -537,20 +570,6 @@ html.actionDrawerToggled body #navigationElements #actionDrawerClosingBackground
 /* ===================================
    iOS STYLE CELL ROW ELEMENTS IN FORM
    =================================== */
-.iOSFontStyling {
-  font-size: 17px;
-  line-height: 29px;
-}
-.cellSeparator:after {
-  content: '';
-  position: absolute;
-  left: 64px;
-  right: 0px;
-  bottom: -0.5px;
-  z-index: 8;
-  background: #B2B2B2;
-  height: 0.5px;
-}
 .actionDrawer {
   font-size: 17px;
   line-height: 29px;
@@ -581,12 +600,12 @@ li.cellRow {
 li.cellRow:after {
   content: '';
   position: absolute;
-  left: 64px;
   right: 0px;
   bottom: -0.5px;
   z-index: 8;
   background: #B2B2B2;
   height: 0.5px;
+  left: 64px;
 }
 li.cellRow:first-of-type {
   border-top: 0.5px solid #B2B2B2;
@@ -609,6 +628,7 @@ input.cellRowContent {
 a.cellRowContent {
   color: #270043;
   text-decoration: none;
+  min-height: 44px;
 }
 .cellRowContent#formApplyFilters {
   text-align: center;
@@ -643,6 +663,7 @@ a.cellRowContent {
 .cellLabel {
   padding-right: 10px;
 }
+.cellValue,
 input.cellValue,
 select.cellValue {
   margin-left: auto;
@@ -1154,6 +1175,6 @@ input[type="checkbox"]:checked:active + .toggle i {
     transform: translateY(150px);
   }
 }
-/* ===============
-   DESKTOP STYLING
-   =============== */
+/* =============
+   MOUSE STYLING
+   ============= */

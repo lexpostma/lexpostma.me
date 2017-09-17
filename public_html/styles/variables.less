@@ -149,4 +149,31 @@
     color: @color4;
 }
 
+.iOSFontStyling {
+    font-size: 17px;
+    line-height: 29px;
+}
 
+.cellSeparatorGeneral {
+    content:''; 
+    position: absolute;
+    right: 0px;
+    bottom: -@lineThickness;
+    z-index: 8;
+    background: @colorLine;
+    height: @lineThickness;    
+}
+
+.cellSeparatorWithIcon {
+    &:after {
+        .cellSeparatorGeneral;
+        left: 64px;
+    }
+}
+
+.cellSeparatorWithoutIcon {
+    &:after {
+        .cellSeparatorGeneral;
+        left: 20px;
+    }
+}

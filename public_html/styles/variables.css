@@ -47,3 +47,36 @@
   font-size: .9em;
   color: DarkGray;
 }
+.iOSFontStyling {
+  font-size: 17px;
+  line-height: 29px;
+}
+.cellSeparatorGeneral {
+  content: '';
+  position: absolute;
+  right: 0px;
+  bottom: -0.5px;
+  z-index: 8;
+  background: #B2B2B2;
+  height: 0.5px;
+}
+.cellSeparatorWithIcon:after {
+  content: '';
+  position: absolute;
+  right: 0px;
+  bottom: -0.5px;
+  z-index: 8;
+  background: #B2B2B2;
+  height: 0.5px;
+  left: 64px;
+}
+.cellSeparatorWithoutIcon:after {
+  content: '';
+  position: absolute;
+  right: 0px;
+  bottom: -0.5px;
+  z-index: 8;
+  background: #B2B2B2;
+  height: 0.5px;
+  left: 20px;
+}

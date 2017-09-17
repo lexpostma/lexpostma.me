@@ -510,24 +510,6 @@ html.actionDrawerToggled {
    iOS STYLE CELL ROW ELEMENTS IN FORM
    =================================== */
 
-.iOSFontStyling {
-    font-size: 17px;
-    line-height: 29px;
-}
-
-.cellSeparator {
-    &:after {
-        content:''; 
-        position: absolute;
-        left: 64px;
-        right: 0px;
-        bottom: -@lineThickness;
-        z-index: 8;
-        background: @colorLine;
-        height: @lineThickness;
-    }
-}
-
 // Strip default styling from form items {
 .actionDrawer {
     .iOSFontStyling;
@@ -553,7 +535,7 @@ ul.cellRowGroup {
 
 li.cellRow {
     position: relative;
-    .cellSeparator;
+    .cellSeparatorWithIcon;
     &:first-of-type {
         border-top:    @lineThickness solid @colorLine;
     }
@@ -579,6 +561,7 @@ input.cellRowContent {
 a.cellRowContent {
     color: @colorBodyText;
     text-decoration: none;
+    min-height: 44px;
 }
 
 
@@ -620,6 +603,7 @@ a.cellRowContent {
     padding-right: 10px;
 }
 
+.cellValue,
 input.cellValue,
 select.cellValue {
     margin-left: auto;
@@ -1194,9 +1178,9 @@ input[type="checkbox"] {
 
 
 
-/* ===============
-   DESKTOP STYLING
-   =============== */
+/* =============
+   MOUSE STYLING
+   ============= */
 
 nav#tabbarNavigation a:hover div#tabbarTooltip span {
 //     text-decoration: underline;
