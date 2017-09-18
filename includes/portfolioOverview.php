@@ -70,3 +70,19 @@
     })
     //]]>
 </script>
+
+
+
+<script src="/scripts/jquery.hover3d.js"></script>
+
+
+
+<script>
+
+$(".portfolioItem").hover3d({
+	selector: ".portfolioItemImage",
+	shine: true,
+	sensitivity: 20,
+});
+
+</script>
