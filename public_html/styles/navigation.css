@@ -112,24 +112,39 @@ header#titleHeader a#mainTitle {
   color: white;
   text-decoration: none;
 }
-header#titleHeader a#mainLogoDesktop,
-header#titleHeader a#mainLogo {
+.logoContainer {
   position: absolute;
-  background: #4B0082;
+  right: 0;
+  z-index: 500;
+}
+.logoContainer .logo a {
+  position: absolute;
+  top: 17px;
+  right: 17px;
+  display: block;
   padding: 3px;
   height: 56px;
   width: 56px;
-  top: 17px;
-  right: 17px;
 }
-header#titleHeader a#mainLogoDesktop svg,
-header#titleHeader a#mainLogo svg {
+.logoContainer .logo a svg {
   height: 100%;
   width: 100%;
+}
+.logoContainer .logo#mainLogo a {
+  background: #4B0082;
+}
+.logoContainer .logo#mainLogo svg {
   fill: #FAFAFA;
 }
-header#titleHeader a#mainLogoDesktop {
+.logoContainer .logo#mainLogoDesktop {
   display: none;
+}
+.logoContainer .logo#mainLogoDesktop svg {
+  fill: #4B0082;
+}
+main#contents {
+  margin-top: calc(84.5px);
+  padding-bottom: 50.5px;
 }
 /* ===================
    NAVIGATION ELEMENTS
@@ -494,8 +509,7 @@ html:not(.actionDrawerToggled) #navigationElements.tabbarOnScrollDown li.tabbarI
    * 
  */
 header#titleHeader,
-header#titleHeader a#mainLogo,
-header#titleHeader a#mainLogoDesktop,
+.logo#mainLogo a,
 nav#secondNavigation,
 main#contents {
   transition-property: opacity, transform, border-radius, background;
@@ -525,9 +539,9 @@ html.actionDrawerToggled body header#titleHeader {
   transform: translateY(-150px);
   transition-delay: .05s;
 }
-html.actionDrawerToggled body header#titleHeader a#mainLogo {
+html.actionDrawerToggled body .logo#mainLogo a {
   transition-delay: .05s;
-  transform: translateY(150px);
+  transform: translateY(0px);
   background: black;
   transform-origin: top;
   opacity: .6;
@@ -849,9 +863,6 @@ li.cellRow.contactItem .cellIcon#contactIcon_instagram {
    * https://codepen.io/o_ti/pen/bkEco
    * 
  */
-input[type="checkbox"] {
-  display: none;
-}
 .toggle {
   position: absolute;
   top: 0;
@@ -885,6 +896,9 @@ input[type="checkbox"] {
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.25), 0 3px 3px 0 rgba(0, 0, 0, 0.15);
   background: #ffffff;
   transition: all 0.3s cubic-bezier(0.275, -0.45, 0.725, 1.45);
+}
+input[type="checkbox"] {
+  display: none;
 }
 input[type="checkbox"]:active + .toggle i {
   width: 35px;
@@ -986,8 +1000,8 @@ input[type="checkbox"]:checked:active + .toggle i {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
-  html.actionDrawerToggled body header#titleHeader a#mainLogo {
-    transform: translateY(0px);
+  html.actionDrawerToggled body .logo#mainLogo a {
+    transform: translateY(-150px);
   }
 }
 /* ==============
@@ -1025,8 +1039,8 @@ input[type="checkbox"]:checked:active + .toggle i {
   #actionDrawerClosingBackground {
     top: calc(-50vh + 200px);
   }
-  html.actionDrawerToggled body header#titleHeader a#mainLogo {
-    transform: translateY(150px);
+  html.actionDrawerToggled body .logo#mainLogo a {
+    transform: translateY(0px);
   }
   html.actionDrawerToggled body main#contents {
     -webkit-transform: scale(0.9, 0.9) translateY(calc(100vw * 0.05));
@@ -1045,19 +1059,56 @@ input[type="checkbox"]:checked:active + .toggle i {
   header#titleHeader a#mainTitle {
     padding-left: calc(220px);
   }
-  header#titleHeader a#mainLogoDesktop,
-  header#titleHeader a#mainLogo {
+  .logoContainer {
+    transition: top 0.2s ease-in-out 0ms;
+    -webkit-transition: top 0.2s ease-in-out 0ms;
+    -o-transition: top 0.2s ease-in-out 0ms;
+    -moz-transition: top 0.2s ease-in-out 0ms;
+    -ms-transition: top 0.2s ease-in-out 0ms;
+    -kthtml-transition: top 0.2s ease-in-out 0ms;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: auto;
+  }
+  .logoContainer .logo {
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    width: 200px;
+    clip: rect(auto, auto, auto, auto);
+    -webkit-clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0);
+  }
+  .logoContainer .logo a {
+    position: fixed;
     right: auto;
     left: 20px;
     top: 20px;
+    -webkit-transform: translatez(0);
+    -moz-transform: translatez(0);
+    -ms-transform: translatez(0);
+    -o-transform: translatez(0);
+    transform: translatez(0);
   }
-  header#titleHeader a#mainLogoDesktop {
-    position: fixed;
+  .logoContainer .logo#mainLogo,
+  .logoContainer .logo#mainLogoDesktop {
+    transition-delay: 0s;
+  }
+  .logoContainer .logo#mainLogo {
+    top: 0px;
+    height: 76px;
+  }
+  .logoContainer .logo#mainLogo a {
+    top: 0;
+    padding-top: 23px;
+    height: 76px;
+  }
+  .logoContainer .logo#mainLogoDesktop {
     display: block;
-    background: none;
-  }
-  header#titleHeader a#mainLogoDesktop svg {
-    fill: #4B0082;
+    top: 76px;
+    bottom: 0;
   }
   nav#secondNavigation {
     top: 0;
@@ -1167,12 +1218,8 @@ input[type="checkbox"]:checked:active + .toggle i {
   html.actionDrawerToggled body header#titleHeader {
     transition-delay: 0s;
   }
-  html.actionDrawerToggled body header#titleHeader a#mainLogo {
-    transition-delay: 0s;
-    transform: translateY(0px);
-  }
-  html.actionDrawerToggled body header#titleHeader a#mainLogoDesktop {
-    transform: translateY(150px);
+  html.actionDrawerToggled body .logoContainer {
+    top: -150px;
   }
 }
 /* =============

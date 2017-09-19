@@ -3,13 +3,21 @@
 ?>
             <header id="titleHeader">
                 <a id="mainTitle" href="<?=$baseURL ?>"><?=$basepageTitle ?></a>
-                <a id="mainLogoDesktop" href="/">
-                    <? include '../public_html/images/lex-logo.svg'; ?>
-                </a>
-                <a id="mainLogo" href="/">
-                    <? include '../public_html/images/lex-logo.svg'; ?>
-                </a>
             </header>
+
+            <div class="logoContainer">
+                <div class="logo" id="mainLogo">
+                    <a href="/">
+                        <? include '../public_html/images/lex-logo.svg'; ?>
+                    </a>
+                </div>
+                <div class="logo" id="mainLogoDesktop">
+                    <a href="/">
+                        <? include '../public_html/images/lex-logo.svg'; ?>
+                    </a>
+                </div>
+            </div>
+
             <nav id="secondNavigation">
                 <ul>
 <?

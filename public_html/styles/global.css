@@ -48,6 +48,39 @@
   font-size: .9em;
   color: DarkGray;
 }
+.iOSFontStyling {
+  font-size: 17px;
+  line-height: 29px;
+}
+.cellSeparatorGeneral {
+  content: '';
+  position: absolute;
+  right: 0px;
+  bottom: -0.5px;
+  z-index: 8;
+  background: #B2B2B2;
+  height: 0.5px;
+}
+.cellSeparatorWithIcon:after {
+  content: '';
+  position: absolute;
+  right: 0px;
+  bottom: -0.5px;
+  z-index: 8;
+  background: #B2B2B2;
+  height: 0.5px;
+  left: 64px;
+}
+.cellSeparatorWithoutIcon:after {
+  content: '';
+  position: absolute;
+  right: 0px;
+  bottom: -0.5px;
+  z-index: 8;
+  background: #B2B2B2;
+  height: 0.5px;
+  left: 20px;
+}
 /* ==============
    GLOBAL STYLING
    ============== */
@@ -70,24 +103,21 @@ body {
   height: 100%;
   background-color: white;
 }
-/*
-body.darkBackgroundLaterToFixScrollbarColor {
-    background-color: @color1;    
+body,
+main#contents {
+  background-color: white;
 }
-*/
+@media (min-width: 500px) {
+  body,
+  main#contents {
+    background-color: #F7F7F7;
+  }
+}
 main#contents {
   margin: auto;
   overflow: hidden;
   min-height: 100vh;
   position: relative;
-  margin-top: calc(84.5px);
-  padding-bottom: 50.5px;
-  background-color: white;
-}
-@media (min-width: 500px) {
-  main#contents {
-    background-color: #F7F7F7;
-  }
 }
 p,
 h1,

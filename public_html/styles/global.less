@@ -25,23 +25,19 @@ body {
     background-color: white;
 }
 
-/*
-body.darkBackgroundLaterToFixScrollbarColor {
-    background-color: @color1;    
+body,
+main#contents {
+    background-color: white;
+    @media (min-width: @sizeChange) {
+        background-color: @colorBackground;
+    }    
 }
-*/
 
 main#contents {
     margin: auto;
     overflow: hidden;
     min-height: 100vh;
     position: relative;
-    margin-top: calc(@titlebarHeight + @secondarybarHeight);
-    padding-bottom: @tabbarHeight;
-    background-color: white;
-    @media (min-width: @sizeChange) {
-        background-color: @colorBackground;
-    }
 }
 
 
