@@ -8,15 +8,18 @@
     $postID     = $row['postID'];
 
     // Extra details
-    $year            = $row['year'];
-    $category        = $row['category'];
-    $shortcategory   = strtolower($category);
-    $course          = $row['course'];
-    $assignment      = $row['assignment'];
-    $acknowledgments = $row['acknowledgments'];
-    $roleFocus       = $row['roleFocus'];
+    $year              = $row['year'];
+    $category          = $row['category'];
+    $shortcategory     = strtolower($category);
+    $course            = $row['course'];
+    $assignment        = $row['assignment'];
+    $acknowledgments   = $row['acknowledgments'];
+    $roleFocus         = $row['roleFocus'];
+    $domainInBrowserUI = $row['domainInBrowserUI'];
 
     // Favourite projects are selected for frontpage
+    $archived                 = $row['archived'];
+    $effectLayers             = $row['3dEffectLayers'];
     $partOfFrontpageSelection = $row['partOfFrontpageSelection'];
     $onlineVisible            = $row['onlineVisible'];
     $initialBody              = $row['initialBody'];

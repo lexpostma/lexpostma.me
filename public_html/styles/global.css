@@ -180,15 +180,15 @@ figure {
   display: block;
   margin: 0;
 }
-.video-container {
+.videoContainer {
   position: relative;
   padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
 }
-.video-container iframe,
-.video-container object,
-.video-container embed {
+.videoContainer iframe,
+.videoContainer object,
+.videoContainer embed {
   position: absolute;
   top: 0;
   left: 0;
