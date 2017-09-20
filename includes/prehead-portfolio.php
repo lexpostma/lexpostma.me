@@ -29,6 +29,14 @@
             $includePage = 'portfolioOverview.php';
             $basepageTwo     = 'archive';
             
+        } else if($p == 'all') { // All projects, archived or not
+            
+            $seoTitle       .= ', complete';
+            $seoDescription = 'Complete portfolio by Lex Postma.';
+    
+//             $corePortfolioSQLquery .= " AND archived = '1' ";
+            $includePage = 'portfolioOverview.php';
+            $basepageTwo     = 'all';
 
 /*
         } else if($p == 'videos' || $p == 'video') { // videos grid
