@@ -60,23 +60,23 @@
                     <a href="/<?=$shortname?>" class="effect-layer layer-<?=$layerCount?> portfolioItemLink" ></a>
                 </div>
             </div>
-            <a href="/<?=$shortname?>" title="<?=$plainTitle?>" class="projectTitle"><? if($archived == '1'){ echo '<i class="fa fa-archive"></i> '; }?><?=$plainTitle?></a>
+            <a href="/<?=$shortname?>" title="<?=$plainTitle?>" class="projectTitle"><?=$plainTitle?><? if($archived == '1'){ echo '<i class="fa fa-archive" title="This project was archived"></i>'; }?></a>
+            <hr>
+            <div class="year"><span><?=$year?></span></div>
+            <p class="portfolioItemSummary"><?=$summary?>
 <?
             if( !empty($videoid) ){
 ?>
-            <a href="#" stuff="http://vimeo.com/<?=$videoid?>" class="video-in-link portfolioItemPlayVideo" 
-                    onclick="ga('send', 'event', 'Portfolio', 'Play video', '<?=$plainTitle?>');" 
-                    title="Play <?=$plainTitle?>'s video">
-                <i class="fa fa-play-circle"></i>
-            </a>
+                <br>
+                <a href="#" stuff="http://vimeo.com/<?=$videoid?>" class="video-in-link portfolioItemPlayVideo" 
+                        onclick="ga('send', 'event', 'Portfolio', 'Play video', '<?=$plainTitle?>');" 
+                        title="Play <?=$plainTitle?>'s video">Watch the video
+                    <i class="fa fa-play-circle"></i>
+                </a>
 <?
             }
 ?>
-<!--             <div class="year"><span><?=$year?></span></div> -->
-            <hr>
-            <p class="portfolioItemSummary"><?=$summary?></p>
-
-
+            </p>
         </div>
 <?
         };
@@ -92,12 +92,9 @@
     //<![CDATA[
     $(document).ready(function(){
        $("a.video-in-link").one('click',function(){
-          var anchor1 = $(this).siblings("div.portfolioItemHoverEffect");
-          var anchor2 = anchor1.children("div.videoContainer");
-//           anchor1.removeClass('move');
-//           anchor1.removeAttr('href');
-          anchor2.html(anchor2.html().replace('<!--','').replace('-->',''));
-          anchor2.addClass('show');
+          var anchor = $(this).parent().siblings("div.portfolioItemHoverEffect").children("div.videoContainer");
+          anchor.html(anchor.html().replace('<!--','').replace('-->',''));
+          anchor.addClass('show');
           $(this).addClass('hide');
           return false;
        })
@@ -106,11 +103,8 @@
 </script>
 
 
-
+<!-- 3D hover effect -->
 <script src="/scripts/jquery.hover3d.js"></script>
-
-
-
 <script>
 
 $(".portfolioItemHoverEffect.move").hover3d({

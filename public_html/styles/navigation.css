@@ -958,6 +958,7 @@ input[type="checkbox"]:checked:active + .toggle i {
     border-bottom: 0.5px solid #B2B2B2;
   }
   main#contents {
+    padding-bottom: 0;
     margin-left: 50.5px;
   }
   #tabbarTooltip {

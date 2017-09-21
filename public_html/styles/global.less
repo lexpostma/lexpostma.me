@@ -22,15 +22,11 @@ html, body {
 
 body {
     height: 100%;
-    background-color: white;
 }
 
 body,
 main#contents {
-    background-color: white;
-    @media (min-width: @sizeChange) {
-        background-color: @colorBackground;
-    }    
+    background-color: @colorBackground;
 }
 
 main#contents {
@@ -52,7 +48,8 @@ math {
 }
 
 p {
-    line-height: 160%;
+    .iOSFontStyling;
+//     line-height: 160%;
 }
 
 a {
@@ -261,8 +258,9 @@ tr:hover {           background-color: silver;           }
 footer#pageFooter p {
     font-style: italic;
     font-size: 15px;
+    line-height: 24px;
     color: @color4;
-    margin: @objectSpace 0;
+    margin: @objectSpace 0 @sidePadding;
     a:link, a:visited { 
         color: @color4;
         text-decoration: underline;

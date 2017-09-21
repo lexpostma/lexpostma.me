@@ -85,7 +85,7 @@
   flex-flow: row wrap;
   justify-content: flex-start;
   align-items: flex-start;
-  max-width: 1600px;
+  max-width: 1200px;
   margin: auto;
 }
 .portfolioItem {
@@ -101,12 +101,40 @@
   font-weight: bold;
   text-transform: uppercase;
 }
+.portfolioItem a.projectTitle i.fa-archive {
+  margin-left: 10px;
+  color: #a77800;
+}
 .portfolioItem p {
   margin-bottom: 80px;
 }
 .portfolioItem hr {
   width: 200px;
   margin: 0 auto;
+}
+.portfolioItem .year {
+  margin-top: -13px;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.portfolioItem .year span {
+  font-size: 12px;
+  padding: 3px;
+  color: #929292;
+  background: #F7F7F7;
+  display: inline-block;
+}
+.portfolioItem a.portfolioItemPlayVideo {
+  font-size: 15px;
+}
+.portfolioItem a.portfolioItemPlayVideo i.fa-play-circle {
+  font-size: 90%;
+  margin-left: 5px;
+}
+.portfolioItem a.portfolioItemPlayVideo.hide {
+  color: #929292;
+  pointer-events: none;
 }
 .hover-in {
   transition: 0.5s ease-out;
@@ -230,16 +258,8 @@
 .videoContainer.show {
   display: block;
 }
-a.portfolioItemPlayVideo {
-  float: right;
-  display: block;
-  /*
-    -webkit-transform: translateZ(50px);
-    transform: translateZ(50px);
-*/
-}
-a.portfolioItemPlayVideo.hide {
-  display: none;
+footer#pageFooter p {
+  text-align: center;
 }
 /* ===============
    LANDSCAPE SHORT
@@ -247,16 +267,6 @@ a.portfolioItemPlayVideo.hide {
 @media screen and (min-width: 560px) {
   .overviewPortfolio {
     padding: 20px;
-  }
-  .portfolioItem {
-    width: calc( 50% - 20px / 2 );
-    margin-bottom: 30px;
-  }
-  .portfolioItem:nth-of-type(odd) {
-    margin-right: calc(10px);
-  }
-  .portfolioItem:nth-of-type(even) {
-    margin-left: calc(10px);
   }
   .portfolioItem a.projectTitle,
   .portfolioItem p {
@@ -277,12 +287,42 @@ a.portfolioItemPlayVideo.hide {
 /* ==============
    LANDSCAPE TALL
    ============== */
+@media screen and (min-width: 560px) and (min-height: 600px) {
+  .portfolioItem {
+    width: calc( 50% - 20px / 2 );
+    margin-bottom: 30px;
+  }
+  .portfolioItem:nth-of-type(odd) {
+    margin-right: calc(10px);
+  }
+  .portfolioItem:nth-of-type(even) {
+    margin-left: calc(10px);
+  }
+}
 /* =======
    DESKTOP
    ======= */
 @media screen and (min-width: 1000px) {
   .overviewPortfolio {
-    padding: 30px calc(15px);
+    padding: 30px;
+    margin-top: 30px;
+  }
+  .portfolioItem {
+    width: calc( 50% - 20px );
+  }
+  .portfolioItem:nth-of-type(odd) {
+    margin-right: 20px;
+  }
+  .portfolioItem:nth-of-type(even) {
+    margin-left: 20px;
+  }
+}
+/* ==========
+   DESKTOP XL
+   ========== */
+@media screen and (min-width: 1500px) {
+  .overviewPortfolio {
+    max-width: 1800px;
   }
   .portfolioItem,
   .portfolioItem:nth-of-type(even),
