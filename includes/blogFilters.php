@@ -94,6 +94,7 @@
     }
 ?>
 
+
 <!--
 <ul class="cellRowGroup">
     <li class="cellRow">
@@ -119,6 +120,7 @@
 
 
 <ul class="cellRowGroup">
+<!--     <lh>Filter blog posts</lh> -->
     <form action="/filtering.php" method="get" id="filteringForm">
 
 <?

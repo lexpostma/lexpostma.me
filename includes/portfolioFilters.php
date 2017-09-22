@@ -97,20 +97,38 @@
 
 ?>
 
-<!--
+<?
+    if ($currentEnvironment !== 'production') {
+?>
+
+
 <ul class="cellRowGroup">
+    <lh>Project selections</lh>
     <li class="cellRow">
-        <a class="cellRowContent" href="/archive">
-            <div class="cellIcon archive"><i class="fa fa-fw fa-archive"></i></div>
-            <span class="cellLabel">Oldies, but goodies</span>
+        <a class="cellRowContent" href="/all">
+            <div class="cellIcon"><i class="fa fa-fw fa-th"></i></div>
+            <span class="cellLabel">All projects</span>
             <div class="cellClosingIcon chevron"><? include 'navigationIcons/chevron.svg'  ?></div>
         </a>
     </li>
+
+    <li class="cellRow">
+        <a class="cellRowContent" href="/archive">
+            <div class="cellIcon archive"><i class="fa fa-fw fa-archive"></i></div>
+            <span class="cellLabel">Archived projects</span>
+            <div class="cellClosingIcon chevron"><? include 'navigationIcons/chevron.svg'  ?></div>
+        </a>
+    </li>
+
 </ul>
--->
+
+<?
+    }
+?>
 
 
 <ul class="cellRowGroup">
+<!--     <lh>Filter projects</lh> -->
     <form action="/filtering.php" method="get" id="filteringForm">
 
 <?

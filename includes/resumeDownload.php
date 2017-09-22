@@ -7,6 +7,7 @@
 ?>
 
 <ul class="cellRowGroup">
+    <lh><strong>Download pdf</strong></lh>
     <li class="cellRow resumeDownloadItem">
         <a class="cellRowContent" href="/public-files/CV-Lex-Postma-en-web.pdf" 
                 download="Lex Postma, web-resume (<? echo date('n/Y')?>).pdf"
@@ -28,3 +29,22 @@
         </a>
     </li>
 </ul>
+
+<ul class="cellRowGroup">
+    <li class="cellRow">
+        <a class="cellRowContent" href="<?=$linkedinURL?>">
+            <div class="cellIcon linkedin"><i class="fa fa-fw fa-linkedin"></i></div>
+            <span class="cellLabel">LinkedIn</span>
+            <div class="cellClosingIcon chevron"><? include 'navigationIcons/chevron.svg'  ?></div>
+        </a>
+    </li>
+
+    <li class="cellRow">
+        <a class="cellRowContent" href="javascript:window.print()">
+            <div class="cellIcon"><i class="fa fa-fw fa-print"></i></div>
+            <span class="cellLabel">Print</span>
+            <div class="cellClosingIcon chevron"><? include 'navigationIcons/chevron.svg'  ?></div>
+        </a>
+    </li>
+</ul>
+

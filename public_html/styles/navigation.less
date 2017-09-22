@@ -21,64 +21,88 @@
 header#titleHeader {
     background-color: @color1;
     color: white;
-    left: 0;
-    right: 0;
+    width: 100%;
     height: @titlebarHeight;
-    position: absolute;
-    z-index: 2;
     a#mainTitle {
-        line-height: 50px;
+        line-height: @titlebarHeight;
         font-size: 24px;
         font-weight: bold;
         padding-left: @sidePadding;
         color: white;
         text-decoration: none;
     }
-}
-
-.logoContainer {
-    position: absolute;
-    right: 0;
-    z-index: 500;
-    
     .logo {
         a {
             position: absolute;
-            top: 17px;
-            right: 17px;
             display: block;
+            background: @color1;
+//             height: 30px;
+//             width: 30px;
+            top: 10px;
+            right: 10px;
+
             padding: 3px;
             height: 56px;
             width: 56px;
-    
-            svg {
-                height: 100%;
-                width: 100%;
-            }
-    
+            z-index: 500;
         }
-    
-        &#mainLogo {
-            a {
-                background: @color1;
-            }
-            svg {
-                fill: #FAFAFA;
-            }
-        }
-        &#mainLogoDesktop {
-            display: none;
-            svg { 
-                fill: @color1;
-            }
+        svg {
+            fill: #FAFAFA;
         }
     }
 }
 
+.logo {
+    svg {
+        height: 100%;
+        width: 100%;
+    }
+}
+
 main#contents {
-    margin-top: calc(@titlebarHeight + @secondarybarHeight);
     padding-bottom: @tabbarHeight;
 }
+
+
+
+
+
+
+/* ====================
+   SECONDARY NAVIGATION
+   ==================== */
+
+nav#secondNavigation {
+//     position: absolute;
+//     top: 50px;
+//     left: 0;
+//     right: 0;
+//     z-index: 1;
+//     height: @secondarybarHeight;
+    .translucentBackground;
+    border-bottom: @lineThickness solid @colorLine;
+    padding: 2px 10px;
+    vertical-align: bottom;
+    a {
+        display: inline-block;
+        text-decoration: none;
+        color: @color1;
+        padding: 5px 10px;
+    }
+    a.active {
+        font-weight: bold;
+    }
+    span {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
 
 
 /* ===================
@@ -92,6 +116,22 @@ main#contents {
     right: 0;
     z-index: 400;
     height: @tabbarHeight;
+    .logo {
+        a {
+            display: none;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: 20px;
+            left: 20px;
+            z-index: 500;
+        }
+
+        svg { 
+            fill: @color1;
+        }
+    }
+
 }
 
 nav ul,
@@ -145,6 +185,10 @@ li.tabbarItem {
             text-align: center;
             font-size: 10px;
             color: @colorInactive;
+            
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
         svg {
             height: 30px;
@@ -238,40 +282,6 @@ li.tabbarItem:first-child a.tabbarLink {
 
 
 
-/* ====================
-   SECONDARY NAVIGATION
-   ==================== */
-
-nav#secondNavigation {
-    position: absolute;
-    top: 50px;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    height: @secondarybarHeight;
-    .translucentBackground;
-    border-bottom: @lineThickness solid @colorLine;
-    padding: 2px 10px;
-    vertical-align: bottom;
-    #specialItemFromTabbar {
-        display: none;
-    }
-    a {
-        display: inline-block;
-        text-decoration: none;
-        color: @color1;
-        padding: 5px 10px;
-    }
-    a.active {
-        font-weight: bold;
-    }
-}
-
-
-
-
-
-
 /* =============
    ACTION DRAWER
    ============= */
@@ -289,20 +299,22 @@ nav#secondNavigation {
     flex-direction: column;
     box-shadow: 0px 20px 50px black;
     border-top-left-radius: 10px;
-    border-top-right-radius: 10px;            
-
+    border-top-right-radius: 10px;
 }
 
-#actionDrawerClosingBackground {
+.actionDrawerClosingBackground {
     width: 100vw;
     height: 100vh;
     position: fixed;
     bottom: 0;
     display: none;
     z-index: -1;
+    
+//     background: rgba(153, 45, 45, 0.76) !important;
 }
 
-#actionDrawerTitleBar {
+.actionDrawerTitleBar {
+    color: @colorBodyText;
     border-top-left-radius:  10px;
     border-top-right-radius: 10px;
     border-top:    @lineThickness solid @colorLine;
@@ -337,7 +349,7 @@ nav#secondNavigation {
     }
 }
 
-#actionDrawerContent {
+.actionDrawerContent {
     .translucentBackground;
     align-items: stretch;
     overflow-y: scroll;
@@ -461,11 +473,8 @@ html:not(.actionDrawerToggled) #navigationElements.tabbarOnScrollDown {
    * 
  */
    
-header#titleHeader,
-.logo#mainLogo a,
-nav#secondNavigation,
 main#contents {
-    transition-property: opacity, transform, border-radius, background;
+    transition-property: opacity, transform, border-radius;
     transition-duration: .2s;
     transition-timing-function: ease-in-out;
     transform-origin: top;
@@ -473,9 +482,6 @@ main#contents {
 
 html:not(.actionDrawerToggled) body {
     .transitionPlus(background; 0.2s; 0s);
-    nav#secondNavigation {
-        transition-delay: .05s;
-    }
 }
 
 html.actionDrawerToggled {
@@ -485,21 +491,6 @@ html.actionDrawerToggled {
     body {
         overflow: hidden;
         background-color: black;
-        header#titleHeader {
-            transform: translateY(-150px);
-            transition-delay: .05s;
-        }
-        .logo#mainLogo a {
-            transition-delay: .05s;
-            transform: translateY(0px);
-            background: black;
-            transform-origin: top;
-            opacity: .6;
-        }
-        nav#secondNavigation {
-            opacity: 0;
-            transform: translateY(-150px);
-        }
         main#contents {
             -webkit-transform: scale(.9, .9) translateY(20px);
                     transform: scale(.9, .9) translateY(20px);
@@ -508,17 +499,18 @@ html.actionDrawerToggled {
             border-top-right-radius: 10px;            
         }
         #navigationElements {
+            .firstButtonActiveState;
+            
             #actionDrawerNavigation {
                 transform: translateY(0);
             }
             #filterIndicationBar {
                 transform: translateY(2* @tabbarHeight);
             }
-            .firstButtonActiveState;
-            #actionDrawerClosingBackground {
+            .actionDrawerClosingBackground {
                 display: block;
             }
-            #actionDrawerContent {
+            .actionDrawerContent {
 //                 -webkit-overflow-scrolling: touch;
             }
         }
@@ -555,6 +547,11 @@ html.actionDrawerToggled {
 
 ul.cellRowGroup {
     margin: 25px auto;
+    lh {
+        display: block;
+        color: @colorBodyText;
+        padding: 5px @sidePadding;
+    }
 }
 
 li.cellRow {
@@ -743,9 +740,15 @@ li.cellRow.contactItem {
 }
 
 .cellIcon i {
-    &.fa-tag {
+    &.fa-tag,
+    &.fa-twitter,
+    &.fa-rss {
         padding-left: 1px;
         padding-top: 7px;                
+    }
+    &.fa-newspaper-o,
+    &.fa-th {
+        padding-top: 7px;
     }
     &.fa-building {
         padding-left: 2px;
@@ -762,6 +765,11 @@ li.cellRow.contactItem {
 .cellIcon.client    i { color: #545454; }
 .cellIcon.author    i { color: #FFDCB1; }
 .cellIcon.video     i { color: #ff0000; }
+
+.cellIcon.twitter   i { color: @twitterBlue; }
+.cellIcon.rss       i { color: orange; }
+.cellIcon.appleNews i { color: #fc415b; }
+.cellIcon.linkedin  i { color: @linkedinBlue; }
 
 
 
@@ -841,11 +849,6 @@ input[type="checkbox"] {
 
 @media screen and (min-width: @screenSizeAtLandscapeShort) {
 
-    header#titleHeader,
-    nav#secondNavigation {
-        left: @tabbarHeight;
-    }
-    
     #navigationElements {
         top: 0;
         right: auto;
@@ -907,7 +910,7 @@ input[type="checkbox"] {
         max-height: 90%;
     }
     
-    #actionDrawerClosingBackground {
+    .actionDrawerClosingBackground {
         left: ~"calc(-50vw + @{actionDrawerWidth} / 2 - @{tabbarHeight} /2)";
     }
     
@@ -936,14 +939,6 @@ input[type="checkbox"] {
                     transform: translateY(0);
         }
     }
-
-    html.actionDrawerToggled {
-        body {
-            .logo#mainLogo a {
-                transform: translateY(-150px);
-            }
-        }
-    }
             
 }
 
@@ -962,16 +957,10 @@ input[type="checkbox"] {
         }
     }
     
-    nav#secondNavigation {
-        left: 0;
-        z-index: 401;
-    }
-
     nav#tabbarNavigation {
-        ul#tabbarItemList {
-            display: block;
-            padding-top: calc( @titlebarHeight + @secondarybarHeight);
-        }
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     #actionDrawerNavigation {
@@ -983,23 +972,19 @@ input[type="checkbox"] {
         transform: translateY(110vh);
     }
     
-    #actionDrawerContent {
+    .actionDrawerContent {
         height: 400px;
         border-bottom-right-radius: 10px;
         border-bottom-left-radius: 10px;
     }
 
-    #actionDrawerClosingBackground {
+    .actionDrawerClosingBackground {
         top: ~"calc(-50vh + 200px)";
 
     }
 
     html.actionDrawerToggled {
         body {
-            .logo#mainLogo a {
-                transform: translateY(0px);
-            }
-
             main#contents {
                 -webkit-transform: scale(.9, .9) translateY(~"calc(100vw * 0.05)");
                         transform: scale(.9, .9) translateY(~"calc(100vw * 0.05)");
@@ -1026,96 +1011,28 @@ input[type="checkbox"] {
 
 
     header#titleHeader {
+        display: none;
         a#mainTitle {
-            padding-left: calc(@navigationWidthDesktop + @sidePadding);
+//             padding-left: calc(@navigationWidthDesktop + @sidePadding);
         }
+        .logo a {
+            display: none;
+        }
+        
     }
-    .logoContainer {
-        .transition(top);
-        pointer-events: none;
-
-        top:0;
-        left: 0;
-        bottom: 0;
-        right: auto;
-
-        .logo {
-            pointer-events: none;
-            position: absolute;
-            left: 0;
-            width: @navigationWidthDesktop;
-
-            clip: rect(auto, auto, auto, auto);
-            -webkit-clip-path: inset(0 0 0 0);
-            clip-path: inset(0 0 0 0);
-            a {
-                position: fixed;
-    
-                right: auto;
-                left: 20px;
-                top: 20px;
-    
-                -webkit-transform: translatez(0);
-                -moz-transform: translatez(0);
-                -ms-transform: translatez(0);
-                -o-transform: translatez(0);
-                transform: translatez(0);
-            }
-            &#mainLogo,
-            &#mainLogoDesktop {
-                transition-delay: 0s;
-            }    
-            &#mainLogo {
-                top: 0px;
-                height: 76px;
-                a {
-                    // This is so the background on the logo keeps moving up with the title bar
-                    top: 0;
-                    padding-top: 23px;
-                    height: 76px;
-                }
-            }
-            &#mainLogoDesktop {
-                display: block;
-                top: 76px;
-                bottom: 0;
-            }
-        }
-    }
-
-    nav#secondNavigation {
-        top: 0;
-        z-index: 501;
-        height: 50px;
-        left: auto;
-        padding: 10px;
-        display: flex;
-        align-items: center;
-        background: none;
-        border: none;
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
-        #specialItemFromTabbar {
-            display: inline-block;
-            svg {
-                display: none;
-            }
-        }
-        a {
-            color: white;
-            padding: 10px @sidePadding;
-        }
+    #navigationElements .logo a {
+        display: block;
     }
 
     nav#tabbarNavigation {
+        display: block;
         ul#tabbarItemList {
-            padding-top: 110px;
+            padding-top: 90px;
         }
     }
 
     main#contents {
         margin-left: @navigationWidthDesktop;
-        margin-top: @titlebarHeight;
     }
 
     li.tabbarItem {
@@ -1146,26 +1063,25 @@ input[type="checkbox"] {
             margin-top: -5px;
         }
         a.tabbarLink.noLabel {
-            border-top: @lineThickness solid @colorLine;
             span.tabName {
-                font-style: italic;
+//                 font-style: italic;
+                font-weight: bold;
             }
             svg {
                 padding: 5px;
             }
         }
+        &:first-of-type {
+            border-top: @lineThickness solid @colorLine;
+        }
 
-    }
-
-    li.tabbarItem.drawerToggleButton {
-        display: none;
     }
 
     #actionDrawerNavigation {
         left: ~"calc(50vw + @{navigationWidthDesktop} /2)";
     }
     
-    #actionDrawerClosingBackground {
+    .actionDrawerClosingBackground {
         left: ~"calc(-50vw + @{actionDrawerWidth} / 2 - @{navigationWidthDesktop} /2)";
     }
 
@@ -1174,7 +1090,7 @@ input[type="checkbox"] {
             z-index: 500;
             text-align: left;
             padding: @sidePadding;
-            top: 400px;
+            top: 460px;
             width: @navigationWidthDesktop;
             left: 0;
             bottom: 0;
@@ -1192,36 +1108,26 @@ input[type="checkbox"] {
                 display: inline;
             }
         }
-        nav#secondNavigation {
-            #specialItemFromTabbar a {
-                font-weight: bold;
-            }
-        }
-    }
-
-    html:not(.actionDrawerToggled) body {
-        nav#secondNavigation {
-            transition-delay: 0s;
-        }
     }
 
     html.actionDrawerToggled {
         body {
             #navigationElements {
-                #actionDrawerNavigation {
-//                     transform: translateY(0px);
+                #filterIndicationBar {
+                    transform: translateY(100vh);
                 }
-            }
-            header#titleHeader {
-                transition-delay: 0s;
-            }
-            .logoContainer {
-                top: -150px;
             }
         }
     }
 
 }
+
+
+
+
+
+
+
 
 
 
@@ -1233,11 +1139,20 @@ nav#tabbarNavigation a:hover div#tabbarTooltip span {
 //     text-decoration: underline;
 }
 
-nav#secondNavigation a:hover {
-//     text-decoration: underline;    
-}
-
 #actionDrawerNavigation {
 //     max-width: 400px;
 //     margin: auto calc(.5*(100vw - 400px));
 }
+
+
+
+
+
+
+
+
+
+
+/* =====
+   PRINT
+   ===== */

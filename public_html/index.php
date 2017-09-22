@@ -33,12 +33,11 @@
     <body>
         <div id="top"></div>
 <?
-    require '../includes/navigationTitle.php';
     require '../includes/navigationTabbar.php';
 ?>
         <main id="contents" class="<?=$basepage.' '.$basepageTwo?>">
 <?
-
+    require '../includes/navigationTitle.php';
 
     if( isset($includePage) ){ 
         require ('../includes/'.$includePage);

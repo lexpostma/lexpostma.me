@@ -62,5 +62,6 @@
     $blogTwitterURL     = 'https://twitter.com/lexpostmame';
     $blogFeedURL        = 'http://feed.lexpostma.me/blog';
     $blogAppleNewsURL   = 'https://apple.news/TBmjmdpQ6SQaZCn5d7fmEdA';
+    $blogJSONURL        = 'http://feed.lexpostma.me/blog'; // TODO
 
 ?>
