@@ -8,6 +8,8 @@
     $contactQuery .= "ORDER BY volgorde ASC;";
     $contactResult = mysqli_query($con,$contactQuery);
     
+    $contactCounter = 1;
+    
 	while($row = mysqli_fetch_array($contactResult)){
 		$network    = $row['network'];
 		$shortname  = $row['shortname'];
@@ -32,6 +34,14 @@
     </li>
 
 <?
+        if ($contactCounter == 5) {
+?>
+</ul>
+<ul class="cellRowGroup">
+    <lh>My other places on the interwebs&hellip;</lh>
+<?
+        };
+        $contactCounter = $contactCounter +1;
 	}
 ?>
 
