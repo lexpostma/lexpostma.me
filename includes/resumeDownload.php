@@ -13,10 +13,7 @@
                 download="Lex Postma, web-resume (<? echo date('n/Y')?>).pdf"
                 target="_blank" title="Download a pdf of my resumé in English" 
                 onclick="ga('send', 'event', 'Navigation', 'Download', 'Resumé pdf English');">
-            <div class="cellIcon fileNflag">
-                <i class="fa fa-fw fa-file-pdf-o"></i>
-                <? include 'navigationIcons/flagGB.svg'  ?>
-            </div>
+            <div class="cellIcon fileNflag"><i class="fa fa-fw fa-file EN"></i></div>
             <span class="cellLabel">Resumé in English</span>
             <div class="cellClosingIcon download"><? include 'navigationIcons/download.svg'  ?></div>
         </a>
@@ -26,10 +23,7 @@
                 download="Lex Postma, web-CV (<? echo date('n/Y')?>).pdf"
                 target="_blank" title="Download een pdf van mijn cv in het Nederlands" 
                 onclick="ga('send', 'event', 'Navigation', 'Download', 'Resumé pdf Nederlands');">
-            <div class="cellIcon fileNflag">
-                <i class="fa fa-fw fa-file-pdf-o"></i>
-                <? include 'navigationIcons/flagNL.svg'  ?>
-            </div>
+            <div class="cellIcon fileNflag"><i class="fa fa-fw fa-file NL"></i></div>
             <span class="cellLabel">CV in het Nederlands</span>
             <div class="cellClosingIcon download"><? include 'navigationIcons/download.svg'  ?></div>
         </a>

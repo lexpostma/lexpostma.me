@@ -744,17 +744,23 @@ li.cellRow.contactItem {
     }
 }
 
-.cellIcon.fileNflag svg {
-    height: 10px;
-    width: 10px;
-    position: absolute;
-    bottom: 1px;
-    right: 1px;
-    margin: 0;
-    border-radius: 7px;
-    overflow: hidden;
+.cellIcon.fileNflag {
+    i {
+        background-size: cover;
+        background-position: center;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width: @lineThickness;
+        -webkit-text-stroke-color: @colorLine;
+    }
+    i.EN {
+        background-image: url(/public-files/images/resume/flag_EN.png);
+    }
+    i.NL {
+        background-image: url(/public-files/images/resume/flag_NL.png);
+    }
 }
-
+    
 .cellIcon i {
     &.fa-tag,
     &.fa-twitter,
@@ -762,9 +768,11 @@ li.cellRow.contactItem {
         padding-left: 1px;
         padding-top: 7px;                
     }
-    &.fa-linkedin,
-    &.fa-file-pdf-o {
+    &.fa-linkedin {
         padding-left: 2px;
+    }
+    &.fa-file {
+        margin-left: 2px;
     }
     &.fa-newspaper-o,
     &.fa-th {

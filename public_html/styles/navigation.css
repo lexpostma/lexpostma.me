@@ -801,15 +801,19 @@ li.cellRow.contactItem .cellIcon#contactIcon_snapchat svg {
 li.cellRow.contactItem .cellIcon#contactIcon_instagram {
   background: radial-gradient(circle at 33% 100%, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF);
 }
-.cellIcon.fileNflag svg {
-  height: 10px;
-  width: 10px;
-  position: absolute;
-  bottom: 1px;
-  right: 1px;
-  margin: 0;
-  border-radius: 7px;
-  overflow: hidden;
+.cellIcon.fileNflag i {
+  background-size: cover;
+  background-position: center;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: #B2B2B2;
+}
+.cellIcon.fileNflag i.EN {
+  background-image: url(/public-files/images/resume/flag_EN.png);
+}
+.cellIcon.fileNflag i.NL {
+  background-image: url(/public-files/images/resume/flag_NL.png);
 }
 .cellIcon i.fa-tag,
 .cellIcon i.fa-twitter,
@@ -817,9 +821,11 @@ li.cellRow.contactItem .cellIcon#contactIcon_instagram {
   padding-left: 1px;
   padding-top: 7px;
 }
-.cellIcon i.fa-linkedin,
-.cellIcon i.fa-file-pdf-o {
+.cellIcon i.fa-linkedin {
   padding-left: 2px;
+}
+.cellIcon i.fa-file {
+  margin-left: 2px;
 }
 .cellIcon i.fa-newspaper-o,
 .cellIcon i.fa-th {
