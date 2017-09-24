@@ -631,6 +631,7 @@ a.cellRowContent {
   border: 0.5px solid #B2B2B2;
   overflow: hidden;
   text-align: center;
+  position: relative;
   margin-right: 15px;
 }
 .cellIcon svg {
@@ -800,11 +801,25 @@ li.cellRow.contactItem .cellIcon#contactIcon_snapchat svg {
 li.cellRow.contactItem .cellIcon#contactIcon_instagram {
   background: radial-gradient(circle at 33% 100%, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF);
 }
+.cellIcon.fileNflag svg {
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+  margin: 0;
+  border-radius: 7px;
+  overflow: hidden;
+}
 .cellIcon i.fa-tag,
 .cellIcon i.fa-twitter,
 .cellIcon i.fa-rss {
   padding-left: 1px;
   padding-top: 7px;
+}
+.cellIcon i.fa-linkedin,
+.cellIcon i.fa-file-pdf-o {
+  padding-left: 2px;
 }
 .cellIcon i.fa-newspaper-o,
 .cellIcon i.fa-th {
