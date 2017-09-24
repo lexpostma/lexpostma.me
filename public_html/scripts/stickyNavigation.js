@@ -9,7 +9,7 @@
  */
 var didScroll;
 var lastScrollPosition = 0;
-var delta = 20;
+var delta = 30;
 
 $(window).scroll(function(event){
     didScroll = true;
