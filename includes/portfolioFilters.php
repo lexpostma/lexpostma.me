@@ -88,70 +88,35 @@
 # ==== Video filter ==== #
 # ====================== #
 
+    $videoCheckbox = ' value="video" ';
     if(isset($typeFilter) && $typeFilter == 'video'){ 
-        $videoCheckbox = ' checked value="video" ';
-    } else {
-        $videoCheckbox = 'value="video" ';
+        $videoCheckbox = ' checked ';
     };
 
 
 ?>
 
-<?
-    if ($currentEnvironment !== 'production') {
-?>
-
-
-<ul class="cellRowGroup">
-    <lh>Project selections</lh>
-    <li class="cellRow">
-        <a class="cellRowContent" href="/all">
-            <div class="cellIcon"><i class="fa fa-fw fa-th"></i></div>
-            <span class="cellLabel">All projects</span>
-            <div class="cellClosingIcon chevron"><? include 'navigationIcons/chevron.svg'  ?></div>
-        </a>
-    </li>
-
-    <li class="cellRow">
-        <a class="cellRowContent" href="/archive">
-            <div class="cellIcon archive"><i class="fa fa-fw fa-archive"></i></div>
-            <span class="cellLabel">Archived projects</span>
-            <div class="cellClosingIcon chevron"><? include 'navigationIcons/chevron.svg'  ?></div>
-        </a>
-    </li>
-
-</ul>
-
-<?
-    }
-?>
-
-
-<ul class="cellRowGroup">
+<form action="/filtering.php" method="get" id="filteringForm">
+    <ul class="cellRowGroup">
 <!--     <lh>Filter projects</lh> -->
-    <form action="/filtering.php" method="get" id="filteringForm">
+
 
 <?
     $inputSearchForWhat = 'projects';
     include 'filterSearchRow.php';
-?>
+    
+    
+    
+    $cellIconClass = 'video';
+    $cellIconFontAwesome = 'video-camera';
+    $cellLabel = 'Videos only';
+    $toggleName = 'type';
+    $toggleMode = $videoCheckbox;
+    
+    include 'filterToggleRow.php';
+    
 
 
-
-        <li class="cellRow">        
-            <div class="cellRowContent">
-                <div class="cellIcon video"><i class="fa fa-fw fa-video-camera"></i></div>
-                <label for="inputType" class="cellLabel">Videos only</label>
-                <input class="cellValue" title="Videos only" type="checkbox" id="inputType" name="type" <?=$videoCheckbox?>>
-        		<div class="cellClosingIcon toggle">
-        			<label for="inputType"><i></i></label>
-        		</div>
-            </div>
-        </li>
-
-
-
-<?
     $cellIconClass = 'category';
     $cellIconFontAwesome = 'tag';
     $cellLabel = 'Category';
@@ -182,10 +147,40 @@
 
 
 
-    </form>
-</ul>
 
+    </ul>
+</form>
 
 <? 
     include 'filterFinalButton.php';
+
+
+
+
+    if ($currentEnvironment !== 'production') {
+?>
+
+
+<ul class="cellRowGroup">
+    <lh>Project selections <i>(development-only)</i></lh>
+    <li class="cellRow">
+        <a class="cellRowContent" href="/all">
+            <div class="cellIcon"><i class="fa fa-fw fa-th"></i></div>
+            <span class="cellLabel">All projects</span>
+            <div class="cellClosingIcon chevron"><? include 'navigationIcons/chevron.svg'  ?></div>
+        </a>
+    </li>
+
+    <li class="cellRow">
+        <a class="cellRowContent" href="/archive">
+            <div class="cellIcon archive"><i class="fa fa-fw fa-archive"></i></div>
+            <span class="cellLabel">Archived projects</span>
+            <div class="cellClosingIcon chevron"><? include 'navigationIcons/chevron.svg'  ?></div>
+        </a>
+    </li>
+
+</ul>
+
+<?
+    }
 ?>

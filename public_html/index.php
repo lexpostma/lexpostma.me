@@ -24,10 +24,14 @@
         $seoTitle = '🚧 ' . $seoTitle;
     }
 
+//     $tabbarMode = 'tabbarMinimizeOnScroll';
+    $tabbarMode = 'tabbarHideOnScroll';
+//     $tabbarMode .= ' actionDrawerToggled';
+
 ?>
 
 <!DOCTYPE HTML>
-<html lang="en" class=" <?=$basepageTwo ?> ">
+<html lang="en" class=" <?=$basepageTwo.' '.$tabbarMode ?>">
 <?  include '../includes/head.php'; ?>
 
     <body>

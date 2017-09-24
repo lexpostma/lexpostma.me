@@ -80,19 +80,19 @@
   height: 0.5px;
   left: 20px;
 }
-.firstButtonActiveState li.tabbarItem#tabbarSpecialItem a.tabbarLink {
+.tabbarButtonActiveState a.tabbarLink {
   background-color: #4B0082;
 }
-.firstButtonActiveState li.tabbarItem#tabbarSpecialItem a.tabbarLink span.tabName {
+.tabbarButtonActiveState a.tabbarLink span.tabName {
   color: white;
 }
-.firstButtonActiveState li.tabbarItem#tabbarSpecialItem a.tabbarLink svg {
+.tabbarButtonActiveState a.tabbarLink svg {
   fill: white;
 }
-.firstButtonActiveState li.tabbarItem#tabbarSpecialItem a.tabbarLink svg:first-of-type {
+.tabbarButtonActiveState a.tabbarLink svg:first-of-type {
   display: none;
 }
-.firstButtonActiveState li.tabbarItem#tabbarSpecialItem a.tabbarLink svg:last-of-type {
+.tabbarButtonActiveState a.tabbarLink svg:last-of-type {
   display: inline;
 }
 header#titleHeader {
@@ -129,29 +129,6 @@ header#titleHeader .logo svg {
 }
 main#contents {
   padding-bottom: 50.5px;
-}
-/* ====================
-   SECONDARY NAVIGATION
-   ==================== */
-nav#secondNavigation {
-  background-color: rgba(250, 250, 250, 0.9);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 0.5px solid #B2B2B2;
-  padding: 2px 10px;
-  vertical-align: bottom;
-}
-nav#secondNavigation a {
-  display: inline-block;
-  text-decoration: none;
-  color: #4B0082;
-  padding: 5px 10px;
-}
-nav#secondNavigation a.active {
-  font-weight: bold;
-}
-nav#secondNavigation span {
-  display: none;
 }
 /* ===================
    NAVIGATION ELEMENTS
@@ -209,7 +186,7 @@ nav#tabbarNavigation ul#tabbarItemList {
 }
 li.tabbarItem {
   display: block;
-  width: 20%;
+  flex: 1;
   position: relative;
 }
 li.tabbarItem a.tabbarLink {
@@ -253,81 +230,65 @@ li.tabbarItem a.tabbarLink.active span.tabName {
 li.tabbarItem a.tabbarLink.active svg {
   fill: #4B0082;
 }
-li.tabbarItem#tabbarSpecialItem a.tabbarLink svg:last-of-type {
+li.tabbarItem a.tabbarLink svg + svg {
   display: none;
 }
-li.tabbarItem#tabbarSpecialItem a.tabbarLink svg:first-of-type {
-  display: inline;
+li.tabbarItem:nth-last-of-type(4) a.tabbarLink {
+  border-right: 1px solid #B2B2B2;
 }
-li.tabbarItem:first-child a.tabbarLink {
-  border-right: 0.5px solid #B2B2B2;
+/*
+@keyframes floatVertically { // Floating animation from https://codepen.io/MarioDesigns/pen/woJgeo
+	0% {		transform: translateY(0px);	    }
+	50% {		transform: translateY(-3px);	}
+	100% {		transform: translateY(0px);   	}
 }
-@keyframes floatVertically {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-3px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
+
 @keyframes floatHorizontally {
-  0% {
-    transform: translateX(0px);
-  }
-  50% {
-    transform: translateX(-3px);
-  }
-  100% {
-    transform: translateX(0px);
-  }
+	0% {		transform: translateX(0px);	    }
+	50% {		transform: translateX(-3px);	}
+	100% {		transform: translateX(0px);   	}
 }
+
 #tabbarTooltip {
-  position: absolute;
-  background-color: #4B0082;
-  color: white;
-  bottom: 54px;
-  left: 50%;
-  margin-left: -28px;
-  display: block;
-  text-align: center;
-  padding: 4px 7px 6px;
-  border-radius: 5px;
-  animation: floatVertically 3s ease-in-out infinite;
-  transition: bottom 0.2s ease-in-out 0s;
-  -webkit-transition: bottom 0.2s ease-in-out 0s;
-  -o-transition: bottom 0.2s ease-in-out 0s;
-  -moz-transition: bottom 0.2s ease-in-out 0s;
-  -ms-transition: bottom 0.2s ease-in-out 0s;
-  -kthtml-transition: bottom 0.2s ease-in-out 0s;
-  z-index: 1;
-  display: none;
+    position: absolute;
+    background-color: @color1;
+    color: white;
+    bottom: 54px;
+    left: 50%;
+    margin-left: -28px;
+    display: block;
+    text-align: center;
+    padding: 4px 7px 6px;
+    border-radius: 5px;
+   	animation: floatVertically 3s ease-in-out infinite;
+    .transitionPlus(bottom; 0.2s; 0s);
+    z-index: 1;
+    span {
+        position: relative;
+        z-index: 3;
+        white-space: nowrap;
+    }
+    &:after {
+        content: '';
+        width: 15px;
+        height: 15px;
+        background-color: inherit;
+        position: absolute;
+        z-index: 0;
+        bottom: -5px;
+        left: 21px;
+        transform: rotate(45deg);
+    }
+    display: none; // Until I decide what to do with the tooltip
+    &.changed { // Don't show tooltip again after it's been changed (eg. clicked)
+        display: none;
+    }
 }
-#tabbarTooltip span {
-  position: relative;
-  z-index: 3;
-  white-space: nowrap;
-}
-#tabbarTooltip:after {
-  content: '';
-  width: 15px;
-  height: 15px;
-  background-color: inherit;
-  position: absolute;
-  z-index: 0;
-  bottom: -5px;
-  left: 21px;
-  transform: rotate(45deg);
-}
-#tabbarTooltip.changed {
-  display: none;
-}
+*/
 /* =============
    ACTION DRAWER
    ============= */
-#actionDrawerNavigation {
+.actionDrawer {
   transition: transform 0.2s ease-in-out 0s;
   -webkit-transition: transform 0.2s ease-in-out 0s;
   -o-transition: transform 0.2s ease-in-out 0s;
@@ -397,6 +358,9 @@ li.tabbarItem:first-child a.tabbarLink {
 /* ==========
    FILTER BAR
    ========== */
+/* *
+   * Add and alter elements when a view is filtered
+ */
 html.filtered #filterIndicationBar {
   display: block;
   position: absolute;
@@ -454,39 +418,61 @@ html.filtered #filterIndicationBar br:nth-last-child(7),
 html.filtered #filterIndicationBar br:nth-last-child(8) {
   display: none;
 }
-html.filtered li.tabbarItem#tabbarSpecialItem a.tabbarLink {
+html.filtered li.tabbarItem.tabbarItemPageSpecific.toggles_drawerFilter a.tabbarLink {
   background-color: #4B0082;
 }
-html.filtered li.tabbarItem#tabbarSpecialItem a.tabbarLink span.tabName {
+html.filtered li.tabbarItem.tabbarItemPageSpecific.toggles_drawerFilter a.tabbarLink span.tabName {
   color: white;
 }
-html.filtered li.tabbarItem#tabbarSpecialItem a.tabbarLink svg {
+html.filtered li.tabbarItem.tabbarItemPageSpecific.toggles_drawerFilter a.tabbarLink svg {
   fill: white;
 }
-html.filtered li.tabbarItem#tabbarSpecialItem a.tabbarLink svg:first-of-type {
+html.filtered li.tabbarItem.tabbarItemPageSpecific.toggles_drawerFilter a.tabbarLink svg:first-of-type {
   display: none;
 }
-html.filtered li.tabbarItem#tabbarSpecialItem a.tabbarLink svg:last-of-type {
+html.filtered li.tabbarItem.tabbarItemPageSpecific.toggles_drawerFilter a.tabbarLink svg:last-of-type {
   display: inline;
 }
 /* =======================
-   TABBAR HIDDEN ON SCROLL
+   TABBAR CHANGE ON SCROLL
    ======================= */
-html:not(.actionDrawerToggled) #navigationElements.tabbarOnScrollDown nav#tabbarNavigation {
+/* *
+   * Minimize the navigation bar on scrolldown, 
+   * show fully on scroll up (if action drawer is not opened)
+   * 
+ */
+html:not(.actionDrawerToggled).tabbarMinimizeOnScroll #navigationElements.tabbarOnScrollDown nav#tabbarNavigation {
   -webkit-transform: translateY(13px);
   transform: translateY(13px);
 }
-html:not(.actionDrawerToggled) #navigationElements.tabbarOnScrollDown nav#tabbarNavigation a #tabbarTooltip {
+html:not(.actionDrawerToggled).tabbarMinimizeOnScroll #navigationElements.tabbarOnScrollDown nav#tabbarNavigation a #tabbarTooltip {
   bottom: -100px;
   animation: none;
 }
-html:not(.actionDrawerToggled) #navigationElements.tabbarOnScrollDown #filterIndicationBar {
+html:not(.actionDrawerToggled).tabbarMinimizeOnScroll #navigationElements.tabbarOnScrollDown #filterIndicationBar {
   -webkit-transform: translateY(13px);
   transform: translateY(13px);
 }
-html:not(.actionDrawerToggled) #navigationElements.tabbarOnScrollDown li.tabbarItem a.tabbarLink.noLabel svg {
+html:not(.actionDrawerToggled).tabbarMinimizeOnScroll #navigationElements.tabbarOnScrollDown li.tabbarItem a.tabbarLink.noLabel svg {
   -webkit-transform: translateY(-6.5px);
   transform: translateY(-6.5px);
+}
+/* *
+   * Hide the navigation bar on scrolldown, 
+   * show on scroll up (if action drawer is not opened)
+   * 
+ */
+html:not(.actionDrawerToggled).tabbarHideOnScroll #navigationElements.tabbarOnScrollDown nav#tabbarNavigation {
+  -webkit-transform: translateY(50.5px);
+  transform: translateY(50.5px);
+}
+html:not(.actionDrawerToggled).tabbarHideOnScroll #navigationElements.tabbarOnScrollDown nav#tabbarNavigation a #tabbarTooltip {
+  bottom: -100px;
+  animation: none;
+}
+html:not(.actionDrawerToggled).tabbarHideOnScroll #navigationElements.tabbarOnScrollDown #filterIndicationBar {
+  -webkit-transform: translateY(50.5px);
+  transform: translateY(50.5px);
 }
 /* =====================
    ACTION DRAWER TOGGLED
@@ -530,33 +516,36 @@ html.actionDrawerToggled body main#contents {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-html.actionDrawerToggled body #navigationElements li.tabbarItem#tabbarSpecialItem a.tabbarLink {
+html.actionDrawerToggled body #navigationElements .tabbarItemPageSpecific.actionDrawerToggled a.tabbarLink {
   background-color: #4B0082;
 }
-html.actionDrawerToggled body #navigationElements li.tabbarItem#tabbarSpecialItem a.tabbarLink span.tabName {
+html.actionDrawerToggled body #navigationElements .tabbarItemPageSpecific.actionDrawerToggled a.tabbarLink span.tabName {
   color: white;
 }
-html.actionDrawerToggled body #navigationElements li.tabbarItem#tabbarSpecialItem a.tabbarLink svg {
+html.actionDrawerToggled body #navigationElements .tabbarItemPageSpecific.actionDrawerToggled a.tabbarLink svg {
   fill: white;
 }
-html.actionDrawerToggled body #navigationElements li.tabbarItem#tabbarSpecialItem a.tabbarLink svg:first-of-type {
+html.actionDrawerToggled body #navigationElements .tabbarItemPageSpecific.actionDrawerToggled a.tabbarLink svg:first-of-type {
   display: none;
 }
-html.actionDrawerToggled body #navigationElements li.tabbarItem#tabbarSpecialItem a.tabbarLink svg:last-of-type {
+html.actionDrawerToggled body #navigationElements .tabbarItemPageSpecific.actionDrawerToggled a.tabbarLink svg:last-of-type {
   display: inline;
 }
-html.actionDrawerToggled body #navigationElements #actionDrawerNavigation {
+html.actionDrawerToggled body #navigationElements .actionDrawer.actionDrawerToggled {
   transform: translateY(0);
+}
+html.actionDrawerToggled body #navigationElements .actionDrawer.actionDrawerToggled .actionDrawerClosingBackground {
+  display: block;
 }
 html.actionDrawerToggled body #navigationElements #filterIndicationBar {
   transform: translateY(101px);
 }
-html.actionDrawerToggled body #navigationElements .actionDrawerClosingBackground {
-  display: block;
-}
 /* ===================================
    iOS STYLE CELL ROW ELEMENTS IN FORM
    =================================== */
+/* *
+   * Strip default styling from form items
+ */
 .actionDrawer {
   font-size: 17px;
   line-height: 29px;
@@ -776,6 +765,9 @@ span.widthForInputHidden {
   color: #7D01D7;
   text-decoration: none;
 }
+/* *
+   * Change styling when a filter is active
+ */
 .cellRow.filterOn .cellRowContent {
   padding-right: 45px;
 }
@@ -789,6 +781,9 @@ span.widthForInputHidden {
 .cellRow.filterOn .cellClosingIcon.deleteFilter {
   display: inline-block;
 }
+/* *
+   * Exceptions and specifics
+ */
 li.cellRow.contactItem .cellIcon svg {
   fill: white;
 }
@@ -932,10 +927,6 @@ input[type="checkbox"]:checked:active + .toggle i {
     height: 100%;
     max-height: 414px;
   }
-  li.tabbarItem {
-    width: 100%;
-    height: 20%;
-  }
   li.tabbarItem a.tabbarLink {
     height: 100%;
     display: flex;
@@ -945,9 +936,9 @@ input[type="checkbox"]:checked:active + .toggle i {
   li.tabbarItem a.tabbarLink span.tabName {
     position: relative;
   }
-  li.tabbarItem:first-child a.tabbarLink {
+  li.tabbarItem:nth-last-of-type(4) a.tabbarLink {
     border-right: none;
-    border-bottom: 0.5px solid #B2B2B2;
+    border-bottom: 1px solid #B2B2B2;
   }
   main#contents {
     padding-bottom: 0;
@@ -963,7 +954,7 @@ input[type="checkbox"]:checked:active + .toggle i {
     left: -6px;
     bottom: 7px;
   }
-  #actionDrawerNavigation {
+  .actionDrawer {
     left: calc(50vw + 50.5px /2);
     width: 420px;
     margin-left: calc( -420px / 2 );
@@ -981,15 +972,18 @@ input[type="checkbox"]:checked:active + .toggle i {
   html.filtered #filterIndicationBar br {
     display: none;
   }
-  html:not(.actionDrawerToggled) #navigationElements.tabbarOnScrollDown nav#tabbarNavigation {
+  html:not(.actionDrawerToggled).tabbarMinimizeOnScroll #navigationElements.tabbarOnScrollDown nav#tabbarNavigation,
+  html:not(.actionDrawerToggled).tabbarHideOnScroll #navigationElements.tabbarOnScrollDown nav#tabbarNavigation {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
-  html:not(.actionDrawerToggled) #navigationElements.tabbarOnScrollDown #filterIndicationBar {
+  html:not(.actionDrawerToggled).tabbarMinimizeOnScroll #navigationElements.tabbarOnScrollDown #filterIndicationBar,
+  html:not(.actionDrawerToggled).tabbarHideOnScroll #navigationElements.tabbarOnScrollDown #filterIndicationBar {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
-  html:not(.actionDrawerToggled) #navigationElements.tabbarOnScrollDown li.tabbarItem a.tabbarLink.noLabel svg {
+  html:not(.actionDrawerToggled).tabbarMinimizeOnScroll #navigationElements.tabbarOnScrollDown li.tabbarItem a.tabbarLink.noLabel svg,
+  html:not(.actionDrawerToggled).tabbarHideOnScroll #navigationElements.tabbarOnScrollDown li.tabbarItem a.tabbarLink.noLabel svg {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
@@ -1010,7 +1004,7 @@ input[type="checkbox"]:checked:active + .toggle i {
     flex-direction: column;
     justify-content: center;
   }
-  #actionDrawerNavigation {
+  .actionDrawer {
     border-radius: 10px;
     transform-origin: top;
     top: 0;
@@ -1031,7 +1025,7 @@ input[type="checkbox"]:checked:active + .toggle i {
     transform: scale(0.9, 0.9) translateY(calc(100vw * 0.05));
     border-radius: 10px;
   }
-  html.actionDrawerToggled body #navigationElements #actionDrawerNavigation {
+  html.actionDrawerToggled body #navigationElements .actionDrawer.actionDrawerToggled {
     -webkit-transform: translateY(calc(50vh - 200px));
     transform: translateY(calc(50vh - 200px));
   }
@@ -1095,9 +1089,9 @@ input[type="checkbox"]:checked:active + .toggle i {
     padding: 5px;
   }
   li.tabbarItem:first-of-type {
-    border-top: 0.5px solid #B2B2B2;
+    border-top: 1px solid #B2B2B2;
   }
-  #actionDrawerNavigation {
+  .actionDrawer {
     left: calc(50vw + 200px /2);
   }
   .actionDrawerClosingBackground {

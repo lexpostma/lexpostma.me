@@ -14,10 +14,12 @@
 
     if(isset($p) && ($p == 'feed' || $p == 'rss' || $p == 'feeds' || $p == 'subscribe')){ // redirect to rss feed
         header ("Location: http://feed.lexpostma.me/blog");
+/*
     } else if(isset($p) && $p == 'archive'){ // archive page
         $seoTitle    = 'Archive of Lex’ blog';
         $basepageTwo  = 'archive';
         $includePage = 'blogArchive.php';
+*/
     } else { // list of blog posts;
         $coreBlogSQLquery =	"
             SELECT *, blog.id AS postID FROM blog 
@@ -32,6 +34,12 @@
 
         if(isset($p) && $p == 'filter'){ // filters are enabled
 
+            if(isset($_GET['mode'])){
+                $modeCheckVar = mysqli_real_escape_string($con,$_GET['mode']);
+                if ($modeCheckVar == 'archive') {
+                    $modeFilter = 'archive';
+                };
+            };
             if(isset($_GET['date'])){
                 $dateFilter = mysqli_real_escape_string($con,$_GET['date']);
                 $dateFilter = preg_replace("/[^0-9-]/", "", $dateFilter);
@@ -94,7 +102,7 @@
             };
 
 
-            if(empty($dateFilter) && empty($tagFilter) && empty($authorFilter) && empty($searchFilter) && empty($sourceFilter) && $pageFilter <= 1){
+            if(empty($dateFilter) && empty($tagFilter) && empty($authorFilter) && empty($searchFilter) && empty($sourceFilter) && empty($modeFilter) && $pageFilter <= 1){
 
                 // If all filters are empty, redirect to the homepage
                 echo '<script language="Javascript">document.location.href="/";</script>';

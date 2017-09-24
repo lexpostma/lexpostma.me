@@ -92,36 +92,24 @@
 		if(isset($tagFilter) && $tagFilter == $shorttag){   $selectTag .= "selected"; };
 		$selectTag .= ">$tag</option>";
     }
+    
+    
+# ======================== #
+# ==== Archive filter ==== #
+# ======================== #
+
+    $archiveCheckbox = ' value="archive" ';
+    if(isset($modeFilter) && $modeFilter == 'archive'){ 
+        $archiveCheckbox .= ' checked ';
+    };
+
+
 ?>
 
-
-<!--
-<ul class="cellRowGroup">
-    <li class="cellRow">
-        <a class="cellRowContent" href="/archive">
-            <div class="cellIcon archive"><i class="fa fa-fw fa-archive"></i></div>
-            <span class="cellLabel">Archive</span>
-            <div class="cellClosingIcon chevron"><? include 'navigationIcons/chevron.svg'  ?></div>
-        </a>
-    </li>
-
-
-
-    <li class="cellRow">
-        <a class="cellRowContent" href="/about">
-            <div class="cellIcon about"><i class="fa fa-fw fa-pencil"></i></div>
-            <span class="cellLabel">About this blog</span>
-            <div class="cellClosingIcon chevron"><? include 'navigationIcons/chevron.svg'  ?></div>
-        </a>
-    </li>
-
-</ul>
--->
-
-
-<ul class="cellRowGroup">
+<form action="/filtering.php" method="get" id="filteringForm">
+    <ul class="cellRowGroup">
 <!--     <lh>Filter blog posts</lh> -->
-    <form action="/filtering.php" method="get" id="filteringForm">
+
 
 <?
     $inputSearchForWhat = 'blog posts';
@@ -156,11 +144,25 @@
     }
 
 ?>
+    </ul>
+    <ul class="cellRowGroup">
+<?
+    
+    
+    $cellIconClass = 'archive';
+    $cellIconFontAwesome = 'archive';
+    $cellLabel = 'View titles only';
+    $toggleName = 'mode';
+    $toggleMode = $archiveCheckbox;
+    
+    include 'filterToggleRow.php';
 
+    
+?>
 
+    </ul>
+</form>
 
-    </form>
-</ul>
 
 
 <? 

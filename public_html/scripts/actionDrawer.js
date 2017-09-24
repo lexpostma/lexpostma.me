@@ -2,9 +2,32 @@ $(document).ready(
     checkFiltersForWidthAndActive()
 );
 
-function toggleDrawer() { 
+function toggleDrawer(id) {
     checkFiltersForWidthAndActive();
-    $('html').toggleClass('actionDrawerToggled');
+    
+    if ( $('#'+id).hasClass('actionDrawerToggled') ) {
+
+        $('.actionDrawerToggled').each(function() {
+            $(this).removeClass('actionDrawerToggled');
+        });
+        
+    } else if ( $('html').hasClass('actionDrawerToggled') ) {
+        
+        $('.actionDrawerToggled').each(function() {
+            $(this).removeClass('actionDrawerToggled');
+        });
+
+        $('html').addClass('actionDrawerToggled');
+        $('#'+id).addClass('actionDrawerToggled');
+        $('.toggles_'+id).addClass('actionDrawerToggled');
+        
+    } else {
+
+        $('html').addClass('actionDrawerToggled');
+        $('#'+id).addClass('actionDrawerToggled');
+        $('.toggles_'+id).addClass('actionDrawerToggled');
+        
+    }
 }
 
 function changeItem(id) { 
@@ -13,21 +36,21 @@ function changeItem(id) {
 
 function checkFiltersForWidthAndActive() {
 
-    $('#actionDrawerNavigation select').each(function() {
+    $('.actionDrawer select').each(function() {
         setWidthOfInput($(this).attr('id'));
         toggleFilterOnOff($(this).attr('id'));
     });
 
-    $('#actionDrawerNavigation select').change(function() {
+    $('.actionDrawer select').change(function() {
         setWidthOfInput($(this).attr('id'));
         toggleFilterOnOff($(this).attr('id'));
     });
     
-    $('#actionDrawerNavigation input').each(function() {
+    $('.actionDrawer input').each(function() {
         toggleFilterOnOff($(this).attr('id'));
     });
 
-    $('#actionDrawerNavigation input').change(function() {
+    $('.actionDrawer input').change(function() {
         toggleFilterOnOff($(this).attr('id'));
     });
 
@@ -92,7 +115,7 @@ function filterOff(id) {   $('#'+id).parents('li.cellRow').removeClass('filterOn
 
 function resetForm(id) {
 
-    $('#actionDrawerNavigation select').each(function() {        clearInput( $(this).attr('id') );    });
-    $('#actionDrawerNavigation input').each(function() {         clearInput( $(this).attr('id') );    });
+    $('.actionDrawer select').each(function() {        clearInput( $(this).attr('id') );    });
+    $('.actionDrawer input').each(function() {         clearInput( $(this).attr('id') );    });
 
 }
