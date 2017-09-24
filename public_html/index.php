@@ -26,7 +26,6 @@
 
 //     $tabbarMode = 'tabbarMinimizeOnScroll';
     $tabbarMode = 'tabbarHideOnScroll';
-//     $tabbarMode .= ' actionDrawerToggled';
 
 ?>
 
