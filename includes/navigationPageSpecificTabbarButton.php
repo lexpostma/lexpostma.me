@@ -9,7 +9,7 @@
 
     } else { 
 
-        echo 'href="'.$tabbarItemAction.'" onclick="'.$gaEventForThisTab.'"';
+        echo 'href="'.$tabbarItemAction.'" onclick="toggleDrawer(); '.$gaEventForThisTab.'"';
 
     }
 ?>>

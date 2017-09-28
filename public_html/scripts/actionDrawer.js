@@ -5,7 +5,15 @@ $(document).ready(
 function toggleDrawer(id) {
     checkFiltersForWidthAndActive();
     
-    if ( $('#'+id).hasClass('actionDrawerToggled') ) {
+    if (!id) {
+
+//         $(this).attr('href')
+
+        $('.actionDrawerToggled').each(function() {
+            $(this).removeClass('actionDrawerToggled');
+        });
+        
+    } else if ( $('#'+id).hasClass('actionDrawerToggled') ) {
 
         $('.actionDrawerToggled').each(function() {
             $(this).removeClass('actionDrawerToggled');
