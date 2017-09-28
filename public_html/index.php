@@ -24,9 +24,7 @@
         $seoTitle = '🚧 ' . $seoTitle;
     }
 
-//     $tabbarMode = 'tabbarMinimizeOnScroll';
-//     $tabbarMode = 'tabbarHideOnScroll';
-    $tabbarMode = 'tabbarLifted';
+    $tabbarMode = 'tabbarLocked'; // OPTIONS: tabbarMinimizeOnScroll, tabbarHideOnScroll, tabbarLifted, tabbarLocked
     
 ?>
 
