@@ -25,8 +25,9 @@
     }
 
 //     $tabbarMode = 'tabbarMinimizeOnScroll';
-    $tabbarMode = 'tabbarHideOnScroll';
-
+//     $tabbarMode = 'tabbarHideOnScroll';
+    $tabbarMode = 'tabbarLifted';
+    
 ?>
 
 <!DOCTYPE HTML>
