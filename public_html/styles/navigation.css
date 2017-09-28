@@ -644,6 +644,20 @@ a.cellRowContent {
 }
 .cellLabel {
   padding-right: 10px;
+  display: inline-block;
+}
+.cellLabel span {
+  display: block;
+}
+.cellLabel span:first-of-type {
+  line-height: 20px;
+  margin-top: -2px;
+}
+.cellLabel span:last-of-type {
+  font-size: 12px;
+  color: #929292;
+  line-height: 14px;
+  margin-bottom: -3px;
 }
 .cellValue,
 input.cellValue,

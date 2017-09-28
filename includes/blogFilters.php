@@ -151,7 +151,7 @@
     
     $cellIconClass = 'archive';
     $cellIconFontAwesome = 'archive';
-    $cellLabel = 'View titles only';
+    $cellLabel = '<span>Archive view</span><span>Titles only</span>';
     $toggleName = 'mode';
     $toggleMode = $archiveCheckbox;
     
