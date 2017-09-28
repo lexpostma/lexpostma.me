@@ -467,8 +467,9 @@ html:not(.actionDrawerToggled).tabbarHideOnScroll #navigationElements.tabbarOnSc
   transform: translateY(50.5px);
 }
 /* *
-   * Lift the navigation bar from the boottom, no changes on scroll 
-   * 
+   * Lift the navigation bar from the bottom
+   * Flip on scroll, but only on small screens
+   *
  */
 .liftMargins {
   left: 5px;
@@ -478,57 +479,59 @@ html:not(.actionDrawerToggled).tabbarHideOnScroll #navigationElements.tabbarOnSc
   border: 0.5px solid #B2B2B2;
   border-radius: 5px;
 }
-html:not(.actionDrawerToggled).tabbarLifted #navigationElements.tabbarOnScrollDown nav#tabbarNavigation {
-  -webkit-transform: perspective(200px) rotateX(-90deg);
-  transform: perspective(200px) rotateX(-90deg);
-}
-html:not(.actionDrawerToggled).tabbarLifted #navigationElements.tabbarOnScrollDown #filterIndicationBar {
-  -webkit-transform: translateY(43px);
-  transform: translateY(43px);
-}
-html.tabbarLifted #navigationElements nav#tabbarNavigation {
-  bottom: 40px;
-  left: 5px;
-  right: 5px;
-  border: 0.5px solid #B2B2B2;
-  border-radius: 5px;
-}
-html.tabbarLifted #navigationElements nav#tabbarNavigation span.tabName {
-  display: none;
-}
-html.tabbarLifted #navigationElements nav#tabbarNavigation .tabbarItem:first-of-type .tabbarLink {
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
-html.tabbarLifted #navigationElements nav#tabbarNavigation .tabbarLink {
-  height: 37px;
-}
-html.tabbarLifted #navigationElements .actionDrawer {
-  left: 5px;
-  right: 5px;
-  border: 0.5px solid #B2B2B2;
-  border-radius: 5px;
-  bottom: 83px;
-  width: auto;
-}
-html.tabbarLifted #navigationElements .actionDrawer .actionDrawerTitleBar {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-html.tabbarLifted #navigationElements .actionDrawer .actionDrawerContent {
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-html.tabbarLifted #navigationElements #filterIndicationBar {
-  left: 5px;
-  right: 5px;
-  bottom: 83px;
-  border: 0.5px solid #B2B2B2;
-  border-radius: 5px;
-}
-html.actionDrawerToggled.tabbarLifted #navigationElements #filterIndicationBar {
-  -webkit-transform: translateY(151.5px);
-  transform: translateY(151.5px);
+@media screen and (max-width: 560px) {
+  html:not(.actionDrawerToggled).tabbarLifted #navigationElements.tabbarOnScrollDown nav#tabbarNavigation {
+    -webkit-transform: perspective(200px) rotateX(-90deg);
+    transform: perspective(200px) rotateX(-90deg);
+  }
+  html:not(.actionDrawerToggled).tabbarLifted #navigationElements.tabbarOnScrollDown #filterIndicationBar {
+    -webkit-transform: translateY(43px);
+    transform: translateY(43px);
+  }
+  html.tabbarLifted #navigationElements nav#tabbarNavigation {
+    bottom: 40px;
+    left: 5px;
+    right: 5px;
+    border: 0.5px solid #B2B2B2;
+    border-radius: 5px;
+  }
+  html.tabbarLifted #navigationElements nav#tabbarNavigation span.tabName {
+    display: none;
+  }
+  html.tabbarLifted #navigationElements nav#tabbarNavigation .tabbarItem:first-of-type .tabbarLink {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  html.tabbarLifted #navigationElements nav#tabbarNavigation .tabbarLink {
+    height: 37px;
+  }
+  html.tabbarLifted #navigationElements .actionDrawer {
+    left: 5px;
+    right: 5px;
+    border: 0.5px solid #B2B2B2;
+    border-radius: 5px;
+    bottom: 83px;
+    width: auto;
+  }
+  html.tabbarLifted #navigationElements .actionDrawer .actionDrawerTitleBar {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  html.tabbarLifted #navigationElements .actionDrawer .actionDrawerContent {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  html.tabbarLifted #navigationElements #filterIndicationBar {
+    left: 5px;
+    right: 5px;
+    bottom: 83px;
+    border: 0.5px solid #B2B2B2;
+    border-radius: 5px;
+  }
+  html.actionDrawerToggled.tabbarLifted #navigationElements #filterIndicationBar {
+    -webkit-transform: translateY(151.5px);
+    transform: translateY(151.5px);
+  }
 }
 /* =====================
    ACTION DRAWER TOGGLED

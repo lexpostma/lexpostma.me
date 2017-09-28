@@ -438,78 +438,84 @@ html:not(.actionDrawerToggled).tabbarHideOnScroll #navigationElements.tabbarOnSc
 
 
 /* *
-   * Lift the navigation bar from the boottom, no changes on scroll 
-   * 
+   * Lift the navigation bar from the bottom
+   * Flip on scroll, but only on small screens
+   *
  */
 
 .liftMargins {
     left: 5px;
     right: 5px;    
 }
+
 .liftStyling {
     border: @lineThickness solid @colorLine;
     border-radius: @borderRad;
 }
 
-html:not(.actionDrawerToggled).tabbarLifted #navigationElements.tabbarOnScrollDown {
-    nav#tabbarNavigation {
-        -webkit-transform: perspective(200px) rotateX(-90deg);
-                transform: perspective(200px) rotateX(-90deg);
-    }
-    #filterIndicationBar {
-        -webkit-transform: translateY(43px);
-                transform: translateY(43px);
-    }
-}
+@media screen and (max-width: @screenSizeAtLandscapeShort) {
 
-html.tabbarLifted #navigationElements {
-    nav#tabbarNavigation {
-        bottom: 40px;
-        .liftMargins;
-        .liftStyling;
-        span.tabName {
-            display: none;
+    html:not(.actionDrawerToggled).tabbarLifted #navigationElements.tabbarOnScrollDown {
+        nav#tabbarNavigation {
+            -webkit-transform: perspective(200px) rotateX(-90deg);
+                    transform: perspective(200px) rotateX(-90deg);
         }
-        .tabbarItem:first-of-type .tabbarLink {
-            border-top-left-radius: @borderRad;
-            border-bottom-left-radius: @borderRad;
-        }
-        .tabbarLink {
-            height: 37px;
+        #filterIndicationBar {
+            -webkit-transform: translateY(43px);
+                    transform: translateY(43px);
         }
     }
     
-    .actionDrawer {
-        .liftMargins;
-        .liftStyling;
-        bottom: 83px;
-        width: auto;
-        .actionDrawerTitleBar {
-            border-top-left-radius: @borderRad;
-            border-top-right-radius: @borderRad;
+    html.tabbarLifted #navigationElements {
+        nav#tabbarNavigation {
+            bottom: 40px;
+            .liftMargins;
+            .liftStyling;
+            span.tabName {
+                display: none;
+            }
+            .tabbarItem:first-of-type .tabbarLink {
+                border-top-left-radius: @borderRad;
+                border-bottom-left-radius: @borderRad;
+            }
+            .tabbarLink {
+                height: 37px;
+            }
         }
-
-        .actionDrawerContent {
-            border-bottom-left-radius: @borderRad;
-            border-bottom-right-radius: @borderRad;
+        
+        .actionDrawer {
+            .liftMargins;
+            .liftStyling;
+            bottom: 83px;
+            width: auto;
+            .actionDrawerTitleBar {
+                border-top-left-radius: @borderRad;
+                border-top-right-radius: @borderRad;
+            }
+    
+            .actionDrawerContent {
+                border-bottom-left-radius: @borderRad;
+                border-bottom-right-radius: @borderRad;
+            }
         }
-    }
-    #filterIndicationBar {
-        .liftMargins;
-        bottom: 83px;
-        .liftStyling;
-    }
-}
-
-html.actionDrawerToggled.tabbarLifted #navigationElements {
-
-    #filterIndicationBar {
-        -webkit-transform: translateY(3 * @tabbarHeight);
-                transform: translateY(3 * @tabbarHeight);
+        #filterIndicationBar {
+            .liftMargins;
+            bottom: 83px;
+            .liftStyling;
+        }
     }
     
-}
+    html.actionDrawerToggled.tabbarLifted #navigationElements {
+    
+        #filterIndicationBar {
+            -webkit-transform: translateY(3 * @tabbarHeight);
+                    transform: translateY(3 * @tabbarHeight);
+        }
+        
+    }
 
+
+}
 
 
 /* =====================
