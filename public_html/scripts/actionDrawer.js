@@ -79,6 +79,13 @@ function clearInput(id) {
 
 function setWidthOfInput(id) {
     
+    /* *
+       * How to set the select to have the width of the selected option
+       * https://stackoverflow.com/questions/16088266/how-to-set-the-select-to-have-the-width-of-the-selected-option
+       * 
+     */
+
+    
     if ( $('#'+id).is('input') == false ) {
 
         widthDefiningText = $('#'+id).find(":selected").text()
