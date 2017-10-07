@@ -1,8 +1,23 @@
 <article class="contentBlock">
     <h1>Credits</h1>
-    <p>This website was built from the ground up using HTML, CSS and PHP and has a MySQL back-end. I used software tools like <a href="http://panic.com/coda/" onclick="ga('send', 'event', 'Credits', 'Tools', 'Coda');">Coda</a>, <a href="http://www.sequelpro.com" onclick="ga('send', 'event', 'Credits', 'Tools', 'Sequel Pro');">Sequel Pro</a>, <a href="https://www.mamp.info/en/mamp-pro/" onclick="ga('send', 'event', 'Credits', 'Tools', 'MAMP Pro');">MAMP Pro</a>, <a href="http://www.pixelmator.com" onclick="ga('send', 'event', 'Credits', 'Tools', 'Pixelmator');">Pixelmator</a> and <a href="http://www.bohemiancoding.com/sketch/" onclick="ga('send', 'event', 'Credits', 'Tools', 'Sketch');">Sketch</a> to create and build it. Special thanks to <a href="https://twitter.com/MickvJ"  onclick="ga('send', 'event', 'Credits', 'Help', 'Mick');">Mick</a>, <a href="https://twitter.com/Lexis"  onclick="ga('send', 'event', 'Credits', 'Help', 'Julian');">Julian</a> and <a href="https://github.com/dunyakirkali"  onclick="ga('send', 'event', 'Credits', 'Help', 'Dunya');">Dünya</a> for helping me out.</p>
+    <p>This website is my spare time project and was created for two reasons: to create my very own online profile and to learn web design and development. It was built from the scratch with PHP, HTML and CSS, and has a MySQL back-end. Special thanks to <a href="https://twitter.com/MickvJ"  onclick="ga('send', 'event', 'Credits', 'Help', 'Mick');">Mick</a>, <a href="https://twitter.com/Lexis"  onclick="ga('send', 'event', 'Credits', 'Help', 'Julian');">Julian</a> and <a href="https://github.com/dunyakirkali"  onclick="ga('send', 'event', 'Credits', 'Help', 'Dunya');">Dünya</a> for helping me out.</p>
 </article>
 
+<article class="contentBlock">
+    <h2>Awesome tools</h2>
+    
+    <p>These are just some of the applications and utilities I used to designed and built this website. You should try them, they're awesome. And you support some indie developers as well.</p>
+    
+    <ul>
+        <li><a href="http://panic.com/coda/" onclick="ga('send', 'event', 'Credits', 'Tools', 'Coda');">Coda</a></li>
+        <li><a href="http://www.sequelpro.com" onclick="ga('send', 'event', 'Credits', 'Tools', 'Sequel Pro');">Sequel Pro</a></li>
+        <li><a href="https://www.mamp.info/en/mamp-pro/" onclick="ga('send', 'event', 'Credits', 'Tools', 'MAMP Pro');">MAMP Pro</a></li>
+        <li><a href="http://www.pixelmator.com" onclick="ga('send', 'event', 'Credits', 'Tools', 'Pixelmator');">Pixelmator</a></li>
+        <li><a href="http://www.bohemiancoding.com/sketch/" onclick="ga('send', 'event', 'Credits', 'Tools', 'Sketch');">Sketch</a></li>
+        <li>xScope</li>
+        <li>Tower</li>
+    </ul>
+</article>
 <article class="contentBlock">
     <h2>Used libraries and resources</h2>
     <ul class="websites">
