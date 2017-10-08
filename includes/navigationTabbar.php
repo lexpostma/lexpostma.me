@@ -57,26 +57,17 @@
         $tabbarItem2SVG    = 'download';
         $tabbarItem2Title  = 'Download my resumé';
         $tabbarItem2Action = 'toggle';
-
-/*
-        $actionDrawer2ID = 'drawerSubscribe';
-        $actionDrawer2Title = 'Subscribe';
-        $actionDrawer2IncludeFile = 'blogSubscribe.php';
-
-        
-        $actionDrawerIncludeFile = 'resumeDownload.php';
-        $actionDrawerTitle = 'Get my resumé';
-        
-        $tabbarSpecialItemIconSVG = 'download';
-        $tabbarSpecialItemName = 'Download';
-        $tabbarSpecialItemTitle = 'Download my resumé';
-*/
         
     } elseif( $basepage == 'about' ){
 
         $actionDrawer2ID          = 'drawerContact';
         $actionDrawer2Title       = 'Get in touch!';
         $actionDrawer2IncludeFile = 'aboutContact.php';
+
+        $tabbarItem1Name   = 'Home';
+        $tabbarItem1SVG    = 'logo';
+        $tabbarItem1Title  = 'Home';
+        $tabbarItem1Action = '/';
 
         $tabbarItem2Name   = 'Let’s talk';
         $tabbarItem2SVG    = 'contact';
@@ -94,11 +85,9 @@
     };
 
     
-/*
-    if ($tabbarSpecialItemName == 'Filter' && $basepageTwo == 'filtered') {
-        $tabbarSpecialItemName = 'Filtered';
+    if (isset($tabbarItem1Name) && $tabbarItem1Name == 'Filter' && $basepageTwo == 'filtered') {
+        $tabbarItem1Name = 'Filtered';
     };
-*/
     
 ?>
 

@@ -943,6 +943,9 @@ li.cellRow.contactItem .cellIcon#contactIcon_instagram {
 .cellIcon.linkedin i {
   color: #4875B4;
 }
+html.about.home #tabbarNavigation li.tabbarItemPageSpecific.home svg {
+  fill: #4B0082;
+}
 /* *
    * iOS style toggle (checkbox)
    * https://codepen.io/o_ti/pen/bkEco
@@ -1214,6 +1217,9 @@ input[type="checkbox"]:checked:active + .toggle i {
   }
   html.actionDrawerToggled body #navigationElements #filterIndicationBar {
     transform: translateY(100vh);
+  }
+  html.about.home #tabbarNavigation li.tabbarItemPageSpecific.home {
+    visibility: hidden;
   }
 }
 /* =============

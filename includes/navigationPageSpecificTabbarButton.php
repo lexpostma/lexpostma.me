@@ -1,5 +1,5 @@
-                    <li class="tabbarItem tabbarItemPageSpecific toggles_<?=$actionDrawerID;?>">
-                        <a class="tabbarLink" title="<?=$tabbarItemTitle?>"
+                    <li class="tabbarItem tabbarItemPageSpecific <? if(isset($actionDrawerID) ){echo 'toggles_'.$actionDrawerID; } else { echo strtolower($tabbarItemName); }?>">
+                        <a class="tabbarLink <?if ( $tabbarItemSVG == 'logo' ) { echo 'noLabel';}?>" title="<?=$tabbarItemTitle?>"
 <?
     $gaEventForThisTab = "ga($gaMainNavEvent '$tabbarItemName on $basepage')";
     
@@ -15,8 +15,12 @@
 ?>>
 
 <?
-                            include 'navigationIcons/'.$tabbarItemSVG.'.svg';
-                            include 'navigationIcons/'.$tabbarItemSVG.'-active.svg';
+    if ( $tabbarItemSVG !== 'logo' ) {
+        include 'navigationIcons/'.$tabbarItemSVG.'.svg';
+        include 'navigationIcons/'.$tabbarItemSVG.'-active.svg';        
+    } else {
+        include '../public_html/images/lex-logo.svg';
+    }
 ?>
                             <span class="tabName"><?=$tabbarItemName?></span>
                         </a>

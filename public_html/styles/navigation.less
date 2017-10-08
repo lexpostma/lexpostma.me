@@ -881,7 +881,11 @@ li.cellRow.contactItem {
 .cellIcon.appleNews i { color: #fc415b; }
 .cellIcon.linkedin  i { color: @linkedinBlue; }
 
-
+html.about.home #tabbarNavigation li.tabbarItemPageSpecific.home {
+    svg {
+        fill: @color1;
+    }
+}
 
 
 /* *
@@ -1228,6 +1232,10 @@ input[type="checkbox"] {
                 }
             }
         }
+    }
+
+    html.about.home #tabbarNavigation li.tabbarItemPageSpecific.home {
+        visibility: hidden;
     }
 
 }
