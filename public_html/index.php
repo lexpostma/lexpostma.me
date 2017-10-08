@@ -29,7 +29,7 @@
 ?>
 
 <!DOCTYPE HTML>
-<html lang="en" class=" <?=$basepageTwo.' '.$tabbarMode ?>">
+<html lang="en" class="<?=$basepage.' '.$basepageTwo.' '.$tabbarMode ?>">
 <?  include '../includes/head.php'; ?>
 
     <body>
@@ -39,14 +39,20 @@
 ?>
         <main id="contents" class="<?=$basepage.' '.$basepageTwo?>">
 <?
-    require '../includes/navigationTitle.php';
-
+    if( $basepage !== 'about' || $basepageTwo !== 'home' ){
+        require '../includes/navigationTitle.php';
+    };
+    
     if( isset($includePage) ){ 
         require ('../includes/'.$includePage);
     } else { 
         echo '404';
     };
-    include '../includes/footer.php';
+
+
+    if( $basepage !== 'about' || $basepageTwo !== 'home' ){
+        include '../includes/footer.php';
+    };
 ?>
         </main>
         
