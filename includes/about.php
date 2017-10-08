@@ -1,15 +1,67 @@
 <?
-    echo mysqli_fetch_array(mysqli_query($con, "SELECT body FROM about WHERE name = 'title';"))[0];
-    echo mysqli_fetch_array(mysqli_query($con, "SELECT body FROM about WHERE name = 'intro';"))[0];
+    $aboutIntroQuery = "SELECT text,emoji 
+                        FROM about_intro 
+                        WHERE published = '1' 
+                        AND funfact = '0'
+                        ORDER BY volgorde ASC;";
+
+    $aboutIntroLines = mysqli_query($con,$aboutIntroQuery);
+
+    $introText = '';
+	while($row = mysqli_fetch_array($aboutIntroLines)){
+    	
+        $introText .= '<span class="aboutLine"><span class="emoji">'.$row['emoji'].'</span> '.$row['text'].'</span> ';
+    	
+	}
+
+/* *
+   * Fun facts and stats
+ */
+
+    $funFactQuery = "SELECT text,emoji 
+                     FROM about_intro 
+                     WHERE published = '1' 
+                     AND funfact = '1'
+                     ORDER BY RAND()
+                     LIMIT 1";
+
+    $funFactArray = mysqli_fetch_array(mysqli_query($con,$funFactQuery));
+	$funFact = htmlentities('<span class="aboutLine"><span class="emoji">'.$funFactArray['emoji'].'</span> '.$funFactArray['text'].'</span>');
+
+    $datediff = time() - strtotime("1991-09-28");
+    $ageInDays = number_format(floor($datediff/(60*60*24)), 0, ',', '.');
+
+    $blogWordCount = wordCount();
+
+    $stats = mysqli_query($con,"SELECT name,value FROM about_stats WHERE published = 0 ;");
+    while($row = mysqli_fetch_array($stats)){
+        
+        $varName  = $row['name'];
+        $varValue = $row['value'];
+        
+        eval('return '.$varName.'='.$varValue.';');
+        
+    }
+
+    eval("\$funFact = \"$funFact\";");
+
+    $funFact = html_entity_decode($funFact);
+
 ?>
 
-<div id="aboutColumns">
-    <article class="contentBlock"><?          echo mysqli_fetch_array(mysqli_query($con, "SELECT body FROM about WHERE name = 'me';"))[0]; ?></article>
-    <article class="contentBlock"><?          include '../includes/aboutDetails.php'; ?></article>
-    <article class="contentBlock"><?          echo mysqli_fetch_array(mysqli_query($con, "SELECT body FROM about WHERE name = 'internetthing';"))[0]; ?></article>
+<div class="aboutContent">
+    
+    <div class="photo" id="profilePhoto" onclick="fullscreen('profilePhoto')"></div>
+    <div class="shadow"></div>
+    
+    <h1>Hi, I’m Lex&nbsp;Postma.</h1>
+    
+    <p><?=$introText?></p>
+    <p><a href="." class="refresh">Fun fact</a><?=$funFact?></p>
 
-    <script>
-    	function show(id) { document.getElementById(id).style.display = "block"; }
-    	function hide(id) { document.getElementById(id).style.display = "none"; }
-    </script>
 </div>
+
+<script>
+    function fullscreen(id) { $('#'+id).toggleClass('full'); }
+
+</script>
