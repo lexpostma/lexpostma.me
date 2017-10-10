@@ -52,12 +52,21 @@ p {
 //     line-height: 160%;
 }
 
+/* *
+   * “Lord Vader’s Handle Formerly Anakin” -  the order for defining anchor pseudo classes in CSS. (LVHFA)
+   * :link :visited :hover :focus :active
+   * https://twitter.com/humantorch/status/917123893659361281
+ */
+
+
 a {
                 color: @color2; text-decoration: none;
     &:link {    color: @color2; text-decoration: none;      }
-//     &:hover {   color: @color3; text-decoration: underline; }
-//     &:active {  color: @color1; text-decoration: underline; }
 //     &:visited { color: @color5;  }
+//     &:hover {   color: @color3; text-decoration: underline; }
+//     &:focus {   color: @color3; text-decoration: underline; }
+//     &:active {  color: @color1; text-decoration: underline; }
+
     @media (monochrome) {       text-decoration: underline; }
 }
 

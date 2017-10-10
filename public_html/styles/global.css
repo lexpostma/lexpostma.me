@@ -130,6 +130,11 @@ p {
   font-size: 17px;
   line-height: 29px;
 }
+/* *
+   * “Lord Vader’s Handle Formerly Anakin” -  the order for defining anchor pseudo classes in CSS. (LVHFA)
+   * :link :visited :hover :focus :active
+   * https://twitter.com/humantorch/status/917123893659361281
+ */
 a {
   color: #F04400;
   text-decoration: none;
