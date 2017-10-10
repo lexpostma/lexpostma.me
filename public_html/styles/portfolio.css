@@ -132,9 +132,18 @@
   font-size: 90%;
   margin-left: 5px;
 }
+.portfolioItem a.portfolioItemPlayVideo span.playing {
+  display: none;
+}
 .portfolioItem a.portfolioItemPlayVideo.hide {
   color: #929292;
   pointer-events: none;
+}
+.portfolioItem a.portfolioItemPlayVideo.hide span.watch {
+  display: none;
+}
+.portfolioItem a.portfolioItemPlayVideo.hide span.playing {
+  display: inline;
 }
 .hover-in {
   transition: 0.5s ease-out;

@@ -70,7 +70,7 @@
                 <br>
                 <a href="#" stuff="http://vimeo.com/<?=$videoid?>" class="video-in-link portfolioItemPlayVideo" 
                         onclick="ga('send', 'event', 'Portfolio', 'Play video', '<?=$plainTitle?>');" 
-                        title="Play <?=$plainTitle?>'s video">Watch the video
+                        title="Play <?=$plainTitle?>'s video"><span class="watch">Watch</span><span class="playing">Playing</span> the video
                     <i class="fa fa-play-circle"></i>
                 </a>
 <?

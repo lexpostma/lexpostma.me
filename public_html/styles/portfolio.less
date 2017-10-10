@@ -52,9 +52,18 @@
             font-size: 90%;
             margin-left: 5px;
         }
+        span.playing {
+            display: none;
+        }
         &.hide {
             color: @colorInactive;
             pointer-events: none;
+            span.watch {
+                display: none;
+            }
+            span.playing {
+                display: inline;
+            }
         }
     }
 
