@@ -18,7 +18,7 @@
             include 'portfolioVariables.php';
 
 ?>
-        <div class="portfolioItem">
+        <div class="portfolioItem" id="<?=$shortname?>">
             <div class="portfolioItemHoverEffect move">
 <?
             if( !empty($videoid) ){
@@ -34,7 +34,7 @@
 <?
             }
 ?>
-                <div class="portfolioItemVisualContainer <?=$shortname ?>">
+                <div class="portfolioItemVisualContainer">
 
 <?
             if ($category == 'Website') {
@@ -60,15 +60,24 @@
                     <a href="/<?=$shortname?>" class="effect-layer layer-<?=$layerCount?> portfolioItemLink" ></a>
                 </div>
             </div>
-            <a href="/<?=$shortname?>" title="<?=$plainTitle?>" class="projectTitle"><?=$plainTitle?><? if($archived == '1'){ echo '<i class="fa fa-archive" title="This project was archived"></i>'; }?></a>
+
+            <div class="cellRow projectTitle">
+                <a class="cellRowContent" href="/<?=$shortname?>" title="<?=$plainTitle?>">
+                    <span class="cellLabel"><?=$plainTitle?><? if($archived == '1'){ echo '<i class="fa fa-archive" title="This project was archived"></i>'; }?></span>
+                    <div class="cellClosingIcon chevron"><? include 'navigationIcons/chevron.svg'  ?></div>
+                </a>
+            </div>
+
             <hr>
-            <div class="year"><span><?=$year?></span></div>
-            <p class="portfolioItemSummary"><?=$summary?>
+
+            <p class="portfolioItemSummary">
+                <span class="year"><span><?=$year?></span></span>
+                <?=$summary?>
 <?
             if( !empty($videoid) ){
 ?>
                 <br>
-                <a href="#" stuff="http://vimeo.com/<?=$videoid?>" class="video-in-link portfolioItemPlayVideo" 
+                <a href="#<?=$shortname?>" stuff="http://vimeo.com/<?=$videoid?>" class="video-in-link portfolioItemPlayVideo" 
                         onclick="ga('send', 'event', 'Portfolio', 'Play video', '<?=$plainTitle?>');" 
                         title="Play <?=$plainTitle?>'s video"><span class="watch">Watch</span><span class="playing">Playing</span> the video
                     <i class="fa fa-play-circle"></i>
