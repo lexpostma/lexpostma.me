@@ -39,6 +39,7 @@
 ?>
         <link rel="canonical" href="<?=$currentURL?>" />
         <link rel="author" href="/humans.txt">
+        <link rel="license" href="/copyright">
 
         <!-- Open Graph protocol / Facebook -->
         <meta property="og:title" content="<?=$seoTitle?>" />

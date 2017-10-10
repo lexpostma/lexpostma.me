@@ -32,6 +32,15 @@
             $basepageTwo    = 'credits';
             $includePage    = 'credits.php';  
 
+        } else if($p == 'copyright'){  // Copyright
+
+            $seoTitle       = 'Copyright for Lex’ website';
+            $seoDescription = $basepageTitle;
+            $seoKeywords    = 'copyright';
+
+            $basepageTwo    = 'copyright';
+            $includePage    = 'copyright.php';  
+
         } else if($p == 'apple'){  // Apple page
 
             $seoTitle       = 'Lex Postma → ';
