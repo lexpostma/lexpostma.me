@@ -14,14 +14,20 @@
             $seoTitle       = 'More stuff from Lex';
             $seoDescription = 'More about Lex Postma, including some random stats and his top 5s.'; // his current iOS homescreen, latest backed Kickstarter projects and hardware and software tools he uses.
             $seoKeywords    = 'top5s,stats'; // tools,iOS,homescreen,Kickstarter,software,hardware
-            $basepageTwo     = 'more';
+            $basepageTwo    = 'more';
             $includePage    = 'aboutMore.php';
+
+        } else if($p == 'allfunfacts'){  // Show all fun facts
+
+            $funfacts       = true;
+            $includePage    = 'about.php';  
+
             
         } else if($p == 'apple'){  // Apple page
             $seoTitle       = 'Lex Postma → ';
             $seoDescription = 'Motivation letter from Lex Postma to Apple.';
             $seoKeywords    = 'Apple,design,iOS,culture,passion,software,hardware,prototyping';
-            $basepageTwo     = 'apple';
+            $basepageTwo    = 'apple';
             $includePage    = 'apple.php';  
 
         } else { // Fallback to custom 404 include page

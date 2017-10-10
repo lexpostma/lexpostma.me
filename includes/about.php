@@ -18,16 +18,6 @@
    * Fun facts and stats
  */
 
-    $funFactQuery = "SELECT text,emoji 
-                     FROM about_intro 
-                     WHERE published = '1' 
-                     AND funfact = '1'
-                     ORDER BY RAND()
-                     LIMIT 1";
-
-    $funFactArray = mysqli_fetch_array(mysqli_query($con,$funFactQuery));
-	$funFact = htmlentities('<span class="aboutLine"><span class="emoji">'.$funFactArray['emoji'].'</span> '.$funFactArray['text'].'</span>');
-
     $datediff = time() - strtotime("1991-09-28");
     $ageInDays = number_format(floor($datediff/(60*60*24)), 0, ',', '.');
 
@@ -42,6 +32,30 @@
         eval('return '.$varName.'='.$varValue.';');
         
     }
+
+    $funFactQuery = "SELECT text,emoji 
+                     FROM about_intro 
+                     WHERE published = '1' 
+                     AND funfact = '1'";
+    if (!isset($funfacts)) { // Show 1 random fun fact
+        
+        $funFactQuery .= "ORDER BY RAND() LIMIT 1";
+        $funFactArray = mysqli_fetch_array(mysqli_query($con,$funFactQuery));
+
+    	$funFact = '<span class="aboutLine"><span class="emoji">'.$funFactArray['emoji'].'</span> '.$funFactArray['text'].'</span>';
+
+    } else { // Show all fun facts
+
+        $funFact = '<span class="aboutLine"><b>All fun facts</b></span>';
+
+        $funFactSet = mysqli_query($con,$funFactQuery);
+        while($row = mysqli_fetch_array($funFactSet)){
+            $funFact .= '<span class="aboutLine"><span class="emoji">'.$row['emoji'].'</span> '.$row['text'].'</span>';
+        }
+
+    }
+
+	$funFact = htmlentities($funFact);
 
     eval("\$funFact = \"$funFact\";");
 
