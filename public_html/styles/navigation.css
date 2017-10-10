@@ -634,10 +634,10 @@ ul.cellRowGroup lh {
   color: #270043;
   padding: 5px 20px;
 }
-li.cellRow {
+.cellRow {
   position: relative;
 }
-li.cellRow:after {
+.cellRow:after {
   content: '';
   position: absolute;
   right: 0px;
