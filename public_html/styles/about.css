@@ -189,6 +189,7 @@ main#contents.about.home a.refresh {
   }
   main#contents.about.home .shadow {
     width: 140px;
+    margin-bottom: 50px;
   }
   main#contents.about.home h1 {
     font-size: 2.5em;
