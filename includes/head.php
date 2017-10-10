@@ -46,7 +46,7 @@
 <?  if(isset($seoImage)){?>
         <meta property="og:image" content="<?=$seoImage?>"/>
 <?  };
-//        <meta property="fb:page_id" content="1409031109319919" />     // werkt niet...
+//      <meta property="fb:page_id" content="1409031109319919" />     // werkt niet...
 ?>
         <meta property="fb:admins" content="1308188724"/>
         <meta property="og:type" content="<?=$seoType?>" />
@@ -66,7 +66,7 @@
         
         <!-- Apple / iOS -->
         <meta name="apple-mobile-web-app-title" content="Lex Postma" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
+<!--         <meta name="apple-mobile-web-app-capable" content="yes" /> -->
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <?
     if($currentEnvironment == 'production' ){
