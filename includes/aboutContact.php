@@ -1,3 +1,24 @@
+<?
+    if ($currentEnvironment !== 'production') {
+?>
+
+
+<ul class="cellRowGroup">
+    <lh>Extra’s <i>(development-only)</i></lh>
+    <li class="cellRow">
+        <a class="cellRowContent" href="/allfunfacts">
+            <div class="cellIcon"><i class="fa fa-fw fa-smile-o"></i></div>
+            <span class="cellLabel">Show all fun facts</span>
+            <div class="cellClosingIcon chevron"><? include 'navigationIcons/chevron.svg'  ?></div>
+        </a>
+    </li>
+
+</ul>
+
+<?
+    }
+?>
+
 <ul class="cellRowGroup">
 
 <?
