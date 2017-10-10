@@ -35,5 +35,10 @@
         }
     } else { // main about me page
         $includePage = 'about.php';
+    
+        $disableTitlebar = true;
+        $disableFooter   = true;
+    
+
     };
 ?>

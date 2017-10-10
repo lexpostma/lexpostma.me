@@ -5,11 +5,6 @@
     $basepageTwo = 'home';
     if(isset($_GET['p'])){
         $p = strtolower(mysqli_real_escape_string($con,$_GET['p']));
-        if($p == 'credit' || $p == 'credits'){
-            $basepage = 'credits';
-        } else if($p == 'apple') {
-            $basepage = 'apple';
-        };
     };
     
 
@@ -39,7 +34,7 @@
 ?>
         <main id="contents" class="<?=$basepage.' '.$basepageTwo?>">
 <?
-    if( $basepage !== 'about' || $basepageTwo !== 'home' ){
+    if( !isset($disableTitlebar) ){
         require '../includes/navigationTitle.php';
     };
     
@@ -50,7 +45,7 @@
     };
 
 
-    if( $basepage !== 'about' || $basepageTwo !== 'home' ){
+    if( !isset($disableFooter) ){
         include '../includes/footer.php';
     };
 ?>
