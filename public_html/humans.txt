@@ -1,0 +1,11 @@
+﻿/* TEAM */
+	Designer and developer: Lex Postma
+	Contact: hello [at] lexpostma.me
+	Twitter: @lexpostma
+	From: The Hague, The Netherlands
+
+/* SITE */
+	Last update:2012/02/04
+	Language: English
+	Doctype:HTML5
+	IDE: Coda, Tower, Sequel Pro, Sketch
