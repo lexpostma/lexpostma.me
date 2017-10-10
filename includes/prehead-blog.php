@@ -151,6 +151,7 @@
                 $seoAuthor         = $author;
                 $seoType           = 'article';
                 $basepageTwo        = 'post';
+                $canonicalWorthy = $post;
                 $coreBlogSQLquery .= "AND shortname = '$post' ";
 
             } else { // Fallback to custom 404 include page

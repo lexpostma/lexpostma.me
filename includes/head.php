@@ -37,8 +37,15 @@
         <link rel="prev" title="<?=$prevPostTitle?>" href="<?=$prevPostURL?>">
 <?
     };
+    
+    if(isset($canonicalWorthy)){
+        $canonicalURL = $baseURL.$canonicalWorthy;
+    } else {
+        $canonicalURL = $baseURL;
+    }
 ?>
-        <link rel="canonical" href="<?=$currentURL?>" />
+
+        <link rel="canonical" href="<?=$canonicalURL?>" />
         <link rel="author" href="/humans.txt">
         <link rel="license" href="/copyright">
 <?

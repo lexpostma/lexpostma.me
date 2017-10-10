@@ -58,6 +58,7 @@
                 $seoKeywords    = 'reference,Lex Postma,'.$author;
                 $seoAuthor      = $author;
                 $includePage    = 'resumeReference.php';
+                $canonicalWorthy = $post;
                 
             }
             else { // Checking whether the $p could be a resume category filter
@@ -71,6 +72,7 @@
                     $seoKeywords   .= $catfilter;
                     $basepageTwo     = 'filter';
                     $includePage    = 'resume.php';
+                    $canonicalWorthy = $catfilter;
         		}
                 else { // Fallback to custom 404 include page
                     include '../includes/error-404-include.php'; exit; //Do not do any more work in this script.

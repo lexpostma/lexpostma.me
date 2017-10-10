@@ -30,6 +30,8 @@
 
             $basepageTwo    = 'credits';
             $includePage    = 'credits.php';
+            $canonicalWorthy = $basepageTwo;
+
             $seoTitle       = 'Credits for Lex’ website';
             $seoDescription = $basepageTitle;
             $seoKeywords    = $basepageTwo;
@@ -38,6 +40,7 @@
 
             $basepageTwo    = 'copyright';
             $includePage    = 'copyright.php';
+            $canonicalWorthy = $basepageTwo;
 
             $seoTitle       = 'Copyright for Lex’ website';
             $seoDescription = $basepageTitle;
@@ -51,6 +54,7 @@
 
             $basepageTwo    = 'apple';
             $includePage    = 'apple.php';
+            $canonicalWorthy = $basepageTwo;
 
             $disableTitlebar = true;
 
