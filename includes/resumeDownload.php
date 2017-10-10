@@ -39,6 +39,7 @@
         </a>
     </li>
 
+<!--
     <li class="cellRow">
         <a class="cellRowContent" href="javascript:window.print()">
             <div class="cellIcon"><i class="fa fa-fw fa-print"></i></div>
@@ -46,5 +47,6 @@
             <div class="cellClosingIcon chevron"><? include 'navigationIcons/chevron.svg'  ?></div>
         </a>
     </li>
+-->
 </ul>
 
