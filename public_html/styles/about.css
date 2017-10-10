@@ -155,6 +155,9 @@ main#contents.about.home p span.aboutLine {
 main#contents.about.home p span.emoji {
   padding-right: 5px;
 }
+main#contents.about.home p:last-child {
+  margin-bottom: 0;
+}
 main#contents.about.home a.refresh {
   color: inherit;
   text-transform: uppercase;
