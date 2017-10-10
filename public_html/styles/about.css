@@ -416,3 +416,314 @@ p.filterText span.line {
     }
 }
 */
+/* ========================
+   APPLE MOTIVATION STYLING
+   ======================== */
+main#contents.apple h1.filterText {
+  margin-top: -20px;
+}
+main#contents.apple p.filterText span.line {
+  white-space: normal;
+}
+@media (min-width: 330px) {
+  main#contents.apple p.filterText span.line {
+    white-space: nowrap;
+  }
+}
+main#contents.apple #top-apple {
+  text-align: center;
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main#contents.apple #top-apple img {
+  width: 80px;
+  filter: grayscale(1) brightness(5);
+  -webkit-filter: grayscale(1) brightness(5);
+  margin: 0;
+}
+main#contents.apple #top-apple #apple-lex {
+  width: 77px;
+}
+main#contents.apple #top-apple span {
+  color: #4B0082;
+  margin: 10px 20px;
+  font-size: 2rem;
+  transition: margin 0.2s ease-in-out 0ms;
+  -webkit-transition: margin 0.2s ease-in-out 0ms;
+  -o-transition: margin 0.2s ease-in-out 0ms;
+  -moz-transition: margin 0.2s ease-in-out 0ms;
+  -ms-transition: margin 0.2s ease-in-out 0ms;
+  -kthtml-transition: margin 0.2s ease-in-out 0ms;
+}
+main#contents.apple #apple-references h4 {
+  margin-bottom: -0.5rem;
+}
+main#contents.apple #apple-references h4 a .author {
+  color: DarkGray;
+  font-weight: normal;
+}
+main#contents.apple #apple-references h4 a:hover .author {
+  color: inherit;
+}
+main#contents.apple #apple-references .continueReading {
+  white-space: nowrap;
+}
+main#contents.apple table#apple-table {
+  border-collapse: collapse;
+  border: none;
+  overflow: hidden;
+  font-size: inherit;
+}
+main#contents.apple table#apple-table td + td {
+  border: none;
+}
+main#contents.apple table#apple-table #apple-timeline-first {
+  display: block;
+  width: 10px;
+  height: 27px;
+  background: white;
+  position: absolute;
+  top: 0;
+  right: -5px;
+}
+main#contents.apple table#apple-table tr {
+  cursor: pointer;
+  background-color: rgba(75, 0, 130, 0);
+}
+main#contents.apple table#apple-table tr:hover {
+  background-color: #EDE7F3;
+}
+main#contents.apple table#apple-table tr:hover #apple-timeline-first {
+  background: #EDE7F3;
+}
+main#contents.apple table#apple-table tr.skip {
+  cursor: default;
+}
+main#contents.apple table#apple-table td.left {
+  border-right: 1px solid #7D01D7;
+  width: 25%;
+  min-width: 80px;
+  text-align: right;
+}
+@media (min-width: 400px) {
+  main#contents.apple table#apple-table td.left {
+    min-width: 150px;
+  }
+}
+main#contents.apple table#apple-table td.left::after {
+  content: "•";
+  position: absolute;
+  right: -3.2px;
+  top: 1rem;
+  color: #7D01D7;
+}
+main#contents.apple table#apple-table td {
+  position: relative;
+  padding: 20px;
+  vertical-align: top;
+}
+main#contents.apple table#apple-table td p {
+  padding: 0;
+  margin: 0;
+}
+main#contents.apple table#apple-table td p.rightMore {
+  opacity: .7;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-in-out 0ms;
+  -webkit-transition: max-height 0.2s ease-in-out 0ms;
+  -o-transition: max-height 0.2s ease-in-out 0ms;
+  -moz-transition: max-height 0.2s ease-in-out 0ms;
+  -ms-transition: max-height 0.2s ease-in-out 0ms;
+  -kthtml-transition: max-height 0.2s ease-in-out 0ms;
+}
+main#contents.apple table#apple-table td p.rightMore.show {
+  max-height: 400px;
+  transition: max-height 0.2s ease-in-out 0ms;
+  -webkit-transition: max-height 0.2s ease-in-out 0ms;
+  -o-transition: max-height 0.2s ease-in-out 0ms;
+  -moz-transition: max-height 0.2s ease-in-out 0ms;
+  -ms-transition: max-height 0.2s ease-in-out 0ms;
+  -kthtml-transition: max-height 0.2s ease-in-out 0ms;
+}
+main#contents.apple table#apple-table tr.skip td.left {
+  border-right: 1px dashed #7D01D7;
+}
+main#contents.apple table#apple-table tr.skip td.left::after {
+  content: "";
+}
+main#contents.apple table#apple-table tr.skip:hover {
+  background-color: rgba(75, 0, 130, 0);
+}
+main#contents.apple table#apple-table tr.emphasis td.left::after {
+  font-size: 2rem;
+  right: -6px;
+  top: 0.4rem;
+}
+main#contents.apple .apple-links {
+  text-align: center;
+  margin: 80px auto;
+}
+main#contents.apple .apple-links a {
+  display: inline-block;
+  text-decoration: none;
+  color: #F04400;
+  padding: 8px 20px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  margin: 3px 2px;
+  border: 1px solid;
+  border-color: #F04400;
+}
+main#contents.apple .apple-links a:hover {
+  color: white;
+  background: #F04400;
+}
+main#contents.apple .apple-links a:active {
+  color: white;
+  background: #4B0082;
+}
+@media (min-width: 350px) {
+  main#contents.apple .apple-links a {
+    margin: 5px;
+  }
+}
+main#contents.apple .apple-links a:active {
+  border-color: #4B0082;
+}
+main#contents.apple .apple-links a i.apple-more {
+  margin-right: 10px;
+}
+main#contents.apple .apple-links a:first-of-type {
+  margin-left: -1rem;
+}
+main#contents.apple .apple-links a:last-of-type {
+  margin-bottom: 1rem;
+  margin-right: -1rem;
+}
+main#contents.apple .apple-links a b {
+  word-spacing: 1px;
+  letter-spacing: .4px;
+}
+main#contents.apple .apple-links br.desktop,
+main#contents.apple .apple-links p.start a i {
+  display: none;
+}
+@media (min-width: 500px) {
+  main#contents.apple .apple-links br.desktop,
+  main#contents.apple .apple-links p.start a i {
+    display: inline;
+  }
+}
+main#contents.apple #apple-ytbaqs b {
+  margin-right: 10px;
+  width: 15px;
+  display: inline-block;
+}
+main#contents.apple h2 small {
+  font-style: italic;
+  font-size: small;
+  white-space: nowrap;
+}
+main#contents.apple .apple-extra-img {
+  text-align: center;
+  display: block;
+  margin: auto;
+  max-width: 415px;
+}
+main#contents.apple .apple-extra-img img {
+  display: block;
+  margin: auto;
+}
+main#contents.apple .apple-extra-img p {
+  display: block;
+  padding: 20px;
+  margin: -10px 1.5rem 0 1.5rem;
+  font-style: italic;
+  font-size: .9em;
+  color: DarkGray;
+}
+main#contents.apple .apple-extra-img.notInline {
+  display: none;
+}
+@media (min-width: 710px) {
+  main#contents.apple .apple-extra-img {
+    padding: 10px;
+    width: 320px;
+    position: absolute;
+    z-index: 100;
+  }
+  main#contents.apple .apple-extra-img img {
+    border-radius: 50%;
+  }
+  main#contents.apple .apple-extra-img.notInline {
+    display: block;
+  }
+  main#contents.apple .apple-extra-img.lef {
+    left: -350px;
+  }
+  main#contents.apple .apple-extra-img.rig {
+    right: -350px;
+  }
+}
+@media (min-width: 710px) and (max-width: 1300px) {
+  main#contents.apple .apple-extra-img {
+    transition: transform 0.2s ease-in-out 0ms;
+    -webkit-transition: transform 0.2s ease-in-out 0ms;
+    -o-transition: transform 0.2s ease-in-out 0ms;
+    -moz-transition: transform 0.2s ease-in-out 0ms;
+    -ms-transition: transform 0.2s ease-in-out 0ms;
+    -kthtml-transition: transform 0.2s ease-in-out 0ms;
+    cursor: pointer;
+  }
+  main#contents.apple .apple-extra-img.lef.show {
+    transform: translateX(290px);
+  }
+  main#contents.apple .apple-extra-img.rig.show {
+    transform: translateX(-290px);
+  }
+  main#contents.apple .apple-extra-img.show img {
+    border: 2px solid #F04400;
+  }
+  main#contents.apple .apple-extra-img p {
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #F04400;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out 0ms;
+    -webkit-transition: opacity 0.2s ease-in-out 0ms;
+    -o-transition: opacity 0.2s ease-in-out 0ms;
+    -moz-transition: opacity 0.2s ease-in-out 0ms;
+    -ms-transition: opacity 0.2s ease-in-out 0ms;
+    -kthtml-transition: opacity 0.2s ease-in-out 0ms;
+  }
+  main#contents.apple .apple-extra-img.show p {
+    opacity: 1;
+  }
+}
+main#contents.apple #apple-img1 {
+  top: 220px;
+}
+main#contents.apple #apple-img2 {
+  top: 550px;
+}
+main#contents.apple #apple-img3 {
+  top: 950px;
+}
+main#contents.apple #apple-img4 {
+  top: 1250px;
+}
+main#contents.apple #apple-img5 {
+  top: 1750px;
+}
+main#contents.apple #apple-img6 {
+  top: 2050px;
+}
+main#contents.apple #apple-img7 {
+  top: 2850px;
+}
+main#contents.apple #apple-img8 {
+  top: 3450px;
+}
