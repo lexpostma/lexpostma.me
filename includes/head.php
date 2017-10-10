@@ -3,15 +3,16 @@
 ?>
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, shrink-to-fit=no" />
         <title><?=$seoTitle?></title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 <?
     if($basepageTwo == 'apple' || $currentEnvironment !== 'production'){?>
         <meta name="robots" content="noindex" />
 <?
     };
 ?>
-        
+        <base href="<?=$baseURL?>">
+
         <!-- Icons -->
         <link rel="mask-icon" href="/images/icons/safariPinnedTabPixelBounds.svg" color="#4B0082">
         <link rel="shortcut icon" type="image/ico" href="/images/icons/favicon.png" />
@@ -40,6 +41,22 @@
         <link rel="canonical" href="<?=$currentURL?>" />
         <link rel="author" href="/humans.txt">
         <link rel="license" href="/copyright">
+<?
+    if($basepage == 'blog'){
+?>
+        <link rel="alternate" href="<?=$blogFeedURL?>" type="application/rss+xml" title="RSS">
+        <link rel="archives" href="<?=$blogURL?>filter/mode=archive">
+<?
+    } else if ($basepage == 'portfolio'){
+?>
+        <link rel="archives" href="<?=$portURL?>all">
+<?
+
+    }
+?>
+        <link rel="index" href="<?=$coreURL?>">
+
+
 
         <!-- Open Graph protocol / Facebook -->
         <meta property="og:title" content="<?=$seoTitle?>" />
@@ -101,7 +118,6 @@
 
         <!-- Styles and scripts -->
         <link rel="stylesheet" href="/styles/normalize.css">
-
         <link rel="stylesheet" href="/styles/global.css">
         <link rel="stylesheet" href="/styles/navigation.css">
         <link rel="stylesheet" href="/styles/<?=$basepage?>.css">

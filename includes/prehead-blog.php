@@ -130,6 +130,7 @@
 
 
         } else if(isset($p)){ // Check if it's an existing blogpost
+
             $postCheck  = mysqli_query($con,"SELECT shortname FROM blog WHERE published = '$pubTest' AND shortname = '$p';"); // check whether it's a blog post title
             if (mysqli_num_rows($postCheck)!=0){ // More than 0 matches = blog post
                 $post = $p;
@@ -151,6 +152,7 @@
                 $seoType           = 'article';
                 $basepageTwo        = 'post';
                 $coreBlogSQLquery .= "AND shortname = '$post' ";
+
             } else { // Fallback to custom 404 include page
                 include '../includes/error-404-include.php'; exit; //Do not do any more work in this script.
             }

@@ -14,6 +14,9 @@
             $funfacts       = true;
             $includePage    = 'about.php';  
 
+            $disableTitlebar = true;
+            $disableFooter   = true;
+
 /*
         } else if($p == 'more'){  // more about me
             $seoTitle       = 'More stuff from Lex';
@@ -25,21 +28,20 @@
 
         } else if($p == 'credits' || $p == 'credit'){  // Credits
 
+            $basepageTwo    = 'credits';
+            $includePage    = 'credits.php';
             $seoTitle       = 'Credits for Lex’ website';
             $seoDescription = $basepageTitle;
-            $seoKeywords    = 'credits';
-
-            $basepageTwo    = 'credits';
-            $includePage    = 'credits.php';  
+            $seoKeywords    = $basepageTwo;
 
         } else if($p == 'copyright'){  // Copyright
 
+            $basepageTwo    = 'copyright';
+            $includePage    = 'copyright.php';
+
             $seoTitle       = 'Copyright for Lex’ website';
             $seoDescription = $basepageTitle;
-            $seoKeywords    = 'copyright';
-
-            $basepageTwo    = 'copyright';
-            $includePage    = 'copyright.php';  
+            $seoKeywords    = $basepageTwo;
 
         } else if($p == 'apple'){  // Apple page
 
@@ -48,7 +50,7 @@
             $seoKeywords    = 'Apple,design,iOS,culture,passion,software,hardware,prototyping';
 
             $basepageTwo    = 'apple';
-            $includePage    = 'apple.php';  
+            $includePage    = 'apple.php';
 
             $disableTitlebar = true;
 
@@ -59,8 +61,7 @@
         $includePage = 'about.php';
     
         $disableTitlebar = true;
-        $disableFooter   = true;
-    
+        $disableFooter   = true;    
 
     };
 ?>

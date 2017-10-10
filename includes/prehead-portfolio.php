@@ -17,10 +17,7 @@
         JOIN portfolio_categories on portfolio.category_id=portfolio_categories.id
         WHERE published = '1' ";
     if(isset($p)) {
-        if($p == 'feed' || $p == 'rss' || $p == 'feeds' || $p == 'subscribe') { // redirect to rss feed
-            header ("Location: http://feed.lexpostma.me/portfolio");
-
-        } else if($p == 'archive') { // Oldies but goodies, aka the archive
+        if($p == 'archive') { // Oldies but goodies, aka the archive
             
             $seoTitle       .= ' archive';
             $seoDescription = 'Older portfolio projects by Lex Postma.';
@@ -33,8 +30,7 @@
             
             $seoTitle       .= ', complete';
             $seoDescription = 'Complete portfolio by Lex Postma.';
-    
-//             $corePortfolioSQLquery .= " AND archived = '1' ";
+
             $includePage = 'portfolioOverview.php';
             $basepageTwo     = 'all';
 
@@ -63,14 +59,9 @@
             $iconFilter    = 1;
             $introTitle = '<p class="filterText">Icons I made, mostly for fun.</p>';
         
-        } else if($p == 'apple'){  // Apple page
-            $seoTitle       = 'Lex Postma → ';
-            $seoDescription = 'Motivation letter from Lex Postma to Apple.';
-            $seoKeywords    = 'Apple,design,iOS,culture,passion,software,hardware,prototyping';
-            $basepageTwo     = 'apple';
-            $includePage    = 'apple.php';  
+        } else if($p == 'feed' || $p == 'rss' || $p == 'feeds' || $p == 'subscribe') { // redirect to rss feed
+            header ("Location: http://feed.lexpostma.me/portfolio");
 */
-
 
         } else if($p == 'filter') { // big overview grid filtered
             $seoTitle    .= ' filtered';
@@ -164,6 +155,7 @@
                 $otherProjectsPortfolioSQLquery = $corePortfolioSQLquery." AND shortname != '$post' GROUP BY shortname ORDER BY rand() ASC LIMIT 2; ";
                                 
                 $corePortfolioSQLquery .= " AND shortname = '$post' ";
+
             }
             else { // Fallback to custom 404 include page
                 include '../includes/error-404-include.php'; exit; //Do not do any more work in this script.

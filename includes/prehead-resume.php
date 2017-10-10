@@ -67,10 +67,10 @@
         		if (mysqli_num_rows($catCheck)!=0){ // More than 0 matches = category filter
             		$catfilter = $p;
     
-            		$seoTitle      = 'Lex’ resumé filtered by '.$catfilter;
-            		$seoKeywords   .= $catfilter;
-            		$basepageTwo     = 'filter';
-            		$includePage    = 'resume.php';
+                    $seoTitle      = 'Lex’ resumé filtered by '.$catfilter;
+                    $seoKeywords   .= $catfilter;
+                    $basepageTwo     = 'filter';
+                    $includePage    = 'resume.php';
         		}
                 else { // Fallback to custom 404 include page
                     include '../includes/error-404-include.php'; exit; //Do not do any more work in this script.

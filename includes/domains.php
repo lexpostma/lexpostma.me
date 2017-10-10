@@ -1,7 +1,5 @@
 <?
     # DOMAINS
-    $currentURL = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-
     if (strpos($_SERVER['HTTP_HOST'], 'dev.lexpostma.me') !== false) {
         
         $currentEnvironment = 'development';
@@ -53,7 +51,7 @@
 
     }
     $coreURL = $abouURL;
-    
+    $currentURL = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";    
     
     $twitterURL         = 'https://twitter.com/lexpostma';    
     $linkedinURL        = 'http://www.linkedin.com/in/lexpostma';
