@@ -2,12 +2,15 @@
 
 .tabbarButtonActiveState {
     a.tabbarLink {
-        background-color: @color1;
+//         background-color: @color1;
+        background: rgba(255, 255, 255, 0.3);
         span.tabName {
-            color: white;
+//             color: white;
+            opacity: 1;
         }
         svg {
-            fill: white;
+            opacity: 1;
+//             fill: white;
         }
         svg:first-of-type {
             display: none;
@@ -125,7 +128,9 @@ nav#tabbarNavigation {
     z-index: 10;
     border-top: @lineThickness solid @colorLine;
     .navShowHideTransition;
-    .translucentBackground;
+//     .translucentBackground;
+    background: @color1;
+        
     ul#tabbarItemList {
         display: flex;
         justify-content: space-around;
@@ -147,8 +152,9 @@ li.tabbarItem {
             right: 0;
             text-align: center;
             font-size: 10px;
-            color: @colorInactive;
-            
+/*             color: @colorInactive; */
+            color: white;
+            opacity: .7;            
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
@@ -157,7 +163,9 @@ li.tabbarItem {
             height: 30px;
             width: 100%;
             margin: 3.5px auto;
-            fill: @colorInactive;
+//             fill: @colorInactive;
+            fill: white;
+            opacity: .7;
         }
     }
     a.tabbarLink.noLabel {
@@ -171,10 +179,12 @@ li.tabbarItem {
     }
     a.tabbarLink.active {
         span.tabName {
-            color: @color1;
+//             color: @color1;
+            opacity: 1;
         }
         svg {
-            fill: @color1;
+            opacity: 1;
+//             fill: @color1;
         }
     }
     a.tabbarLink {
@@ -312,7 +322,8 @@ li.tabbarItem:nth-last-of-type(4) a.tabbarLink {
 }
 
 .actionDrawerContent {
-    .translucentBackground;
+//     .translucentBackground;
+    background: #F0EFF5;
     align-items: stretch;
     overflow-y: scroll;
     overflow-x: hidden;
