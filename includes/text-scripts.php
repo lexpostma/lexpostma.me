@@ -6,11 +6,8 @@ function bodyScan($input,$unique){
     global $blogURL;
     global $portURL;
     
-    $input = str_replace('src="/images', 'src="'.$coreURL.'images',  $input);
-    $input = str_replace('src="/videos', 'src="'.$coreURL.'videos', $input);
-
-    $input = str_replace('href="/portfolio', 'href="'.$portURL,       $input);
-    $input = str_replace('href="/blog',      'href="'.$blogURL,       $input);
+    $input = str_replace('src="/public-files/images/', 'src="'.$coreURL.'public-files/images/', $input);
+    $input = str_replace('src="/public-files/videos/', 'src="'.$coreURL.'public-files/videos/', $input);
 
 
     /*** Twitter usernames and hashtags become links ***/
