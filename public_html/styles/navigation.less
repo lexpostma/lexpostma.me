@@ -3,7 +3,6 @@
 .tabbarButtonActiveState {
     a.tabbarLink {
         background-color: @color1;
-        opacity: 1;
         span.tabName {
             color: white;
         }
@@ -37,6 +36,8 @@ header#titleHeader {
             position: absolute;
             display: block;
             background: @color1;
+//             height: 30px;
+//             width: 30px;
             top: 10px;
             right: 10px;
 
@@ -124,7 +125,7 @@ nav#tabbarNavigation {
     z-index: 10;
     border-top: @lineThickness solid @colorLine;
     .navShowHideTransition;
-    background: white;
+    .translucentBackground;
     ul#tabbarItemList {
         display: flex;
         justify-content: space-around;
@@ -147,6 +148,7 @@ li.tabbarItem {
             text-align: center;
             font-size: 10px;
             color: @colorInactive;
+            
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
@@ -180,10 +182,6 @@ li.tabbarItem {
             display: none;
         }
     }
-}
-
-li.tabbarItem.tabbarItemPageSpecific {
-//     background-color: navy;
 }
 
 li.tabbarItem:nth-last-of-type(4) a.tabbarLink {
@@ -314,7 +312,7 @@ li.tabbarItem:nth-last-of-type(4) a.tabbarLink {
 }
 
 .actionDrawerContent {
-    background: #F0EFF5;
+    .translucentBackground;
     align-items: stretch;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -340,7 +338,8 @@ html.filtered {
         right: 0;
         z-index: 8;
         .navShowHideTransition;
-        background-color: white;
+        .translucentBackground;
+
         padding: 5px 10px;
         text-decoration: none;
         text-align: center;
