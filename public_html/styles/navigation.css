@@ -875,8 +875,9 @@ li.cellRow.contactItem .cellIcon#contactIcon_instagram {
   background: radial-gradient(circle at 33% 100%, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF);
 }
 .cellIcon.fileNflag i {
-  background-size: cover;
-  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 18px;
+  background-position: 50% -1px;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 0.5px;
