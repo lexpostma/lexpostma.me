@@ -7,6 +7,7 @@
     $seoKeywords    = 'TU,Delft,CV,curriculum vitae,Industrial Design,engineering,Apple';
     $seoAuthor      = 'Lex Postma';
     $seoType        = 'website';
+    $seoImage       = $coreURL.'public-files/images/about/profile.png';
 
     if (isset($p)) {
         if ($p == 'references'){ // Reference overview page

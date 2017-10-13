@@ -7,6 +7,7 @@
     $seoKeywords    = 'blog,resume,portfolio,Apple,TU,Delft,design,tech,sport';
     $seoAuthor      = 'Lex Postma';
     $seoType        = 'website';
+    $seoImage       = $coreURL.'public-files/images/about/profile.png';
 
     if(isset($p)) {
         if($p == 'allfunfacts'){  // Show all fun facts
