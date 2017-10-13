@@ -80,7 +80,6 @@
         <meta property="og:site_name" content="<?=$seoSiteName?>" />
 
         <meta property="fb:admins" content="1308188724" />
-        <meta property="fb:page_id" content="1409031109319919" />
         <meta property="article:publisher" content="https://www.facebook.com/lexpostmame" />
         <meta property="article:author" content="https://www.facebook.com/lexpostma" />
         
