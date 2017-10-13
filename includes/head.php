@@ -73,15 +73,16 @@
         <meta property="og:image" content="<?=$seoImage?>"/>
         <meta property="og:image:secure_url" content="<?=$seoImage?>"/>
 <?  };
-//      <meta property="fb:page_id" content="1409031109319919" />     // werkt niet...
-//      <meta property="article:publisher" content="https://www.facebook.com/lexpostmame" />
-//      <meta property="article:author" content="https://www.facebook.com/lexpostma" />
 
 
 ?>
-        <meta property="fb:admins" content="1308188724"/>
         <meta property="og:type" content="<?=$seoType?>" />
         <meta property="og:site_name" content="<?=$seoSiteName?>" />
+
+        <meta property="fb:admins" content="1308188724" />
+        <meta property="fb:page_id" content="1409031109319919" />
+        <meta property="article:publisher" content="https://www.facebook.com/lexpostmame" />
+        <meta property="article:author" content="https://www.facebook.com/lexpostma" />
         
         <!-- Twitter (Cards) -->
         <meta name="twitter:widgets:link-color" content="#F04400" />
