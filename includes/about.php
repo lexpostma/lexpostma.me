@@ -65,7 +65,7 @@
 
 <div class="aboutContent">
     
-    <div class="photo" id="profilePhoto" onclick="fullscreen('profilePhoto')"></div>
+    <div class="photo" id="profilePhoto" onclick="animate('profilePhoto')"></div>
     <div class="shadow"></div>
     
     <h1>Hi, I’m Lex&nbsp;Postma.</h1>
@@ -76,6 +76,5 @@
 </div>
 
 <script>
-    function fullscreen(id) { $('#'+id).toggleClass('full'); }
-
+    function animate(id) { $('#'+id).toggleClass('animate'); }
 </script>

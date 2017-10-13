@@ -126,18 +126,6 @@ main#contents.about.home .photo {
   position: relative;
   animation: photoFloat 3s ease-in-out infinite;
 }
-main#contents.about.home .photo.full {
-  animation: none;
-  width: 100vw;
-  border-radius: 0;
-  height: 100vh;
-  position: absolute;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  margin: 0;
-  background-position: 20% 50%;
-}
 main#contents.about.home .shadow {
   animation: shadowFloat 3s ease-in-out infinite;
   transform-origin: bottom;
