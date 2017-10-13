@@ -1,5 +1,5 @@
 <?php
-function bodyScan($input,$unique){
+function bodyScanForText($input,$unique){
 
     /*** Relative URLs become absolute ***/
     global $coreURL;
@@ -25,10 +25,28 @@ function bodyScan($input,$unique){
 
     
 // videos responsive maken met PHP ipv Javascript
-/* afbeeldingen uit de text zoeken voor SEO en url als var in $contentImage */
-    
+
+
 	return $input;
 };
+
+function bodyScanForImage($input){
+
+    global $coreURL;
+
+    /*** Get image URL from body to use for SEO ***/
+    if (strpos($input, '/public-files/images/') !== false) {
+        
+//         $string = '    <img src="http://dev.lexpostma.me/public-files/images/portfolio/synology-icons-more.png" alt="Extra non-standard icons" /> Writing to tell /public-files/images/portfolio/lalala.jpg you that var MyCode = "dentline"; Learn it.';
+        $matches = array();
+        preg_match('/\/public-files\/images(.*?)"/', $input, $matches);
+//         echo $matches[1];
+        
+        $seoImage = $coreURL.'public-files/images'.$matches[1];
+        return $seoImage;
+    }    
+};
+
 
 function makeNewFilterURL($filterType){
 

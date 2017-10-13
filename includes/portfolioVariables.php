@@ -61,7 +61,9 @@
     if(strpos($body,'<p>') === false){
         $body = MarkdownExtra::defaultTransform($body);
     };
-    $body = bodyScan($body,$shortname);
+    $body = bodyScanForText($body,$shortname);
+
+    $seoImage = bodyScanForImage($body);
 
 /*
     if(isset($searchFilter)){

@@ -17,7 +17,9 @@
     if(strpos($row['Footnote_Code_markDown_Tweet_Math'],'d') !== false){
         $body = MarkdownExtra::defaultTransform($body);
     };
-    $body = bodyScan($body,$shortname);
+    $body = bodyScanForText($body,$shortname);
+
+    $seoImage = bodyScanForImage($body);
 
 /*
     if(isset($searchFilter)){
