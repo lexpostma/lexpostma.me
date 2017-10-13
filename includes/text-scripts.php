@@ -36,15 +36,29 @@ function bodyScanForImage($input){
 
     /*** Get image URL from body to use for SEO ***/
     if (strpos($input, '/public-files/images/') !== false) {
-        
-//         $string = '    <img src="http://dev.lexpostma.me/public-files/images/portfolio/synology-icons-more.png" alt="Extra non-standard icons" /> Writing to tell /public-files/images/portfolio/lalala.jpg you that var MyCode = "dentline"; Learn it.';
+
         $matches = array();
         preg_match('/\/public-files\/images(.*?)"/', $input, $matches);
-//         echo $matches[1];
-        
         $seoImage = $coreURL.'public-files/images'.$matches[1];
         return $seoImage;
-    }    
+
+    };
+};
+
+function bodyScanForImageSize($seoImage){
+    
+    /* *
+       *     https://stackoverflow.com/questions/3890578/get-image-dimensions
+     */
+
+    list($width, $height) = getimagesize($seoImage);
+
+    if($width >= '280' && $height >= '150'){
+        return $seoImageSize = 'large';
+    } else {
+        return $seoImageSize = 'small';        
+    };
+    
 };
 
 

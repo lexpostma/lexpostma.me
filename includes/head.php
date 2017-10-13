@@ -71,8 +71,13 @@
         <meta property="og:url" content="<?=$currentURL?>" />
 <?  if(isset($seoImage)){?>
         <meta property="og:image" content="<?=$seoImage?>"/>
+        <meta property="og:image:secure_url" content="<?=$seoImage?>"/>
 <?  };
 //      <meta property="fb:page_id" content="1409031109319919" />     // werkt niet...
+//      <meta property="article:publisher" content="https://www.facebook.com/lexpostmame" />
+//      <meta property="article:author" content="https://www.facebook.com/lexpostma" />
+
+
 ?>
         <meta property="fb:admins" content="1308188724"/>
         <meta property="og:type" content="<?=$seoType?>" />
@@ -84,15 +89,32 @@
         <meta name="twitter:url" content="<?=$currentURL?>">
         <meta name="twitter:title" content="<?=$seoTitle?>">
         <meta name="twitter:description" content="<?=$seoDescription?>">
-<?  if(isset($seoImage)){?>
+<?
+    if(isset($seoImage)){
+        $seoImageSize = bodyScanForImageSize($seoImage);
+        if ($seoImageSize == 'large'){
+?>
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:image:src" content="<?=$seoImage?>">
+<?            
+        } else {
+?>
         <meta name="twitter:image" content="<?=$seoImage?>">
-<?  };  ?>
+        <meta name="twitter:card" content="summary">
+<?
+        };
+    } else {
+?>
+        <meta name="twitter:card" content="summary">
+<?            
+    }
+?>
         <meta name="twitter:creator" content="@lexpostma">
         <meta name="twitter:site" content="@lexpostmame">
         
         <!-- Apple / iOS -->
         <meta name="apple-mobile-web-app-title" content="Lex Postma" />
-<!--         <meta name="apple-mobile-web-app-capable" content="yes" /> -->
+        <meta name="apple-mobile-web-app-capable" content="no" /> <!-- TODO: yes -->
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <?
     if($currentEnvironment == 'production' ){
