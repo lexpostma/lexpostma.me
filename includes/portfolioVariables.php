@@ -64,15 +64,6 @@
     $body = bodyScanForText($body,$shortname);
 
     $seoImage = bodyScanForImage($body);
-
-/*
-    if(isset($searchFilter)){
-		$plainTitle = searchHighligths($plainTitle,$searchFilter);
-		$body = searchHighligths($body,$searchFilter);
-    }
-*/
-
-
     
     // LISTING ALL THE CLIENTS
     unset($clientPromo);

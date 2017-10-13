@@ -21,12 +21,6 @@
 
     $seoImage = bodyScanForImage($body);
 
-/*
-    if(isset($searchFilter)){
-		$plainTitle = searchHighligths($plainTitle,$searchFilter);
-		$body = searchHighligths($body,$searchFilter);
-    }
-*/
     $title = '<h1><a href="/'.$shortname.'" title="'.$plainTitle.'">'.$plainTitle.'</a></h1>';
     
     $author = $row['author'];
