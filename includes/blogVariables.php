@@ -37,6 +37,7 @@
     $datePublishedRead = date("l, j F Y", strtotime($datePublished));
     $datePublishedFull = date("r", strtotime($datePublished));
     $datePublishedTime = $datePublishedRead.' at '.date("G:i e", strtotime($datePublished)).' time';
+    $datePubISO8601 = date(DATE_ISO8601, strtotime($datePublished));
 
     $pubDay      = date("l, j", strtotime($datePublished));
     $pubDayNum   = date("j", strtotime($datePublished));
@@ -46,8 +47,10 @@
     $pubStatus   = $row['published'];
     
     $dateUpdated   = $row['dateUpdated'];
-    $dateUpdatedRead = date("j F Y", strtotime($dateUpdated));
-
+    if ($dateUpdated != ""){
+        $dateUpdatedRead = date("j F Y", strtotime($dateUpdated));
+        $datePubUpdateISO8601 = date(DATE_ISO8601, strtotime($dateUpdated));        
+    }
 
     // LISTING ALL TAGS
     $blogPostTags = mysqli_query($con,"SELECT tag,shorttag FROM blog JOIN blog_tags_relations ON blog.id=blog_tags_relations.blog_id JOIN blog_tags ON blog_tags_relations.tag_id=blog_tags.id WHERE shortname = '$shortname' ORDER BY tag ASC;");

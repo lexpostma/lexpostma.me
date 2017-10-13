@@ -72,13 +72,16 @@
 <?  if(isset($seoImage)){?>
         <meta property="og:image" content="<?=$seoImage?>"/>
         <meta property="og:image:secure_url" content="<?=$seoImage?>"/>
-<?  };
-
-
-?>
+<?  }; ?>
         <meta property="og:type" content="<?=$seoType?>" />
         <meta property="og:site_name" content="<?=$seoSiteName?>" />
         <meta property="fb:admins" content="1308188724" />
+<?  if(isset($seoPubDate)){?>
+        <meta property="article:published_time" content="<?=$seoPubDate?>"/>
+<?  };
+    if(isset($seoPubDateUpdate)){?>
+        <meta property="article:modified_time" content="<?=$seoPubDateUpdate?>"/>
+<?  }; ?>
         <meta property="article:publisher" content="<?=$seoSiteName?>" />
         <meta property="article:author" content="<?=$seoAuthor?>" />
         
@@ -141,7 +144,7 @@
         <meta name="msapplication-TileColor" content="#47257E">
         <meta name="msapplication-TileImage" content="/images/icons/metro.png">
 
-        <!-- Pinterest -->        
+        <!-- Pinterest -->
         <meta name="p:domain_verify" content="06c4f3327c9c9b5ae87545dc4fa3a3ad"/>
 
         <!-- Styles and scripts -->

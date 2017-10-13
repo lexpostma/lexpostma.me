@@ -144,13 +144,15 @@
                 $row = mysqli_fetch_array($portfolioPost);
                 include '../includes/portfolioVariables.php';
     
-                $seoTitle       = $plainTitle.' • Lex’ portfolio';
-                $seoDescription = $summary;
-                $seoKeywords    = $category.$clientsKeywords;
-                $seoType        = 'article';
-                $includePage    = 'portfolioProject.php';
-                $basepageTwo     = 'post';
-                $canonicalWorthy = $post;
+                $seoTitle          = $plainTitle.' • Lex’ portfolio';
+                $seoDescription    = $summary;
+                $seoKeywords       = $category.$clientsKeywords;
+                $seoPubDate        = $datePubISO8601;
+                if(isset($datePubUpdateISO8601)) {$seoPubDateUpdate  = $datePubUpdateISO8601;}
+                $seoType           = 'article';
+                $includePage       = 'portfolioProject.php';
+                $basepageTwo       = 'post';
+                $canonicalWorthy   = $post;
                 
                 // Get 2 random projects, to display at bottom of project detail page
                 $otherProjectsPortfolioSQLquery = $corePortfolioSQLquery." AND shortname != '$post' GROUP BY shortname ORDER BY rand() ASC LIMIT 2; ";

@@ -149,8 +149,10 @@
                 $seoDescription    = $summary;
                 $seoKeywords       = $tagKeywords.$author;
                 $seoAuthor         = $author;
+                $seoPubDate        = $datePubISO8601;
+                if(isset($datePubUpdateISO8601)) {$seoPubDateUpdate  = $datePubUpdateISO8601;}
                 $seoType           = 'article';
-                $basepageTwo        = 'post';
+                $basepageTwo       = 'post';
                 $canonicalWorthy = $post;
                 $coreBlogSQLquery .= "AND shortname = '$post' ";
 

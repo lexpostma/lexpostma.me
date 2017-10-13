@@ -32,8 +32,13 @@
     $extendedPubDateRead = date("l, j F Y", strtotime($extendedPubDate));
     $extendedPubDateFull = date("r", strtotime($extendedPubDate));
     $extendedPubTime = $extendedPubDateRead.' at '.date("G:i e", strtotime($extendedPubDate)).' time';
+    $datePubISO8601 = date(DATE_ISO8601, strtotime($extendedPubDate));
     $extendedUpdateDate = $row['extendedUpdateDate'];
-    $extendedUpdateDateRead = date("j F Y", strtotime($extendedUpdateDate));
+
+    if ($extendedUpdateDate != ""){
+        $extendedUpdateDateRead = date("j F Y", strtotime($extendedUpdateDate));
+        $datePubUpdateISO8601 = date(DATE_ISO8601, strtotime($extendedUpdateDate));
+    };
     
     // Body of the individual page
     if($extendedPostPublished == '1'){
