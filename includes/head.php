@@ -78,10 +78,9 @@
 ?>
         <meta property="og:type" content="<?=$seoType?>" />
         <meta property="og:site_name" content="<?=$seoSiteName?>" />
-
         <meta property="fb:admins" content="1308188724" />
-        <meta property="article:publisher" content="https://www.facebook.com/lexpostmame" />
-        <meta property="article:author" content="https://www.facebook.com/lexpostma" />
+        <meta property="article:publisher" content="<?=$seoSiteName?>" />
+        <meta property="article:author" content="<?=$seoAuthor?>" />
         
         <!-- Twitter (Cards) -->
         <meta name="twitter:widgets:link-color" content="#F04400" />
