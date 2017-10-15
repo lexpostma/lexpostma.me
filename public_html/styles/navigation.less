@@ -616,6 +616,7 @@ html.actionDrawerToggled {
 }
 
 ul.cellRowGroup {
+    .iOSFontStyling;
     margin: 25px auto;
     lh {
         display: block;
@@ -625,10 +626,9 @@ ul.cellRowGroup {
 }
 
 .cellRow {
+    .iOSFontStyling;
     position: relative;
     .cellSeparatorWithIcon;
-}
-li.cellRow {
     &:first-of-type {
         border-top:    @lineThickness solid @colorLine;
     }
@@ -648,7 +648,10 @@ input.cellRowContent {
     
     display: flex;
     align-content: center;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
+    &.filterRowContent {
+        flex-flow: row wrap;        
+    }
 }
 
 a.cellRowContent {
@@ -694,6 +697,7 @@ a.cellRowContent {
 .cellLabel {
     padding-right: 10px;
     display: inline-block;
+    flex-shrink: 100000;
     span {
         display: block;
         &:first-of-type {
@@ -767,6 +771,15 @@ span.widthForInputHidden {
         fill: @color1;
         height: 29px;
         margin-right: -9px
+    }
+    &.plus {
+        transition: transform .2s ease-in-out;
+        &.open {
+            transform: rotate(135deg);            
+        }
+        svg {
+            fill: @color1;
+        }
     }
     &.chevron svg {
         fill: @colorInactive;
@@ -850,43 +863,66 @@ li.cellRow.contactItem {
     }
 }
     
-.cellIcon i {
-    &.fa-tag,
-    &.fa-twitter,
-    &.fa-rss {
-        padding-left: 1px;
-        padding-top: 7px;                
+.cellIcon {
+    i {
+        &.fa-tag,
+        &.fa-twitter,
+        &.fa-rss {
+            padding-left: 1px;
+            padding-top: 7px;                
+        }
+        &.fa-linkedin {
+            padding-left: 2px;
+        }
+        &.fa-file {
+            margin-left: 1.5px;
+        }
+        &.fa-newspaper-o,
+        &.fa-ellipsis-h,
+        &.fa-th {
+            padding-top: 7px;
+        }
+        &.fa-pinterest-p {
+            padding-top: 8px;
+        }
+        &.fa-facebook-square,
+        &.fa-building {
+            padding-left: 2px;
+            padding-top: 7px;
+        }
     }
-    &.fa-linkedin {
-        padding-left: 2px;
-    }
-    &.fa-file {
-        margin-left: 2px;
-    }
-    &.fa-newspaper-o,
-    &.fa-th {
-        padding-top: 7px;
-    }
-    &.fa-building {
-        padding-left: 2px;
-        padding-top: 7px;
+
+    &.search    i { color: #4885ed; }
+    &.date      i,
+    &.year      i { color: #b70909; }
+    &.tag       i,
+    &.category  i { color: @color5; }
+    &.archive   i { color: @archiveBrown; }
+    &.client    i { color: #545454; }
+    &.author    i { color: #FFDCB1; }
+    &.video     i { color: #ff0000; }
+    &.twitter   i { color: @twitterBlue; }
+    &.rss       i { color: orange; }
+    &.appleNews i { color: #fc415b; }
+    &.linkedin  i { color: @linkedinBlue; }
+}
+
+.cellRowContent.shareRow {
+    justify-content: space-between;
+    .cellIcon {
+        margin: 0;
+        border: none;
+        i { 
+            color: white;
+        }
+        &.email     { background: @color1;       }
+        &.facebook  { background: @facebookBlue; }
+        &.pinterest { background: @pinterestRed; }
+        &.twitter   { background: @twitterBlue;  }
+        &.linkedin  { background: @linkedinBlue; }
     }
 }
 
-.cellIcon.search    i { color: #4885ed; }
-.cellIcon.date      i,
-.cellIcon.year      i { color: #b70909; }
-.cellIcon.tag       i,
-.cellIcon.category  i { color: @color5; }
-.cellIcon.archive   i { color: @archiveBrown; }
-.cellIcon.client    i { color: #545454; }
-.cellIcon.author    i { color: #FFDCB1; }
-.cellIcon.video     i { color: #ff0000; }
-
-.cellIcon.twitter   i { color: @twitterBlue; }
-.cellIcon.rss       i { color: orange; }
-.cellIcon.appleNews i { color: #fc415b; }
-.cellIcon.linkedin  i { color: @linkedinBlue; }
 
 html.about.home #tabbarNavigation li.tabbarItemPageSpecific.home {
     svg {

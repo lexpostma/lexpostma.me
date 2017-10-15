@@ -630,6 +630,8 @@ html.actionDrawerToggled body #navigationElements #filterIndicationBar {
   -webkit-border-radius: 0;
 }
 ul.cellRowGroup {
+  font-size: 17px;
+  line-height: 29px;
   margin: 25px auto;
 }
 ul.cellRowGroup lh {
@@ -638,6 +640,8 @@ ul.cellRowGroup lh {
   padding: 5px 20px;
 }
 .cellRow {
+  font-size: 17px;
+  line-height: 29px;
   position: relative;
 }
 .cellRow:after {
@@ -650,13 +654,13 @@ ul.cellRowGroup lh {
   height: 0.5px;
   left: 64px;
 }
-li.cellRow:first-of-type {
+.cellRow:first-of-type {
   border-top: 0.5px solid #B2B2B2;
 }
-li.cellRow:last-of-type {
+.cellRow:last-of-type {
   border-bottom: 0.5px solid #B2B2B2;
 }
-li.cellRow:last-of-type:after {
+.cellRow:last-of-type:after {
   content: none;
 }
 .cellRowContent,
@@ -666,6 +670,10 @@ input.cellRowContent {
   background-color: white;
   display: flex;
   align-content: center;
+  flex-flow: row nowrap;
+}
+.cellRowContent.filterRowContent,
+input.cellRowContent.filterRowContent {
   flex-flow: row wrap;
 }
 a.cellRowContent {
@@ -707,6 +715,7 @@ a.cellRowContent {
 .cellLabel {
   padding-right: 10px;
   display: inline-block;
+  flex-shrink: 100000;
 }
 .cellLabel span {
   display: block;
@@ -826,6 +835,15 @@ span.widthForInputHidden {
   height: 29px;
   margin-right: -9px;
 }
+.cellClosingIcon.plus {
+  transition: transform 0.2s ease-in-out;
+}
+.cellClosingIcon.plus.open {
+  transform: rotate(135deg);
+}
+.cellClosingIcon.plus svg {
+  fill: #4B0082;
+}
 .cellClosingIcon.chevron svg {
   fill: #929292;
 }
@@ -902,12 +920,17 @@ li.cellRow.contactItem .cellIcon#contactIcon_instagram {
   padding-left: 2px;
 }
 .cellIcon i.fa-file {
-  margin-left: 2px;
+  margin-left: 1.5px;
 }
 .cellIcon i.fa-newspaper-o,
+.cellIcon i.fa-ellipsis-h,
 .cellIcon i.fa-th {
   padding-top: 7px;
 }
+.cellIcon i.fa-pinterest-p {
+  padding-top: 8px;
+}
+.cellIcon i.fa-facebook-square,
 .cellIcon i.fa-building {
   padding-left: 2px;
   padding-top: 7px;
@@ -946,6 +969,31 @@ li.cellRow.contactItem .cellIcon#contactIcon_instagram {
 }
 .cellIcon.linkedin i {
   color: #4875B4;
+}
+.cellRowContent.shareRow {
+  justify-content: space-between;
+}
+.cellRowContent.shareRow .cellIcon {
+  margin: 0;
+  border: none;
+}
+.cellRowContent.shareRow .cellIcon i {
+  color: white;
+}
+.cellRowContent.shareRow .cellIcon.email {
+  background: #4B0082;
+}
+.cellRowContent.shareRow .cellIcon.facebook {
+  background: #3B5998;
+}
+.cellRowContent.shareRow .cellIcon.pinterest {
+  background: #D43638;
+}
+.cellRowContent.shareRow .cellIcon.twitter {
+  background: #33CCFF;
+}
+.cellRowContent.shareRow .cellIcon.linkedin {
+  background: #4875B4;
 }
 html.about.home #tabbarNavigation li.tabbarItemPageSpecific.home svg {
   fill: #4B0082;
