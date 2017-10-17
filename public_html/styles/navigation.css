@@ -713,7 +713,7 @@ a.cellRowContent {
   color: #4B0082;
 }
 .cellLabel {
-  padding-right: 10px;
+  padding-right: 15px;
   display: inline-block;
   flex-shrink: 100000;
 }
@@ -972,6 +972,7 @@ li.cellRow.contactItem .cellIcon#contactIcon_instagram {
 }
 .cellRowContent.shareRow {
   justify-content: space-between;
+  padding: 15px 20px;
 }
 .cellRowContent.shareRow .cellIcon {
   margin: 0;
