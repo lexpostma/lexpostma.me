@@ -45,13 +45,13 @@ function bodyScanForImage($input){
     };
 };
 
-function bodyScanForImageSize($seoImage){
+function seoImageSizeScan($image){
     
     /* *
        *     https://stackoverflow.com/questions/3890578/get-image-dimensions
      */
 
-    list($width, $height) = getimagesize($seoImage);
+    list($width, $height) = getimagesize($image);
 
     if($width >= '280' && $height >= '150'){
         return $seoImageSize = 'large';

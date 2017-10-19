@@ -93,7 +93,7 @@
         <meta name="twitter:description" content="<?=$seoDescription?>">
 <?
     if(isset($seoImage)){
-        $seoImageSize = bodyScanForImageSize($seoImage);
+        $seoImageSize = seoImageSizeScan($seoImage);
         if ($seoImageSize == 'large'){
 ?>
         <meta name="twitter:card" content="summary_large_image">
