@@ -181,20 +181,6 @@
     	</script>
 <?
     };
-    if($basepage == 'about' && $basepageTwo == 'more'){
-?>
-        <!-- Counter-Up • jQuery plugin that animates a number from zero -->
-        <script>
-            jQuery(document).ready(function($) {
-                $('.counter').counterUp({
-                    delay: 10,
-                    time: 1000
-                });
-            });
-        </script>
-<?
-    };
-
 
 
     // detect whether browser is mobile, use FastClick to optimize touches
