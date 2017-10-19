@@ -46,6 +46,8 @@
 # ==== Author filter ==== #
 # ======================= #
 
+	$selectAuthor = "<option value=''>Select</option><option disabled></option>";
+	
     $authorFilterSelectionQuery = "SELECT authors_creators.id,authors_creators.author,authors_creators.username 
                                    FROM blog JOIN authors_creators ON blog.author_id=authors_creators.id 
                                    WHERE published = '$pubTest' 
@@ -54,18 +56,22 @@
 
     $authorFilterSelection = mysqli_query($con,$authorFilterSelectionQuery);
 
+    while($row = mysqli_fetch_array($authorFilterSelection)){
+		$shortauthor = $row['username'];
+		$author = $row['author'];
+		
+		$selectAuthor .= "<option value='$shortauthor' ";
+		if(isset($authorFilter) && $authorFilter == $shortauthor){  $selectAuthor .= "selected"; };
+		$selectAuthor .= ">$author</option>";
+
+    }
+
+
+
 	if(mysqli_num_rows($authorFilterSelection)>1){
-    	$selectAuthor = "<option value=''>Select</option><option disabled></option>";
-
-        while($row = mysqli_fetch_array($authorFilterSelection)){
-    		$shortauthor = $row['username'];
-    		$author = $row['author'];
-    		
-    		$selectAuthor .= "<option value='$shortauthor' ";
-    		if(isset($authorFilter) && $authorFilter == $shortauthor){  $selectAuthor .= "selected"; };
-    		$selectAuthor .= ">$author</option>";
-
-        }
+    	$selectAuthorShow = true;
+    } else {
+        $selectAuthorShow = false;
     }
 
 # ==================== #
@@ -134,7 +140,7 @@
     include 'filterSelectRow.php';
 
 
-    if ( isset($selectAuthor) ) {
+    if ( $selectAuthorShow == true || $currentEnvironment !== 'production' ) {
         $cellIconClass = 'author';
         $cellIconFontAwesome = 'user';
         $cellLabel = 'Author';
@@ -151,7 +157,7 @@
     
     $cellIconClass = 'archive';
     $cellIconFontAwesome = 'archive';
-    $cellLabel = '<span>Archive view</span><span>Titles only</span>';
+    $cellLabel = '<span class="multiLine">Archive view</span><span class="multiLine">Titles only</span>';
     $toggleName = 'mode';
     $toggleMode = $archiveCheckbox;
     
