@@ -47,9 +47,25 @@ math {
     color: @color1-4;
 }
 
-p {
+p, ul {
     .iOSFontStyling;
 //     line-height: 160%;
+}
+
+ul, ol {
+    color: @color1-4;
+    padding-right: @sidePadding;
+}
+
+ul {    padding-left: 2.3rem;   }
+ol {    padding-left: 2.6rem;   }
+
+p, li, blockquote {
+    hanging-punctuation: first;
+}
+
+article ul:not(.cellRowGroup) li:not(:first-of-type) {
+    margin-top: 1em;
 }
 
 /* *
@@ -70,16 +86,6 @@ a {
     @media (monochrome) {       text-decoration: underline; }
 }
 
-ul, ol {
-    padding-right: @sidePadding;
-}
-
-ul {    padding-left: 2.3rem;   }
-ol {    padding-left: 2.6rem;   }
-
-p, li, blockquote {
-    hanging-punctuation: first;
-}
 
 img, video, figure {
     width: 100%;
