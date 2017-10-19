@@ -14,80 +14,7 @@
 <?
         
         while($row = mysqli_fetch_array($portfolioListResult)){
-
-            include 'portfolioVariables.php';
-
-?>
-        <div class="portfolioItem" id="<?=$shortname?>">
-            <div class="portfolioItemHoverEffect move">
-<?
-            if( !empty($videoid) ){
-?>
-                <div class="videoContainer">
-                <!--
-                    <figure id="video<?=$shortname?>">
-                		<iframe src="//player.vimeo.com/video/<?=$videoid?>?autoplay=1&title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="1920" height="1080" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
-                		</iframe>
-                	</figure>   
-                -->
-                </div>
-<?
-            }
-?>
-                <div class="portfolioItemVisualContainer">
-
-<?
-            if ($category == 'Website') {
-?>
-                    <div class="effect-layer layer-0 portfolioItemWebbar" >
-                        <span class="browserUI"><span class="red">•</span><span class="yellow">•</span><span class="green">•</span></span>
-                        <span class="url"><?=$domainInBrowserUI?></span>
-                    </div>
-
-<?
-            }
-            
-            
-            $layerCount = 1;
-            while ( $effectLayers != $layerCount-1) {
-?>
-                    <div class="effect-layer layer-<?=$layerCount?>" style="background-image: url(../public-files/images/portfolio-3d-effect/<?=$shortname ?>-layer-<?=$layerCount?>.png); "></div>
-<?
-                $layerCount = $layerCount+1;
-            }
-
-?>
-                    <a href="/<?=$shortname?>" class="effect-layer layer-<?=$layerCount?> portfolioItemLink" ></a>
-                </div>
-            </div>
-
-            <div class="cellRow projectTitle">
-                <a class="cellRowContent" href="/<?=$shortname?>" title="<?=$plainTitle?>">
-                    <span class="cellLabel"><?=$plainTitle?><? if($archived == '1'){ echo '<i class="fa fa-archive" title="This project was archived"></i>'; }?></span>
-                    <div class="cellClosingIcon chevron"><? include 'navigationIcons/chevron.svg'  ?></div>
-                </a>
-            </div>
-
-            <hr>
-
-            <p class="portfolioItemSummary">
-                <span class="year"><span><?=$year?></span></span>
-                <?=$summary?>
-<?
-            if( !empty($videoid) ){
-?>
-                <br>
-                <a href="#<?=$shortname?>" stuff="http://vimeo.com/<?=$videoid?>" class="video-in-link portfolioItemPlayVideo" 
-                        onclick="ga('send', 'event', 'Portfolio', 'Play video', '<?=$plainTitle?>');" 
-                        title="Play <?=$plainTitle?>'s video"><span class="watch">Watch</span><span class="playing">Playing</span> the video
-                    <i class="fa fa-play-circle"></i>
-                </a>
-<?
-            }
-?>
-            </p>
-        </div>
-<?
+            include 'portfolioOverviewItem.php';
         };
 ?>
     </div>
@@ -100,13 +27,13 @@
 <script type="text/javascript">
     //<![CDATA[
     $(document).ready(function(){
-       $("a.video-in-link").one('click',function(){
-          var anchor = $(this).parent().siblings("div.portfolioItemHoverEffect").children("div.videoContainer");
-          anchor.html(anchor.html().replace('<!--','').replace('-->',''));
-          anchor.addClass('show');
-          $(this).addClass('hide');
-          return false;
-       })
+        $("a.video-in-link").one('click',function(){
+            var anchor = $(this).parent().parent().parent().siblings("div.portfolioItemVisualContainer").children("div.videoContainer");
+            anchor.html(anchor.html().replace('<!--','').replace('-->',''));
+            anchor.addClass('show');
+            $(this).addClass('hide');
+            return false;
+        })
     })
     //]]>
 </script>
@@ -116,8 +43,8 @@
 <script src="/scripts/jquery.hover3d.js"></script>
 <script>
 
-$(".portfolioItemHoverEffect.move").hover3d({
-	selector: ".portfolioItemVisualContainer",
+$(".portfolioItemVisualContainer.move").hover3d({
+	selector: ".portfolioItemLayerContainer",
 // 	shine: true,
 	sensitivity: 10,
 });

@@ -210,6 +210,19 @@
 			});
 		</script>
 
+<?
+    if ( $basepage == 'portfolio' && $basepageTwo == 'post' && $photoGallery !== '' ){
+?>
+
+        <!-- PhotoSwipe • JavaScript gallery, no dependencies -->
+        <link rel="stylesheet" href="/styles/photoswipe.css"> 
+        <link rel="stylesheet" href="/styles/default-skin/default-skin.css"> 
+        <script src="/scripts/photoswipe.min.js"></script> 
+        <script src="/scripts/photoswipe-ui-default.min.js"></script> 
+
+<?
+    }
+?>
 		<!-- Google Analytics -->
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

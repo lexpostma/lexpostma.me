@@ -148,6 +148,7 @@
                 $seoDescription    = $summary;
                 $seoKeywords       = $category.$clientsKeywords;
                 $seoPubDate        = $datePubISO8601;
+                $seoImage          = $headerImage;
                 if(isset($datePubUpdateISO8601)) {$seoPubDateUpdate  = $datePubUpdateISO8601;}
                 $seoType           = 'article';
                 $includePage       = 'portfolioProject.php';

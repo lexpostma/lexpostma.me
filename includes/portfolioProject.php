@@ -1,47 +1,89 @@
-<?=$title?>
-<p class="filterText"><?=$summary?></p>
+<article class="portfolioPost">
+    <img class="portfolioHeaderImage" src="<?=$headerImage?>">
+    <h1><?=$plainTitle?></h1>
 
-<article class="projectPost">
-    <?=$body?>
+<?
+    echo $body;
+
+    if ( $photoGallery != '' ){
+        echo '<div class="portfolioPhotoGallery" itemscope itemtype="http://schema.org/ImageGallery">'.$photoGallery.'</div>';
+        include('photoSwipeElements.php');
+    };
+
+?>
+
+    <ul class="cellRowGroup">
+
+        <li class="cellRow" id="quickDetailsRow">
+            <a class="cellRowContent" href="#quickDetailsRow" onclick="toggleDetails()">
+                <div class="cellIcon"><i class="fa fa-fw fa-ellipsis-v"></i></div>
+                <span class="cellLabel">Quick details</span>
+                <div class="cellClosingIcon plus"><? include 'navigationIcons/plus.svg'  ?></div>
+            </a>
+            
+        </li>
+        
+        
+<?
+    echo $portfolioFooterCells;  
+?>
+
+        <li class="cellRow">
+            <a class="cellRowContent" href="mailto:hello@lexpostma.me?subject=<?=$plainTitle?>" title="Email Lex">
+                <div class="cellIcon"><i class="fa fa-fw fa-question-circle"></i></div>
+                <span class="cellLabel">Want to know more about <?=$plainTitle?>? Don’t hesitate to email me.</span>
+                <div class="cellClosingIcon chevron"><? include 'navigationIcons/chevron.svg'  ?></div>
+            </a>
+        </li>
     
-
-    <div id="infoBlock<?=$shortname?>" class="contentBlock morePostInfoBlock">
-<?
-    if(isset($clientPromo)){
-        $clientPromoImg = $clientPromo;
-        if($clientPromo == 'peerby'){ $clientPromoImg .= 'Light'; }
-?>
-        <a href="<?=makeNewFilterURL('client').'&client='.$clientPromo?>" title="View projects for <?=$clientCount?>"><img class="infoClientLogo" src="/images/logos/<?=$clientPromoImg?>.svg"></a>
-<?
-    }
-?>
-        <ul class="fa-ul">
-            <?=$portfolioFooter?>
-            <li><i class="fa-li fa fa-share-square-o"></i>Share or comment on <? $shareFrom = 'Portfolio'; include 'sharing.php';?></li>
-        </ul>        
-    </div>
+        <li class="cellRow">
+            <div class="cellRowContent shareRow">
+                <? include 'sharing.php';?>
+            </div>
+        </li>
+    </ul>
 </article>
 
-<aside class="otherProjects">
-    <h2>Check out these other projects&hellip;</h2>
+<script>
+    
+    function toggleDetails() {
+        $('#quickDetailsRow').toggleClass('open');
+        
+        $('.cellRow.indent').each(function() {
+            $(this).toggleClass('show');
+        });
+
+    }
+    
+</script>
+
+
+<h2>Check out these other projects&hellip;</h2>
+<aside class="overviewPortfolio otherProjects">
+
 <?
     $otherProjectsPortfolioResult = mysqli_query($con,$otherProjectsPortfolioSQLquery);
 
     while($row = mysqli_fetch_array($otherProjectsPortfolioResult)){
+        include 'portfolioOverviewItem.php';
+
+/*
         include 'portfolioVariables.php';
-        echo '<div class="portfolioItem">';
+        echo '<div class="otherPortfolioItem">';
 
 ?>    
         <a href="/<?=$shortname?>" style="background-image: url(/public-files/images/portfolio/<?=$shortname?>-1.png);" title="<?=$plainTitle?>">
+<!--
             <div class="portfolioItemText">
                 <span class="portfolioItemTitle"><?=$plainTitle?></span>
                 <span class="portfolioItemSummary"><?=$summary?></span>
-                <!-- <span><?=$category.' from '.$year?></span> -->
             </div>
+-->
         </a>
 
 <?
         echo '</div>';
+*/
     };
 
 ?>

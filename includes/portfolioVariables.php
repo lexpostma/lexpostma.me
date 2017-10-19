@@ -1,46 +1,69 @@
 <?
+
+    # ============================= #
+    # ==== Portfolio variables ==== #
+    # ============================= #
+
     // Unique project characteristics
-    $plainTitle = $row['title'];
-    $shortname  = $row['shortname'];
-    $summary    = $row['summary'];
-    $shareURL   = 'http://lexpostma.me/'.$shortname;
-    $title      = '<h1 class="title"><a title="'.$plainTitle.'" href="/'.$shortname.'">'.$plainTitle.'</a></h1>';
-    $postID     = $row['postID'];
+    $plainTitle         = $row['title'];
+    $shortname          = $row['shortname'];
+    $summary            = $row['summary'];
+    $shareURL           = $portURL.$shortname;
+    $title              = '<h1 class="title"><a title="'.$plainTitle.'" href="'.$portURL.$shortname.'">'.$plainTitle.'</a></h1>';
+    $postID             = $row['postID'];
+    $body               = $row['body'];
+    $headerImage        = $coreURL.'public-files/images/portfolio/'.$row['shortname'].'-header.png';
 
     // Extra details
-    $year              = $row['year'];
-    $category          = $row['category'];
-    $shortcategory     = strtolower($category);
-    $course            = $row['course'];
-    $assignment        = $row['assignment'];
-    $acknowledgments   = $row['acknowledgments'];
-    $roleFocus         = $row['roleFocus'];
-    $domainInBrowserUI = $row['domainInBrowserUI'];
+    $year               = $row['year'];
+    $category           = $row['category'];
+    $shortcategory      = strtolower($category);
+    $course             = $row['course'];
+    $assignment         = $row['assignment'];
+    $acknowledgments    = $row['acknowledgments'];
+    $roleFocus          = $row['roleFocus'];
 
-    // Favourite projects are selected for frontpage
-    $archived                 = $row['archived'];
-    $effectLayers             = $row['3dEffectLayers'];
-    $partOfFrontpageSelection = $row['partOfFrontpageSelection'];
-    $onlineVisible            = $row['onlineVisible'];
-    $initialBody              = $row['initialBody'];
-    $videoid                  = $row['videoid'];
+    // Frontpage attributes
+    $archived           = $row['archived'];
+    $effectLayers       = $row['3dEffectLayers'];
+    $videoid            = $row['videoid'];
+    $domainInBrowserUI  = $row['domainInBrowserUI'];
+    $relatedBlogpost    = $row['relatedBlogpost'];
 
-    // Some projects have a more detailed individual page
-    $extendedBody = $row['extendedBody'];
-    $extendedPostPublished = $row['extendedPostPublished'];
-    $extendedPubDate = $row['extendedPubDate'];
-    $extendedPubDateRead = date("l, j F Y", strtotime($extendedPubDate));
-    $extendedPubDateFull = date("r", strtotime($extendedPubDate));
-    $extendedPubTime = $extendedPubDateRead.' at '.date("G:i e", strtotime($extendedPubDate)).' time';
-    $datePubISO8601 = date(DATE_ISO8601, strtotime($extendedPubDate));
-    $extendedUpdateDate = $row['extendedUpdateDate'];
+    // Dates
+    $datePublished      = $row['datePublished'];
+    $datePublishedRead  = date("l, j F Y", strtotime($datePublished));
+    $datePublishedFull  = date("r", strtotime($datePublished));
+    $datePublishedTime  = $datePublishedRead.' at '.date("G:i e", strtotime($datePublished)).' time';
+    $datePubISO8601     = date(DATE_ISO8601, strtotime($datePublished));
 
-    if ($extendedUpdateDate != ""){
-        $extendedUpdateDateRead = date("j F Y", strtotime($extendedUpdateDate));
-        $datePubUpdateISO8601 = date(DATE_ISO8601, strtotime($extendedUpdateDate));
+    $dateUpdated        = $row['dateUpdated'];
+    if ($dateUpdated != ""){
+        $dateUpdatedRead        = date("j F Y", strtotime($dateUpdated));
+        $datePubUpdateISO8601   = date(DATE_ISO8601, strtotime($dateUpdated));
     };
     
-    // Body of the individual page
+    
+    
+    # ====================================== #
+    # ==== Body of the individual page ===== #
+    # ====================================== #
+    
+    use \Michelf\MarkdownExtra;
+    if(strpos($body,'<p>') === false){
+        $body = MarkdownExtra::defaultTransform($body);
+    };
+    $body = bodyScanForText($body,$shortname);
+    
+
+    
+
+
+
+
+
+/*
+
     if($extendedPostPublished == '1'){
         $body = $extendedBody;
     } else{
@@ -55,20 +78,18 @@
             $body .= '<img src="/public-files/images/portfolio/'.$shortname.'-1.png">';
         };
         
-        if($initialBody != ''){
-            $body .= $initialBody;
+        if($body != ''){
+            $body .= $body;
         } else {
             $body .= '<p>'.$summary.'</p>';
         };
         $body .= '</div>';
     }
-    use \Michelf\MarkdownExtra;
-    if(strpos($body,'<p>') === false){
-        $body = MarkdownExtra::defaultTransform($body);
-    };
-    $body = bodyScanForText($body,$shortname);
+    
+    
+*/
 
-    $seoImage = bodyScanForImage($body);
+//     $seoImage = bodyScanForImage($body);
     
     // LISTING ALL THE CLIENTS
     unset($clientPromo);
@@ -90,7 +111,7 @@
             
             if (empty($clientPromo) && $row['showLogo'] == 1) { $clientPromo = $clientCountShort; };
         };
-        $clientsComplete .= '</span>';
+//         $clientsComplete .= '</span>';
         $clientsComplete = strrev(implode(strrev(', and'), explode(',', strrev($clientsComplete), 2)));
     }
 
@@ -103,6 +124,8 @@
                          <a href="'.makeNewFilterURL('year').'&year='.$year.'" title="View projects from '.$year.'">'.$year.'</a>.';
     };
 
+    $moreInfoLineSansClient = '<a href="'.makeNewFilterURL('category').'&category='.$shortcategory.'" title="View '.$category.' projects">'.$category.'</a> from
+                     <a href="'.makeNewFilterURL('year').'&year='.$year.'" title="View projects from '.$year.'">'.$year.'</a>.';
 
 
     // LISTING ALL THE FELLOW CREATORS AND RESPONSIBILITIES
@@ -132,17 +155,135 @@
     
     
     // Summation of the project, extra details
-                                        $portfolioFooter = '<li><i class="fa-li fa fa-info-circle"></i>'.$moreInfoLine.'</li>';
+    $portfolioFooterCells = '';
 
-    if(isset($creatorsComplete)){
-        if(isset($creatorName)){        $portfolioFooter .= '<li><i class="fa-li fa fa-users"></i>'.$creatorsComplete.'</li>';             }
-        else{                           $portfolioFooter .= '<li><i class="fa-li fa fa-user"></i>'.$creatorsComplete.'</li>';              };
+    $cellIcon = 'fa-info-circle';
+    $cellLabel = $moreInfoLineSansClient;
+    $cellRowClasses = 'indent';
+    $portfolioFooterCells .= include('cellRow.php');
+
+    if( isset($clientsComplete) ){
+        $cellIcon = 'fa-building';
+        $cellLabel = $clientsComplete;
+        $cellRowClasses = 'indent';
+        $portfolioFooterCells .= include('cellRow.php');
     };
-    if($course != ""){                  $portfolioFooter .= '<li><i class="fa-li fa fa-graduation-cap"></i><b>Course</b>: '.$course.'.</li>';               };
-    if($assignment != ""){              $portfolioFooter .= '<li><i class="fa-li fa fa-file-text"></i><b>Assignment</b>: '.$assignment.'</li>';             };
-    if($acknowledgments != ""){         $portfolioFooter .= '<li><i class="fa-li fa fa-thumbs-up"></i><b>Acknowledgments</b>: '.$acknowledgments.'</li>';   };
-	if($extendedPubDate != ""){         $portfolioFooter .= '<li><i class="fa-li fa fa-calendar" title="'.$extendedPubTime.'"></i>Posted on <time datetime="'.$extendedPubDate.'" pubdate>'.$extendedPubDateRead.'</time>';
-    	if($extendedUpdateDate != ""){  $portfolioFooter .= ', last updated on '.$extendedUpdateDateRead;  }
-    	                                $portfolioFooter .= '</li>';
-	};
-                                	    $portfolioFooter .= '<li><i class="fa-li fa fa-question-circle"></i>Want to know more about '.$plainTitle.'? <span style="white-space:nowrap;">Don’t hesitate to <a href="mailto:hello@lexpostma.me?subject='.$plainTitle.'" title="Email Lex">email me</a>.</span></li>';
+
+    if( isset($creatorsComplete) ){
+        if(isset($creatorName)){        $cellIcon = 'fa-users'; }
+        else{                           $cellIcon = 'fa-user';  };
+        $cellLabel = $creatorsComplete;
+        $cellRowClasses = 'indent';
+        $portfolioFooterCells .= include('cellRow.php');
+    };
+    
+    if( $course !== NULL ){
+        $cellIcon = 'fa-graduation-cap';
+        $cellLabel = '<b>Course</b>: '.$course;
+        $cellRowClasses = 'indent';
+        $portfolioFooterCells .= include('cellRow.php');
+    };
+
+    if( $assignment !== NULL ){
+        $cellIcon = 'fa-file-text';
+        $cellLabel = '<b>Assignment</b>: '.$assignment;
+        $cellRowClasses = 'indent';
+        $portfolioFooterCells .= include('cellRow.php');
+    };
+
+    if( $acknowledgments !== NULL ){
+        $cellIcon = 'fa-thumbs-up';
+        $cellLabel = '<b>Acknowledgments</b>: '.$acknowledgments;
+        $cellRowClasses = 'indent';
+        $portfolioFooterCells .= include('cellRow.php');
+    };
+
+
+    $cellIcon = 'fa-calendar';
+    $cellLabel = 'Posted on <time datetime="'.$datePublished.'" pubdate>'.$datePublishedRead.'</time>';
+	if($dateUpdated != ""){             $cellLabel .= ', last updated on '.$dateUpdatedRead;  }
+	$cellRowClasses = 'indent last';
+    $portfolioFooterCells .= include('cellRow.php');
+
+    if ( $relatedBlogpost !== NULL ){
+        
+        $portfolioFooterCells .= '
+        <li class="cellRow">
+            <a class="cellRowContent" href="'.$blogURL.$relatedBlogpost.'">
+                <div class="cellIcon"><i class="fa fa-fw fa-pencil"></i></div>
+                <span class="cellLabel">Read more about this project on my blog</span>
+                <div class="cellClosingIcon chevron">'. file_get_contents( '../includes/navigationIcons/chevron.svg' ) .'</div>
+            </a>
+        </li>';
+        
+    };
+    
+    if ( $domainInBrowserUI !== NULL ){
+
+        $portfolioFooterCells .= '
+        <li class="cellRow">
+            <a class="cellRowContent" href="http://'.$domainInBrowserUI.'" target="_blank">
+                <div class="cellIcon"><i class="fa fa-fw fa-link"></i></div>
+                <span class="cellLabel">'.$domainInBrowserUI.'</span>
+                <div class="cellClosingIcon chevron">'. file_get_contents( '../includes/navigationIcons/chevron.svg' ) .'</div>
+            </a>
+        </li>';
+
+    };
+
+    
+    // Loading photos
+    $photoGallery = '';
+    
+    if ( $videoid !== NULL ){
+        
+        $videoEmbedLink = 'https://player.vimeo.com/video/'.$videoid.'?autoplay=1&title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff';
+        
+        $videoEmbed = '
+            <div class="photoswipeVideoWrapper">
+                <div class="videoContainer">
+                    <iframe class="pswp__video" src="'.$videoEmbedLink.'" width="1920" height="1080" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </div>
+            </div>';
+        
+        $photoGallery .= '
+            <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a href="'.$videoEmbedLink.'" itemprop="contentUrl" data-size="1920x1080" data-type="video" data-video=\''.$videoEmbed.'\' class="photoswipeVideoThumb">
+                    <img src="http://placehold.it/640x640?text=Vimeo" itemprop="thumbnail">
+                    <i class="fa fa-play-circle photoswipeVideoThumbPlayIcon"></i>
+                </a>
+            </figure>';
+    };
+    
+    $portfolioPhotoQuery = "SELECT * FROM portfolio_photos WHERE portfolioProject_id = '$postID' ORDER BY volgorde ASC";
+        
+    $portfolioPhotoResult = mysqli_query($con,$portfolioPhotoQuery);
+    
+    while($row = mysqli_fetch_array($portfolioPhotoResult)){
+        $photoCaption       = $row['caption'];
+        $photoPath          = $portURL.'public-files/images/portfolio/'.$shortname.'-'.$row['fileName'];
+        $photoThumbPath     = $portURL.'public-files/images/portfolio/'.$shortname.'-'.$row['fileName'];
+        $photoDescription   = $row['imageDescription'];
+        
+        $photoGallery .= '
+            <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a href="'.$photoPath.'" itemprop="contentUrl" data-size="'.imageSizeScan($photoThumbPath).'">
+                    <img src="'.$photoThumbPath.'" itemprop="thumbnail" alt="'.$photoDescription.'" />
+                </a>
+                <figcaption itemprop="caption description">'.$photoCaption.'</figcaption>
+            </figure>';
+        
+    };
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

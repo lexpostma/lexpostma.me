@@ -61,6 +61,17 @@ function seoImageSizeScan($image){
     
 };
 
+function imageSizeScan($image){
+    
+    /* *
+       *     https://stackoverflow.com/questions/3890578/get-image-dimensions
+     */
+
+    list($width, $height) = getimagesize($image);
+    return $width.'x'.$height;
+    
+};
+
 
 function makeNewFilterURL($filterType){
 

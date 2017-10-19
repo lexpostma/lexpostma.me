@@ -215,6 +215,7 @@ li.tabbarItem a.tabbarLink span.tabName {
   text-align: center;
   font-size: 10px;
   color: #929292;
+  line-height: normal;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -853,9 +854,6 @@ span.widthForInputHidden {
 }
 .cellClosingIcon.plus {
   transition: transform 0.2s ease-in-out;
-}
-.cellClosingIcon.plus.open {
-  transform: rotate(135deg);
 }
 .cellClosingIcon.plus svg {
   fill: #4B0082;

@@ -145,7 +145,7 @@ li.tabbarItem {
             text-align: center;
             font-size: 10px;
             color: @colorInactive;
-            
+            line-height: normal;
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
@@ -769,9 +769,6 @@ span.widthForInputHidden {
     }
     &.plus {
         transition: transform .2s ease-in-out;
-        &.open {
-            transform: rotate(135deg);            
-        }
         svg {
             fill: @color1;
         }
