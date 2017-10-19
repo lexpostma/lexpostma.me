@@ -924,6 +924,7 @@ li.cellRow.contactItem .cellIcon#contactIcon_instagram {
 }
 .cellIcon i.fa-newspaper-o,
 .cellIcon i.fa-ellipsis-h,
+.cellIcon i.fa-ellipsis-v,
 .cellIcon i.fa-th {
   padding-top: 7px;
 }
@@ -935,39 +936,41 @@ li.cellRow.contactItem .cellIcon#contactIcon_instagram {
   padding-left: 2px;
   padding-top: 7px;
 }
-.cellIcon.search i {
+.cellIcon i.fa-search {
   color: #4885ed;
 }
-.cellIcon.date i,
-.cellIcon.year i {
+.cellIcon i.fa-calendar {
   color: #b70909;
 }
-.cellIcon.tag i,
-.cellIcon.category i {
-  color: #27ae60;
+.cellIcon i.fa-graduation-cap {
+  color: black;
 }
-.cellIcon.archive i {
-  color: #a77800;
+.cellIcon i.fa-user,
+.cellIcon i.fa-users {
+  color: #ffbe56;
 }
-.cellIcon.client i {
-  color: #545454;
-}
-.cellIcon.author i {
-  color: #FFDCB1;
-}
-.cellIcon.video i {
-  color: #ff0000;
-}
-.cellIcon.twitter i {
+.cellIcon i.fa-twitter {
   color: #33CCFF;
 }
-.cellIcon.rss i {
+.cellIcon i.fa-building {
+  color: #545454;
+}
+.cellIcon i.fa-tag {
+  color: #27ae60;
+}
+.cellIcon i.fa-video-camera {
+  color: #ff0000;
+}
+.cellIcon i.fa-rss {
   color: orange;
 }
-.cellIcon.appleNews i {
+.cellIcon i.fa-newspaper-o {
   color: #fc415b;
 }
-.cellIcon.linkedin i {
+.cellIcon i.fa-archive {
+  color: #a77800;
+}
+.cellIcon i.fa-linkedin {
   color: #4875B4;
 }
 .cellRowContent.shareRow {
