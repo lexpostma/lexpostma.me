@@ -10,7 +10,7 @@
     // Unique blog post characteristics
     $shortname = $row['shortname'];
     $summary = $row['summary'];
-    $shareURL = 'http://blog.lexpostma.me/'.$shortname;
+    $shareURL = $blogURL.$shortname;
     $body = $row['body'];
 
     use \Michelf\MarkdownExtra;
@@ -21,7 +21,7 @@
 
     $seoImage = bodyScanForImage($body);
 
-    $title = '<h1><a href="/'.$shortname.'" title="'.$plainTitle.'">'.$plainTitle.'</a></h1>';
+    $title = '<h1><a href="'.$blogURL.$shortname.'" title="'.$plainTitle.'">'.$plainTitle.'</a></h1>';
     
     $author = $row['author'];
     $shortauthor = $row['username'];
