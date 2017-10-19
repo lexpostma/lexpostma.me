@@ -692,7 +692,7 @@ a.cellRowContent {
     padding-right: 15px;
     display: inline-block;
     flex-shrink: 100000;
-    span {
+    span.multiLine {
         display: block;
         &:first-of-type {
             line-height: 20px;
@@ -712,6 +712,7 @@ input.cellValue,
 select.cellValue {
     margin-left: auto;
     color: @colorInactive;
+    white-space: nowrap;
 }
 
 .placeholderStyling {
@@ -792,6 +793,7 @@ span.widthForInputHidden {
         }
     }
 }
+
 
 /* *
    * Change styling when a filter is active

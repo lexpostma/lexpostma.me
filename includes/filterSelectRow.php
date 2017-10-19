@@ -3,7 +3,7 @@
 ?>
 
 <li class="cellRow">
-    <div class="cellRowContent">
+    <div class="cellRowContent filterRowContent">
         <div class="cellIcon <?=$cellIconClass?>"><i class="fa fa-fw fa-<?=$cellIconFontAwesome?>"></i></div>
         <label for="<?=$inputID?>" class="cellLabel"><?=$cellLabel?></label>
         <select class="cellValue" title="Filter by <?=$cellIconClass?>" name= "<?=$cellIconClass?>" id="<?=$inputID?>"><?=$selectItems?></select>

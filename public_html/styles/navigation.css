@@ -732,14 +732,14 @@ a.cellRowContent {
   display: inline-block;
   flex-shrink: 100000;
 }
-.cellLabel span {
+.cellLabel span.multiLine {
   display: block;
 }
-.cellLabel span:first-of-type {
+.cellLabel span.multiLine:first-of-type {
   line-height: 20px;
   margin-top: -2px;
 }
-.cellLabel span:last-of-type {
+.cellLabel span.multiLine:last-of-type {
   font-size: 12px;
   color: #929292;
   line-height: 14px;
@@ -750,6 +750,7 @@ input.cellValue,
 select.cellValue {
   margin-left: auto;
   color: #929292;
+  white-space: nowrap;
 }
 .placeholderStyling {
   color: #929292;

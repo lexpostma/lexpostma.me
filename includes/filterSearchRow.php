@@ -1,5 +1,5 @@
 <li class="cellRow">
-    <div class="cellRowContent">
+    <div class="cellRowContent filterRowContent">
         <div class="cellIcon search"><i class="fa fa-fw fa-search"></i></div>
         <label for="inputSearch" class="cellLabel">Search</label>
         <input class="cellValue" title="Search for <?=$inputSearchForWhat?>" type="search" name="search" id="inputSearch" placeholder="Type" 
