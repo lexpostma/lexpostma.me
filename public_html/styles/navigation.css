@@ -51,33 +51,46 @@
   font-size: 17px;
   line-height: 29px;
 }
-.cellSeparatorGeneral {
+.cellSeparatorGeneral:after {
   content: '';
   position: absolute;
   right: 0px;
-  bottom: -0.5px;
+  bottom: 0.5px;
   z-index: 8;
   background: #B2B2B2;
   height: 0.5px;
+}
+.cellSeparatorGeneral:after:last-of-type {
+  content: none;
 }
 .cellSeparatorWithIcon:after {
   content: '';
   position: absolute;
   right: 0px;
-  bottom: -0.5px;
+  bottom: 0.5px;
   z-index: 8;
   background: #B2B2B2;
   height: 0.5px;
+}
+.cellSeparatorWithIcon:after:last-of-type {
+  content: none;
+}
+.cellSeparatorWithIcon:after {
   left: 64px;
 }
 .cellSeparatorWithoutIcon:after {
   content: '';
   position: absolute;
   right: 0px;
-  bottom: -0.5px;
+  bottom: 0.5px;
   z-index: 8;
   background: #B2B2B2;
   height: 0.5px;
+}
+.cellSeparatorWithoutIcon:after:last-of-type {
+  content: none;
+}
+.cellSeparatorWithoutIcon:after {
   left: 20px;
 }
 .tabbarButtonActiveState a.tabbarLink {
@@ -648,10 +661,15 @@ ul.cellRowGroup lh {
   content: '';
   position: absolute;
   right: 0px;
-  bottom: -0.5px;
+  bottom: 0.5px;
   z-index: 8;
   background: #B2B2B2;
   height: 0.5px;
+}
+.cellRow:after:last-of-type {
+  content: none;
+}
+.cellRow:after {
   left: 64px;
 }
 .cellRow:first-of-type {
@@ -659,9 +677,6 @@ ul.cellRowGroup lh {
 }
 .cellRow:last-of-type {
   border-bottom: 0.5px solid #B2B2B2;
-}
-.cellRow:last-of-type:after {
-  content: none;
 }
 .cellRowContent,
 input.cellRowContent {

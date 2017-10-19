@@ -51,32 +51,45 @@
   font-size: 17px;
   line-height: 29px;
 }
-.cellSeparatorGeneral {
+.cellSeparatorGeneral:after {
   content: '';
   position: absolute;
   right: 0px;
-  bottom: -0.5px;
+  bottom: 0.5px;
   z-index: 8;
   background: #B2B2B2;
   height: 0.5px;
+}
+.cellSeparatorGeneral:after:last-of-type {
+  content: none;
 }
 .cellSeparatorWithIcon:after {
   content: '';
   position: absolute;
   right: 0px;
-  bottom: -0.5px;
+  bottom: 0.5px;
   z-index: 8;
   background: #B2B2B2;
   height: 0.5px;
+}
+.cellSeparatorWithIcon:after:last-of-type {
+  content: none;
+}
+.cellSeparatorWithIcon:after {
   left: 64px;
 }
 .cellSeparatorWithoutIcon:after {
   content: '';
   position: absolute;
   right: 0px;
-  bottom: -0.5px;
+  bottom: 0.5px;
   z-index: 8;
   background: #B2B2B2;
   height: 0.5px;
+}
+.cellSeparatorWithoutIcon:after:last-of-type {
+  content: none;
+}
+.cellSeparatorWithoutIcon:after {
   left: 20px;
 }

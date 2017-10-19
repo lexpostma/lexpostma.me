@@ -158,25 +158,31 @@
 }
 
 .cellSeparatorGeneral {
-    content:''; 
-    position: absolute;
-    right: 0px;
-    bottom: -@lineThickness;
-    z-index: 8;
-    background: @colorLine;
-    height: @lineThickness;    
+    &:after {
+        content:''; 
+        position: absolute;
+        right: 0px;
+        bottom: @lineThickness;
+        z-index: 8;
+        background: @colorLine;
+        height: @lineThickness;
+        &:last-of-type {
+            content: none;
+        }
+
+    }
 }
 
 .cellSeparatorWithIcon {
+    .cellSeparatorGeneral;
     &:after {
-        .cellSeparatorGeneral;
         left: 64px;
     }
 }
 
 .cellSeparatorWithoutIcon {
+    .cellSeparatorGeneral;
     &:after {
-        .cellSeparatorGeneral;
         left: 20px;
     }
 }
