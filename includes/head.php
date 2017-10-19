@@ -44,7 +44,6 @@
         $canonicalURL = $baseURL;
     }
 ?>
-
         <link rel="canonical" href="<?=$canonicalURL?>" />
         <link rel="author" href="/humans.txt">
         <link rel="license" href="/copyright">
@@ -62,8 +61,6 @@
     }
 ?>
         <link rel="index" href="<?=$coreURL?>">
-
-
 
         <!-- Open Graph protocol / Facebook -->
         <meta property="og:title" content="<?=$seoTitle?>" />
@@ -154,14 +151,12 @@
         <link rel="stylesheet" href="/styles/<?=$basepage?>.css">
         <link rel="stylesheet" href="/fonts/font-awesome/css/font-awesome.min.css">
         <script type="text/javascript" src="/scripts/jquery-1.12.0.min.js"></script>
-<!--
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-        <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
--->
 
-
-        
 <?
+//         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+//         <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+
     if(isset($footnoteOn) || $basepage == 'resume'){
 ?>
         <!-- Bigfoot • jQuery plugin for empowering footnotes -->
