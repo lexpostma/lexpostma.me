@@ -249,8 +249,8 @@
         $photoGallery .= '
             <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                 <a href="'.$videoEmbedLink.'" itemprop="contentUrl" data-size="1920x1080" data-type="video" data-video=\''.$videoEmbed.'\' class="photoswipeVideoThumb">
-                    <img src="http://placehold.it/640x640?text=Vimeo" itemprop="thumbnail">
-                    <i class="fa fa-play-circle photoswipeVideoThumbPlayIcon"></i>
+                    <img src="'.$portURL.'public-files/images/portfolio/'.$shortname.'-header.png'.'" itemprop="thumbnail">
+                    <div class="photoswipeVideoThumbPlayIcon">'.file_get_contents( '../includes/navigationIcons/play.svg' ).'</div>
                 </a>
             </figure>';
     };
