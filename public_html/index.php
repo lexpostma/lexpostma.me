@@ -19,7 +19,7 @@
         $seoTitle = '🚧 ' . $seoTitle;
     }
 
-    $tabbarMode = 'tabbarLocked'; // OPTIONS: tabbarMinimizeOnScroll, tabbarHideOnScroll, tabbarLifted, tabbarLocked
+    $tabbarMode = 'tabbarHideOnScroll'; // OPTIONS: tabbarMinimizeOnScroll, tabbarHideOnScroll, tabbarLifted, tabbarLocked
     
 ?>
 
