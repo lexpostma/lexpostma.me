@@ -55,24 +55,24 @@
   content: '';
   position: absolute;
   right: 0px;
-  bottom: 0.5px;
+  bottom: 0;
   z-index: 8;
   background: #B2B2B2;
   height: 0.5px;
 }
-.cellSeparatorGeneral:after:last-of-type {
+.cellSeparatorGeneral:last-of-type:after {
   content: none;
 }
 .cellSeparatorWithIcon:after {
   content: '';
   position: absolute;
   right: 0px;
-  bottom: 0.5px;
+  bottom: 0;
   z-index: 8;
   background: #B2B2B2;
   height: 0.5px;
 }
-.cellSeparatorWithIcon:after:last-of-type {
+.cellSeparatorWithIcon:last-of-type:after {
   content: none;
 }
 .cellSeparatorWithIcon:after {
@@ -82,12 +82,12 @@
   content: '';
   position: absolute;
   right: 0px;
-  bottom: 0.5px;
+  bottom: 0;
   z-index: 8;
   background: #B2B2B2;
   height: 0.5px;
 }
-.cellSeparatorWithoutIcon:after:last-of-type {
+.cellSeparatorWithoutIcon:last-of-type:after {
   content: none;
 }
 .cellSeparatorWithoutIcon:after {
@@ -105,12 +105,12 @@
   content: '';
   position: absolute;
   right: 0px;
-  bottom: 0.5px;
+  bottom: 0;
   z-index: 8;
   background: #B2B2B2;
   height: 0.5px;
 }
-.cellRow.projectTitle:after:last-of-type {
+.cellRow.projectTitle:last-of-type:after {
   content: none;
 }
 .cellRow.projectTitle:after {
@@ -131,18 +131,21 @@
   width: 100%;
   margin-bottom: 80px;
 }
+.portfolioItem:last-of-type {
+  margin-bottom: 0;
+}
 .portfolioItem .cellRow.projectTitle:after,
 .portfolioItem .cellRow.projectSummary:after {
   content: '';
   position: absolute;
   right: 0px;
-  bottom: 0.5px;
+  bottom: 0;
   z-index: 8;
   background: #B2B2B2;
   height: 0.5px;
 }
-.portfolioItem .cellRow.projectTitle:after:last-of-type,
-.portfolioItem .cellRow.projectSummary:after:last-of-type {
+.portfolioItem .cellRow.projectTitle:last-of-type:after,
+.portfolioItem .cellRow.projectSummary:last-of-type:after {
   content: none;
 }
 .portfolioItem .cellRow.projectTitle:after,

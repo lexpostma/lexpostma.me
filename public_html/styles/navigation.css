@@ -55,24 +55,24 @@
   content: '';
   position: absolute;
   right: 0px;
-  bottom: 0.5px;
+  bottom: 0;
   z-index: 8;
   background: #B2B2B2;
   height: 0.5px;
 }
-.cellSeparatorGeneral:after:last-of-type {
+.cellSeparatorGeneral:last-of-type:after {
   content: none;
 }
 .cellSeparatorWithIcon:after {
   content: '';
   position: absolute;
   right: 0px;
-  bottom: 0.5px;
+  bottom: 0;
   z-index: 8;
   background: #B2B2B2;
   height: 0.5px;
 }
-.cellSeparatorWithIcon:after:last-of-type {
+.cellSeparatorWithIcon:last-of-type:after {
   content: none;
 }
 .cellSeparatorWithIcon:after {
@@ -82,12 +82,12 @@
   content: '';
   position: absolute;
   right: 0px;
-  bottom: 0.5px;
+  bottom: 0;
   z-index: 8;
   background: #B2B2B2;
   height: 0.5px;
 }
-.cellSeparatorWithoutIcon:after:last-of-type {
+.cellSeparatorWithoutIcon:last-of-type:after {
   content: none;
 }
 .cellSeparatorWithoutIcon:after {
@@ -662,12 +662,12 @@ ul.cellRowGroup lh {
   content: '';
   position: absolute;
   right: 0px;
-  bottom: 0.5px;
+  bottom: 0;
   z-index: 8;
   background: #B2B2B2;
   height: 0.5px;
 }
-.cellRow:after:last-of-type {
+.cellRow:last-of-type:after {
   content: none;
 }
 .cellRow:after {

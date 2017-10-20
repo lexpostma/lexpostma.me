@@ -162,14 +162,14 @@
         content:''; 
         position: absolute;
         right: 0px;
-        bottom: @lineThickness;
+        bottom: 0;
         z-index: 8;
         background: @colorLine;
         height: @lineThickness;
-        &:last-of-type {
-            content: none;
-        }
 
+    }
+    &:last-of-type:after {
+        content: none;
     }
 }
 
