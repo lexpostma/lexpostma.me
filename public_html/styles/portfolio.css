@@ -336,7 +336,7 @@
 }
 .portfolioPost .portfolioHeaderImage {
   object-fit: cover;
-  height: calc(100vh - 2 * 50.5px);
+  height: calc(100vh - 50.5px);
 }
 .overviewPortfolio.otherProjects .portfolioItem {
   margin-bottom: 20px;
@@ -524,9 +524,6 @@
   }
   main#contents.portfolio.home footer#pageFooter p {
     text-align: center;
-  }
-  .portfolioPost .portfolioHeaderImage {
-    height: calc(100vh - 50.5px);
   }
   .portfolioPhotoGallery img {
     width: calc(33.333333333vw - 1.5 * 20px - .33333333 * 50.5px);
