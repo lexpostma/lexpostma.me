@@ -861,6 +861,7 @@ li.cellRow.contactItem {
 .cellIcon {
     i {
         &.fa-tag,
+        &.fa-check,
         &.fa-twitter,
         &.fa-rss {
             padding-left: 1px;
@@ -917,6 +918,30 @@ li.cellRow.contactItem {
         &.pinterest { background: @pinterestRed; }
         &.twitter   { background: @twitterBlue;  }
         &.linkedin  { background: @linkedinBlue; }
+
+        &.clipboard {
+            transition: background .3s ease-in-out;
+            i {
+                transition: opacity .3s ease-in-out;
+            }
+            i:last-child {
+                position: absolute;
+                left: 0;
+                right: 0;
+                font-size: 20px;
+                padding-top: 5px;
+                opacity: 0;
+            }
+            &.copied {
+                background: @color5;
+                i:first-child {
+                    opacity: .5;
+                }
+                i:last-child {
+                    opacity: 1;
+                }
+            }
+        }
     }
 }
 

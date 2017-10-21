@@ -928,6 +928,7 @@ li.cellRow.contactItem .cellIcon#contactIcon_instagram {
   background-image: url(/public-files/images/resume/flag_NL.png);
 }
 .cellIcon i.fa-tag,
+.cellIcon i.fa-check,
 .cellIcon i.fa-twitter,
 .cellIcon i.fa-rss {
   padding-left: 1px;
@@ -1014,6 +1015,29 @@ li.cellRow.contactItem .cellIcon#contactIcon_instagram {
 }
 .cellRowContent.shareRow .cellIcon.linkedin {
   background: #4875B4;
+}
+.cellRowContent.shareRow .cellIcon.clipboard {
+  transition: background 0.3s ease-in-out;
+}
+.cellRowContent.shareRow .cellIcon.clipboard i {
+  transition: opacity 0.3s ease-in-out;
+}
+.cellRowContent.shareRow .cellIcon.clipboard i:last-child {
+  position: absolute;
+  left: 0;
+  right: 0;
+  font-size: 20px;
+  padding-top: 5px;
+  opacity: 0;
+}
+.cellRowContent.shareRow .cellIcon.clipboard.copied {
+  background: #27ae60;
+}
+.cellRowContent.shareRow .cellIcon.clipboard.copied i:first-child {
+  opacity: .5;
+}
+.cellRowContent.shareRow .cellIcon.clipboard.copied i:last-child {
+  opacity: 1;
 }
 html.about.home #tabbarNavigation li.tabbarItemPageSpecific.home svg {
   fill: #4B0082;

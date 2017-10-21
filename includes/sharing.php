@@ -38,31 +38,45 @@
     <i class="fa fa-envelope"></i>
 </a>
 <button title="Copy URL to clipboard"
-        class="sharing cellIcon clipboard"    
+        class="sharing cellIcon clipboard"   
+        id="clipboardCopyButton" 
         target="_blank" 
-        onclick="ga('send', 'event', '<?=$shareFrom?>', 'Share', 'Clipboard'); copyToClipboard('<?=$shareURL?>')">
+        onclick="ga('send', 'event', '<?=$shareFrom?>', 'Share', 'Clipboard'); copyToClipboard('<?=$shareURL?>','clipboardCopyButton')">
     <i class="fa fa-clipboard"></i>
+    <i class="fa fa-check"></i>
 </button>
 
 <script>
-    function copyToClipboard(text){
-      function selectElementText(element) {
-        if (document.selection) {
-          var range = document.body.createTextRange();
-          range.moveToElementText(element);
-          range.select();
-        } else if (window.getSelection) {
-          var range = document.createRange();
-          range.selectNode(element);
-          window.getSelection().removeAllRanges();
-          window.getSelection().addRange(range);
+
+/* *
+   * https://stackoverflow.com/questions/26336138/how-can-i-copy-to-clipboard-in-html5-without-using-flash
+ */
+
+    function copyToClipboard(text,id){
+        function selectElementText(element) {
+            if (document.selection) {
+                var range = document.body.createTextRange();
+                range.moveToElementText(element);
+                range.select();
+            } else if (window.getSelection) {
+                var range = document.createRange();
+                range.selectNode(element);
+                window.getSelection().removeAllRanges();
+                window.getSelection().addRange(range);
+            }
         }
-      }
-      var element = document.createElement('DIV');
-      element.textContent = text;
-      document.body.appendChild(element);
-      selectElementText(element);
-      document.execCommand('copy');
-      element.remove();
+        var element = document.createElement('DIV');
+        element.textContent = text;
+        document.body.appendChild(element);
+        selectElementText(element);
+        document.execCommand('copy');
+        element.remove();
+
+        $('#'+id).addClass('copied');
+        
+        setTimeout(function() {
+            $('#'+id).removeClass('copied');        
+        }, 2000);
     }
+    
 </script>
