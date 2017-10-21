@@ -6,7 +6,7 @@
         class="sharing cellIcon twitter"   
         target="_blank" 
         onclick="ga('send', 'event', '<?=$shareFrom?>', 'Share', 'Twitter');   <?=$popWindowJS?>"
-        href="https://twitter.com/home?status=<?=$plainTitle?> by @lexpostma • <?=$shareURL?>">
+        href="https://twitter.com/intent/tweet?text=<?=$plainTitle?> by @lexpostma • <?=$shareURL?>">
     <i class="fa fa-twitter"></i>
 </a>
 <a title="Share or comment on Facebook"
