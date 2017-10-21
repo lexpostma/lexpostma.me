@@ -37,3 +37,32 @@
         href="mailto:hello@lexpostma.me?subject=<?=$plainTitle?>&body=<?=$shareURL?>">
     <i class="fa fa-envelope"></i>
 </a>
+<button title="Copy URL to clipboard"
+        class="sharing cellIcon clipboard"    
+        target="_blank" 
+        onclick="ga('send', 'event', '<?=$shareFrom?>', 'Share', 'Clipboard'); copyToClipboard('<?=$shareURL?>')">
+    <i class="fa fa-clipboard"></i>
+</button>
+
+<script>
+    function copyToClipboard(text){
+      function selectElementText(element) {
+        if (document.selection) {
+          var range = document.body.createTextRange();
+          range.moveToElementText(element);
+          range.select();
+        } else if (window.getSelection) {
+          var range = document.createRange();
+          range.selectNode(element);
+          window.getSelection().removeAllRanges();
+          window.getSelection().addRange(range);
+        }
+      }
+      var element = document.createElement('DIV');
+      element.textContent = text;
+      document.body.appendChild(element);
+      selectElementText(element);
+      document.execCommand('copy');
+      element.remove();
+    }
+</script>

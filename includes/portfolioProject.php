@@ -38,7 +38,7 @@
     
         <li class="cellRow">
             <div class="cellRowContent shareRow">
-                <? include 'sharing.php';?>
+                <? $shareFrom = 'Blog'; include 'sharing.php';?>
             </div>
         </li>
     </ul>

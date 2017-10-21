@@ -626,9 +626,9 @@ html.actionDrawerToggled body #navigationElements #filterIndicationBar {
   font-size: 17px;
   line-height: 29px;
 }
-.actionDrawer select,
-.actionDrawer button,
-.actionDrawer input {
+.cellRow select,
+.cellRow button,
+.cellRow input {
   font-size: 17px;
   line-height: 29px;
   margin: 0 0 0 auto;
@@ -709,6 +709,7 @@ a.cellRowContent {
     }
 */
 }
+button.cellIcon,
 .cellIcon {
   height: 29px;
   width: 29px;
@@ -720,11 +721,13 @@ a.cellRowContent {
   position: relative;
   margin-right: 15px;
 }
+button.cellIcon svg,
 .cellIcon svg {
   margin: -0.5px;
   height: 29px;
   width: 29px;
 }
+button.cellIcon i,
 .cellIcon i {
   color: #4B0082;
 }
@@ -946,6 +949,7 @@ li.cellRow.contactItem .cellIcon#contactIcon_instagram {
   padding-top: 8px;
 }
 .cellIcon i.fa-facebook-square,
+.cellIcon i.fa-clipboard,
 .cellIcon i.fa-building {
   padding-left: 2px;
   padding-top: 7px;
@@ -994,12 +998,10 @@ li.cellRow.contactItem .cellIcon#contactIcon_instagram {
 .cellRowContent.shareRow .cellIcon {
   margin: 0;
   border: none;
+  background: #4B0082;
 }
 .cellRowContent.shareRow .cellIcon i {
   color: white;
-}
-.cellRowContent.shareRow .cellIcon.email {
-  background: #4B0082;
 }
 .cellRowContent.shareRow .cellIcon.facebook {
   background: #3B5998;
