@@ -258,7 +258,8 @@
     $portfolioPhotoQuery = "SELECT * FROM portfolio_photos WHERE portfolioProject_id = '$postID' ORDER BY volgorde ASC";
         
     $portfolioPhotoResult = mysqli_query($con,$portfolioPhotoQuery);
-    
+
+
     while($row = mysqli_fetch_array($portfolioPhotoResult)){
         $photoCaption       = $row['caption'];
         $photoPath          = $portURL.'public-files/images/portfolio/'.$shortname.'-'.$row['fileName'];
@@ -272,18 +273,9 @@
                 </a>
                 <figcaption itemprop="caption description">'.$photoCaption.'</figcaption>
             </figure>';
-        
     };
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+

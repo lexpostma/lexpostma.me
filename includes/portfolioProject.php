@@ -1,5 +1,10 @@
-<article class="portfolioPost">
+<div class="portfolioHeader">
     <img class="portfolioHeaderImage" src="<?=$headerImage?>">
+
+</div>
+
+<article class="portfolioPost" id="start">
+
     <h1><?=$plainTitle?></h1>
 
 <?
@@ -58,9 +63,9 @@
 </script>
 
 
-<h2>Check out these other projects&hellip;</h2>
-<aside class="overviewPortfolio otherProjects">
 
+<aside class="overviewPortfolio otherProjects">
+    <h2>Check out these other projects&hellip;</h2>
 <?
     $otherProjectsPortfolioResult = mysqli_query($con,$otherProjectsPortfolioSQLquery);
 

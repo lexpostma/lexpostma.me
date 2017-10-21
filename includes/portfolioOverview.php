@@ -10,7 +10,7 @@
     } else {
         
 ?>
-    <div class="overviewPortfolio">
+    <div class="overviewPortfolio allProjects">
 <?
         
         while($row = mysqli_fetch_array($portfolioListResult)){
