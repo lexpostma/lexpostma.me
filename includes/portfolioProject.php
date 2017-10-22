@@ -17,10 +17,10 @@
 
 ?>
 
-    <ul class="cellRowGroup">
-
+    <ul class="cellRowGroup" id="quickDetailsSidebar">
+        <div id="quickDetailsSidebarToggler" onclick="toggleDetails()"></div>
         <li class="cellRow" id="quickDetailsRow">
-            <a class="cellRowContent" href="#quickDetailsRow" onclick="toggleDetails()">
+            <a class="cellRowContent" href="#" onclick="toggleDetails()">
                 <div class="cellIcon"><i class="fa fa-fw fa-ellipsis-v"></i></div>
                 <span class="cellLabel">Quick details</span>
                 <div class="cellClosingIcon plus"><? include 'navigationIcons/plus.svg'  ?></div>
@@ -43,7 +43,10 @@
     
         <li class="cellRow">
             <div class="cellRowContent shareRow">
-                <? $shareFrom = 'Blog'; include 'sharing.php';?>
+                <div class="cellIcon sharingGeneralIcon"><i class="fa fa-fw fa-share-square-o"></i></div>
+                <span class="cellLabel">
+                    <? $shareFrom = 'Portfolio'; include 'sharing.php';?>
+                </span>
             </div>
         </li>
     </ul>
@@ -53,6 +56,8 @@
     
     function toggleDetails() {
         $('#quickDetailsRow').toggleClass('open');
+        
+        $('#quickDetailsSidebar').toggleClass('open');
         
         $('.cellRow.indent').each(function() {
             $(this).toggleClass('show');

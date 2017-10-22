@@ -93,6 +93,9 @@
 .cellSeparatorWithoutIcon:after {
   left: 20px;
 }
+/* =======================
+   PORTFOLIO OVERVIEW PAGE
+   ======================= */
 .overviewPortfolio {
   display: flex;
   flex-flow: row wrap;
@@ -328,6 +331,9 @@
 .portfolioItemVisualContainer:hover .portfolioItemLayerContainer {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
+/* ===================
+   PROJECT DETAIL PAGE
+   =================== */
 .portfolioHeaderImage {
   object-fit: cover;
   height: calc(100vh - 50.5px);
@@ -339,12 +345,8 @@
   text-transform: uppercase;
 }
 .portfolioPost .cellRowGroup {
+  position: relative;
   background-color: white;
-}
-.overviewPortfolio.otherProjects h2 {
-  padding: 0;
-  display: block;
-  width: 100%;
 }
 .overviewPortfolio.otherProjects .portfolioItem {
   margin-bottom: 20px;
@@ -352,6 +354,9 @@
 /* *
    * Portfolio quick details
  */
+#quickDetailsSidebarToggler {
+  display: none;
+}
 .cellRow.open:after {
   height: 1px;
   left: 0;
@@ -451,6 +456,9 @@
 .portfolioHeader {
   position: relative;
 }
+/* *
+   * Scrolling pointing device animation
+ */
 .animateMouseWheel-animation 0% {
   opacity: 1;
   top: 60%;
@@ -709,6 +717,9 @@
   margin-left: calc(10px);
 }
 @media screen and (min-width: 560px) {
+  /* =======================
+       PORTFOLIO OVERVIEW PAGE
+       ======================= */
   .overviewPortfolio {
     padding: 20px;
   }
@@ -768,6 +779,17 @@
   .overviewPortfolio .portfolioItem .cellRow.projectTitle a.cellRowContent .cellClosingIcon {
     display: none;
   }
+  main#contents.portfolio.home footer#pageFooter p {
+    text-align: center;
+  }
+  /* ===================
+       PROJECT DETAIL PAGE
+       =================== */
+  .overviewPortfolio.otherProjects h2 {
+    padding: 0;
+    display: block;
+    width: 100%;
+  }
   .overviewPortfolio.otherProjects p {
     margin-bottom: 0;
   }
@@ -790,13 +812,6 @@
   .portfolioItemLayerContainer .layer-1 {
     border-radius: 5px;
   }
-  main#contents.portfolio.home footer#pageFooter p {
-    text-align: center;
-  }
-  main#contents.portfolio.post footer#pageFooter {
-    max-width: 650px;
-    margin: auto;
-  }
   .portfolioPhotoGallery figure {
     width: calc(33.333333% - 20px);
     padding-top: calc(33.333333% - 20px);
@@ -806,6 +821,9 @@
    LANDSCAPE TALL
    ============== */
 @media screen and (min-width: 560px) and (min-height: 600px) {
+  /* =======================
+       PORTFOLIO OVERVIEW PAGE
+       ======================= */
   .overviewPortfolio .portfolioItem {
     width: calc( 50% - 20px / 2 );
     margin-bottom: 30px;
@@ -816,19 +834,20 @@
   .overviewPortfolio .portfolioItem:nth-of-type(even) {
     margin-left: calc(10px);
   }
-  .otherProjects,
+  /* ===================
+       PROJECT DETAIL PAGE
+       =================== */
   .portfolioPost {
     padding-right: 50.5px;
     max-width: 650px;
     margin: auto;
     position: relative;
   }
-  .otherProjects h1,
   .portfolioPost h1 {
     padding-top: 20px;
   }
-  .otherProjects .cellRowGroup,
   .portfolioPost .cellRowGroup {
+    padding-top: 1px;
     position: absolute;
     top: 0;
     border-top: 0.5px solid #B2B2B2;
@@ -842,38 +861,77 @@
     border-bottom-left-radius: 10px;
     z-index: 1;
   }
-  .otherProjects .cellRowGroup .cellRow,
-  .portfolioPost .cellRowGroup .cellRow {
-    border: none;
+  .portfolioPost .cellRowGroup #quickDetailsSidebarToggler {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    opacity: .4;
+    width: 50.5px;
+    z-index: 1;
+    cursor: pointer;
   }
-  .otherProjects .cellRowGroup .cellRow .cellIcon,
+  .portfolioPost .cellRowGroup .cellRow {
+    max-height: 44px;
+    border: none;
+    transition: max-height 0.2s ease-in-out;
+  }
+  .portfolioPost .cellRowGroup .cellRow#quickDetailsRow {
+    max-height: 0;
+  }
+  .portfolioPost .cellRowGroup .cellRow#quickDetailsRow .cellIcon {
+    display: none;
+  }
+  .portfolioPost .cellRowGroup .cellRow .cellRowContent {
+    padding-left: 20px;
+    background: white;
+    pointer-events: none;
+  }
   .portfolioPost .cellRowGroup .cellRow .cellIcon {
     transition: transform 0.2s ease-in-out;
     transform: translateX(-12px);
   }
-  .otherProjects .cellRowGroup .cellRow .cellIcon.twitter,
-  .portfolioPost .cellRowGroup .cellRow .cellIcon.twitter {
-    transform: translateY(8px) translateX(-12px);
+  .portfolioPost .cellRowGroup .cellRow .cellIcon.sharingGeneralIcon {
+    transform: translateY(-8px) translateX(-12px);
   }
-  .otherProjects .cellRowGroup:hover,
-  .portfolioPost .cellRowGroup:hover {
-    padding-top: 11px;
+  .portfolioPost .cellRowGroup.open {
     padding-bottom: 3px;
     transform: translateX(-369.5px);
   }
-  .otherProjects .cellRowGroup:hover .cellRow .cellIcon,
-  .portfolioPost .cellRowGroup:hover .cellRow .cellIcon {
+  .portfolioPost .cellRowGroup.open #quickDetailsSidebarToggler {
+    display: none;
+  }
+  .portfolioPost .cellRowGroup.open .cellRow {
+    max-height: 1000px;
+    transition-duration: 2s;
+  }
+  .portfolioPost .cellRowGroup.open .cellRow#quickDetailsRow {
+    max-height: 1000px;
+  }
+  .portfolioPost .cellRowGroup.open .cellRow .cellRowContent {
+    pointer-events: auto;
+  }
+  .portfolioPost .cellRowGroup.open .cellRow .cellIcon {
     transform: translateX(0px);
   }
-  .otherProjects .cellRowGroup:hover .cellRow .cellIcon.twitter,
-  .portfolioPost .cellRowGroup:hover .cellRow .cellIcon.twitter {
+  .portfolioPost .cellRowGroup.open .cellRow .cellIcon.sharingGeneralIcon {
     transform: translateY(0) translateX(0);
+  }
+  .otherProjects,
+  main#contents.portfolio.post footer#pageFooter {
+    padding-right: 70.5px;
+    max-width: 650px;
+    margin: auto;
   }
 }
 /* =======
    DESKTOP
    ======= */
 @media screen and (min-width: 1000px) {
+  /* =======================
+       PORTFOLIO OVERVIEW PAGE
+       ======================= */
   .overviewPortfolio.allProjects {
     padding: 30px;
     margin-top: 30px;
@@ -888,20 +946,23 @@
   .overviewPortfolio.allProjects .portfolioItem:nth-of-type(even) {
     margin-left: 20px;
   }
+  /* ===================
+       PROJECT DETAIL PAGE
+       =================== */
   .portfolioHeaderImage {
     height: 100vh;
   }
   .portfolioPost .cellRowGroup {
-    border: 0.5px solid #B2B2B2;
-    right: calc( -420px - 50px );
-    left: auto;
-    border-radius: 10px;
+    left: calc( (100vw - 200px - 650px) / 2 - 50.5px + 650px );
   }
 }
 /* ==========
    DESKTOP XL
    ========== */
 @media screen and (min-width: 1500px) {
+  /* =======================
+       PORTFOLIO OVERVIEW PAGE
+       ======================= */
   .overviewPortfolio.allProjects {
     max-width: 1800px;
   }

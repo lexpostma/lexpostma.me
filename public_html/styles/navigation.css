@@ -622,12 +622,16 @@ html.actionDrawerToggled body #navigationElements #filterIndicationBar {
 /* *
    * Strip default styling from form items
  */
-.actionDrawer {
+.actionDrawer,
+.cellRow {
   font-size: 17px;
   line-height: 29px;
 }
+.actionDrawer select,
 .cellRow select,
+.actionDrawer button,
 .cellRow button,
+.actionDrawer input,
 .cellRow input {
   font-size: 17px;
   line-height: 29px;
@@ -951,6 +955,7 @@ li.cellRow.contactItem .cellIcon#contactIcon_instagram {
 }
 .cellIcon i.fa-facebook-square,
 .cellIcon i.fa-clipboard,
+.cellIcon i.fa-share-square-o,
 .cellIcon i.fa-building {
   padding-left: 2px;
   padding-top: 7px;
@@ -993,36 +998,41 @@ li.cellRow.contactItem .cellIcon#contactIcon_instagram {
   color: #4875B4;
 }
 .cellRowContent.shareRow {
-  justify-content: space-between;
   padding: 15px 20px;
 }
-.cellRowContent.shareRow .cellIcon {
+.cellRowContent.shareRow .cellLabel {
+  justify-content: space-between;
+  width: 100%;
+  display: flex;
+  padding: 0;
+}
+.cellRowContent.shareRow .cellLabel .cellIcon {
   margin: 0;
   border: none;
   background: #4B0082;
 }
-.cellRowContent.shareRow .cellIcon i {
+.cellRowContent.shareRow .cellLabel .cellIcon i {
   color: white;
 }
-.cellRowContent.shareRow .cellIcon.facebook {
+.cellRowContent.shareRow .cellLabel .cellIcon.facebook {
   background: #3B5998;
 }
-.cellRowContent.shareRow .cellIcon.pinterest {
+.cellRowContent.shareRow .cellLabel .cellIcon.pinterest {
   background: #D43638;
 }
-.cellRowContent.shareRow .cellIcon.twitter {
+.cellRowContent.shareRow .cellLabel .cellIcon.twitter {
   background: #33CCFF;
 }
-.cellRowContent.shareRow .cellIcon.linkedin {
+.cellRowContent.shareRow .cellLabel .cellIcon.linkedin {
   background: #4875B4;
 }
-.cellRowContent.shareRow .cellIcon.clipboard {
+.cellRowContent.shareRow .cellLabel .cellIcon.clipboard {
   transition: background 0.3s ease-in-out;
 }
-.cellRowContent.shareRow .cellIcon.clipboard i {
+.cellRowContent.shareRow .cellLabel .cellIcon.clipboard i {
   transition: opacity 0.3s ease-in-out;
 }
-.cellRowContent.shareRow .cellIcon.clipboard i:last-child {
+.cellRowContent.shareRow .cellLabel .cellIcon.clipboard i:last-child {
   position: absolute;
   left: 0;
   right: 0;
@@ -1030,13 +1040,13 @@ li.cellRow.contactItem .cellIcon#contactIcon_instagram {
   padding-top: 5px;
   opacity: 0;
 }
-.cellRowContent.shareRow .cellIcon.clipboard.copied {
+.cellRowContent.shareRow .cellLabel .cellIcon.clipboard.copied {
   background: #27ae60;
 }
-.cellRowContent.shareRow .cellIcon.clipboard.copied i:first-child {
+.cellRowContent.shareRow .cellLabel .cellIcon.clipboard.copied i:first-child {
   opacity: .5;
 }
-.cellRowContent.shareRow .cellIcon.clipboard.copied i:last-child {
+.cellRowContent.shareRow .cellLabel .cellIcon.clipboard.copied i:last-child {
   opacity: 1;
 }
 html.about.home #tabbarNavigation li.tabbarItemPageSpecific.home svg {

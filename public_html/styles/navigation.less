@@ -592,11 +592,10 @@ html.actionDrawerToggled {
    * Strip default styling from form items
  */
 
-.actionDrawer {
-    .iOSFontStyling;
-}
-
+.actionDrawer,
 .cellRow {
+    .iOSFontStyling;
+
     select, button, input {
         .iOSFontStyling;
         margin: 0 0 0 auto;
@@ -884,6 +883,7 @@ li.cellRow.contactItem {
         }
         &.fa-facebook-square,
         &.fa-clipboard,
+        &.fa-share-square-o,
         &.fa-building {
             padding-left: 2px;
             padding-top: 7px;
@@ -905,51 +905,55 @@ li.cellRow.contactItem {
 }
 
 .cellRowContent.shareRow {
-    justify-content: space-between;
-    padding: 15px 20px;
-    .cellIcon {
-        margin: 0;
-        border: none;
-        background: @color1;
-        i { 
-            color: white;
-        }
-        &.facebook  { background: @facebookBlue; }
-        &.pinterest { background: @pinterestRed; }
-        &.twitter   { background: @twitterBlue;  }
-        &.linkedin  { background: @linkedinBlue; }
+    padding: 15px 20px;    
+    .cellLabel {
+        justify-content: space-between;
+        width: 100%;
+        display: flex;
+        padding: 0;
 
-        &.clipboard {
-            transition: background .3s ease-in-out;
-            i {
-                transition: opacity .3s ease-in-out;
+        .cellIcon {
+            margin: 0;
+            border: none;
+            background: @color1;
+            i { 
+                color: white;
             }
-            i:last-child {
-                position: absolute;
-                left: 0;
-                right: 0;
-                font-size: 20px;
-                padding-top: 5px;
-                opacity: 0;
-            }
-            &.copied {
-                background: @color5;
-                i:first-child {
-                    opacity: .5;
+            &.facebook  { background: @facebookBlue; }
+            &.pinterest { background: @pinterestRed; }
+            &.twitter   { background: @twitterBlue;  }
+            &.linkedin  { background: @linkedinBlue; }
+    
+            &.clipboard {
+                transition: background .3s ease-in-out;
+                i {
+                    transition: opacity .3s ease-in-out;
                 }
                 i:last-child {
-                    opacity: 1;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    font-size: 20px;
+                    padding-top: 5px;
+                    opacity: 0;
+                }
+                &.copied {
+                    background: @color5;
+                    i:first-child {
+                        opacity: .5;
+                    }
+                    i:last-child {
+                        opacity: 1;
+                    }
                 }
             }
         }
     }
 }
 
+html.about.home #tabbarNavigation li.tabbarItemPageSpecific.home svg {
+    fill: @color1;
 
-html.about.home #tabbarNavigation li.tabbarItemPageSpecific.home {
-    svg {
-        fill: @color1;
-    }
 }
 
 
