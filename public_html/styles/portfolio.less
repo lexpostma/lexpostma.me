@@ -638,11 +638,20 @@
     /* ===================
        PROJECT DETAIL PAGE
        =================== */
-    
+    .portfolioPost,    
+    .otherProjects,
+    main#contents.portfolio.post footer#pageFooter {
+        max-width: @readabilityWidth;
+        margin: auto;        
+    }
+
+    .otherProjects,
+    main#contents.portfolio.post footer#pageFooter {
+        padding-right: @tabbarHeight + @sidePadding;
+    }
+
     .portfolioPost {
         padding-right: @tabbarHeight;
-        max-width: @readabilityWidth;
-        margin: auto;
         position: relative;
         h1 {
             padding-top: @sidePadding;
@@ -700,13 +709,6 @@
                 transform: translateX(-@actionDrawerWidth + @tabbarHeight);
             }
         }
-    }
-
-    .otherProjects,
-    main#contents.portfolio.post footer#pageFooter {
-        padding-right: @tabbarHeight + @sidePadding;
-        max-width: @readabilityWidth;
-        margin: auto;        
     }
 }
 

@@ -880,10 +880,18 @@
   /* ===================
        PROJECT DETAIL PAGE
        =================== */
-  .portfolioPost {
-    padding-right: 50.5px;
+  .portfolioPost,
+  .otherProjects,
+  main#contents.portfolio.post footer#pageFooter {
     max-width: 650px;
     margin: auto;
+  }
+  .otherProjects,
+  main#contents.portfolio.post footer#pageFooter {
+    padding-right: 70.5px;
+  }
+  .portfolioPost {
+    padding-right: 50.5px;
     position: relative;
   }
   .portfolioPost h1 {
@@ -961,12 +969,6 @@
   .portfolioPost .cellRowGroup.open .cellRow .cellIcon.sharingGeneralIcon {
     transform: translateY(0) translateX(0);
   }
-  .otherProjects,
-  main#contents.portfolio.post footer#pageFooter {
-    padding-right: 70.5px;
-    max-width: 650px;
-    margin: auto;
-  }
 }
 /* =======
    DESKTOP
@@ -1030,11 +1032,6 @@
     border-radius: 10px;
     border: 0.5px solid #B2B2B2;
     padding-bottom: 3px;
-    /*
-            &.open {
-                transform: none;
-            }
-*/
   }
   .portfolioPost .cellRowGroup #quickDetailsSidebarToggler {
     display: none;
