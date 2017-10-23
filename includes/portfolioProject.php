@@ -55,14 +55,7 @@
 <script>
     
     function toggleDetails() {
-        $('#quickDetailsRow').toggleClass('open');
-        
         $('#quickDetailsSidebar').toggleClass('open');
-        
-        $('.cellRow.indent').each(function() {
-            $(this).toggleClass('show');
-        });
-
     }
     
 </script>

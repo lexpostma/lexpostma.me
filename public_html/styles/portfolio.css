@@ -357,17 +357,26 @@
 #quickDetailsSidebarToggler {
   display: none;
 }
-.cellRow.open:after {
+#quickDetailsSidebar.open .cellRow:first-of-type:after {
   height: 1px;
   left: 0;
   background: #4B0082;
   bottom: 0;
 }
-.cellRow.open .cellLabel {
+#quickDetailsSidebar.open .cellRow:first-of-type .cellLabel {
   font-weight: bold;
 }
-.cellRow.open .cellClosingIcon.plus {
+#quickDetailsSidebar.open .cellRow:first-of-type .cellClosingIcon.plus {
   transform: rotate(-45deg);
+}
+#quickDetailsSidebar.open .cellRow.indent {
+  max-height: 1000px;
+}
+#quickDetailsSidebar.open .cellRow.indent.last:after {
+  height: 1px;
+  left: 0;
+  background: #4B0082;
+  bottom: 0;
 }
 .cellRow.indent {
   transition: max-height 0.5s ease-in-out;
@@ -378,15 +387,6 @@
   padding: 0;
   list-style-type: disc;
   margin-left: 20px;
-}
-.cellRow.indent.show {
-  max-height: 1000px;
-}
-.cellRow.indent.show.last:after {
-  height: 1px;
-  left: 0;
-  background: #4B0082;
-  bottom: 0;
 }
 .cellRow.indent:after {
   left: 74px;
@@ -779,12 +779,26 @@
   .overviewPortfolio .portfolioItem .cellRow.projectTitle a.cellRowContent .cellClosingIcon {
     display: none;
   }
+  .portfolioItemLayerContainer {
+    border-radius: 5px;
+  }
+  .portfolioItemLayerContainer .portfolioItemWebbar {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  .portfolioItemLayerContainer .layer-1 {
+    border-radius: 5px;
+  }
   main#contents.portfolio.home footer#pageFooter p {
     text-align: center;
   }
   /* ===================
        PROJECT DETAIL PAGE
        =================== */
+  .portfolioPhotoGallery figure {
+    width: calc(33.333333% - 20px);
+    padding-top: calc(33.333333% - 20px);
+  }
   .overviewPortfolio.otherProjects h2 {
     padding: 0;
     display: block;
@@ -802,24 +816,53 @@
   .overviewPortfolio.otherProjects .portfolioItem:nth-of-type(even) {
     margin-left: calc(10px);
   }
-  .portfolioItemLayerContainer {
-    border-radius: 5px;
-  }
-  .portfolioItemLayerContainer .portfolioItemWebbar {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-  }
-  .portfolioItemLayerContainer .layer-1 {
-    border-radius: 5px;
-  }
-  .portfolioPhotoGallery figure {
-    width: calc(33.333333% - 20px);
-    padding-top: calc(33.333333% - 20px);
-  }
 }
 /* ==============
    LANDSCAPE TALL
    ============== */
+.cellRowGroupOpenStyling {
+  padding-bottom: 3px;
+}
+.cellRowGroupOpenStyling #quickDetailsSidebarToggler {
+  display: none;
+}
+.cellRowGroupOpenStyling .cellRow {
+  max-height: 1000px;
+  transition-duration: 2s;
+}
+.cellRowGroupOpenStyling .cellRow#quickDetailsRow {
+  max-height: 1000px;
+}
+.cellRowGroupOpenStyling .cellRow .cellRowContent {
+  pointer-events: auto;
+}
+.cellRowGroupOpenStyling .cellRow .cellIcon {
+  transform: translateX(0px);
+}
+.cellRowGroupOpenStyling .cellRow .cellIcon.sharingGeneralIcon {
+  transform: translateY(0) translateX(0);
+}
+.cellRowFirstItemOpenStyling .cellRow:first-of-type:after {
+  height: 1px;
+  left: 0;
+  background: #4B0082;
+  bottom: 0;
+}
+.cellRowFirstItemOpenStyling .cellRow:first-of-type .cellLabel {
+  font-weight: bold;
+}
+.cellRowFirstItemOpenStyling .cellRow:first-of-type .cellClosingIcon.plus {
+  transform: rotate(-45deg);
+}
+.cellRowFirstItemOpenStyling .cellRow.indent {
+  max-height: 1000px;
+}
+.cellRowFirstItemOpenStyling .cellRow.indent.last:after {
+  height: 1px;
+  left: 0;
+  background: #4B0082;
+  bottom: 0;
+}
 @media screen and (min-width: 560px) and (min-height: 600px) {
   /* =======================
        PORTFOLIO OVERVIEW PAGE
@@ -928,7 +971,7 @@
 /* =======
    DESKTOP
    ======= */
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1000px) and (min-height: 600px) {
   /* =======================
        PORTFOLIO OVERVIEW PAGE
        ======================= */
@@ -959,7 +1002,7 @@
 /* ==========
    DESKTOP XL
    ========== */
-@media screen and (min-width: 1500px) {
+@media screen and (min-width: 1300px) and (min-height: 600px) {
   /* =======================
        PORTFOLIO OVERVIEW PAGE
        ======================= */
@@ -972,6 +1015,72 @@
     width: calc( 33.3% - 30px );
     margin-left: calc(15px);
     margin-right: calc(15px);
+  }
+  /* ===================
+       PROJECT DETAIL PAGE
+       =================== */
+  .portfolioPost,
+  .otherProjects,
+  main#contents.portfolio.post footer#pageFooter {
+    margin-left: calc( (100vw - 200px - 650px - 420px ) / 2 );
+  }
+  .portfolioPost .cellRowGroup {
+    left: auto;
+    right: -420px;
+    border-radius: 10px;
+    border: 0.5px solid #B2B2B2;
+    padding-bottom: 3px;
+    /*
+            &.open {
+                transform: none;
+            }
+*/
+  }
+  .portfolioPost .cellRowGroup #quickDetailsSidebarToggler {
+    display: none;
+  }
+  .portfolioPost .cellRowGroup .cellRow {
+    max-height: 1000px;
+    transition-duration: 2s;
+  }
+  .portfolioPost .cellRowGroup .cellRow#quickDetailsRow {
+    max-height: 1000px;
+  }
+  .portfolioPost .cellRowGroup .cellRow .cellRowContent {
+    pointer-events: auto;
+  }
+  .portfolioPost .cellRowGroup .cellRow .cellIcon {
+    transform: translateX(0px);
+  }
+  .portfolioPost .cellRowGroup .cellRow .cellIcon.sharingGeneralIcon {
+    transform: translateY(0) translateX(0);
+  }
+  .portfolioPost .cellRowGroup#quickDetailsSidebar .cellRow:first-of-type:after {
+    height: 1px;
+    left: 0;
+    background: #4B0082;
+    bottom: 0;
+  }
+  .portfolioPost .cellRowGroup#quickDetailsSidebar .cellRow:first-of-type .cellLabel {
+    font-weight: bold;
+  }
+  .portfolioPost .cellRowGroup#quickDetailsSidebar .cellRow:first-of-type .cellClosingIcon.plus {
+    transform: rotate(-45deg);
+  }
+  .portfolioPost .cellRowGroup#quickDetailsSidebar .cellRow.indent {
+    max-height: 1000px;
+  }
+  .portfolioPost .cellRowGroup#quickDetailsSidebar .cellRow.indent.last:after {
+    height: 1px;
+    left: 0;
+    background: #4B0082;
+    bottom: 0;
+  }
+  .portfolioPost .cellRowGroup#quickDetailsSidebar .cellRow:first-of-type .cellRowContent {
+    pointer-events: none;
+  }
+  .portfolioPost .cellRowGroup#quickDetailsSidebar .cellClosingIcon.plus {
+    display: none;
   }
 }
 /*

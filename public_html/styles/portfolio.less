@@ -246,19 +246,9 @@
 #quickDetailsSidebarToggler {    
     display: none;
 }
-.cellRow.open {
-    &:after {
-        height: 1px;
-        left: 0;
-        background: @color1;
-        bottom: 0;
-    }
-    .cellLabel {
-        font-weight: bold;
-    }
-    .cellClosingIcon.plus {
-        transform: rotate(-45deg);
-    }
+
+#quickDetailsSidebar.open {
+    .cellRowFirstItemOpenStyling;
 }
 
 .cellRow.indent {
@@ -269,16 +259,6 @@
         padding: 0;
         list-style-type: disc;
         margin-left: @sidePadding;
-    }
-
-    &.show {
-        max-height: 1000px;
-        &.last:after {
-            height: 1px;
-            left: 0;
-            background: @color1;
-            bottom: 0;
-        }
     }
 
     &:after {
@@ -544,6 +524,18 @@
         }
     }
 
+    .portfolioItemLayerContainer {
+        border-radius: @borderRad;
+        .portfolioItemWebbar {
+            border-top-left-radius: @borderRad;
+            border-top-right-radius: @borderRad;
+        }
+        .layer-1 {
+            border-radius: @borderRad;
+        }
+
+    }
+
     main#contents.portfolio.home footer#pageFooter p {
         text-align: center;
     }        
@@ -553,6 +545,13 @@
     /* ===================
        PROJECT DETAIL PAGE
        =================== */
+
+    .portfolioPhotoGallery {
+        figure {
+            width:       ~"calc(33.333333% - @{sidePadding})";
+            padding-top: ~"calc(33.333333% - @{sidePadding})";
+        }
+    }
 
     .overviewPortfolio.otherProjects {
         h2 {
@@ -567,26 +566,6 @@
             .portfolioItem50;
         }
     }
-
-    .portfolioItemLayerContainer {
-        border-radius: @borderRad;
-        .portfolioItemWebbar {
-            border-top-left-radius: @borderRad;
-            border-top-right-radius: @borderRad;
-        }
-        .layer-1 {
-            border-radius: @borderRad;
-        }
-
-    }
-
-    .portfolioPhotoGallery {
-        figure {
-            width:       ~"calc(33.333333% - @{sidePadding})";
-            padding-top: ~"calc(33.333333% - @{sidePadding})";
-        }
-    }
-
 }
 
 
@@ -594,7 +573,55 @@
 /* ==============
    LANDSCAPE TALL
    ============== */
+   
+.cellRowGroupOpenStyling {
+    padding-bottom: 3px;
+    #quickDetailsSidebarToggler {
+        display: none;
+    }
+    .cellRow {
+        max-height: 1000px;
+        transition-duration: 2s;
+        &#quickDetailsRow {
+            max-height: 1000px;
+        }
+        .cellRowContent {
+            pointer-events: auto;
+        }
+        .cellIcon {
+            transform: translateX(0px);
+            &.sharingGeneralIcon {
+                transform: translateY(0) translateX(0);
+            }
+        }
+    }
+}
 
+.cellRowFirstItemOpenStyling {
+    .cellRow:first-of-type {
+        &:after {
+            height: 1px;
+            left: 0;
+            background: @color1;
+            bottom: 0;
+        }
+        .cellLabel {
+            font-weight: bold;
+        }
+        .cellClosingIcon.plus {
+            transform: rotate(-45deg);
+        }
+    }
+    .cellRow.indent {
+        max-height: 1000px;
+        &.last:after {
+            height: 1px;
+            left: 0;
+            background: @color1;
+            bottom: 0;
+        }
+    }
+}
 
 @media screen and (min-width: @screenSizeAtLandscapeShort) and (min-height: @screenSizeAtLandscapeTallHeight) {
 
@@ -669,28 +696,8 @@
                 }
             }
             &.open {
-                padding-bottom: 3px;
+                .cellRowGroupOpenStyling;
                 transform: translateX(-@actionDrawerWidth + @tabbarHeight);
-                #quickDetailsSidebarToggler {
-                    display: none;
-                }
-                .cellRow {
-                    max-height: 1000px;
-                    transition-duration: 2s;
-                    &#quickDetailsRow {
-                        max-height: 1000px;
-                    }
-                    .cellRowContent {
-                        pointer-events: auto;
-                    }
-                    .cellIcon {
-                        transform: translateX(0px);
-                        &.sharingGeneralIcon {
-                            transform: translateY(0) translateX(0);
-//                             display: none;
-                        }
-                    }
-                }
             }
         }
     }
@@ -709,7 +716,7 @@
    DESKTOP
    ======= */
 
-@media screen and (min-width: @screenSizeAtDesktopWidth) {
+@media screen and (min-width: @screenSizeAtDesktopWidth) and (min-height: @screenSizeAtDesktopHeight) {
 
     /* =======================
        PORTFOLIO OVERVIEW PAGE
@@ -752,7 +759,7 @@
    DESKTOP XL
    ========== */
 
-@media screen and (min-width: @screenSizeAtDesktopXLWidth) {
+@media screen and (min-width: @screenSizeAtDesktopXLWidth) and (min-height: @screenSizeAtDesktopHeight) {
 
 
     /* =======================
@@ -768,6 +775,40 @@
             width: ~"calc( 33.3% - @{itemMargin} )";
             margin-left:  calc( @itemMargin / 2 );
             margin-right: calc( @itemMargin / 2 );
+        }
+    }
+
+
+    /* ===================
+       PROJECT DETAIL PAGE
+       =================== */
+
+    .portfolioHeaderImage {
+//         height: 100vh;
+    }
+
+    .portfolioPost,
+    .otherProjects,
+    main#contents.portfolio.post footer#pageFooter {
+        margin-left:  ~"calc( (100vw - @{navigationWidthDesktop} - @{readabilityWidth} - @{actionDrawerWidth} ) / 2 )";
+    }
+
+    .portfolioPost {
+        .cellRowGroup {
+            left: auto;
+            right: -@actionDrawerWidth;
+            border-radius: 10px;
+            border: @lineThickness solid @colorLine;
+            .cellRowGroupOpenStyling;
+            &#quickDetailsSidebar {
+                .cellRowFirstItemOpenStyling;
+                .cellRow:first-of-type .cellRowContent {
+                    pointer-events: none;
+                }
+                .cellClosingIcon.plus {
+                    display: none;
+                }
+            }
         }
     }
 }
