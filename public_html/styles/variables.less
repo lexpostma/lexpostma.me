@@ -1,6 +1,6 @@
-/* ========================
+/* ======
    COLORS
-   ======================== */
+   ====== */
 
 @colorLine: #B2B2B2; // iOS-like line color
 @colorInactive: #929292; // iOS-like inactive color for text and icons
@@ -51,9 +51,9 @@
 
 
 
-/* ========================
+/* ====================
    SIZES & MEASUREMENTS
-   ======================== */
+   ==================== */
 
 @tabbarHeight: 50px + @lineThickness;
 @titlebarHeight: 50px;
@@ -78,9 +78,9 @@
 
 
 
-/* ========================
+/* =============================
    MEDIA QUERIES (DEVICES SIZES)
-   ======================== */
+   ============================= */
 
 // Landscape short
 @screenSizeAtLandscapeShort: 560px;
@@ -94,12 +94,12 @@
 @screenSizeAtDesktopHeight: 600px;
 
 // DesktopXL
-@screenSizeAtDesktopXLWidth: 1500px;
+@screenSizeAtDesktopXLWidth: 1300px;
 
 
-/* ========================
+/* ===========
    TRANSITIONS
-   ======================== */
+   =========== */
 
 .transition (@transitionProperty) {
             transition: @transitionProperty 0.2s ease-in-out 0ms;
@@ -126,9 +126,9 @@
 
 
 
-/* ========================
+/* ========
    ELEMENTS
-   ======================== */
+   ======== */
 
 .orangeButton {
     display: inline-block;
@@ -163,7 +163,7 @@
         content:''; 
         position: absolute;
         right: 0px;
-        bottom: 0;
+        bottom: @lineThickness;
         z-index: 8;
         background: @colorLine;
         height: @lineThickness;
