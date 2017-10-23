@@ -1248,6 +1248,9 @@ input[type="checkbox"]:checked:active + .toggle i {
   }
   nav#tabbarNavigation {
     display: block;
+    background-color: #fafafa;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
   nav#tabbarNavigation ul#tabbarItemList {
     padding-top: 90px;
