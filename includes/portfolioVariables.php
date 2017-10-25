@@ -232,7 +232,7 @@
     };
 
     
-    // Loading photos
+    // Loading photos for PhotoSwipe photo slider
     $photoGallery = '';
     
     if ( $videoid !== NULL ){
@@ -256,9 +256,7 @@
     };
     
     $portfolioPhotoQuery = "SELECT * FROM portfolio_photos WHERE portfolioProject_id = '$postID' ORDER BY volgorde ASC";
-        
     $portfolioPhotoResult = mysqli_query($con,$portfolioPhotoQuery);
-
 
     while($row = mysqli_fetch_array($portfolioPhotoResult)){
         $photoCaption       = $row['caption'];
