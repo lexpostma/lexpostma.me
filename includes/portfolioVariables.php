@@ -164,7 +164,7 @@
 
     if( isset($clientsComplete) ){
         $cellIcon = 'fa-building';
-        $cellLabel = $clientsComplete;
+        $cellLabel = 'For '.$clientsComplete;
         $cellRowClasses = 'indent';
         $portfolioFooterCells .= include('cellRow.php');
     };
