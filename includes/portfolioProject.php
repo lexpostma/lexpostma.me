@@ -1,6 +1,14 @@
 <div class="portfolioHeader">
     <img class="portfolioHeaderImage" src="<?=$headerImage?>">
 
+    <span class="scrollingAnimation">
+        <a href="#start">
+            <span class="mouse">
+                <span>
+                </span>
+            </span>
+        </a>
+    </span>
 </div>
 
 <article class="portfolioPost" id="start">
