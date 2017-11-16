@@ -64,8 +64,6 @@ main#contents {
 
 
 
-
-
 /* ===================
    NAVIGATION ELEMENTS
    =================== */
@@ -466,7 +464,11 @@ html:not(.actionDrawerToggled).tabbarHideOnScroll #navigationElements.tabbarOnSc
                     transform: translateY(43px);
         }
     }
-    
+
+    html.tabbarLifted main#contents {
+        padding-bottom: @tabbarHeight + 40px;
+    }
+
     html.tabbarLifted #navigationElements {
         nav#tabbarNavigation {
             bottom: 40px;
@@ -479,8 +481,11 @@ html:not(.actionDrawerToggled).tabbarHideOnScroll #navigationElements.tabbarOnSc
                 border-top-left-radius: @borderRad;
                 border-bottom-left-radius: @borderRad;
             }
+            .tabbarItem a.tabbarLink svg {
+                margin: 5px auto;
+            }
             .tabbarLink {
-                height: 37px;
+                height: 40px;
             }
         }
         
