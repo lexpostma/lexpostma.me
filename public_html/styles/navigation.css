@@ -496,12 +496,16 @@ html:not(.actionDrawerToggled).tabbarHideOnScroll #navigationElements.tabbarOnSc
 }
 .liftStyling {
   border: 0.5px solid #B2B2B2;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 @media screen and (max-width: 560px) {
   html:not(.actionDrawerToggled).tabbarLifted #navigationElements.tabbarOnScrollDown nav#tabbarNavigation {
-    -webkit-transform: perspective(200px) rotateX(-90deg);
-    transform: perspective(200px) rotateX(-90deg);
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+    /*
+            -webkit-transform: perspective(200px) rotateX(-90deg);
+                    transform: perspective(200px) rotateX(-90deg);
+*/
   }
   html:not(.actionDrawerToggled).tabbarLifted #navigationElements.tabbarOnScrollDown #filterIndicationBar {
     -webkit-transform: translateY(43px);
@@ -515,14 +519,14 @@ html:not(.actionDrawerToggled).tabbarHideOnScroll #navigationElements.tabbarOnSc
     left: 5px;
     right: 5px;
     border: 0.5px solid #B2B2B2;
-    border-radius: 5px;
+    border-radius: 10px;
   }
   html.tabbarLifted #navigationElements nav#tabbarNavigation span.tabName {
     display: none;
   }
   html.tabbarLifted #navigationElements nav#tabbarNavigation .tabbarItem:first-of-type .tabbarLink {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
   }
   html.tabbarLifted #navigationElements nav#tabbarNavigation .tabbarItem a.tabbarLink svg {
     margin: 5px auto;
@@ -534,24 +538,24 @@ html:not(.actionDrawerToggled).tabbarHideOnScroll #navigationElements.tabbarOnSc
     left: 5px;
     right: 5px;
     border: 0.5px solid #B2B2B2;
-    border-radius: 5px;
+    border-radius: 10px;
     bottom: 83px;
     width: auto;
   }
   html.tabbarLifted #navigationElements .actionDrawer .actionDrawerTitleBar {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
   }
   html.tabbarLifted #navigationElements .actionDrawer .actionDrawerContent {
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
   html.tabbarLifted #navigationElements #filterIndicationBar {
     left: 5px;
     right: 5px;
     bottom: 83px;
     border: 0.5px solid #B2B2B2;
-    border-radius: 5px;
+    border-radius: 10px;
   }
   html.actionDrawerToggled.tabbarLifted #navigationElements #filterIndicationBar {
     -webkit-transform: translateY(151.5px);
