@@ -149,11 +149,10 @@
         <link rel="stylesheet" href="/styles/global.css">
         <link rel="stylesheet" href="/styles/navigation.css">
         <link rel="stylesheet" href="/styles/<?=$basepage?>.css">
-        <link rel="stylesheet" href="/fonts/font-awesome/css/font-awesome.min.css">
+        <script defer src="/scripts/fontawesome-all.js"></script>
         <script type="text/javascript" src="/scripts/jquery-1.12.0.min.js"></script>
 
 <?
-//         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 //         <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 
 
