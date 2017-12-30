@@ -1,61 +1,48 @@
 <?
     # DOMAINS
-    if (strpos($_SERVER['HTTP_HOST'], 'dev.lexpostma.me') !== false) {
+    $productionDomain  = 'lexpostma.me';            // Actual URL
+    $testingDomain     = 'test.'.$productionDomain; // Digital Ocean testing URL
+    $developmentDomain = 'dev.'.$productionDomain;  // MAMP development URL
+
+    
+    if (strpos($_SERVER['HTTP_HOST'], $developmentDomain) !== false) {
         
         $currentEnvironment = 'development';
+        $currentDomain = $developmentDomain;
+        $httpType = 'http://';
         
-        $portURL = "http://portfolio.dev.lexpostma.me/";
-        $blogURL =      "http://blog.dev.lexpostma.me/";
-        $resuURL =    "http://resume.dev.lexpostma.me/";
-        $abouURL =           "http://dev.lexpostma.me/";
-        
-    	// MAMP development URLs
-    	    if($_SERVER['HTTP_HOST'] ==      'blog.dev.lexpostma.me'){ $basepage = "blog";      $baseURL = $blogURL; }
-    	elseif($_SERVER['HTTP_HOST'] ==    'resume.dev.lexpostma.me'){ $basepage = "resume";    $baseURL = $resuURL; }
-        elseif($_SERVER['HTTP_HOST'] == 'portfolio.dev.lexpostma.me'){ $basepage = "portfolio"; $baseURL = $portURL; }
-    	elseif($_SERVER['HTTP_HOST'] ==     'about.dev.lexpostma.me'){ $basepage = "about";     $baseURL = $abouURL; } // legacy URL
-    	elseif($_SERVER['HTTP_HOST'] ==           'dev.lexpostma.me'){ $basepage = "about";     $baseURL = $abouURL; };
-        
-    } elseif (strpos($_SERVER['HTTP_HOST'], 'test.lexpostma.me') !== false) {
+    } elseif (strpos($_SERVER['HTTP_HOST'], $testingDomain) !== false) {
 
         $currentEnvironment = 'test';
-        
-        $portURL = "https://portfolio.test.lexpostma.me/";
-        $blogURL =      "https://blog.test.lexpostma.me/";
-        $resuURL =    "https://resume.test.lexpostma.me/";
-        $abouURL =           "https://test.lexpostma.me/";
-        
-    	// Digital Ocean testing URLs
-    	    if($_SERVER['HTTP_HOST'] ==      'blog.test.lexpostma.me'){ $basepage = "blog";      $baseURL = $blogURL; }
-    	elseif($_SERVER['HTTP_HOST'] ==    'resume.test.lexpostma.me'){ $basepage = "resume";    $baseURL = $resuURL; }
-        elseif($_SERVER['HTTP_HOST'] == 'portfolio.test.lexpostma.me'){ $basepage = "portfolio"; $baseURL = $portURL; }
-    	elseif($_SERVER['HTTP_HOST'] ==     'about.test.lexpostma.me'){ $basepage = "about";     $baseURL = $abouURL; } // legacy URL
-    	elseif($_SERVER['HTTP_HOST'] ==           'test.lexpostma.me'){ $basepage = "about";     $baseURL = $abouURL; };
-        
+        $currentDomain = $testingDomain;
+        $httpType = 'https://';
+
     } else {
 
         $currentEnvironment = 'production';
-
-        $portURL = "https://portfolio.lexpostma.me/";
-        $blogURL =      "https://blog.lexpostma.me/";
-        $resuURL =    "https://resume.lexpostma.me/";
-        $abouURL =           "https://lexpostma.me/";
-
-    	// Actual URLs
-            if($_SERVER['HTTP_HOST'] ==      'blog.lexpostma.me'){ $basepage = "blog";      $baseURL = $blogURL; }
-    	elseif($_SERVER['HTTP_HOST'] ==    'resume.lexpostma.me'){ $basepage = "resume";    $baseURL = $resuURL; }
-        elseif($_SERVER['HTTP_HOST'] == 'portfolio.lexpostma.me'){ $basepage = "portfolio"; $baseURL = $portURL; }
-    	elseif($_SERVER['HTTP_HOST'] ==     'about.lexpostma.me'){ $basepage = "about";     $baseURL = $abouURL; } // legacy URL
-    	elseif($_SERVER['HTTP_HOST'] ==           'lexpostma.me'){ $basepage = "about";     $baseURL = $abouURL; };
-
+        $currentDomain = $productionDomain;
+        $httpType = 'https://';
 
     }
+
+    $portURL = $httpType."portfolio.".  $currentDomain."/";
+    $blogURL = $httpType."blog.".       $currentDomain."/";
+    $resuURL = $httpType."resume.".     $currentDomain."/";
+    $abouURL = $httpType.               $currentDomain."/";
+
+        if($_SERVER['HTTP_HOST'] ==      'blog.'.$currentDomain ){ $basepage = "blog";      $baseURL = $blogURL; }
+	elseif($_SERVER['HTTP_HOST'] ==    'resume.'.$currentDomain ){ $basepage = "resume";    $baseURL = $resuURL; }
+    elseif($_SERVER['HTTP_HOST'] == 'portfolio.'.$currentDomain ){ $basepage = "portfolio"; $baseURL = $portURL; }
+	elseif($_SERVER['HTTP_HOST'] ==     'about.'.$currentDomain ){ $basepage = "about";     $baseURL = $abouURL; } // legacy URL
+	elseif($_SERVER['HTTP_HOST'] ==              $currentDomain ){ $basepage = "about";     $baseURL = $abouURL; };
+
+
     $coreURL = $abouURL;
     $currentURL = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";    
     
     $twitterURL         = 'https://twitter.com/lexpostma';    
-    $linkedinURL        = 'http://www.linkedin.com/in/lexpostma';
-    $dribbbleURL        = 'http://dribbble.com/lexpostma';
+    $linkedinURL        = 'https://www.linkedin.com/in/lexpostma';
+    $dribbbleURL        = 'https://dribbble.com/lexpostma';
 
     $blogTwitterURL     = 'https://twitter.com/lexpostmame';
     $blogFeedURL        = 'http://feed.lexpostma.me/blog';
