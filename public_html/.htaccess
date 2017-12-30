@@ -4,6 +4,7 @@
 # RedirectMatch 301 ^/resume/?$       https://resume.lexpostma.me$1
 # RedirectMatch 301 ^/about/?$        https://about.lexpostma.me$1
 
+## Left-over redirects from graduation project ##
 RedirectMatch 301 ^/q/?$            https://lexpostma.typeform.com/to/fKK9oO
 RedirectMatch 301 ^/Q/?$            https://lexpostma.typeform.com/to/fKK9oO
 RedirectMatch 301 ^/statafel/?$     https://lexpostma.typeform.com/to/fKK9oO
