@@ -21,10 +21,10 @@
     else if (strpos($_SERVER['HTTP_HOST'], 'test.lexpostma.me') !== false) {
         $test = "ON";
         
-        $portURL =        "http://test.lexpostma.me/";
-        $blogURL =   "http://blog.test.lexpostma.me/";
-        $resuURL = "http://resume.test.lexpostma.me/";
-        $abouURL =  "http://about.test.lexpostma.me/";
+        $portURL =        "https://test.lexpostma.me/";
+        $blogURL =   "https://blog.test.lexpostma.me/";
+        $resuURL = "https://resume.test.lexpostma.me/";
+        $abouURL =  "https://about.test.lexpostma.me/";
         
     	// Digital Ocean testing URLs
     	    if($_SERVER['HTTP_HOST'] ==      'blog.test.lexpostma.me'){ $homepage = "blog";      $baseURL = $blogURL; }
