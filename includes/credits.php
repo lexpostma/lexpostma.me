@@ -69,12 +69,12 @@
     <h2>Older versions</h2>
     <p>Previous attempts and iterations of my website: </p>
     <ul class="websites">
-    	<li><a href="/prototype/website-2011-07" onclick="ga('send', 'event', 'Credits', 'View', '2011-07');">July 2011</a>, my first website, built using iWeb.</li>
-    	<li><a href="/prototype/website-2011-09" onclick="ga('send', 'event', 'Credits', 'View', '2011-09');">September 2011</a>, animated and built using Hype.</li>
-    	<li><a href="/prototype/website-2012-04" onclick="ga('send', 'event', 'Credits', 'View', '2012-04');">April 2012</a>, my first attempt at raw HTML and CSS, and a single page design.</li>
-    	<li><a href="/prototype/website-2012-05" onclick="ga('send', 'event', 'Credits', 'View', '2012-05');">May 2012</a>, iterating.</li>
-    	<li><a href="/prototype/website-2012-10" onclick="ga('send', 'event', 'Credits', 'View', '2012-10');">October 2012</a>, going for simplicity.</li>
-    	<li><a href="https://2017.lexpostma.me"  onclick="ga('send', 'event', 'Credits', 'View', '2017-12');">December 2017</a>.</li>
+    	<li><a href="https://archive.lexpostma.me/website-2011-07" onclick="ga('send', 'event', 'Credits', 'View', '2011-07');">July 2011</a>, my first website, built using iWeb.</li>
+    	<li><a href="https://archive.lexpostma.me/website-2011-09" onclick="ga('send', 'event', 'Credits', 'View', '2011-09');">September 2011</a>, animated and built using Hype.</li>
+    	<li><a href="https://archive.lexpostma.me/website-2012-04" onclick="ga('send', 'event', 'Credits', 'View', '2012-04');">April 2012</a>, my first attempt at raw HTML and CSS, and a single page design.</li>
+    	<li><a href="https://archive.lexpostma.me/website-2012-05" onclick="ga('send', 'event', 'Credits', 'View', '2012-05');">May 2012</a>, iterating.</li>
+    	<li><a href="https://archive.lexpostma.me/website-2012-10" onclick="ga('send', 'event', 'Credits', 'View', '2012-10');">October 2012</a>, going for simplicity.</li>
+    	<li><a href="https://archive.lexpostma.me/website-2017"    onclick="ga('send', 'event', 'Credits', 'View', '2017');"   >December 2017</a>.</li>
     </ul>
     <p>Sorry for the bugs, most of them were not finished or tested for final hosting.</p>
 </article>
