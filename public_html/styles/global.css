@@ -284,6 +284,21 @@ time a.blend:active + a {
   margin: 80px auto;
   position: relative;
 }
+.contentBlock.noResults {
+  text-align: center;
+}
+.contentBlock.noResults p {
+  color: DarkGray;
+}
+.contentBlock.noResults .fa-frown-o {
+  font-size: 200%;
+  margin-top: 10px;
+  -webkit-transform: rotate(-15deg);
+  -moz-transform: rotate(-15deg);
+  -ms-transform: rotate(-15deg);
+  -o-transform: rotate(-15deg);
+  transform: rotate(-15deg);
+}
 /* ======
    TABLES
    ====== */

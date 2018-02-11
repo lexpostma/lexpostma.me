@@ -93,7 +93,7 @@
 .cellSeparatorWithoutIcon:after {
   left: 20px;
 }
-article.contentBlock {
+.contentBlock {
   max-width: 650px;
   overflow: hidden;
 }
