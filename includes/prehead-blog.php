@@ -33,6 +33,8 @@
         else{                         $pageFilter = 1;      };
 
         if(isset($p) && $p == 'filter'){ // filters are enabled
+            
+            $filterBlogSQLquery = "";
 
             if(isset($_GET['mode'])){
                 $modeCheckVar = mysqli_real_escape_string($con,$_GET['mode']);
@@ -46,13 +48,13 @@
                 
                 if ($dateFilter !== '') {
 
-                    $coreBlogSQLquery .= "AND datePublished BETWEEN ";
-    				if (strlen($dateFilter)==2){		      $monthFilter=$dateFilter;     $yearFilter=date('Y');       $coreBlogSQLquery .= " '$yearFilter-$monthFilter-01 00:00:00' AND '$yearFilter-$monthFilter-31 23:59:59' ";  }
-    				elseif (strlen($dateFilter)==4){	                                    $yearFilter=$dateFilter;     $coreBlogSQLquery .= " '$yearFilter-01-01 00:00:00' AND '$yearFilter-12-31 23:59:59'    ";                   }
+                    $filterBlogSQLquery .= "AND datePublished BETWEEN ";
+    				if (strlen($dateFilter)==2){		      $monthFilter=$dateFilter;     $yearFilter=date('Y');       $filterBlogSQLquery .= " '$yearFilter-$monthFilter-01 00:00:00' AND '$yearFilter-$monthFilter-31 23:59:59' ";  }
+    				elseif (strlen($dateFilter)==4){	                                    $yearFilter=$dateFilter;     $filterBlogSQLquery .= " '$yearFilter-01-01 00:00:00' AND '$yearFilter-12-31 23:59:59'    ";                   }
     				elseif (strlen($dateFilter)==7){
     					$explodeDate = explode("-", $dateFilter);
-    					if (    strlen($explodeDate[0])==2){  $monthFilter=$explodeDate[0];	$yearFilter=$explodeDate[1]; $coreBlogSQLquery .= " '$yearFilter-$monthFilter-01 00:00:00' AND '$yearFilter-$monthFilter-31 23:59:59' ";  }
-    					elseif (strlen($explodeDate[0])==4){  $monthFilter=$explodeDate[1];	$yearFilter=$explodeDate[0]; $coreBlogSQLquery .= " '$yearFilter-$monthFilter-01 00:00:00' AND '$yearFilter-$monthFilter-31 23:59:59' ";  }
+    					if (    strlen($explodeDate[0])==2){  $monthFilter=$explodeDate[0];	$yearFilter=$explodeDate[1]; $filterBlogSQLquery .= " '$yearFilter-$monthFilter-01 00:00:00' AND '$yearFilter-$monthFilter-31 23:59:59' ";  }
+    					elseif (strlen($explodeDate[0])==4){  $monthFilter=$explodeDate[1];	$yearFilter=$explodeDate[0]; $filterBlogSQLquery .= " '$yearFilter-$monthFilter-01 00:00:00' AND '$yearFilter-$monthFilter-31 23:59:59' ";  }
     				};
     				if(isset($monthFilter)){
         				$monthFilterName = date("F", mktime(0, 0, 0, $monthFilter, 10));
@@ -66,7 +68,7 @@
                 if (mysqli_num_rows($tagCheck)!=0){ // More than 0 matches = existing tag
                     $tagFilter = $tagCheckVar;
                     $tagFilterNice = mysqli_fetch_array($tagCheck)[1];
-                    $coreBlogSQLquery .= " AND shorttag = '$tagFilter' ";
+                    $filterBlogSQLquery .= " AND shorttag = '$tagFilter' ";
                 };
             };
             if(isset($_GET['author'])){
@@ -75,7 +77,7 @@
                 if (mysqli_num_rows($authorCheck)!=0){ // More than 0 matches = existing author
                     $authorFilter = $authorCheckVar;
                     $authorFilterNice = mysqli_fetch_array($authorCheck)[1];
-                    $coreBlogSQLquery .= " AND username = '$authorFilter' ";
+                    $filterBlogSQLquery .= " AND username = '$authorFilter' ";
                 };
             };
             if(isset($_GET['source'])){
@@ -85,7 +87,7 @@
                 foreach ($sourceExploded as $sTerm){								
     				if (is_numeric($sTerm)){ $sTerm = " ".$sTerm; };
     				if (strlen($sTerm) !=1){
-        				$coreBlogSQLquery .= "AND (sourcetitle LIKE '%$sTerm%' OR source LIKE '%$sTerm%') ";
+        				$filterBlogSQLquery .= "AND (sourcetitle LIKE '%$sTerm%' OR source LIKE '%$sTerm%') ";
     				};
     			};
             };
@@ -96,7 +98,7 @@
                 foreach ($searchExploded as $term){								
     				if (is_numeric($term)){ $term = " ".$term; };
     				if (strlen($term) !=1){
-        				$coreBlogSQLquery .= "AND (body LIKE '%$term%' OR title LIKE '%$term%' OR author LIKE '%$term%' OR tag LIKE '%$term%' OR sourcetitle LIKE '%$term%' OR source LIKE '%$term%') ";
+        				$filterBlogSQLquery .= "AND (body LIKE '%$term%' OR title LIKE '%$term%' OR author LIKE '%$term%' OR tag LIKE '%$term%' OR sourcetitle LIKE '%$term%' OR source LIKE '%$term%') ";
     				};
     			};
             };
@@ -128,6 +130,7 @@
                 $seoTitle  .= ', page '.$pageFilter;
             }
 
+            $coreBlogSQLquery .= $filterBlogSQLquery;
 
         } else if(isset($p)){ // Check if it's an existing blogpost
 
