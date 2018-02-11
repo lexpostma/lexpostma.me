@@ -920,6 +920,7 @@ li.cellRow.contactItem .cellIcon:not(#contactIcon_snapchat) {
 }
 li.cellRow.contactItem .cellIcon:not(#contactIcon_snapchat) svg {
   padding-top: 1px;
+  padding-left: 1px;
 }
 li.cellRow.contactItem .cellIcon#contactIcon_snapchat svg {
   stroke: black;
