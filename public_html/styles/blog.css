@@ -207,6 +207,9 @@ main.blog.post p.blogHeaderByline span {
   background-color: #4B0082;
   border-top-color: #4B0082;
 }
+main#contents.blog footer#pageFooter p {
+  text-align: center;
+}
 .yearList {
   list-style: none;
   padding-left: 20px;
