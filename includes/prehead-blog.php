@@ -21,12 +21,13 @@
         $includePage = 'blogArchive.php';
 */
     } else { // list of blog posts;
-        $coreBlogSQLquery =	"
-            SELECT *, blog.id AS postID FROM blog 
+        $blogSQLjoinQuery = "
             JOIN authors_creators ON blog.author_id=authors_creators.id 
             JOIN blog_tags_relations ON blog.id=blog_tags_relations.blog_id
-            JOIN blog_tags ON blog_tags_relations.tag_id=blog_tags.id 
-            WHERE published = '$pubTest' ";
+            JOIN blog_tags ON blog_tags_relations.tag_id=blog_tags.id";
+
+        $coreBlogSQLquery =	"
+            SELECT *, blog.id AS postID FROM blog ".$blogSQLjoinQuery." WHERE published = '$pubTest' ";
 
         // page numbers
         if(isset($_GET['page'])){     $pageFilter = mysqli_real_escape_string($con,$_GET['page']); /* if($pageFilter < 1){ $pageFilter = 1; }; */ }
@@ -36,12 +37,6 @@
             
             $filterBlogSQLquery = "";
 
-            if(isset($_GET['mode'])){
-                $modeCheckVar = mysqli_real_escape_string($con,$_GET['mode']);
-                if ($modeCheckVar == 'archive') {
-                    $modeFilter = 'archive';
-                };
-            };
             if(isset($_GET['date'])){
                 $dateFilter = mysqli_real_escape_string($con,$_GET['date']);
                 $dateFilter = preg_replace("/[^0-9-]/", "", $dateFilter);
@@ -102,6 +97,12 @@
     				};
     			};
             };
+            if(isset($_GET['mode'])){
+                $modeCheckVar = mysqli_real_escape_string($con,$_GET['mode']);
+                if ($modeCheckVar == 'archive') {
+                    $modeFilter = 'archive';
+                };
+            };
 
 
             if(empty($dateFilter) && empty($tagFilter) && empty($authorFilter) && empty($searchFilter) && empty($sourceFilter) && empty($modeFilter) && $pageFilter <= 1){
@@ -109,7 +110,7 @@
                 // If all filters are empty, redirect to the homepage
                 echo '<script language="Javascript">document.location.href="/";</script>';
 
-            } elseif (!empty($dateFilter) || !empty($tagFilter) || !empty($authorFilter) || !empty($searchFilter) || !empty($sourceFilter)) {
+            } elseif (!empty($dateFilter) || !empty($tagFilter) || !empty($authorFilter) || !empty($searchFilter) || !empty($sourceFilter) || !empty($modeFilter)) {
 
                 // If not all filters are empty, than the page is filtered
                 $seoTitle  .= ' filtered';
@@ -122,8 +123,10 @@
                 if(isset($tagFilter)){        $filterbarText .= '<span>tagged with '.$tagFilterNice.'</span>';  }
                 if(isset($sourceFilter)){     $filterbarText .= '<span>where the original source includes \'<span class="sourceTerms">'.$sourceFilter.'</span>\'</span>';  }
                 if(isset($searchFilter)){     $filterbarText .= '<span>that include \'<span class="searchTerms">'.$searchFilter.'</span>\'</span>';  }                
+                if(isset($modeFilter) && $modeFilter == 'archive') {
+                    $filterbarText .= ', archive view';
+                }
                 $filterbarText .= '.';
-
             }
 
             if($pageFilter > 1){
