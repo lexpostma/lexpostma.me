@@ -1,45 +1,32 @@
 <?
-    if ($currentEnvironment !== 'production') {
-?>
+    $contactGroupQuery = "SELECT groupName FROM about_contact_groups ORDER BY groupOrder ASC;";
+    $contactGroupResult = mysqli_query($con,$contactGroupQuery);
 
+	while($row = mysqli_fetch_array($contactGroupResult)){
+        echo('<ul class="cellRowGroup"><lh>'.$row['groupName'].'</lh>');
+        
+        $contactItemQuery = "
+            SELECT * 
+            FROM about_contact
+            JOIN about_contact_groups ON about_contact.contactGroup_id=about_contact_groups.id
+            WHERE published = '1' 
+            AND groupName = '".$row['groupName']."' ";
 
-<ul class="cellRowGroup">
-    <lh>Extra’s <i>(development-only)</i></lh>
-    <li class="cellRow">
-        <a class="cellRowContent" href="/allfunfacts">
-            <div class="cellIcon"><i class="fa fa-fw fa-smile-o"></i></div>
-            <span class="cellLabel">Show all fun facts</span>
-            <div class="cellClosingIcon chevron"><? include 'navigationIcons/chevron.svg'  ?></div>
-        </a>
-    </li>
+        if( !$detect ->isMobile()) {
+            $contactItemQuery .= "AND mobileOnly = '0' ";
+        }
+        $contactItemQuery .= "ORDER BY volgorde ASC;";
+        $contactItemResult = mysqli_query($con,$contactItemQuery);
 
-</ul>
-
-<?
-    }
-?>
-
-<ul class="cellRowGroup">
-
-<?
-    $contactQuery = "SELECT * FROM about_contact WHERE published = '1' ";
-    if( !$detect ->isMobile()) {
-        $contactQuery .= "AND mobileOnly = '0' ";
-    }
-    $contactQuery .= "ORDER BY volgorde ASC;";
-    $contactResult = mysqli_query($con,$contactQuery);
+    	while($row = mysqli_fetch_array($contactItemResult)){
+    		$network    = $row['network'];
+    		$shortname  = $row['shortname'];
+    		$link       = $row['link'];
+    		$webtext    = $row['webtext'];
+    		$brandcolor = $row['brandcolor'];
+            $svgCode    = $row['svgCode'];
     
-    $contactCounter = 1;
-    
-	while($row = mysqli_fetch_array($contactResult)){
-		$network    = $row['network'];
-		$shortname  = $row['shortname'];
-		$link       = $row['link'];
-		$webtext    = $row['webtext'];
-		$brandcolor = $row['brandcolor'];
-        $svgCode    = $row['svgCode'];
-
-        $gaEvent   = "ga('send', 'event', 'About', 'Contact', '$network');";
+            $gaEvent   = "ga('send', 'event', 'About', 'Contact', '$network');";
 ?>
 
     <li class="cellRow contactItem">
@@ -55,15 +42,7 @@
     </li>
 
 <?
-        if ($contactCounter == 5) {
-?>
-</ul>
-<ul class="cellRowGroup">
-    <lh>My other places on the interwebs&hellip;</lh>
-<?
         };
-        $contactCounter = $contactCounter +1;
-	}
+        echo('</ul>');
+	};
 ?>
-
-</ul>
