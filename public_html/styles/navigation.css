@@ -1229,7 +1229,7 @@ input[type="checkbox"]:checked:active + .toggle i {
     transform: translateY(110vh);
   }
   .actionDrawerContent {
-    height: 400px;
+    max-height: 60vh;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
   }
@@ -1242,8 +1242,8 @@ input[type="checkbox"]:checked:active + .toggle i {
     border-radius: 10px;
   }
   html.actionDrawerToggled body #navigationElements .actionDrawer.actionDrawerToggled {
-    -webkit-transform: translateY(calc(50vh - 200px));
-    transform: translateY(calc(50vh - 200px));
+    -webkit-transform: translateY(calc(45vh - 200px));
+    transform: translateY(calc(45vh - 200px));
   }
 }
 /* =======
