@@ -24,6 +24,9 @@
   -ms-transition: transform 0.2s ease-in-out 0s;
   -kthtml-transition: transform 0.2s ease-in-out 0s;
 }
+/* ================
+   iPHONE X SUPPORT
+   ================ */
 /* ========
    ELEMENTS
    ======== */
@@ -136,7 +139,9 @@ figcaption,
 caption,
 math {
   padding-left: 20px;
+  padding-left: calc(20px + env(safe-area-inset-left));
   padding-right: 20px;
+  padding-right: calc(20px + env(safe-area-inset-right));
   color: #270043;
 }
 p,

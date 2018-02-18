@@ -23,6 +23,9 @@
   -ms-transition: transform 0.2s ease-in-out 0s;
   -kthtml-transition: transform 0.2s ease-in-out 0s;
 }
+/* ================
+   iPHONE X SUPPORT
+   ================ */
 /* ========
    ELEMENTS
    ======== */
@@ -128,6 +131,7 @@ header#titleHeader .logo a {
   background: #4B0082;
   top: 10px;
   right: 10px;
+  right: calc(10px + env(safe-area-inset-right));
   padding: 3px;
   height: 56px;
   width: 56px;
@@ -1138,6 +1142,7 @@ input[type="checkbox"]:checked:active + .toggle i {
   main#contents {
     padding-bottom: 0;
     margin-left: 50.5px;
+    margin-left: calc(50.5px + env(safe-area-inset-right));
   }
   #tabbarTooltip {
     animation: floatHorizontally 3s ease-in-out infinite;

@@ -38,6 +38,7 @@ header#titleHeader {
             background: @color1;
             top: 10px;
             right: 10px;
+            right: ~"calc(10px + @{iX_right})";
             padding: 3px;
             height: 56px;
             width: 56px;
@@ -652,7 +653,8 @@ ul.cellRowGroup {
 .cellRowContent,
 input.cellRowContent {
     width: 100%; 
-    padding: 7px 20px 8px;
+    padding: 7px @sidePadding 8px;
+//     padding: 7px ~"calc(@{sidePadding} + @{iX_right})" 8px ~"calc(@{sidePadding} + @{iX_left})";
     background-color: white;
     
     display: flex;
@@ -1085,6 +1087,7 @@ input[type="checkbox"] {
     main#contents {
         padding-bottom: 0;
         margin-left: @tabbarHeight;
+        margin-left: ~"calc(@{tabbarHeight} + @{iX_right})";        
     }
     
     #tabbarTooltip {

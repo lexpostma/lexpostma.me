@@ -43,7 +43,9 @@ h1,h2,h3,h4,h5,h6,
 figcaption,caption,
 math {
     padding-left:  @sidePadding;
+    padding-left:  ~"calc(@{sidePadding} + @{iX_left})";
     padding-right: @sidePadding;
+    padding-right: ~"calc(@{sidePadding} + @{iX_right})";
     color: @color1-4;
 }
 
