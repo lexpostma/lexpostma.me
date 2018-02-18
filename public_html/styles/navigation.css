@@ -338,9 +338,9 @@ li.tabbarItem:nth-last-of-type(4) a.tabbarLink {
   background-color: white;
   border-bottom: 0.5px solid #B2B2B2;
   position: relative;
-  padding: 7px 20px 8px;
 }
 .actionDrawerTitleBar span {
+  padding: 7px 0 8px;
   text-align: center;
   font-weight: bold;
   width: 100%;
@@ -348,18 +348,19 @@ li.tabbarItem:nth-last-of-type(4) a.tabbarLink {
 }
 .actionDrawerTitleBar input.actionDrawerTitleButton {
   position: absolute;
-  top: 7px;
+  padding: 7px 20px 8px;
+  top: 0;
   text-decoration: none;
   color: #4B0082;
 }
-.actionDrawerTitleBar input#formCancel {
-  left: 20px;
+.actionDrawerTitleBar input.formCancel {
+  left: 0;
 }
-.actionDrawerTitleBar input#formReset {
-  right: 20px;
+.actionDrawerTitleBar input.formReset {
+  right: 0;
   color: #F04400;
 }
-.actionDrawerTitleBar input#formReset:disabled {
+.actionDrawerTitleBar input.formReset:disabled {
   color: #929292;
   opacity: .3;
 }
@@ -718,12 +719,10 @@ a.cellRowContent {
   font-weight: bold;
   display: block;
   color: #4B0082;
-  /*
-    &:disabled {
-        color: @colorInactive;
-        font-weight: normal;
-    }
-*/
+}
+.cellRowContent#formApplyFilters:disabled {
+  color: #929292;
+  opacity: .3;
 }
 button.cellIcon,
 .cellIcon {
@@ -772,19 +771,18 @@ select.cellValue {
   color: #929292;
   white-space: nowrap;
 }
+input[type="search"].cellValue {
+  color: #4B0082;
+}
 .placeholderStyling {
   color: #929292;
-  transform: translateX(90px);
-  transition-property: opacity, transform;
-  transition-duration: .2s;
-  transition-timing-function: ease-in-out;
+  text-align: right;
 }
 .placeholderFocusStyling {
   opacity: 0;
-  transform: translateX(0px);
 }
 input.cellValue#inputSearch {
-  width: 135px;
+  width: 56%;
   padding: 0 5px;
   margin-right: -5px;
   border-radius: 5px;
@@ -798,61 +796,41 @@ input.cellValue#inputSearch {
 }
 input.cellValue#inputSearch::-webkit-input-placeholder {
   color: #929292;
-  transform: translateX(90px);
-  transition-property: opacity, transform;
-  transition-duration: .2s;
-  transition-timing-function: ease-in-out;
+  text-align: right;
 }
 input.cellValue#inputSearch:-ms-input-placeholder {
   color: #929292;
-  transform: translateX(90px);
-  transition-property: opacity, transform;
-  transition-duration: .2s;
-  transition-timing-function: ease-in-out;
+  text-align: right;
 }
 input.cellValue#inputSearch::-ms-input-placeholder {
   color: #929292;
-  transform: translateX(90px);
-  transition-property: opacity, transform;
-  transition-duration: .2s;
-  transition-timing-function: ease-in-out;
+  text-align: right;
 }
 input.cellValue#inputSearch:-moz-placeholder {
   color: #929292;
-  transform: translateX(90px);
-  transition-property: opacity, transform;
-  transition-duration: .2s;
-  transition-timing-function: ease-in-out;
+  text-align: right;
 }
 input.cellValue#inputSearch::-moz-placeholder {
   color: #929292;
-  transform: translateX(90px);
-  transition-property: opacity, transform;
-  transition-duration: .2s;
-  transition-timing-function: ease-in-out;
+  text-align: right;
 }
 input.cellValue#inputSearch:focus {
   background-color: #F7F7F7;
 }
 input.cellValue#inputSearch:focus::-webkit-input-placeholder {
   opacity: 0;
-  transform: translateX(0px);
 }
 input.cellValue#inputSearch:focus:-ms-input-placeholder {
   opacity: 0;
-  transform: translateX(0px);
 }
 input.cellValue#inputSearch:focus::-ms-input-placeholder {
   opacity: 0;
-  transform: translateX(0px);
 }
 input.cellValue#inputSearch:focus:-moz-placeholder {
   opacity: 0;
-  transform: translateX(0px);
 }
 input.cellValue#inputSearch:focus::-moz-placeholder {
   opacity: 0;
-  transform: translateX(0px);
 }
 span.widthForInputHidden {
   position: absolute;

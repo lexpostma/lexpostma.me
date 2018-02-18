@@ -1,12 +1,12 @@
             <div id="<?=$actionDrawerID?>" class="actionDrawer">
                 <div class="actionDrawerTitleBar">
                     <span><?=$actionDrawerTitle?></span>
-                    <input class="actionDrawerTitleButton" id="formCancel" type="reset" value="Close"  form="filteringForm" onclick="toggleDrawer('<?=$actionDrawerID?>')">
+                    <input class="actionDrawerTitleButton formCancel" type="reset" value="Close"  form="filteringForm" onclick="toggleDrawer('<?=$actionDrawerID?>')">
 
 <?
     if ( isset($actionDrawerID) && $actionDrawerID == 'drawerFilter' ) {
 ?>
-                    <input class="actionDrawerTitleButton" id="formReset" type="button" value="Reset"  form="filteringForm" onclick="resetForm('filteringForm')">
+                    <input class="actionDrawerTitleButton formReset" type="button" value="Reset" disabled form="filteringForm" onclick="resetForm('filteringForm')">
 <?
     }
 ?>

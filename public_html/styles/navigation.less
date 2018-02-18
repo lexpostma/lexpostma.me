@@ -279,8 +279,8 @@ li.tabbarItem:nth-last-of-type(4) a.tabbarLink {
     background-color: white;
     border-bottom: @lineThickness solid @colorLine;
     position: relative;
-    padding: 7px @sidePadding 8px;
     span {
+        padding: 7px 0 8px;
         text-align: center;
         font-weight: bold;
         width: 100%;
@@ -288,21 +288,21 @@ li.tabbarItem:nth-last-of-type(4) a.tabbarLink {
     }
     input.actionDrawerTitleButton {
         position: absolute;
-        top: 7px;
+        padding: 7px @sidePadding 8px;
+        top: 0;
         text-decoration: none;
         color: @color1;
     }
-    input#formCancel {
-        left: @sidePadding;
+    input.formCancel {
+        left: 0;
     }
-    input#formReset {
-        right: @sidePadding;
+    input.formReset {
+        right: 0;
         color: @color2;
         &:disabled {
             color: @colorInactive;
             opacity: .3;
         }
-
     }
 }
 
@@ -674,12 +674,11 @@ a.cellRowContent {
     font-weight: bold;
     display: block;
     color: @color1;
-/*
     &:disabled {
         color: @colorInactive;
-        font-weight: normal;
+//         font-weight: normal;
+        opacity: .3;
     }
-*/
 }
 
 button.cellIcon,
@@ -730,22 +729,21 @@ select.cellValue {
     color: @colorInactive;
     white-space: nowrap;
 }
+input[type="search"].cellValue {
+    color: @color1;
+}
 
 .placeholderStyling {
     color: @colorInactive;
-    transform: translateX(90px); 
-    transition-property: opacity, transform; 
-    transition-duration: .2s;
-    transition-timing-function: ease-in-out;
+    text-align: right;
 }
 
 .placeholderFocusStyling {
     opacity: 0;
-    transform: translateX(0px);
 }
 
 input.cellValue#inputSearch {
-    width: 135px;
+    width: 56%;
     padding: 0 5px;
     margin-right: -5px;
     border-radius: 5px;
