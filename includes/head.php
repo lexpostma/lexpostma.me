@@ -115,7 +115,8 @@
 <?
     if(isset($customIcon)) {
 ?>
-        <meta name="apple-mobile-web-app-title" content="   ‍   " />
+<!--         <meta name="apple-mobile-web-app-title" content="   ‍   " /> -->
+        <meta name="apple-mobile-web-app-title" content=".me" />
 <?
     } else {
 ?>
@@ -127,7 +128,7 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <?
     if(isset($customIcon)) {
-        $iconPath = '/images/icons/custom/white-on-grey/';
+        $iconPath = '/images/icons/custom/purple-on-white/';
     } else if($currentEnvironment == 'production' ){
         $iconPath = '/images/icons/';
     } else if($currentEnvironment == 'test' ){
