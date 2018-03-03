@@ -112,7 +112,17 @@
         <meta name="twitter:site" content="@lexpostmame">
         
         <!-- Apple / iOS -->
+<?
+    if(isset($customIcon)) {
+?>
+        <meta name="apple-mobile-web-app-title" content="   ‍   " />
+<?
+    } else {
+?>
         <meta name="apple-mobile-web-app-title" content="Lex Postma" />
+<?
+    }
+?>
         <meta name="apple-mobile-web-app-capable" content="no" /> <!-- TODO: yes -->
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <?
