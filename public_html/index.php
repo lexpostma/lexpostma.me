@@ -5,6 +5,10 @@
     $basepageTwo = 'home';
     if(isset($_GET['p'])){
         $p = strtolower(mysqli_real_escape_string($con,$_GET['p']));
+        if($p == 'black') {
+            $customIcon = true;
+            unset($p);
+        }
     };
     
 

@@ -116,9 +116,11 @@
         <meta name="apple-mobile-web-app-capable" content="no" /> <!-- TODO: yes -->
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <?
-    if($currentEnvironment == 'production' ){
+    if(isset($customIcon)) {
+        $iconPath = '/images/icons/black/';
+    } else if($currentEnvironment == 'production' ){
         $iconPath = '/images/icons/';
-    } elseif($currentEnvironment == 'test' ){
+    } else if($currentEnvironment == 'test' ){
         $iconPath = '/images/icons/test/';
     } else {
         $iconPath = '/images/icons/dev/';
