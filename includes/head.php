@@ -128,7 +128,7 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <?
     if(isset($customIcon)) {
-        $iconPath = '/images/icons/custom/white-on-grey/';
+        $iconPath = '/images/icons/custom/white-on-black/';
     } else if($currentEnvironment == 'production' ){
         $iconPath = '/images/icons/';
     } else if($currentEnvironment == 'test' ){
