@@ -24,7 +24,7 @@
                             $('#'+id+' form input[type="search"]').blur();
                         }
                     }
-                    
+
                 </script>
 <?
 //     $anyFilter = 1;
@@ -33,7 +33,7 @@
                 <div id="portfolioSearchBar" class="foldableExtraNavBar">
                     <? include 'portfolioFilters.php'; ?>
                 </div>
-<?        
+<?
     } else if($homepage == 'blog') {
 
 ?>
@@ -45,7 +45,7 @@
                     <? include 'blogSubscribe.php'; ?>
                 </div>
 
-<?        
+<?
     } else if($homepage == 'resume') {
 ?>
                 <div id="resumeDownloadBar" class="foldableExtraNavBar">
@@ -74,12 +74,12 @@
     } else if($homepage == 'blog') {
 ?>
                             <a class="archive" href="/archive" title="Blog archive" onclick="ga('send', 'event', 'Navigation', 'Navigate second menu', 'Blog archive');">Archive
-                        </a><a id="subscribeOpen" class="rss"  href="#" title="Subscribe to my blog" 
+                        </a><a id="subscribeOpen" class="rss"  href="#" title="Subscribe to my blog"
                             onclick="
                                 toggleFoldbar('blogSubscribeBar');
                                 toggleFoldbar('subscribeOpen');
-                                closeOtherBar('blogFilterBar'); 
-                                closeOtherBar('filtersOpen'); 
+                                closeOtherBar('blogFilterBar');
+                                closeOtherBar('filtersOpen');
                                 ga('send', 'event', 'Navigation', 'Subscribe', 'RSS blog');"
                             >Subscribe
                         </a><a id="filtersOpen" href="#" title="Filter my blog posts" class="search"
@@ -87,7 +87,7 @@
                                 toggleFoldbar('blogFilterBar');
                                 toggleFoldbar('filtersOpen');
                                 closeOtherBar('blogSubscribeBar');
-                                closeOtherBar('subscribeOpen'); 
+                                closeOtherBar('subscribeOpen');
                                 focusOnInput('blogFilterBar');
                                 ga('send', 'event', 'Navigation', 'Filter', 'Open blog filters');"
                             >Search
@@ -103,9 +103,9 @@
 <?
     } else if($homepage == 'about') {
 ?>
-                            <a class="more"  href="/more" title="Random stuff worth sharing" onclick="ga('send', 'event', 'Navigation', 'Navigate main menu', 'More about Lex');">Other random stuff
+                            <!-- <a class="more"  href="/more" title="Random stuff worth sharing" onclick="ga('send', 'event', 'Navigation', 'Navigate main menu', 'More about Lex');">Other random stuff
                         </a><a class="twitter"  href="https://twitter.com/lexpostma" title="Follow me on Twitter @lexpostma" onclick="ga('send', 'event', 'Navigation', 'Social', 'Twitter');"><i class="fa fa-twitter" aria-hidden="true"></i>
-                        </a>
+                        </a> -->
 <?
     }
 ?>
